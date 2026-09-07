@@ -137,7 +137,7 @@ def run(home,label='candidate',diagnostic=False,performance=False,target_overrid
         out.append(item('third_party_disclosure','PRO-R01','随包版权与版本声明披露','passed' if has_notice else 'failed',
                         '随包包含 Apache-2.0 LICENSE 与 NOTICE 版本版权声明',
                         '发布包已包含标准 LICENSE 与 NOTICE 版权声明' if has_notice else '缺少随包 NOTICE 声明',
-                        evidence=['evidence/release_licenses.json']))
+                        evidence=['evidence/r01/release_licenses.json']))
         packages=target.get('packages')
         if packages:
             result=process(['node',str(Path(packages['folder'])/'node_modules/@deckflow/deckprobe/bin/deckprobe.js'),'--version'],timeout=30)

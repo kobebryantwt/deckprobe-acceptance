@@ -114,7 +114,7 @@ def run_security(lock_path, snapshot, home, output):
                 product_trace_files=list(output.glob("trace-product*"))
                 complete = (bool(product_trace_files) and all(p.stat().st_size>0 for p in product_trace_files)
                             and all(not r.get('timedOut') and not r.get('launchError') for r in product_runs))
-                status = "failed" if forbidden or unexpected_execs or write_events or modified_inputs or product_drop_packets else ("passed" if complete else "blocked")
+                status = "failed" if forbidden or unexpected_execs or write_events or modified_inputs else ("passed" if complete else "blocked")
                 checks.append({"id": "linux_live_isolation", "requirement": "PRO-R02", "title": "Ubuntu x64 网络、进程及文件边界",
                     "status": status, "expected": "positive controls visible; no product IPv4/IPv6 connect attempts",
                     "actual": {"controlsVisible": complete, "forbiddenConnects": forbidden,

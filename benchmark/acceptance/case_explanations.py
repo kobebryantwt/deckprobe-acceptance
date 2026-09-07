@@ -7,7 +7,7 @@ from __future__ import annotations
 
 VERSION = 1
 SUPPORTED = {
-    'runner.py': '12544fd0ac1110805515b6061c9296dbf0bf036b5170c3f7e73b3bd6caee4ca8',
+    'runner.py': 'ef2a571094899d5d3e065ad40935b5626903169ae81f6fd7ecb0a680536fc178',
     'contracts.py': 'aa7bfe77ca6f1ebb6d1817629610b5a498d072359cf7aa57b319dbc53cb9a9b2',
     'config/policy.json': '04e60675926fea747b935c7a181a78ed14f63c2ba050247c47f2b4455095d5e5',
     'security.py': 'aefc6301a3140051395f5a9958dd760fda20a2d43722e360d5ea9acc983c41fe',
@@ -18,7 +18,7 @@ SUPPORTED = {
     'docs/handbook.md': '16926e968c6826d693f83899e2e556bbd06350d674c68c792f932e40d91d47b2',
     'supply_evidence.py': '14240eb78dc8ae8d319baabd6bd82644fde7e86c94d6560e622ecd35b5a44b36',
     'github_ci.py': '4bfc4e57be47cd8d28ff2edf096f3a361409ab0096db26000c6efc3f62a0d778',
-    'linux_security.py': '3254be83f0d53e0cb4982d1daf02bda790996077eff462c274a86f69e8fe2c63',
+    'linux_security.py': 'a54fa5a7520ab25ea7caac14c5ad513f77c924a4c9b46dfe3111679f7fdfa6e5',
 }
 LEGACY = {'runner.py': {'ae3af454936e5367d7da5801c60ef482956ee8f0506f1e380838e17daace8d81', '82cdca1eb54b602d4d4605c26f165b1876876550fe849f2b2a8e44b89e4fd6bf', '9cda58512fa28f9ff23f98f1bf3742f717ff2c9ac237201266d9f1b341e6a0b2'}}
 
