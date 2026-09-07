@@ -1,0 +1,466 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "reports": [
+          {
+            "path": "local-evidence://Word加密文档.docx",
+            "report": {
+              "diagnostics": [
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.application could not be resolved from this document"
+                },
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.author could not be resolved from this document"
+                },
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.title could not be resolved from this document"
+                }
+              ],
+              "driver": {
+                "id": "office-legacy",
+                "profile": "encrypted-ooxml"
+              },
+              "execution": {
+                "actual_cost": {
+                  "expanded_bytes": 0,
+                  "physical_bytes_read": 6152,
+                  "random_reads": 6
+                },
+                "estimated_cost": 12,
+                "paths": [
+                  "office_legacy.cfb_inventory",
+                  "office_legacy.summary_information"
+                ],
+                "probe_level": "metadata",
+                "unresolved_targets": [
+                  "document.application",
+                  "document.author",
+                  "document.title"
+                ]
+              },
+              "input": {
+                "display_name": "Word加密文档.docx",
+                "file_size": 19968,
+                "source_kind": "local_file"
+              },
+              "results": {
+                "document.application": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.application"
+                },
+                "document.author": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.author"
+                },
+                "document.extension": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "input path",
+                  "status": "resolved",
+                  "target": "document.extension",
+                  "value": "docx"
+                },
+                "document.extension_matches": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "input path + detected profile",
+                  "status": "resolved",
+                  "target": "document.extension_matches",
+                  "value": true
+                },
+                "document.file_size": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "filesystem metadata",
+                  "status": "resolved",
+                  "target": "document.file_size",
+                  "value": 19968
+                },
+                "document.format": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format",
+                  "value": "office-open-xml"
+                },
+                "document.format_profile": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format_profile",
+                  "value": "encrypted-ooxml"
+                },
+                "document.mime_type": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "format profile",
+                  "status": "resolved",
+                  "target": "document.mime_type",
+                  "value": "application/x-ole-storage"
+                },
+                "document.title": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.title"
+                },
+                "office.cfb_container": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB header and directory",
+                  "status": "resolved",
+                  "target": "office.cfb_container",
+                  "value": true
+                },
+                "office.cfb_entry_count": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB directory",
+                  "status": "resolved",
+                  "target": "office.cfb_entry_count",
+                  "value": 12
+                },
+                "office.content_probe_supported": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "legacy parser capability",
+                  "status": "resolved",
+                  "target": "office.content_probe_supported",
+                  "value": false
+                },
+                "office.document_kind": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "validated CFB main stream",
+                  "status": "resolved",
+                  "target": "office.document_kind",
+                  "value": "encrypted"
+                },
+                "office.legacy_kind": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "validated CFB main stream",
+                  "status": "resolved",
+                  "target": "office.legacy_kind",
+                  "value": "encrypted-ooxml"
+                },
+                "security.encrypted": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "EncryptionInfo + EncryptedPackage streams",
+                  "status": "resolved",
+                  "target": "security.encrypted",
+                  "value": true
+                },
+                "security.has_embedded_files": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB embedded-object storage inventory",
+                  "status": "resolved",
+                  "target": "security.has_embedded_files",
+                  "value": true
+                },
+                "security.has_macros": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB directory inventory",
+                  "status": "resolved",
+                  "target": "security.has_macros",
+                  "value": false
+                },
+                "security.password_protected": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "EncryptionInfo + EncryptedPackage streams",
+                  "status": "resolved",
+                  "target": "security.password_protected",
+                  "value": true
+                }
+              },
+              "schema_version": 2,
+              "status": "partial",
+              "tool_version": "2.5.0"
+            }
+          },
+          {
+            "path": "local-evidence://missing.pdf",
+            "report": {
+              "error": {
+                "code": "MCP_INVALID_PATH",
+                "message": "local-evidence://missing.pdf'",
+                "origin": "mcp-server"
+              },
+              "schema_version": 2,
+              "status": "error"
+            }
+          },
+          {
+            "path": "local-evidence://Word加密文档.docx",
+            "report": {
+              "diagnostics": [
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.application could not be resolved from this document"
+                },
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.author could not be resolved from this document"
+                },
+                {
+                  "code": "UNRESOLVED_TARGET",
+                  "level": "warning",
+                  "message": "document.title could not be resolved from this document"
+                }
+              ],
+              "driver": {
+                "id": "office-legacy",
+                "profile": "encrypted-ooxml"
+              },
+              "execution": {
+                "actual_cost": {
+                  "expanded_bytes": 0,
+                  "physical_bytes_read": 6152,
+                  "random_reads": 6
+                },
+                "estimated_cost": 12,
+                "paths": [
+                  "office_legacy.cfb_inventory",
+                  "office_legacy.summary_information"
+                ],
+                "probe_level": "metadata",
+                "unresolved_targets": [
+                  "document.application",
+                  "document.author",
+                  "document.title"
+                ]
+              },
+              "input": {
+                "display_name": "Word加密文档.docx",
+                "file_size": 19968,
+                "source_kind": "local_file"
+              },
+              "results": {
+                "document.application": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.application"
+                },
+                "document.author": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.author"
+                },
+                "document.extension": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "input path",
+                  "status": "resolved",
+                  "target": "document.extension",
+                  "value": "docx"
+                },
+                "document.extension_matches": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "input path + detected profile",
+                  "status": "resolved",
+                  "target": "document.extension_matches",
+                  "value": true
+                },
+                "document.file_size": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "filesystem metadata",
+                  "status": "resolved",
+                  "target": "document.file_size",
+                  "value": 19968
+                },
+                "document.format": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format",
+                  "value": "office-open-xml"
+                },
+                "document.format_profile": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format_profile",
+                  "value": "encrypted-ooxml"
+                },
+                "document.mime_type": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "format profile",
+                  "status": "resolved",
+                  "target": "document.mime_type",
+                  "value": "application/x-ole-storage"
+                },
+                "document.title": {
+                  "confidence": "none",
+                  "confidence_score": 0,
+                  "path": "office_legacy.summary_information",
+                  "source": "none",
+                  "status": "unknown",
+                  "target": "document.title"
+                },
+                "office.cfb_container": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB header and directory",
+                  "status": "resolved",
+                  "target": "office.cfb_container",
+                  "value": true
+                },
+                "office.cfb_entry_count": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB directory",
+                  "status": "resolved",
+                  "target": "office.cfb_entry_count",
+                  "value": 12
+                },
+                "office.content_probe_supported": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "legacy parser capability",
+                  "status": "resolved",
+                  "target": "office.content_probe_supported",
+                  "value": false
+                },
+                "office.document_kind": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "validated CFB main stream",
+                  "status": "resolved",
+                  "target": "office.document_kind",
+                  "value": "encrypted"
+                },
+                "office.legacy_kind": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "validated CFB main stream",
+                  "status": "resolved",
+                  "target": "office.legacy_kind",
+                  "value": "encrypted-ooxml"
+                },
+                "security.encrypted": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "EncryptionInfo + EncryptedPackage streams",
+                  "status": "resolved",
+                  "target": "security.encrypted",
+                  "value": true
+                },
+                "security.has_embedded_files": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB embedded-object storage inventory",
+                  "status": "resolved",
+                  "target": "security.has_embedded_files",
+                  "value": true
+                },
+                "security.has_macros": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "CFB directory inventory",
+                  "status": "resolved",
+                  "target": "security.has_macros",
+                  "value": false
+                },
+                "security.password_protected": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "office_legacy.cfb_inventory",
+                  "source": "EncryptionInfo + EncryptedPackage streams",
+                  "status": "resolved",
+                  "target": "security.password_protected",
+                  "value": true
+                }
+              },
+              "schema_version": 2,
+              "status": "partial",
+              "tool_version": "2.5.0"
+            }
+          }
+        ]
+      },
+      "details": null,
+      "expected": "3 ordered independent results; first/last good",
+      "featureId": "PRO-R07",
+      "id": "mcp-pinned_batch_case-12afdb506994aa0089ae",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "mcp-pinned_batch_case-12afdb506994aa0089ae",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/mcp-pinned-case-12afdb506994aa0089ae.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

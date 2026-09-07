@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 1,
+      "details": {
+        "answerDigest": "f2347cedaa15408c5d4a632d586014759ad858b2006deb34d097ac879df3b9d4",
+        "diagnosticMatch": true
+      },
+      "expected": 1,
+      "featureId": "PRO-R03",
+      "id": "case-3c29b13c2daee129ca62_fact-1cfa35782c",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-3c29b13c2daee129ca62_fact-1cfa35782c",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.sheet_count",
+    "local-evidence://Excel旧版模板.xlt"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-219444332b58f2b487614b2e439fab36b940aedfdd4128cfcd1379f7d21ce6bd.json"
+  ],
+  "source": {
+    "uri": "sha256:3c29b13c2daee129ca6222253c12838ef38767faedeb4306b419d62cdaf09eef"
+  },
+  "status": "passed"
+}

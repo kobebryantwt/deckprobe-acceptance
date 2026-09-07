@@ -2,57 +2,115 @@
   "checks": [],
   "runs": [
     {
+      "counts": {
+        "blocked": 8,
+        "failed": 22,
+        "passed": 276,
+        "review": 49
+      },
       "createdAt": "2026-09-07T13:09:02.107015+00:00",
       "decision": "FAIL",
       "inputDigest": "b0964493f37f372b9703205126d984b2c03849a2536af55ab1f9c7d8d1cdb251",
+      "performanceAlerts": 2,
       "release": "v2.5.0",
       "runId": "v2.5.0-b0964493f37f372b9703",
       "url": "runs/v2.5.0-b0964493f37f372b9703/report.html"
     },
     {
       "comparisonUrl": "comparisons/v2.5.0-b0964493f37f372b9703--v2.5.0-ccb899997fc3868ee69c/comparison.html",
+      "counts": {
+        "blocked": 5,
+        "failed": 21,
+        "passed": 280,
+        "review": 49
+      },
       "createdAt": "2026-09-07T13:41:35.059791+00:00",
       "decision": "FAIL",
       "inputDigest": "ccb899997fc3868ee69c096105087bf53ea30a1fcb0e1a8bd733d2e29477f139",
+      "performanceAlerts": 0,
       "release": "v2.5.0",
       "runId": "v2.5.0-ccb899997fc3868ee69c",
       "url": "runs/v2.5.0-ccb899997fc3868ee69c/report.html"
     },
     {
       "comparisonUrl": "comparisons/v2.5.0-ccb899997fc3868ee69c--v2.5.0-785d48ad4f06a61a2400/comparison.html",
+      "counts": {
+        "blocked": 4,
+        "failed": 20,
+        "passed": 282,
+        "review": 49
+      },
       "createdAt": "2026-09-07T14:04:56.164909+00:00",
       "decision": "FAIL",
       "inputDigest": "785d48ad4f06a61a2400b6db1a2f1a852a83350541b3fe7d6850f90daa29d00e",
+      "performanceAlerts": 0,
       "release": "v2.5.0",
       "runId": "v2.5.0-785d48ad4f06a61a2400",
       "url": "runs/v2.5.0-785d48ad4f06a61a2400/report.html"
     },
     {
       "comparisonUrl": "comparisons/v2.5.0-785d48ad4f06a61a2400--v2.5.0-0e6c49cc6539597285b9/comparison.html",
+      "counts": {
+        "blocked": 3,
+        "failed": 22,
+        "passed": 324,
+        "review": 58
+      },
       "createdAt": "2026-09-07T14:12:07.253073+00:00",
       "decision": "FAIL",
       "inputDigest": "0e6c49cc6539597285b9c51fe1283ba817496d67a755237ec8baee8db17b40ab",
+      "performanceAlerts": 0,
       "release": "v2.5.0",
       "runId": "v2.5.0-0e6c49cc6539597285b9",
       "url": "runs/v2.5.0-0e6c49cc6539597285b9/report.html"
     },
     {
       "comparisonUrl": "comparisons/v2.5.0-0e6c49cc6539597285b9--v2.5.0-f4318a3ffff837fe56a7/comparison.html",
+      "counts": {
+        "blocked": 2,
+        "failed": 22,
+        "passed": 323,
+        "review": 59
+      },
       "createdAt": "2026-09-07T14:23:09.615214+00:00",
       "decision": "FAIL",
       "inputDigest": "f4318a3ffff837fe56a7b561c2104220bb609d3dabaa0e3ab06ae300150f0bbf",
+      "performanceAlerts": 1,
       "release": "v2.5.0",
       "runId": "v2.5.0-f4318a3ffff837fe56a7",
       "url": "runs/v2.5.0-f4318a3ffff837fe56a7/report.html"
     },
     {
       "comparisonUrl": "comparisons/v2.5.0-f4318a3ffff837fe56a7--v2.5.0-f5bbcb5e404c884a0212/comparison.html",
+      "counts": {
+        "blocked": 2,
+        "failed": 18,
+        "passed": 327,
+        "review": 59
+      },
       "createdAt": "2026-09-07T14:48:05.430343+00:00",
       "decision": "FAIL",
       "inputDigest": "f5bbcb5e404c884a02122394d4d03abf7f4a17362a6e11f2914e62d4e6b20c60",
+      "performanceAlerts": 1,
       "release": "v2.5.0",
       "runId": "v2.5.0-f5bbcb5e404c884a0212",
       "url": "runs/v2.5.0-f5bbcb5e404c884a0212/report.html"
+    },
+    {
+      "comparisonUrl": "comparisons/v2.5.0-f5bbcb5e404c884a0212--v2.5.0-960eaf259da9760497c3/comparison.html",
+      "counts": {
+        "blocked": 3,
+        "failed": 18,
+        "passed": 327,
+        "review": 58
+      },
+      "createdAt": "2026-09-07T15:08:32.982756+00:00",
+      "decision": "FAIL",
+      "inputDigest": "960eaf259da9760497c3f621f97846a67d962b0f5ea8c0615ff824b93cb29ef9",
+      "performanceAlerts": 0,
+      "release": "v2.5.0",
+      "runId": "v2.5.0-960eaf259da9760497c3",
+      "url": "runs/v2.5.0-960eaf259da9760497c3/report.html"
     }
   ],
   "schemaVersion": 1

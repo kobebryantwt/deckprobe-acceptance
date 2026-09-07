@@ -1,0 +1,51 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "targets": [
+          "powerpoint.slide_count"
+        ],
+        "value": {
+          "confidence": "high",
+          "confidence_score": 0.95,
+          "path": "powerpoint.app_statistics",
+          "source": "docProps/app.xml saved statistic",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "details": null,
+      "expected": {
+        "targets": [
+          "powerpoint.slide_count"
+        ],
+        "value": {
+          "confidence": "high",
+          "confidence_score": 0.95,
+          "path": "powerpoint.app_statistics",
+          "source": "docProps/app.xml saved statistic",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "featureId": "PRO-R05",
+      "id": "no_piggyback_contract",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "no_piggyback_contract",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

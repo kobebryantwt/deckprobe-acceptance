@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "application/x-iwork-keynote-sffkey",
+      "details": {
+        "answerDigest": "129ae1f067c4c8847af22c08ba6a5e9daa000b4125459fc328e965eac5e7f2a9",
+        "diagnosticMatch": true
+      },
+      "expected": "application/x-iwork-keynote-sffkey",
+      "featureId": "PRO-R03",
+      "id": "case-ea1e65eec57d5bfaa3aa_fact-01a5cc3dcc",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-ea1e65eec57d5bfaa3aa_fact-01a5cc3dcc",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.mime_type",
+    "local-evidence://Keynote表格与图片演示文稿.key"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-3758cdbab78961f237f55e837d5cf6ca33b4720a97345308c6ec579d09f0c210.json"
+  ],
+  "source": {
+    "uri": "sha256:ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+  },
+  "status": "passed"
+}

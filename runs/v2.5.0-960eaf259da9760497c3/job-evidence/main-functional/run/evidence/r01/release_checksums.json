@@ -1,0 +1,535 @@
+{
+  "counts": {
+    "blocked": 0,
+    "failed": 0,
+    "passed": 27,
+    "review": 0
+  },
+  "groups": [
+    {
+      "rows": [
+        {
+          "actual": "dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-aarch64-apple-darwin.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-aarch64-apple-darwin.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-aarch64-unknown-linux-gnu.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 2",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "3504677c1a5361494eee38d52c5ce93d0751a786410ff8b51f79cf33346a9d65",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "3504677c1a5361494eee38d52c5ce93d0751a786410ff8b51f79cf33346a9d65",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-aarch64-unknown-linux-musl.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 3",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-aarch64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "6a7b3e9361312790245848bc0cdbc536762f3c9c77ffb1a2d0876ef81f066204",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "6a7b3e9361312790245848bc0cdbc536762f3c9c77ffb1a2d0876ef81f066204",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-x86_64-apple-darwin.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 4",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-x86_64-apple-darwin.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "8485f93e20edfa9cfbbe62a3c22087a7d3ed14390929aa8ac1ab29a78375c55e",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "8485f93e20edfa9cfbbe62a3c22087a7d3ed14390929aa8ac1ab29a78375c55e",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-x86_64-pc-windows-msvc.zip.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 5",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-x86_64-pc-windows-msvc.zip"
+    },
+    {
+      "rows": [
+        {
+          "actual": "6e89aa8e997d3292d9989878112d8b0bd80d5fa690b008ebea7a919f4fc2684f",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "6e89aa8e997d3292d9989878112d8b0bd80d5fa690b008ebea7a919f4fc2684f",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-x86_64-unknown-linux-gnu.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 6",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "0f9327526804d87571068b7f0034116dad3470167867a28314abfc38c9c67a25",
+          "actualEvidence": [
+            {
+              "label": "已冻结的发布资产信息",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "expected": "0f9327526804d87571068b7f0034116dad3470167867a28314abfc38c9c67a25",
+          "expectedEvidence": [
+            {
+              "label": "发布方 checksum",
+              "locator": "line 1",
+              "path": "evidence/r01/checksums/deckprobe-x86_64-unknown-linux-musl.tar.gz.sha256"
+            },
+            {
+              "label": "发布方 checksum",
+              "locator": "line 7",
+              "path": "evidence/r01/checksums/sha256.sum"
+            }
+          ],
+          "label": "安装包 SHA-256",
+          "note": "实际值由本轮读取安装包字节计算；同时核对独立 .sha256 与汇总清单中的对应记录。",
+          "status": "passed"
+        }
+      ],
+      "title": "deckprobe-x86_64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": "sha256:dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+          "actualEvidence": [],
+          "expected": "sha256:dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-apple-darwin.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:b26bbe681d25c1c106ea42669a2185de1b312391dcc0f30051ab7786176e0c0e",
+          "actualEvidence": [],
+          "expected": "sha256:b26bbe681d25c1c106ea42669a2185de1b312391dcc0f30051ab7786176e0c0e",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-apple-darwin.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+          "actualEvidence": [],
+          "expected": "sha256:6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-unknown-linux-gnu.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:89d1ddedd41f1ba60da03ba9abf8dd6ef25dff8bc6d0fce187c2638873d9c712",
+          "actualEvidence": [],
+          "expected": "sha256:89d1ddedd41f1ba60da03ba9abf8dd6ef25dff8bc6d0fce187c2638873d9c712",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-unknown-linux-gnu.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:3504677c1a5361494eee38d52c5ce93d0751a786410ff8b51f79cf33346a9d65",
+          "actualEvidence": [],
+          "expected": "sha256:3504677c1a5361494eee38d52c5ce93d0751a786410ff8b51f79cf33346a9d65",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-unknown-linux-musl.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:c68a645a82ed6a5904d9b9d2bbc5765b872be1050ea3bd479da6ed3fefac9f2c",
+          "actualEvidence": [],
+          "expected": "sha256:c68a645a82ed6a5904d9b9d2bbc5765b872be1050ea3bd479da6ed3fefac9f2c",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-aarch64-unknown-linux-musl.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:07015de9f485d32491ba22be8351204ebdbe5c31b8200a1cbfbd3e8dffd4fb5f",
+          "actualEvidence": [],
+          "expected": "sha256:07015de9f485d32491ba22be8351204ebdbe5c31b8200a1cbfbd3e8dffd4fb5f",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-installer.ps1",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:838c993ae345b37f2fa057e640a24cb3c9b52d717475cba55396cf98204bf06c",
+          "actualEvidence": [],
+          "expected": "sha256:838c993ae345b37f2fa057e640a24cb3c9b52d717475cba55396cf98204bf06c",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-installer.sh",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:6a7b3e9361312790245848bc0cdbc536762f3c9c77ffb1a2d0876ef81f066204",
+          "actualEvidence": [],
+          "expected": "sha256:6a7b3e9361312790245848bc0cdbc536762f3c9c77ffb1a2d0876ef81f066204",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-apple-darwin.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:2116f14b3403e7ef01ce13608a342978077c928a51fd413b69d3c4b693fd47da",
+          "actualEvidence": [],
+          "expected": "sha256:2116f14b3403e7ef01ce13608a342978077c928a51fd413b69d3c4b693fd47da",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-apple-darwin.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:8485f93e20edfa9cfbbe62a3c22087a7d3ed14390929aa8ac1ab29a78375c55e",
+          "actualEvidence": [],
+          "expected": "sha256:8485f93e20edfa9cfbbe62a3c22087a7d3ed14390929aa8ac1ab29a78375c55e",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-pc-windows-msvc.zip",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:4daba2c89747b049c45550046f6ccd7103dffdf6c2583a6c4f241e79a840aab2",
+          "actualEvidence": [],
+          "expected": "sha256:4daba2c89747b049c45550046f6ccd7103dffdf6c2583a6c4f241e79a840aab2",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-pc-windows-msvc.zip.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:6e89aa8e997d3292d9989878112d8b0bd80d5fa690b008ebea7a919f4fc2684f",
+          "actualEvidence": [],
+          "expected": "sha256:6e89aa8e997d3292d9989878112d8b0bd80d5fa690b008ebea7a919f4fc2684f",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-unknown-linux-gnu.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:ea7e58f3d4ca3ad6789a57671a26bc9479648cfe53f4bcf3051401182876104d",
+          "actualEvidence": [],
+          "expected": "sha256:ea7e58f3d4ca3ad6789a57671a26bc9479648cfe53f4bcf3051401182876104d",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-unknown-linux-gnu.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:0f9327526804d87571068b7f0034116dad3470167867a28314abfc38c9c67a25",
+          "actualEvidence": [],
+          "expected": "sha256:0f9327526804d87571068b7f0034116dad3470167867a28314abfc38c9c67a25",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-unknown-linux-musl.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:b618adf381d772db26a039aa623cf9039beec442833e104073bbb42e12bec631",
+          "actualEvidence": [],
+          "expected": "sha256:b618adf381d772db26a039aa623cf9039beec442833e104073bbb42e12bec631",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "deckprobe-x86_64-unknown-linux-musl.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:39e4a30139afa3b9f5d0f491c67e9014e8258faba5e5cf8bba4c98277c857fb0",
+          "actualEvidence": [],
+          "expected": "sha256:39e4a30139afa3b9f5d0f491c67e9014e8258faba5e5cf8bba4c98277c857fb0",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "dist-manifest.json",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:9a882676a6526b896f57e7a27252890b0ad1170a7a3657cd552a4b2bf1d864e7",
+          "actualEvidence": [],
+          "expected": "sha256:9a882676a6526b896f57e7a27252890b0ad1170a7a3657cd552a4b2bf1d864e7",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "sha256.sum",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:fe236bcb79382099ced4fb8f323b0279daaf67fd3096c8624b8e703bff163f4c",
+          "actualEvidence": [],
+          "expected": "sha256:fe236bcb79382099ced4fb8f323b0279daaf67fd3096c8624b8e703bff163f4c",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "source.tar.gz",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        },
+        {
+          "actual": "sha256:f77ed78a9c8411883c2789694cd55633f7d2bf56cecbf99ae770ffcf13df0342",
+          "actualEvidence": [],
+          "expected": "sha256:f77ed78a9c8411883c2789694cd55633f7d2bf56cecbf99ae770ffcf13df0342",
+          "expectedEvidence": [
+            {
+              "label": "GitHub 发布 API 摘要",
+              "locator": "/assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "source.tar.gz.sha256",
+          "note": "这一层核对 GitHub 记录的附件摘要；不替代平台安装包 checksum 或构建来源验签。",
+          "status": "passed"
+        }
+      ],
+      "title": "全部发布附件 · GitHub 摘要核对"
+    }
+  ],
+  "scope": "安装包 checksum 与附件完整性分开统计，附件数量不是通过证据。",
+  "status": "passed",
+  "summary": "逐项核对 7 个平台安装包 checksum；另核对 20 个发布附件的 GitHub 摘要"
+}
