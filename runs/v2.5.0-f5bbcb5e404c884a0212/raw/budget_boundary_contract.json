@@ -1,0 +1,41 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "exitCode": 4,
+        "report": {
+          "error": {
+            "code": "BUDGET_EXCEEDED",
+            "exit_code": 4,
+            "message": "budget exceeded: deckprobe physical read budget exceeded"
+          },
+          "schema_version": 2,
+          "status": "error",
+          "tool_version": "2.5.0"
+        }
+      },
+      "details": null,
+      "expected": {
+        "code": "BUDGET_EXCEEDED",
+        "exitCode": 4,
+        "status": "error"
+      },
+      "featureId": "PRO-R05",
+      "id": "budget_boundary_contract",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "budget_boundary_contract",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

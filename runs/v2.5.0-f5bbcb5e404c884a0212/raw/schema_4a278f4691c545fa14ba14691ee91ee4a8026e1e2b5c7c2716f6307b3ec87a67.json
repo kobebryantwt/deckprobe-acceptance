@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_4a278f4691c545fa14ba14691ee91ee4a8026e1e2b5c7c2716f6307b3ec87a67",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_4a278f4691c545fa14ba14691ee91ee4a8026e1e2b5c7c2716f6307b3ec87a67",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.unique_media_asset_count",
+    "local-evidence://PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-4a278f4691c545fa14ba14691ee91ee4a8026e1e2b5c7c2716f6307b3ec87a67.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

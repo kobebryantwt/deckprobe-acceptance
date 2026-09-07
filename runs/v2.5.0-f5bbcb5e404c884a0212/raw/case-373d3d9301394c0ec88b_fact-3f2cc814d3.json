@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": null,
+      "details": {
+        "answerDigest": "194c5b4d004fce06a5dd56c4da660aad7379bbe1da41a61802234bc150eb7a5f",
+        "diagnosticMatch": false
+      },
+      "expected": true,
+      "featureId": "PRO-R03",
+      "id": "case-373d3d9301394c0ec88b_fact-3f2cc814d3",
+      "role": "gate",
+      "severity": "critical",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-373d3d9301394c0ec88b_fact-3f2cc814d3",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_embedded_files",
+    "local-evidence://Excel旧版嵌入对象工作簿.xls"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-21ccddd7e019e9fd51fce210ab30b589a2a59076caa55af04d4d4218509ddc2c.json"
+  ],
+  "source": {
+    "uri": "sha256:373d3d9301394c0ec88b9ee12cfc525f72d0c77ccca721b2c417bbff3cc110d0"
+  },
+  "status": "failed"
+}

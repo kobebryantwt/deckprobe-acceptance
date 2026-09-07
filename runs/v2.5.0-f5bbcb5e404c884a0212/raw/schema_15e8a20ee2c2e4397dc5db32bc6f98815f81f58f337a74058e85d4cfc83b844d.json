@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_15e8a20ee2c2e4397dc5db32bc6f98815f81f58f337a74058e85d4cfc83b844d",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_15e8a20ee2c2e4397dc5db32bc6f98815f81f58f337a74058e85d4cfc83b844d",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.chart_part_count",
+    "local-evidence://PPT_Zenodo_光伏财务可行性_6图表2表格.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-15e8a20ee2c2e4397dc5db32bc6f98815f81f58f337a74058e85d4cfc83b844d.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

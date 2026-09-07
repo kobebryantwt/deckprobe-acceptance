@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "UNSUPPORTED_FORMAT",
+      "details": {
+        "answerDigest": "a93f6fefbe9a8a8401ea5d563ac5252f2e307440b65a70c130faf7c7a7d5d2ed",
+        "diagnosticMatch": true
+      },
+      "expected": "UNSUPPORTED_FORMAT",
+      "featureId": "PRO-R03",
+      "id": "case-51bf981fe9572c26a961_answer-91976060dc",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-51bf981fe9572c26a961_answer-91976060dc",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://OneNote笔记文档.one"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-0820e78424dce825f0d5a849d55a0b650c8d3198a368dbfd70e94b4277d9b00e.json"
+  ],
+  "source": {
+    "uri": "sha256:51bf981fe9572c26a9611e05a4bb1f0f3940c84c4a0e5a986f97343d16561a05"
+  },
+  "status": "passed"
+}

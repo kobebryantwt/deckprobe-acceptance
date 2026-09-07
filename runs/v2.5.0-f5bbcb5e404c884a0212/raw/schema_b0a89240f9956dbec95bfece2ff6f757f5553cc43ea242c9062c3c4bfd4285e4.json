@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_b0a89240f9956dbec95bfece2ff6f757f5553cc43ea242c9062c3c4bfd4285e4",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_b0a89240f9956dbec95bfece2ff6f757f5553cc43ea242c9062c3c4bfd4285e4",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.page_count",
+    "local-evidence://PDF_综合复习题_96页.pdf"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-b0a89240f9956dbec95bfece2ff6f757f5553cc43ea242c9062c3c4bfd4285e4.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

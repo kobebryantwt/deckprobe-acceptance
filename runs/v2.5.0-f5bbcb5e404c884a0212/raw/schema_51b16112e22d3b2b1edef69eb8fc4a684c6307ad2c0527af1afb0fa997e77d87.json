@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_51b16112e22d3b2b1edef69eb8fc4a684c6307ad2c0527af1afb0fa997e77d87",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_51b16112e22d3b2b1edef69eb8fc4a684c6307ad2c0527af1afb0fa997e77d87",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://PowerPoint宏演示文稿.pptm"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-51b16112e22d3b2b1edef69eb8fc4a684c6307ad2c0527af1afb0fa997e77d87.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

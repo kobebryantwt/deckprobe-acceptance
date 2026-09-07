@@ -1,0 +1,28 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "approvedAnswers": [],
+        "results": []
+      },
+      "details": null,
+      "expected": "at least one approved allowed-path and cost-ceiling answer",
+      "featureId": "PRO-R05",
+      "id": "paths_oracle",
+      "role": "gate",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "paths_oracle",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}

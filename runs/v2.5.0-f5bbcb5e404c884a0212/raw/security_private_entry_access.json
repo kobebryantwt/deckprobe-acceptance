@@ -1,0 +1,33 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "accessible": false,
+        "authenticated": true,
+        "finalUrl": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fdeckflow%2Fdeckprobe%2Fsecurity%2Fadvisories%2Fnew",
+        "status": 200,
+        "url": "https://github.com/deckflow/deckprobe/security/advisories/new"
+      },
+      "details": null,
+      "expected": {
+        "authenticated": true,
+        "path": "/security/advisories/new",
+        "status": 200
+      },
+      "featureId": "PRO-R09",
+      "id": "security_private_entry_access",
+      "role": "gate",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "security_private_entry_access",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}
