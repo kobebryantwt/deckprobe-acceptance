@@ -168,12 +168,17 @@ jobs:
         with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
       - name: Run native platform smoke
         shell: bash
-        run: >-
-          python benchmark/scripts/release_acceptance.py run-platform
-          --lock "$RUNNER_TEMP/freeze/run-lock.json"
-          --snapshot "$ACCEPTANCE_SNAPSHOT"
-          --platform "${{ matrix.id }}"
-          --output "$RUNNER_TEMP/platform-result"
+        run: |
+          mkdir -p "$RUNNER_TEMP/platform-result"
+          python benchmark/scripts/release_acceptance.py run-platform \
+            --lock "$RUNNER_TEMP/freeze/run-lock.json" \
+            --snapshot "$ACCEPTANCE_SNAPSHOT" \
+            --platform "${{ matrix.id }}" \
+            --output "$RUNNER_TEMP/platform-result" > "$RUNNER_TEMP/platform-result/stdout.txt" 2> "$RUNNER_TEMP/platform-result/stderr.txt" || {
+              cat "$RUNNER_TEMP/platform-result/stderr.txt"
+              cat "$RUNNER_TEMP/platform-result/stdout.txt"
+              exit 1
+            }
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with: { name: "result-platform-${{ matrix.id }}", path: "${{ runner.temp }}/platform-result", retention-days: 30 }
