@@ -3,7 +3,10 @@ from __future__ import annotations
 import os
 from pathlib import Path
 import platform
-import pwd
+try:
+    import pwd
+except ImportError:  # Windows has no POSIX account database.
+    pwd = None
 import shutil
 import importlib.metadata
 from .common import CODE, atomic, now, process, read, sha
@@ -32,8 +35,11 @@ def validate_session(session, run_id, artifact_hash, corpus_hash):
 def doctor(home):
     tools={n:shutil.which(n) for n in ['node','npm','gh','tcpdump','eslogger','pfctl']}
     sudo=process(['/usr/bin/sudo','-n','/usr/bin/true'],timeout=5) if platform.system()=='Darwin' else {'exitCode':None}
-    try:user=pwd.getpwnam('_deckprobe_accept');identity={'uid':user.pw_uid,'gid':user.pw_gid}
-    except KeyError:identity=None
+    try:
+        user = pwd.getpwnam('_deckprobe_accept') if pwd is not None else None
+        identity = {'uid': user.pw_uid, 'gid': user.pw_gid} if user is not None else None
+    except KeyError:
+        identity = None
     blockers=[]
     if platform.system()!='Darwin':blockers.append('This runner is configured for macOS; select a native platform adapter')
     if platform.machine()!='arm64':blockers.append('Locked native platform requires Apple Silicon')

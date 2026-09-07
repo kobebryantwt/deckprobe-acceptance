@@ -20,7 +20,9 @@ from benchmark.acceptance.reporting import publish, rebuild, compare
 from benchmark.acceptance.cli import check
 from benchmark.acceptance.report_view import comparison_kind, target_observation, capture_context
 from benchmark.acceptance.ci_snapshot import export_snapshot, materialize_snapshot, validate_snapshot
-from benchmark.acceptance.github_ci import aggregate as aggregate_ci, freeze as freeze_ci, publish_history
+from benchmark.acceptance.github_ci import (aggregate as aggregate_ci, freeze as freeze_ci,
+                                            publish_history, sanitize_publication)
+from benchmark.acceptance import security
 
 SCENARIOS=['identity','content_mismatch','missing_vs_zero','positive_and_negative_security','documented_limit','budget_boundary']
 def approved_claims(answer_id):
@@ -177,6 +179,26 @@ class AcceptanceTests(unittest.TestCase):
         with locked(self.root):
             with self.assertRaises(RuntimeError):
                 with locked(self.root):pass
+
+    def test_security_module_supports_windows_without_pwd(self):
+        with patch.object(security, 'pwd', None), patch.object(security.platform, 'system', return_value='Windows'), \
+             patch.object(security.platform, 'machine', return_value='AMD64'), \
+             patch.object(security, 'process', return_value={'exitCode': 0, 'stdout': 'v24.0.0\n'}):
+            result = security.doctor(self.root)
+        self.assertIsNone(result['testIdentity'])
+        self.assertIn('select a native platform adapter', '; '.join(result['blockers']))
+
+    def test_publication_sanitizer_ignores_git_worktree_metadata(self):
+        site = self.root / 'site'; site.mkdir()
+        git_pointer = site / '.git'
+        git_pointer.write_text('gitdir: /home/runner/work/repo/.git/worktrees/site\n', encoding='utf-8')
+        report = site / 'report.json'
+        report.write_text('{"path":"local-evidence://result.json"}\n', encoding='utf-8')
+        self.assertEqual(sanitize_publication(site), [])
+        report.write_text('{"path":"/home/runner/private/result.json"}\n', encoding='utf-8')
+        self.assertEqual(sanitize_publication(site), [str(report)])
+        self.assertEqual(git_pointer.read_text(encoding='utf-8'),
+                         'gitdir: /home/runner/work/repo/.git/worktrees/site\n')
 
     def test_process_timeout_kills_child_group(self):
         sentinel=self.root/'escaped'
