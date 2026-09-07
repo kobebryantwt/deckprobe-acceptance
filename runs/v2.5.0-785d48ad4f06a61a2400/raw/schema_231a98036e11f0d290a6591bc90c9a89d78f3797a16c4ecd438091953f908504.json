@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_231a98036e11f0d290a6591bc90c9a89d78f3797a16c4ecd438091953f908504",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_231a98036e11f0d290a6591bc90c9a89d78f3797a16c4ecd438091953f908504",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.author",
+    "local-evidence://Word旧版宏文档.doc"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-231a98036e11f0d290a6591bc90c9a89d78f3797a16c4ecd438091953f908504.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

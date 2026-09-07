@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 26,
+      "details": {
+        "answerDigest": "af746ffc19b1eb5a46e66b5bb3d5977742e57926627e98a3c1ceb751f6216b32",
+        "diagnosticMatch": true
+      },
+      "expected": 26,
+      "featureId": "PRO-R03",
+      "id": "case-baa21791da557def206a_fact-ff427d6f5e",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-baa21791da557def206a_fact-ff427d6f5e",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.table_count",
+    "local-evidence://Word_公共书房运营规划书_55页18图表部件.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-23c450af19a3c5afeca3c2a78f9393b32bbadb4eca5463da6acd2f1ca8cce360.json"
+  ],
+  "source": {
+    "uri": "sha256:baa21791da557def206a3fa9b5eb05ecbeba364b911cdadbe82b668712d4f049"
+  },
+  "status": "passed"
+}

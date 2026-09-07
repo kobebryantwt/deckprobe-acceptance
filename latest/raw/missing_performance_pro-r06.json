@@ -1,0 +1,23 @@
+{
+  "assertions": [
+    {
+      "actual": null,
+      "details": null,
+      "expected": "bound job result",
+      "featureId": "PRO-R06",
+      "id": "missing_performance_pro-r06",
+      "role": "observation",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "missing_performance_pro-r06",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}
