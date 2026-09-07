@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_17395cfe15495b75d9a3657978afc6e5159dda0a25dd0f11d6bb4dbb0f9abe30",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_17395cfe15495b75d9a3657978afc6e5159dda0a25dd0f11d6bb4dbb0f9abe30",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.encrypted",
+    "local-evidence://Excel加密工作簿.xlsx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-17395cfe15495b75d9a3657978afc6e5159dda0a25dd0f11d6bb4dbb0f9abe30.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

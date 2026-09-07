@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_f70c34f93c612da3278c9eabc395b795a5f8a70eeb587f046886afe7688fd221",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_f70c34f93c612da3278c9eabc395b795a5f8a70eeb587f046886afe7688fd221",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pages.body_paragraph_break_count",
+    "local-evidence://Pages多章节页眉页脚文档.pages"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-f70c34f93c612da3278c9eabc395b795a5f8a70eeb587f046886afe7688fd221.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

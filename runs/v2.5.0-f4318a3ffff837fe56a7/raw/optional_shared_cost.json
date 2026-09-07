@@ -1,0 +1,25 @@
+{
+  "assertions": [
+    {
+      "actual": {},
+      "details": null,
+      "expected": {},
+      "featureId": "PRO-R05",
+      "id": "optional_shared_cost",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "optional_shared_cost",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

@@ -1,0 +1,25 @@
+{
+  "assertions": [
+    {
+      "actual": null,
+      "details": null,
+      "expected": null,
+      "featureId": "PRO-R05",
+      "id": "optional_required_semantics",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "optional_required_semantics",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

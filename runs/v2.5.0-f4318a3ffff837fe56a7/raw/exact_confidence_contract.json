@@ -1,0 +1,29 @@
+{
+  "assertions": [
+    {
+      "actual": {},
+      "details": null,
+      "expected": {
+        "confidence": "exact",
+        "score": 1.0,
+        "value": null
+      },
+      "featureId": "PRO-R05",
+      "id": "exact_confidence_contract",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "exact_confidence_contract",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

@@ -35,6 +35,15 @@
       "release": "v2.5.0",
       "runId": "v2.5.0-0e6c49cc6539597285b9",
       "url": "runs/v2.5.0-0e6c49cc6539597285b9/report.html"
+    },
+    {
+      "comparisonUrl": "comparisons/v2.5.0-0e6c49cc6539597285b9--v2.5.0-f4318a3ffff837fe56a7/comparison.html",
+      "createdAt": "2026-09-07T14:23:09.615214+00:00",
+      "decision": "FAIL",
+      "inputDigest": "f4318a3ffff837fe56a7b561c2104220bb609d3dabaa0e3ab06ae300150f0bbf",
+      "release": "v2.5.0",
+      "runId": "v2.5.0-f4318a3ffff837fe56a7",
+      "url": "runs/v2.5.0-f4318a3ffff837fe56a7/report.html"
     }
   ],
   "schemaVersion": 1
