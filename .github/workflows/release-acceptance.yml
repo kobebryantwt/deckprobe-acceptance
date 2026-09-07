@@ -165,18 +165,18 @@ jobs:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: ./.github/actions/setup-acceptance
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with: { name: acceptance-lock, path: .ci-freeze }
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
       - name: Run native platform smoke
         shell: bash
         run: >-
           python benchmark/scripts/release_acceptance.py run-platform
-          --lock .ci-freeze/run-lock.json
+          --lock "${{ runner.temp }}/freeze/run-lock.json"
           --snapshot "$ACCEPTANCE_SNAPSHOT"
           --platform "${{ matrix.id }}"
-          --output .ci-platform-result
+          --output "${{ runner.temp }}/platform-result"
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with: { name: "result-platform-${{ matrix.id }}", path: .ci-platform-result, retention-days: 30 }
+        with: { name: "result-platform-${{ matrix.id }}", path: "${{ runner.temp }}/platform-result", retention-days: 30 }
 
   platform-smoke-musl:
     needs: freeze
