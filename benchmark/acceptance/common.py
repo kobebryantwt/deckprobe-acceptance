@@ -48,7 +48,8 @@ def read(path, default=None):
 def atomic(path, value):
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-    fd, tmp = tempfile.mkstemp(prefix="." + p.name, dir=p.parent)
+    prefix = "_tmp_" if os.name == "nt" else "." + p.name
+    fd, tmp = tempfile.mkstemp(prefix=prefix, dir=p.parent)
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
             if isinstance(value, str):
@@ -57,11 +58,19 @@ def atomic(path, value):
                 json.dump(value, f, ensure_ascii=False, indent=2, sort_keys=True)
                 f.write("\n")
             f.flush()
-            os.fsync(f.fileno())
-        os.replace(tmp, p)
+            if os.name != "nt":
+                os.fsync(f.fileno())
+        for attempt in range(10):
+            try:
+                os.replace(tmp, p)
+                break
+            except PermissionError:
+                if attempt == 9: raise
+                time.sleep(0.05)
     finally:
         if os.path.exists(tmp):
-            os.unlink(tmp)
+            try: os.unlink(tmp)
+            except OSError: pass
 
 
 def immutable(path, value):

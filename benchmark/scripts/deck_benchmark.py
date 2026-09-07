@@ -1076,7 +1076,7 @@ def build_agent_report(envelope: dict[str, Any], run_dir: Path, questions: list[
             "suspectedComponent": suspected_component(assertion, finding),
             "confidence": "high" if finding.get("status") in {"failed", "blocked"} else "medium",
             "regressionState": "unknown",
-            "rawEvidence": f"raw/{finding['caseId']}.json",
+            "rawEvidence": f"raw/{finding['caseId'].replace(':', '-')}.json",
             "reproduction": {"cwd": str(REPO), "command": finding.get("command", [])},
             "recommendedAction": "Reproduce from raw evidence, fix the target or evaluator implementation, and keep the approved oracle unchanged.",
         })
@@ -1090,7 +1090,7 @@ def build_agent_report(envelope: dict[str, Any], run_dir: Path, questions: list[
                 "caseId": result["caseId"], "assertionId": assertion.get("id"), "featureId": assertion.get("featureId"),
                 "question": question.get("question"), "approvedAnswer": question.get("answer"),
                 "status": assertion.get("status"), "expected": assertion.get("expected"), "actual": assertion.get("actual"),
-                "details": assertion.get("details"), "rawEvidence": f"raw/{result['caseId']}.json",
+                "details": assertion.get("details"), "rawEvidence": f"raw/{result['caseId'].replace(':', '-')}.json",
             })
     clusters = []
     grouped: dict[str, list[dict[str, Any]]] = {}
@@ -1109,7 +1109,7 @@ def build_agent_report(envelope: dict[str, Any], run_dir: Path, questions: list[
         "qualitySummary": envelope["qualitySummary"], "counts": envelope["counts"],
         "failureClusters": clusters, "actionableFindings": actionable, "reviewObservations": observations,
         "cases": [{
-            "caseId": result["caseId"], "status": result["status"], "source": result.get("source"), "rawEvidence": f"raw/{result['caseId']}.json",
+            "caseId": result["caseId"], "status": result["status"], "source": result.get("source"), "rawEvidence": f"raw/{result['caseId'].replace(':', '-')}.json",
             "assertions": [{key: assertion.get(key) for key in ("id", "type", "role", "severity", "status", "featureId", "score", "expected", "actual")} for assertion in result.get("assertions", [])],
         } for result in envelope["results"]],
         "artifacts": {"humanReport": "report.html", "runEnvelope": "run.json", "rawCaseDirectory": "raw/"},
@@ -1143,7 +1143,8 @@ def build_reports(envelope: dict[str, Any], run_dir: Path, questions: list[dict[
             assertions.append(f'''<article class="assertion {html.escape(str(assertion["status"]))}"><header><code>{html.escape(str(assertion["id"]))}</code><span>{html.escape(str(assertion["role"]))} · {html.escape(str(assertion["status"]))}</span></header><p class="question">{html.escape(str(question.get("question") or "未绑定审批问题"))}</p><p><b>标准答案：</b>{html.escape(str(question.get("answer") or "—"))}</p><div class="diff"><section><h4>预期</h4><pre>{html_value(assertion.get("expected"))}</pre></section><section><h4>实际</h4><pre>{html_value(assertion.get("actual"))}</pre></section></div></article>''')
         opened = " open" if result["status"] != "passed" else ""
         assertion_content = "".join(assertions) or "<p>没有可用断言（通常表示执行被阻塞）。</p>"
-        case_blocks.append(f'''<details class="case"{opened}><summary><b>{html.escape(result["caseId"])}</b><span>{html.escape(result["status"].upper())} · {result.get("durationMs", 0)} ms</span></summary><p><a href="raw/{html.escape(result["caseId"])}.json">查看原始运行证据</a></p>{assertion_content}</details>''')
+        safe_raw_id = result["caseId"].replace(':', '-')
+        case_blocks.append(f'''<details class="case"{opened}><summary><b>{html.escape(result["caseId"])}</b><span>{html.escape(result["status"].upper())} · {result.get("durationMs", 0)} ms</span></summary><p><a href="raw/{html.escape(safe_raw_id)}.json">查看原始运行证据</a></p>{assertion_content}</details>''')
     findings_content = "".join(findings) or '<div class="card">没有可执行的产品缺陷。</div>'
     page = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{html.escape(envelope["suite"]["displayName"])} · {html.escape(envelope["runId"])}</title><style>
     :root{{--ink:#17202a;--muted:#667085;--line:#dfe3e8;--bg:#f6f7f9;--panel:#fff;--pass:#137a4b;--review:#9a6700;--fail:#b42318}}*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 system-ui,sans-serif}}main{{max-width:1240px;margin:auto;padding:34px 22px 70px}}h1{{margin:0}}h2{{margin-top:36px}}a{{color:#175cd3}}.sub,.hint{{color:var(--muted)}}.toolbar{{display:flex;gap:16px;margin:16px 0}}.cards{{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}}.card,.finding,.assertion,.case{{background:var(--panel);border:1px solid var(--line);border-radius:10px}}.card{{padding:16px;border-top:4px solid #175cd3}}.card strong,.card span,.card small{{display:block}}.card strong{{font-size:25px}}.card span{{font-weight:650}}.card small{{color:var(--muted)}}table{{width:100%;border-collapse:collapse;background:var(--panel)}}th,td{{padding:10px;border:1px solid var(--line);text-align:left}}.finding,.assertion{{padding:16px;margin:12px 0}}.finding.failed,.assertion.failed{{border-left:5px solid var(--fail)}}.finding.review,.assertion.review{{border-left:5px solid var(--review)}}.assertion.passed{{border-left:5px solid var(--pass)}}header,.case summary{{display:flex;justify-content:space-between;gap:12px}}.question{{font-size:16px;font-weight:650}}.diff{{display:grid;grid-template-columns:1fr 1fr;gap:12px}}pre{{white-space:pre-wrap;overflow:auto;max-height:320px;background:#f8fafc;border:1px solid var(--line);padding:10px;border-radius:7px}}.case{{margin:12px 0;padding:0 16px 16px}}.case summary{{cursor:pointer;padding:16px 0}}@media(max-width:760px){{.cards,.diff{{grid-template-columns:1fr}}}}</style></head><body><main><h1>{html.escape(envelope["suite"]["displayName"])}</h1><div class="sub">目标：{html.escape(envelope["target"]["displayName"])} · 运行：{html.escape(envelope["runId"])} · Core {CORE_VERSION}</div><div class="toolbar"><a href="agent-report.json">Agent 修复报告</a><a href="run.json">完整运行数据</a></div><div class="cards">{cards_html}</div><h2>质量分解</h2><p class="hint">质量分按特性宏平均；门禁、评分和观察项分别统计，不用简单 case 通过率代替质量。</p><table><thead><tr><th>特性</th><th>得分</th><th>已评分检查</th><th>权重</th></tr></thead><tbody>{feature_rows}</tbody></table><h2>需要修复的差异</h2>{"".join(findings) or '<div class="card">没有可执行的产品缺陷。</div>'}<h2>逐案例：标准答案与实际结果</h2><p class="hint">所有检查点均保留，失败案例默认展开；观察项不触发产品失败。</p>{"".join(case_blocks)}</main></body></html>'''

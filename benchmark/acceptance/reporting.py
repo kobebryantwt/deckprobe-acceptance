@@ -47,7 +47,7 @@ def publish(folder, record, home=None):
         questions.append({'questionId':'q-'+item['id'],'caseId':item['id'],'question':item['title'],
                           'answer':item.get('expected'),'assertionIds':[item['id']],
                           'evidence':item.get('evidence',[]),'reviewStatus':item.get('approval','approved-rule')})
-        atomic(folder/'raw'/(item['id']+'.json'),result)
+        atomic(folder/'raw'/(item['id'].replace(':','-')+'.json'),result)
     suite={'id':'deckprobe-release-acceptance-v1','displayName':'DeckProbe 发布验收 · 完整手册',
            'version':'1','profile':'probe','qualityPolicy':{'version':'1','scoring':{'aggregation':'macro_feature','scale':100}}}
     target={'id':'released-'+record['targetVersion'],'displayName':'Published DeckProbe '+record['targetVersion']}

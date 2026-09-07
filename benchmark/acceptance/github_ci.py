@@ -189,7 +189,7 @@ def run_main(lock_path, snapshot, home, output):
     for row in inventory.get("facts",[]):
         if row.get("scope",{}).get("mode")=="reference" or row.get("mapping",{}).get("status")=="mapped":continue
         fact=row["fact"];mapping=row.get("mapping",{})
-        checks.append({"id":"fact-gap-"+fact["id"],"requirement":"PRO-R03","title":fact["question"],
+        checks.append({"id":"fact-gap-"+fact["id"].replace(":","-"),"requirement":"PRO-R03","title":fact["question"],
             "status":"review","role":"observation","expected":fact.get("expected"),
             "actual":{"mappingStatus":mapping.get("status"),"reason":mapping.get("note"),"executed":False},
             "approval":fact.get("status","pending"),"evidence":["facts.json"]})
