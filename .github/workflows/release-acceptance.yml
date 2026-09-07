@@ -25,8 +25,8 @@ permissions:
   actions: read
 
 concurrency:
-  group: deckprobe-release-acceptance
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   ACCEPTANCE_SNAPSHOT: ci-input/current
