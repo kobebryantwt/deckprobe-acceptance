@@ -109,9 +109,9 @@ def safe_extract(data, target, max_bytes=1073741824):
         if total > max_bytes:
             raise ValueError("Archive exceeds expansion limit")
         dest = target.joinpath(*p.parts)
-        try:
-            dest.resolve().relative_to(target.resolve())
-        except ValueError:
+        target_abs = os.path.abspath(target)
+        dest_abs = os.path.abspath(dest)
+        if os.path.commonpath([target_abs, dest_abs]) != target_abs:
             raise ValueError("Archive member escapes destination")
         dest.parent.mkdir(parents=True, exist_ok=True)
         return dest

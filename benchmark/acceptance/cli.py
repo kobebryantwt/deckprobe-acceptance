@@ -227,6 +227,8 @@ def main(argv=None):
         print(json.dumps(result,ensure_ascii=False,indent=2))
         return 0
     except (OSError,ValueError,RuntimeError) as e:
+        import traceback
+        traceback.print_exc(file=sys.stderr)
         print(json.dumps({'status':'blocked','error':str(e)},ensure_ascii=False),file=sys.stderr)
         return 2
 

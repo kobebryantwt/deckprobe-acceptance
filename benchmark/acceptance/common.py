@@ -106,7 +106,8 @@ def process(argv, cwd=None, timeout=60, stdin=None, env=None):
     try:
         p = subprocess.Popen(record["command"], cwd=cwd or ROOT, env=clean,
                              stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                             text=True, start_new_session=True)
+                             text=True, encoding="utf-8", errors="replace",
+                             start_new_session=(os.name != "nt"))
         try:
             out, err = p.communicate(stdin, timeout=timeout)
             record.update(exitCode=p.returncode, stdout=out, stderr=err, timedOut=False)
