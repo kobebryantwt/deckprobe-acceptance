@@ -59,6 +59,35 @@ function reportsIn(value,found=[],path='output'){
  }return found;
 }
 function table(headers,rows){const wrap=el('div','table-wrap'),t=el('table'),head=el('thead'),hr=el('tr');headers.forEach(x=>hr.append(el('th','',x)));head.append(hr);t.append(head);const body=el('tbody');for(const row of rows){const tr=el('tr');row.forEach((v,i)=>{const td=el('td',i===0?'key':'');td.append(el('pre','',typeof v==='string'?v:pretty(v)));tr.append(td);});body.append(tr);}t.append(body);wrap.append(t);return wrap;}
+function sourceTitle(id){
+ const source=sourceMap.get(id),binding=source?.purpose?.binding;
+ return binding?.inputName||source?.path?.split('/').pop()||id;
+}
+function performanceTable(rows){
+ const wrap=el('div','table-wrap performance-table'),t=el('table'),head=el('thead'),hr=el('tr');
+ ['文件与配置','p50：前版 → 候选版','p50 变化','p95：前版 → 候选版','p95 变化','判断'].forEach(x=>hr.append(el('th','',x)));head.append(hr);t.append(head);
+ const fixed=v=>typeof v==='number'?v.toFixed(3):'—',delta=(ms,relative)=>typeof ms==='number'?`${ms>0?'+':''}${ms.toFixed(3)} ms · ${relative>0?'+':''}${(relative*100).toFixed(1)}%`:'—';
+ const body=el('tbody');for(const m of rows){
+  const tr=el('tr',m.status==='review'?'performance-alert':'');
+  const identity=el('td','key');identity.append(el('strong','',sourceTitle(m.caseId)),el('span','performance-config',`${m.level} · ${m.mode}`));tr.append(identity);
+  [ {value:`${fixed(m.previousP50Ms)} → ${fixed(m.candidateP50Ms)} ms`,kind:'performance-value'},
+    {value:delta(m.p50DeltaMs,m.p50RelativeDelta),kind:'performance-delta'+(m.p50RelativeDelta>=.2&&m.p50DeltaMs>=2?' alert-metric':'')},
+    {value:`${fixed(m.previousP95Ms)} → ${fixed(m.candidateP95Ms)} ms`,kind:'performance-value'},
+    {value:delta(m.p95DeltaMs,m.p95RelativeDelta),kind:'performance-delta'+(m.p95RelativeDelta>=.2&&m.p95DeltaMs>=2?' alert-metric':'')}
+  ].forEach(item=>tr.append(el('td',item.kind,item.value)));
+  const verdict=el('td');verdict.append(badge(m.status==='review'?'需复核':'稳定',m.status==='review'?'review':'matched'));tr.append(verdict);body.append(tr);
+ }t.append(body);wrap.append(t);return wrap;
+}
+function performanceSummary(parent,row){
+ const all=row.details?.distributions||[],alerts=all.filter(x=>x.status==='review'),incomplete=row.details?.incomplete||[],stable=all.length-alerts.length;
+ const headline=el('div','performance-headline');
+ [[all.length,'完整配置',''],[stable,'未触发提醒','good'],[alerts.length,'需复核','warn'],[incomplete.length,'不完整','bad']].forEach(([number,text,kind])=>{const card=el('div','performance-stat '+kind);card.append(el('strong','',number),el('span','',text));headline.append(card);});parent.append(headline);
+ parent.append(el('p','hint',`每种配置：候选版与前版各预热 ${row.expected?.warmup??'—'} 次、计时 ${row.expected?.samples??'—'} 次。正数表示候选版更慢；负数表示更快。`));
+ if(alerts.length){parent.append(el('h3','performance-title','需要复核'));parent.append(performanceTable(alerts));}
+ else parent.append(el('div','notice','没有配置同时达到“变慢 20% 且至少 2 ms”的提醒条件。'));
+ if(incomplete.length)parent.append(jsonBlock(`${incomplete.length} 个不完整配置`,incomplete));
+ if(stable){const rest=el('details','performance-all');rest.append(el('summary','',`查看其余 ${stable} 个未触发提醒的配置`));rest.addEventListener('toggle',()=>{if(rest.open&&!rest.dataset.loaded){rest.append(performanceTable(all.filter(x=>x.status!=='review')));rest.dataset.loaded='true';}});parent.append(rest);}
+}
 function evidenceBlock(name,baseline=false){
  const data=model.evidence[name],d=el('details','raw-block');d.append(el('summary','',(baseline?'查看比较基准':'查看系统完整输出')+' · '+name.split('/').pop()));
  d.addEventListener('toggle',()=>{
@@ -160,6 +189,7 @@ function auditBody(row){
 function caseBody(row){
  if(row.details?.audit)return auditBody(row);
  const body=el('div'),grid=el('div','compare-grid'),left=el('section','pane expected-pane'),right=el('section','pane actual-pane');
+ if(row.id==='performance_pair')grid.classList.add('performance-layout');
  const p=row.protocol||{};
  body.append(protocolIntro(row));
  left.append(el('div','pane-title',row.answer?'01 / 预期答案与取证依据':'01 / 测试设计与通过条件'));right.append(el('div','pane-title','02 / 本轮执行与结果'));
@@ -172,6 +202,7 @@ function caseBody(row){
   meta(right,[['系统状态','error'],['错误说明',row.targetObservation.error?.message]]);
  }else if(row.targetObservation?.kind==='missing')valueBox(right,'系统输出中缺少该 target');
  else if(row.targetObservation?.kind==='target')valueBox(right,row.targetObservation.result.value,row.targetObservation.valuePresent);
+ else if(row.id==='performance_pair')performanceSummary(right,row);
  else if(p.observed||p.observedFields){
   if(p.observed)right.append(el('p','observation-summary',p.observed));
   if(p.observedFields?.length)right.append(table(['观察项','本轮记录'],p.observedFields.map(([k,v])=>[k,v===undefined?'未记录':v])));
@@ -200,17 +231,6 @@ function caseBody(row){
    `${m.p50Ms?.toFixed(3)??'—'} / ${m.p95Ms?.toFixed(3)??'—'}`,m.complete?'后台观察':'单点 / 未完成'
   ])));
  }
- if(row.id==='performance_pair'&&row.details?.distributions?.length){
-  const fixed=v=>typeof v==='number'?v.toFixed(3):'—';
-  const change=(ms,relative)=>`${fixed(ms)} ms / ${typeof relative==='number'?(relative*100).toFixed(1)+'%':'—'}`;
-  right.append(table(['文件 / 配置','前版 p50 / p95 (ms)','候选版 p50 / p95 (ms)','变化 p50 / p95','结论'],row.details.distributions.map(m=>[
-   `${m.caseId}\n${m.level} · ${m.mode}`,
-   `${fixed(m.previousP50Ms)} / ${fixed(m.previousP95Ms)}`,
-   `${fixed(m.candidateP50Ms)} / ${fixed(m.candidateP95Ms)}`,
-   `${change(m.p50DeltaMs,m.p50RelativeDelta)}\n${change(m.p95DeltaMs,m.p95RelativeDelta)}`,
-   m.status==='review'?'需复核':'趋势观察'
-  ])));
- }
  if(p.showExpected||row.answer)comparisonFields(right,row.expected,row.actual);
  row.evidence.forEach(n=>right.append(evidenceBlock(n)));
  if(!row.evidence.length)right.append(el('div','hint','本项没有归档原始输出；以上为原验收记录中的结果或缺口说明。'));
@@ -227,7 +247,7 @@ function caseCard(row,forceOpen=false){
  heading.append(el('div','case-title',row.protocol?.question||row.title),el('div','case-sub',row.sourceIds.length>2?`${row.protocol?.kind||row.id} · ${row.sourceIds.length} 份关联文件`:row.sourceIds.length?row.sourceIds.join(' · '):row.id));summary.append(heading);
  if(row.answer)summary.append(el('span','summary-value',`${short(row.expected)} → ${row.comparison==='unexecuted'?'未执行':row.targetObservation?.kind==='error'?(row.targetObservation.error?.code||'error'):row.targetObservation?.kind==='missing'?'target 缺失':row.targetObservation?.valuePresent===false?'value 缺失':short(row.actual)}`));
  else if(Array.isArray(row.expected)&&row.expected.length===0&&Array.isArray(row.actual)&&row.actual.length===0)summary.append(el('span','summary-value','0 差异 · 契约完全符合'));
- const badges=el('div','badges');badges.append(badge(kinds[row.comparison],row.comparison));
+ const badges=el('div','badges'),comparisonLabel=row.id==='performance_pair'&&row.status==='review'?'性能需复核':kinds[row.comparison];badges.append(badge(comparisonLabel,row.comparison));
  if(row.approval==='draft')badges.append(badge('GT 待审核','review'));else badges.append(badge(row.id.startsWith('schema_')&&row.status==='passed'?'契约通过':statuses[row.status],row.status==='failed'?'different':row.status==='blocked'?'blocked':''));summary.append(badges);d.append(summary);
  function populate(){if(!d.dataset.loaded){d.append(caseBody(row));d.dataset.loaded='true';}}
  d.addEventListener('toggle',()=>{if(d.open)populate();});

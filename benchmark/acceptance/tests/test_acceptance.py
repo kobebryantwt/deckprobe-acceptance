@@ -22,7 +22,8 @@ from benchmark.acceptance.report_view import comparison_kind, target_observation
 from benchmark.acceptance.ci_snapshot import export_snapshot, materialize_snapshot, validate_snapshot
 from benchmark.acceptance.github_ci import (aggregate as aggregate_ci, freeze as freeze_ci,
                                             publish_history, sanitize_publication, _canonical_arch,
-                                            _platform_smoke_sample)
+                                            _platform_smoke_sample, _history_page)
+from benchmark.acceptance.reporting import _comparison_page
 from benchmark.acceptance import security
 
 SCENARIOS=['identity','content_mismatch','missing_vs_zero','positive_and_negative_security','documented_limit','budget_boundary']
@@ -324,6 +325,22 @@ class AcceptanceTests(unittest.TestCase):
         result=publish_history(self.root/'no-change',self.root/'site')
         self.assertTrue(result['noChange']);self.assertEqual(sha(self.root/'site/runs/v1-input/run.json'),original)
         self.assertEqual(read(self.root/'site/history.json')['checks'][-1]['status'],'NO_CHANGE')
+
+    def test_history_and_incomparable_diff_prioritize_human_summary(self):
+        history={'runs':[{'runId':'r1','createdAt':'2026-09-07T14:48:05+00:00','release':'v2.5.0','decision':'FAIL',
+                          'url':'runs/r1/report.html','comparisonUrl':'comparisons/a/comparison.html',
+                          'counts':{'passed':327,'failed':18,'blocked':2},'performanceAlerts':1}]}
+        history_html=_history_page(history)
+        self.assertIn('327 PASS · 18 FAIL · 2 BLOCKED',history_html)
+        self.assertIn('北京时间',history_html)
+        comparison={'before':'a','after':'b','comparable':False,'guardDifferences':['codeSha256'],
+                    'changes':[{'id':str(i),'classification':'incomparable','before':'passed','after':'passed'} for i in range(406)],
+                    'statusTransitions':[{'id':'changed','classification':'status_changed','before':'failed','after':'passed'}],
+                    'currentPerformance':[],'sourceLabels':{}}
+        comparison_html=_comparison_page(comparison)
+        self.assertEqual(comparison_html.count('class="change '),1)
+        self.assertIn('只展示状态变化，不归因于产品',comparison_html)
+        self.assertIn('查看全部 406 条机器比较记录',comparison_html)
 
     def test_offline_report_rebuild_preserves_evidence_and_escape(self):
         folder=self.root/'run';folder.mkdir()

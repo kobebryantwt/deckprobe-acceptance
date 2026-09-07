@@ -383,7 +383,7 @@ def run_performance(lock_path, snapshot, home, output):
                    "status": "blocked" if incomplete else ("review" if review else "passed"), "role": "observation",
                    "expected": {"warmup": policy['warmup'], "samples": policy['samples'], "claim": "trend only"},
                    "actual": {"groups": len(record.get("groups", [])), "comparisons": len(comparisons),
-                              "configurations": len(distributions), "runtimeVersions": len(runtime_records),
+                              "configurations": len(distributions), "runtimeBatches": len(runtime_records),
                               "blocked": len(incomplete), "alerts": sum(c["status"] == "review" for c in comparisons)},
                    "details": {"distributions": distributions, "incomplete": incomplete},
                    "evidence": ["paired.json", "runtime-pairs.json"]}]
@@ -537,7 +537,10 @@ def publish_history(run_folder, site, comparison=None):
     else: shutil.copytree(run_folder, destination)
     entry = {"runId": run_id, "createdAt": envelope["createdAt"],
             "release": envelope["acceptance"]["targetVersion"], "inputDigest": envelope["acceptance"]["inputDigest"],
-            "decision": envelope["qualitySummary"]["releaseDecision"], "url": f"runs/{run_id}/report.html"}
+            "decision": envelope["qualitySummary"]["releaseDecision"], "url": f"runs/{run_id}/report.html",
+            "counts": envelope.get("counts", {}),
+            "performanceAlerts": sum(c.get("actual", {}).get("alerts", 0) for c in envelope["acceptance"].get("checks", [])
+                                      if c.get("id") == "performance_pair" and isinstance(c.get("actual"), dict))}
     if comparison:
         comparison = Path(comparison)
         data = read(comparison / "comparison.json", {})
@@ -547,6 +550,14 @@ def publish_history(run_folder, site, comparison=None):
         entry["comparisonUrl"] = f"comparisons/{name}/comparison.html"
     if not any(r["runId"] == run_id for r in history["runs"]):
         history["runs"].append(entry)
+    # Backfill summary data for history rows created by older renderer versions.
+    for historical in history["runs"]:
+        archived = read(site / Path(historical.get("url", "")).parent / "run.json", {})
+        if not archived: continue
+        historical.setdefault("counts", archived.get("counts", {}))
+        historical.setdefault("performanceAlerts", sum(c.get("actual", {}).get("alerts", 0)
+            for c in archived.get("acceptance", {}).get("checks", [])
+            if c.get("id") == "performance_pair" and isinstance(c.get("actual"), dict)))
     if envelope["qualitySummary"]["releaseDecision"] == "PASS":
         history["lastPassedRunId"] = run_id
     atomic(site / "history.json", history)
@@ -557,12 +568,41 @@ def publish_history(run_folder, site, comparison=None):
         passed = site / "last-passed"
         if passed.exists(): shutil.rmtree(passed)
         shutil.copytree(run_folder, passed)
-    rows = "".join(f'<tr><td>{html.escape(r["createdAt"])}</td><td>{html.escape(r["release"])}</td><td>{r["decision"]}</td><td><a href="{r["url"]}">报告</a>' + (f' · <a href="{r["comparisonUrl"]}">差异</a>' if r.get("comparisonUrl") else '') + '</td></tr>' for r in reversed(history["runs"]))
-    passed_link = ' · <a href="last-passed/report.html">最近通过基线</a>' if history.get("lastPassedRunId") else ''
-    atomic(site / "index.html", '<!doctype html><meta charset="utf-8"><title>DeckProbe 验收历史</title><style>body{font:15px system-ui;margin:40px;max-width:1100px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:10px}</style><h1>DeckProbe 每周发布验收</h1><p><a href="latest/report.html">查看最新报告</a>'+passed_link+'</p><table><tr><th>时间</th><th>版本</th><th>结论</th><th>报告</th></tr>'+rows+'</table>')
+    atomic(site / "index.html", _history_page(history))
     leaks = sanitize_publication(site)
     if leaks: raise ValueError("publication contains sensitive paths or values: " + ", ".join(leaks))
     return {"runId": run_id, "runs": len(history["runs"]), "site": str(site)}
+
+
+def _history_page(history):
+    runs=list(reversed(history.get("runs",[])))
+    esc=lambda value:html.escape(str(value if value is not None else '—'))
+    def status(value):return str(value or 'INCOMPLETE').lower().replace('_','-')
+    def card(row,latest=False):
+        counts=row.get('counts') or {};alerts=row.get('performanceAlerts')
+        facts=[]
+        if counts:facts.append(f'{counts.get("passed",0)} PASS · {counts.get("failed",0)} FAIL · {counts.get("blocked",0)} BLOCKED')
+        if alerts is not None:facts.append(f'R06：{alerts} 项需复核')
+        details=' · '.join(facts) or '旧记录未保存汇总计数'
+        diff=f'<a class="button secondary" href="{esc(row["comparisonUrl"])}">查看差异</a>' if row.get('comparisonUrl') else ''
+        marker='<span class="latest">最新</span>' if latest else ''
+        try:
+            from datetime import datetime
+            from zoneinfo import ZoneInfo
+            when=datetime.fromisoformat(str(row.get('createdAt',''))).astimezone(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M')+'（北京时间）'
+        except (ValueError,TypeError):when=str(row.get('createdAt','')).replace('T',' ')[:19]
+        return f'<article class="run"><div class="run-main"><div><span class="pill {status(row.get("decision"))}">{esc(row.get("decision"))}</span>{marker}<h2>{esc(row.get("release"))}</h2><p>{esc(when)} · {esc(details)}</p></div><div class="run-actions"><a class="button" href="{esc(row.get("url"))}">完整报告</a>{diff}</div></div><details><summary>运行标识</summary><code>{esc(row.get("runId"))}</code></details></article>'
+    latest=runs[0] if runs else None
+    history_cards=''.join(card(r,i==0) for i,r in enumerate(runs)) or '<p class="empty">尚无验收运行记录。</p>'
+    latest_actions=''
+    if latest:
+        latest_actions=f'<a class="button" href="latest/report.html">打开最新完整报告</a>'
+        if latest.get('comparisonUrl'):latest_actions+=f'<a class="button secondary" href="{esc(latest["comparisonUrl"])}">查看最新差异</a>'
+    passed='<a class="button secondary" href="last-passed/report.html">最近通过基线</a>' if history.get('lastPassedRunId') else ''
+    checks=history.get('checks',[])
+    quiet=f'<p class="quiet">另有 {len(checks)} 次定时检查发现输入无变化，因此没有重复生成报告。</p>' if checks else ''
+    css='''*{box-sizing:border-box}body{margin:0;background:#f4f5f0;color:#202b29;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}main{max-width:1040px;margin:auto;padding:50px 24px}a{text-decoration:none}.eyebrow{font-size:11px;letter-spacing:1.5px;color:#315e4d}.hero{display:flex;justify-content:space-between;gap:30px;align-items:flex-end;margin-bottom:34px}.hero h1{font-size:32px;margin:8px 0}.hero p,.run p,.quiet{color:#6c7470}.actions,.run-actions{display:flex;gap:8px;flex-wrap:wrap}.button{display:inline-block;background:#315e4d;color:#fff;border-radius:7px;padding:9px 14px;font-size:12px}.button.secondary{background:#fff;color:#315e4d;border:1px solid #dce2d8}.run{background:#fff;border:1px solid #e2e6df;border-radius:11px;padding:18px 20px;margin:10px 0}.run:first-child{border-color:#b8cbbd;box-shadow:0 5px 20px #2033290a}.run-main{display:flex;align-items:center;justify-content:space-between;gap:20px}.run h2{font-size:20px;margin:8px 0 2px}.run p{margin:0}.pill,.latest{display:inline-block;border-radius:5px;padding:3px 7px;font-size:10px;font-weight:650;margin-right:6px}.pill.pass{background:#e8f1e7;color:#315e4d}.pill.fail{background:#fae9e4;color:#ae443c}.pill.review{background:#fbf0dc;color:#95621b}.pill.incomplete{background:#ebf0f4;color:#516b82}.latest{background:#edf0e6;color:#556346}.run details{margin-top:12px;font-size:10px;color:#6c7470}.run summary{cursor:pointer}.run code{display:block;margin-top:6px;overflow-wrap:anywhere}.quiet{margin-top:20px}.empty{background:#fff;padding:20px;border-radius:9px}@media(max-width:700px){main{padding:30px 16px}.hero,.run-main{display:block}.actions,.run-actions{margin-top:15px}.run-actions .button{flex:1;text-align:center}.hero h1{font-size:27px}}'''
+    return f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DeckProbe 验收历史</title><style>{css}</style><main><header class="hero"><div><div class="eyebrow">DECKPROBE ACCEPTANCE</div><h1>发布验收历史</h1><p>先看最新结论，需要时再进入完整证据或两轮差异。</p></div><nav class="actions">{latest_actions}{passed}</nav></header><section>{history_cards}</section>{quiet}</main></html>'''
 
 
 def verdict(run_folder):

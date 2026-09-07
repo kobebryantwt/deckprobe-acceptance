@@ -17,7 +17,7 @@ SUPPORTED = {
     'coverage.py': 'b7bd99f460c02cd86f37dc907354e8b8353e760e7de9325050861e898d928df2',
     'docs/handbook.md': '35a10505517525fd1311225cdfedf7720014c64b5f860388e971ee379ad84261',
     'supply_evidence.py': '14240eb78dc8ae8d319baabd6bd82644fde7e86c94d6560e622ecd35b5a44b36',
-    'github_ci.py': '98a8282c4abe9708af68d07160611bcc791123a0028fc3d49ae71e3baedc177a',
+    'github_ci.py': '827611b8d7dce5ad3eccc8b27d3927637ae697850fc970bc4afaa3211eb1f25b',
     'linux_security.py': 'a54fa5a7520ab25ea7caac14c5ad513f77c924a4c9b46dfe3111679f7fdfa6e5',
 }
 LEGACY = {'runner.py': {'ae3af454936e5367d7da5801c60ef482956ee8f0506f1e380838e17daace8d81', '82cdca1eb54b602d4d4605c26f165b1876876550fe849f2b2a8e44b89e4fd6bf', '9cda58512fa28f9ff23f98f1bf3742f717ff2c9ac237201266d9f1b341e6a0b2'}}
@@ -219,7 +219,7 @@ def explain(row, policy, evidence):
                         [('implementation/github_ci.py', 'run_performance() 的配对、完整性与阈值判定'),
                          ('implementation/adapters/performance.mjs', 'JS、WASM、浏览器和 Worker 重复测量'), *rule],
                         '该结果只表示 GitHub hosted runner 上的版本趋势；BLOCKED 和 REVIEW 都是观察结论，不参与发布门禁，也不构成绝对延迟 SLA。',
-                        observedFields=[[{'groups':'原生配置组数','comparisons':'比较项数','runtimeVersions':'运行时版本数',
+                        observedFields=[[{'groups':'原生配置组数','comparisons':'比较项数','runtimeVersions':'运行时测量批次','runtimeBatches':'运行时测量批次',
                                           'configurations':'完整比较配置数','blocked':'不完整配置数','alerts':'需复核分位数项数'}.get(k,k),v] for k,v in data.items()])
     if key in {'native_install','npm_native_install'}:
         npm = key == 'npm_native_install'
