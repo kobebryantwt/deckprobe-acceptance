@@ -1,14 +1,14 @@
 {
   "claimsApproved": true,
   "claimsComplete": true,
-  "contentDigest": "1a0db622b9d4c000e099a1a6516504401383526172ec78884c6cb8dd857a285f",
+  "contentDigest": "e8bb6613ee9f7ee37b85cb1c7be6b6326a77aa5fe33c5a7e3b089b37a2870f4f",
   "counts": {
     "answers": 132,
     "gaps": 0,
     "pending": 0,
     "samples": 67
   },
-  "createdAt": "2026-09-07T14:00:36.057576+00:00",
+  "createdAt": "2026-09-07T14:13:32.542319+00:00",
   "factCount": 1382,
   "factInventoryVersion": 1,
   "missingPerformanceCases": [],

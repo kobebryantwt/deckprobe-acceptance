@@ -10,6 +10,14 @@ from benchmark.acceptance.report_view import build_model
 
 
 class CaseExplanationTests(unittest.TestCase):
+    def test_performance_pair_uses_policy_sample_count_and_is_not_a_release_gate(self):
+        row = {'id':'performance_pair', 'requirement':'PRO-R06', 'title':'performance',
+               'status':'review', 'role':'observation',
+               'actual':{'configurations':51,'blocked':0,'alerts':2}}
+        explanation = explain(row, {'performance':{'warmup':5,'samples':50}}, {})
+        self.assertIn('50 个有效点', ''.join(explanation['method']))
+        self.assertIn('不参与发布门禁', explanation['limitation'])
+
     def test_matching_unknown_and_private_count_do_not_become_fact_proof(self):
         row = {'id':'optional_required_semantics', 'requirement':'PRO-R05', 'title':'pair',
                'expected':{'status':'unknown'}, 'actual':{'status':'unknown'}, 'status':'passed'}

@@ -25,7 +25,7 @@
 | PRO-R03 | 格式与限制 | 按矩阵扫描 PDF、Office、iWork、负向格式 | 支持项按 target 返回值；XLSB、旧 XML iWork、受限 PDF 等限制按文档状态出现 |
 | PRO-R04 | target 语义 | 对 metadata/structure/security/assets/quality target 运行，并校验 schema | value、status、confidence、path、evidence、成本计数齐全；`partial` 不被呈现为健康结论 |
 | PRO-R05 | path 共享 | 请求可共享必需 target 与可选 target | 报告的 selected path、piggyback 和成本与测试计划相符，不影响正确性 |
-| PRO-R06 | 性能声明 | 在固定机器、文件集、冷热启动下测浅/深 probe | 发布 p50/p95、样例大小、target、版本和命令；“毫秒”仅在覆盖数据范围内使用 |
+| PRO-R06 | GitHub 性能分布与版本趋势 | 在同一 hosted runner 上交错测候选版与前一正式版，各配置预热 5 次、采样 50 次 | 发布逐配置 p50/p95、原始点和环境；异常为 REVIEW，数据不完整为观察性 BLOCKED，均不作为发布门禁或绝对 SLA |
 | PRO-R07 | 集成表面 | CLI、JSONL、Node、浏览器 Worker、MCP 执行等价样例 | schema 与核心语义一致；批处理错误隔离和 Worker 不阻塞 UI 的证据可复核 |
 | PRO-R08 | 平台与供应链 | macOS/Linux/Windows 按发布清单安装并运行 | 每个平台结果一致；notarization/AuthentiCode 缺失按 release notes 披露 |
 | PRO-R09 | 安全报告 | 验证 SECURITY/GitHub Advisories 私密提交路径 | 私密入口可用，公开 Issue 不要求机密样例 |

@@ -47,7 +47,7 @@ python3 benchmark/scripts/release_acceptance.py weekly
 - `compare --before RUN_DIR --after RUN_DIR --output NEW_DIR`：校验证据后比较；条件不一致时不归因产品回归。
 - `report --run RUN_DIR --output NEW_DIR`：不运行产品、离线重建报告；先检验证据完整性，保留原目录。
 - `weekly`：检查→有变化才准备→运行→归档→比较。单实例锁防重叠；成功结束才更新已处理指纹。无变化安静。
-- `performance-pair`：对新旧发布版 native 逐次交错采样，输出到 `performance-pairs/`；JS/WASM 各模式另保留分版本后台记录，不能宣称它们经过逐次配对的受控测量。周度流程包含 native 配对采样。
+- `performance-pair`：对新旧发布版 native 逐次交错采样，输出到 `performance-pairs/`。GitHub R06 任务还会在同一 hosted runner 上对 Node、WASM、浏览器主线程和 Worker 交错采样，并逐配置保留原始点及 p50/p95。
 
 迁移后的正式周度入口是 GitHub Actions 的 IANA `Asia/Shanghai` 周一 10:00 调度；不依赖本机 Codex。
 本地 `weekly` 仅保留给迁移前历史复现和故障诊断，不作为 GitHub 正式结果来源。
@@ -125,7 +125,7 @@ python3 benchmark/scripts/release_acceptance.py approve --decisions /absolute/pa
 | R03 | 内容寻址语料、生成/公开样本、逐答案 GT、历史审批保留、声明覆盖分母 | 每条新答案审核、完整事实与场景覆盖 |
 | R04 | 发布 schema、状态、confidence、source/path、成本计数、partial 关系校验 | 未覆盖 target 的独立事实与版本迁移复核 |
 | R05 | required/optional/no-piggyback/exact/budget 成组采集，共享语义/成本断言 | 精确路径集合、预算临界值、外部 I/O 口径答案审核 |
-| R06 | native 新进程、JSONL、Node/WASM、浏览器主线程/Worker 的后台采样；初次初始化单点单列 | 固定受控环境、至少100次、重复试验、真正磁盘冷缓存协议。后台数据不能作正式性能承诺 |
+| R06 | GitHub hosted runner 上候选版/前版交错采样；每配置预热 5 次、采样 50 次；逐配置展示 p50/p95、变化比例与原始点 | 这是版本趋势观察，不是绝对延迟 SLA；增长达到 20% 且 2ms 标 REVIEW，数据不完整标观察性 BLOCKED，均不影响发布门禁 |
 | R07 | CLI/JSONL、Node byte shapes、Browser/Worker、MCP 四工具/schema/好坏好/路径拒绝/参数拒绝/超时，实际发布包默认与指定引擎 | IWA/Legacy 等深度代表语料、WASM fallback、完整平台组合 |
 | R08 | 全平台资产静态验证、ARM64 macOS 直接/native npm 启动 | Intel Mac、Linux GNU/musl、Windows 的原生运行证据 |
 | R09 | 固定 SECURITY 快照、GitHub 私密报告设置读取 | 已认证表单访问；功能若关闭是配置失败，不是假装权限不足。绝不自动提交漏洞 |

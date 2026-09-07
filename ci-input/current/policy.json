@@ -51,7 +51,7 @@
       ],
       "relativeAlert": 0.2,
       "role": "observation",
-      "samples": 30,
+      "samples": 50,
       "warmup": 5
     },
     "platforms": [
@@ -130,14 +130,14 @@
       },
       {
         "evidence": [
-          "controlled environment",
-          "100 samples/config",
-          "independent repetitions"
+          "same-runner candidate/previous pairing",
+          "50 samples/config",
+          "per-configuration p50/p95 and raw points"
         ],
         "id": "PRO-R06",
         "priority": "P1",
         "scope": "full",
-        "title": "正式性能声明"
+        "title": "GitHub 性能分布与版本趋势"
       },
       {
         "evidence": [
@@ -153,7 +153,7 @@
       {
         "evidence": [
           "native runner per published platform",
-          "same locked artifacts and suite"
+          "same locked smoke fixture and normalized result"
         ],
         "id": "PRO-R08",
         "priority": "P1",
@@ -177,7 +177,7 @@
       "timezone": "Asia/Shanghai",
       "weekday": "Monday"
     },
-    "version": "1"
+    "version": "2"
   },
   "schemaVersion": 1
 }

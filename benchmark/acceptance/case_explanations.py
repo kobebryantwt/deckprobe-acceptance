@@ -7,17 +7,17 @@ from __future__ import annotations
 
 VERSION = 1
 SUPPORTED = {
-    'runner.py': 'ef2a571094899d5d3e065ad40935b5626903169ae81f6fd7ecb0a680536fc178',
+    'runner.py': 'c25bc9eb6fbbcd2594327f95cf64ec880b44dc7f1a0e025fd66572ae044a423f',
     'contracts.py': 'aa7bfe77ca6f1ebb6d1817629610b5a498d072359cf7aa57b319dbc53cb9a9b2',
-    'config/policy.json': 'afb822044886d3fdb453a20f1a09e70fbfefabbc1785a634f3c0b9b8835c88c9',
+    'config/policy.json': '7caa2c80eb87f39542b48d135feb1463c4b8871174db862bff87187f3b7c34e8',
     'security.py': 'aefc6301a3140051395f5a9958dd760fda20a2d43722e360d5ea9acc983c41fe',
     'adapters/runtime.mjs': 'a9a87a459a8a9d2aa8f2c4bc4fe1bae291ae096ee891cbd85ffb2bc8333c4334',
     'adapters/performance.mjs': '397a8a1e8c2ba651668e1a3dcfbeeb5a8c21b80d728c726791d7172c4e19d26d',
     'adapters/paired-performance.mjs': '57b48bbe9516076278b127e9db9f75b45b7e76a9ab4c6a572177fcf8e1d63f57',
     'coverage.py': 'b7bd99f460c02cd86f37dc907354e8b8353e760e7de9325050861e898d928df2',
-    'docs/handbook.md': '16926e968c6826d693f83899e2e556bbd06350d674c68c792f932e40d91d47b2',
+    'docs/handbook.md': '35a10505517525fd1311225cdfedf7720014c64b5f860388e971ee379ad84261',
     'supply_evidence.py': '14240eb78dc8ae8d319baabd6bd82644fde7e86c94d6560e622ecd35b5a44b36',
-    'github_ci.py': '8f400e90042c1cf23f2b25f3c88bfff1e068e0b679ff21d784e840db0abd4293',
+    'github_ci.py': '98a8282c4abe9708af68d07160611bcc791123a0028fc3d49ae71e3baedc177a',
     'linux_security.py': 'a54fa5a7520ab25ea7caac14c5ad513f77c924a4c9b46dfe3111679f7fdfa6e5',
 }
 LEGACY = {'runner.py': {'ae3af454936e5367d7da5801c60ef482956ee8f0506f1e380838e17daace8d81', '82cdca1eb54b602d4d4605c26f165b1876876550fe849f2b2a8e44b89e4fd6bf', '9cda58512fa28f9ff23f98f1bf3742f717ff2c9ac237201266d9f1b341e6a0b2'}}
@@ -209,21 +209,18 @@ def explain(row, policy, evidence):
                         '后台负载和文件系统缓存未受控；新进程不等于磁盘冷缓存。', criteriaLabel='测量结果如何使用',
                         observed=f'共 {data.get("configurations", 0)} 组配置，其中 {data.get("complete", 0)} 组完成重复采样；其他配置需分别查看原因。')
     if key == 'performance_pair':
+        config = policy.get('performance', {})
+        warm, samples = config.get('warmup','未记录'), config.get('samples','未记录')
         return protocol('GitHub 配对性能趋势', '同一 hosted runner 中，候选版相对前一正式版是否出现需要复核的延迟增长？',
-                        ['新旧版本在同一 runner 交错运行；原生配置及 Node、浏览器、Worker 配置均预热后保留 30 个有效点。',
+                        [f'新旧版本在同一 runner 交错运行；原生配置及 Node、浏览器、Worker 配置均预热 {warm} 次后各保留 {samples} 个有效点。',
                          '首次初始化通过新进程、新页面或新 Worker 重建后重复采样；逐配置计算 p50 和 p95。'],
-                        ['所有配置保留完整原始点且可比；缺失或删去慢样本为 BLOCKED。',
+                        [f'每个版本每种配置都必须保留 {samples} 个成功点；缺失、失败或删去慢样本均标为 BLOCKED。',
                          '相对增长至少 20% 且绝对增长至少 2 ms 时为 REVIEW，不直接否决发布。'],
                         [('implementation/github_ci.py', 'run_performance() 的配对、完整性与阈值判定'),
                          ('implementation/adapters/performance.mjs', 'JS、WASM、浏览器和 Worker 重复测量'), *rule],
-                        '该结果只表示 GitHub runner 上的版本趋势，不支持绝对毫秒声明。',
+                        '该结果只表示 GitHub hosted runner 上的版本趋势；BLOCKED 和 REVIEW 都是观察结论，不参与发布门禁，也不构成绝对延迟 SLA。',
                         observedFields=[[{'groups':'原生配置组数','comparisons':'比较项数','runtimeVersions':'运行时版本数',
-                                          'blocked':'不完整配置数','alerts':'需复核项数'}.get(k,k),v] for k,v in data.items()])
-    if key == 'formal_performance':
-        return protocol('性能签核准备', '是否有足够证据支持某个明确范围的性能声明？',
-                        ['需要在受控时段固定机器、软件环境、语料、运行方式与缓存状态，并独立重复测量。'],
-                        ['每配置至少 100 次有效测量；保留失败和超时；每条对外声明指向具体测量范围。'], rule,
-                        '本轮只有后台观察，未执行正式性能签核。', criteriaLabel='正式签核门槛', observed='缺少受控环境、足量样本和独立重复证据。')
+                                          'configurations':'完整比较配置数','blocked':'不完整配置数','alerts':'需复核分位数项数'}.get(k,k),v] for k,v in data.items()])
     if key in {'native_install','npm_native_install'}:
         npm = key == 'npm_native_install'
         return protocol('本机启动检查', ('npm 安装的启动器' if npm else 'macOS ARM64 发布二进制') + '能否启动并返回正确版本？',

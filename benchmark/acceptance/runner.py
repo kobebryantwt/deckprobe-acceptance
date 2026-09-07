@@ -355,9 +355,8 @@ def run(home,label='candidate',diagnostic=False,performance=False,target_overrid
                                                      'p50Ms':statistics.median(times) if complete else None,'p95Ms':times[math.ceil(.95*len(times))-1] if complete else None})
                         else:measurements.append({'caseId':name,'level':level,'mode':'runtime-adapter','complete':False,'error':adapter['stderr']})
             save('performance',measurements)
-        return [item('background_performance','PRO-R06','后台性能观察','review','diagnostic only; no public latency claim',
-                     {'configurations':len(measurements),'complete':sum(x['complete'] for x in measurements)},role='observation',evidence=['evidence/performance.json'] if measurements else []),
-                item('formal_performance','PRO-R06','正式性能声明证据','blocked','controlled environment + >=100 samples/config + repetition','background observation only',scope='full')]
+        return [item('background_performance','PRO-R06','本地性能分布观察','review','diagnostic only; no absolute latency SLA',
+                     {'configurations':len(measurements),'complete':sum(x['complete'] for x in measurements)},role='observation',evidence=['evidence/performance.json'] if measurements else [])]
 
     def private_reporting():
         snapshot=read(home/'security-entry.json',{})

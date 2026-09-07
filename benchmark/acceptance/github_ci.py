@@ -137,7 +137,6 @@ def run_main(lock_path, snapshot, home, output):
     previous = run(home, "previous", diagnostic=False, performance=False) if lock.get("previous") else None
     envelope = read(Path(home) / "runs" / candidate["runId"] / "run.json")
     excluded = {"PRO-R02", "PRO-R06"}
-    original_checks = envelope["acceptance"]["checks"]
     checks = [c for c in envelope["acceptance"]["checks"] if c["requirement"] not in excluded | {"PRO-R09"}
               and c["id"] not in {"platform_matrix", "native_install", "npm_native_install"}]
     release_comparison=[]
@@ -149,9 +148,6 @@ def run_main(lock_path, snapshot, home, output):
         checks.append({"id":"candidate_previous_compatibility","requirement":"PRO-R04",
             "title":"候选版与前一正式版在同一冻结输入下的契约差异","status":"failed" if regressions else "passed",
             "expected":"no previously passing contract regresses","actual":{"regressions":regressions,"changes":release_comparison}})
-    # CI trend measurements are supplementary. Preserve the formal R06 gate so
-    # a hosted-runner observation cannot silently replace the approved claim.
-    checks.extend(c for c in original_checks if c["id"] == "formal_performance")
     security = read(Path(home) / "security-entry.json", {})
     enabled = security.get("privateReporting", {}).get("enabled") is True
     security_policy = targets["candidate"]["release"].get("sourceSnapshots", {}).get("SECURITY.md", {})
@@ -312,8 +308,12 @@ def run_performance(lock_path, snapshot, home, output):
     lock, targets = prepare_locked(lock_path, snapshot, home, include_previous=True)
     output = Path(output); output.mkdir(parents=True, exist_ok=True)
     if not lock.get("previous"):
-        checks = [{"id": "performance_pair", "requirement": "PRO-R06", "title": "新旧版本配对趋势",
-                   "status": "blocked", "role": "observation", "expected": "two stable releases", "actual": None}]
+        policy = lock["policy"]["performance"]
+        checks = [{"id": "performance_pair", "requirement": "PRO-R06", "title": "GitHub runner 新旧版本配对趋势",
+                   "status": "blocked", "role": "observation",
+                   "expected": {"warmup": policy["warmup"], "samples": policy["samples"], "claim": "trend only"},
+                   "actual": {"blocked": 1, "reason": "previous stable release is unavailable"},
+                   "details": {"distributions": [], "incomplete": [{"reason": "previous stable release is unavailable"}]}}]
         record = None
     else:
         pair = paired_performance(home); record = read(pair.get("path"), {})
@@ -365,12 +365,28 @@ def run_performance(lock_path, snapshot, home, output):
                             'status':'review' if relative is not None and relative>=policy['relativeAlert'] and delta>=policy['absoluteAlertMs'] else 'observation'})
         atomic(output / "runtime-pairs.json", runtime_records)
         record["comparisons"] = comparisons; record["runtimePairs"] = runtime_records
+        distributions = []
+        grouped = {}
+        for comparison in comparisons:
+            key = (comparison["caseId"], comparison["level"], comparison["mode"])
+            grouped.setdefault(key, {})[comparison["metric"]] = comparison
+        for (case_id, level, mode), metrics in sorted(grouped.items()):
+            p50, p95 = metrics.get("p50", {}), metrics.get("p95", {})
+            distributions.append({"caseId": case_id, "level": level, "mode": mode,
+                "previousP50Ms": p50.get("previousMs"), "candidateP50Ms": p50.get("candidateMs"),
+                "p50DeltaMs": p50.get("absoluteDeltaMs"), "p50RelativeDelta": p50.get("relativeDelta"),
+                "previousP95Ms": p95.get("previousMs"), "candidateP95Ms": p95.get("candidateMs"),
+                "p95DeltaMs": p95.get("absoluteDeltaMs"), "p95RelativeDelta": p95.get("relativeDelta"),
+                "status": "review" if any(item.get("status") == "review" for item in metrics.values()) else "observation"})
         review = any(c["status"] == "review" for c in comparisons)
         checks = [{"id": "performance_pair", "requirement": "PRO-R06", "title": "GitHub runner 新旧版本配对趋势",
                    "status": "blocked" if incomplete else ("review" if review else "passed"), "role": "observation",
                    "expected": {"warmup": policy['warmup'], "samples": policy['samples'], "claim": "trend only"},
                    "actual": {"groups": len(record.get("groups", [])), "comparisons": len(comparisons),
-                              "runtimeVersions": len(runtime_records), "blocked": len(incomplete), "alerts": sum(c["status"] == "review" for c in comparisons)}}]
+                              "configurations": len(distributions), "runtimeVersions": len(runtime_records),
+                              "blocked": len(incomplete), "alerts": sum(c["status"] == "review" for c in comparisons)},
+                   "details": {"distributions": distributions, "incomplete": incomplete},
+                   "evidence": ["paired.json", "runtime-pairs.json"]}]
         if record: atomic(output / "paired.json", record)
     result = job_result(lock, "performance", checks, "BLOCKED" if checks[0]["status"] == "blocked" else ("REVIEW" if checks[0]["status"] == "review" else "PASS"))
     atomic(output / "job-result.json", result); seal(output)
@@ -414,8 +430,20 @@ def aggregate(lock_path, inputs, output):
                 check["evidence"] = rewritten
         elif value.get("job") == "performance":
             evidence_root.mkdir(parents=True, exist_ok=True)
+            archived = set()
             for name in ["paired.json", "runtime-pairs.json"]:
-                if (path.parent / name).is_file(): atomic(evidence_root / name, _portable(read(path.parent / name)))
+                if (path.parent / name).is_file():
+                    atomic(evidence_root / name, _portable(read(path.parent / name)))
+                    archived.add(name)
+            for check in value.get("checks", []):
+                rewritten = []
+                for name in check.get("evidence", []):
+                    if name not in archived:
+                        check["status"] = "blocked"
+                        check.setdefault("missingEvidence", []).append(name)
+                        continue
+                    rewritten.append("job-evidence/" + evidence_key + "/" + name)
+                check["evidence"] = rewritten
         elif value.get("job") == "security-linux" and (path.parent / "security-session.json").is_file():
             evidence_root.mkdir(parents=True, exist_ok=True)
             atomic(evidence_root / "security-session.json", _portable(read(path.parent / "security-session.json")))

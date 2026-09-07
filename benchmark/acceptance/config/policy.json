@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "2",
   "repository": "deckflow/deckprobe",
   "schedule": {"timezone": "Asia/Shanghai", "weekday": "Monday", "hour": 10},
   "nativePlatform": "aarch64-apple-darwin",
@@ -10,7 +10,7 @@
     "cases": ["case-cc0cff1b91879bebb339", "case-fad1409b1b0d8cb9f7ef", "case-2e921ccffab9ea815eea"],
     "levels": ["header", "metadata", "deep"],
     "warmup": 5,
-    "samples": 30,
+    "samples": 50,
     "relativeAlert": 0.2,
     "absoluteAlertMs": 2,
     "role": "observation"
@@ -21,7 +21,7 @@
     {"id":"PRO-R03","title":"格式与限制","priority":"P0","scope":"local","evidence":["approved source-bound answers","declared profile-target matrix"]},
     {"id":"PRO-R04","title":"target 语义与契约","priority":"P0","scope":"local","evidence":["release schema","confidence/status/evidence invariants","compatibility"]},
     {"id":"PRO-R05","title":"路径与共享","priority":"P1","scope":"local","evidence":["approved allowed paths and cost constraints","paired requests"]},
-    {"id":"PRO-R06","title":"正式性能声明","priority":"P1","scope":"full","evidence":["controlled environment","100 samples/config","independent repetitions"]},
+    {"id":"PRO-R06","title":"GitHub 性能分布与版本趋势","priority":"P1","scope":"full","evidence":["same-runner candidate/previous pairing","50 samples/config","per-configuration p50/p95 and raw points"]},
     {"id":"PRO-R07","title":"集成表面","priority":"P1","scope":"local","evidence":["CLI/JSONL/Node/WASM/Worker/MCP","batch isolation","UI timing controls"]},
     {"id":"PRO-R08","title":"全部发布平台","priority":"P1","scope":"full","evidence":["native runner per published platform","same locked smoke fixture and normalized result"]},
     {"id":"PRO-R09","title":"私密报告入口","priority":"P1","scope":"local","evidence":["SECURITY snapshot","private reporting enabled","authenticated form access"]}

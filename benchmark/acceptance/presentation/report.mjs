@@ -200,6 +200,17 @@ function caseBody(row){
    `${m.p50Ms?.toFixed(3)??'—'} / ${m.p95Ms?.toFixed(3)??'—'}`,m.complete?'后台观察':'单点 / 未完成'
   ])));
  }
+ if(row.id==='performance_pair'&&row.details?.distributions?.length){
+  const fixed=v=>typeof v==='number'?v.toFixed(3):'—';
+  const change=(ms,relative)=>`${fixed(ms)} ms / ${typeof relative==='number'?(relative*100).toFixed(1)+'%':'—'}`;
+  right.append(table(['文件 / 配置','前版 p50 / p95 (ms)','候选版 p50 / p95 (ms)','变化 p50 / p95','结论'],row.details.distributions.map(m=>[
+   `${m.caseId}\n${m.level} · ${m.mode}`,
+   `${fixed(m.previousP50Ms)} / ${fixed(m.previousP95Ms)}`,
+   `${fixed(m.candidateP50Ms)} / ${fixed(m.candidateP95Ms)}`,
+   `${change(m.p50DeltaMs,m.p50RelativeDelta)}\n${change(m.p95DeltaMs,m.p95RelativeDelta)}`,
+   m.status==='review'?'需复核':'趋势观察'
+  ])));
+ }
  if(p.showExpected||row.answer)comparisonFields(right,row.expected,row.actual);
  row.evidence.forEach(n=>right.append(evidenceBlock(n)));
  if(!row.evidence.length)right.append(el('div','hint','本项没有归档原始输出；以上为原验收记录中的结果或缺口说明。'));

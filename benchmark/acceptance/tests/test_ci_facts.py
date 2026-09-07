@@ -4,9 +4,16 @@ from pathlib import Path
 from benchmark.acceptance.common import atomic,read,digest,seal
 from benchmark.acceptance.ci_snapshot import export_snapshot,validate_snapshot
 from benchmark.acceptance.github_ci import aggregate
+from benchmark.acceptance.contracts import decision
 from benchmark.acceptance.corpus import add_source
 
 class FactSnapshotTests(unittest.TestCase):
+ def test_performance_review_and_blocked_are_observations_not_release_gates(self):
+  gate={'id':'functional','status':'passed','role':'gate'}
+  for status in ('review','blocked'):
+   performance={'id':'performance_pair','status':status,'role':'observation'}
+   self.assertEqual(decision([gate,performance]),'PASS')
+
  def test_unmapped_public_fact_survives_export_and_tamper_detected(self):
   with tempfile.TemporaryDirectory() as d:
    home=Path(d);s=add_source(home,b'public','pdf','a',{})
