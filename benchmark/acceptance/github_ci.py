@@ -266,9 +266,10 @@ def platform_smoke(lock_path, snapshot, platform_id, output):
         if len(binaries) != 1: raise ValueError("expected exactly one executable")
         binary = binaries[0]; binary.chmod(binary.stat().st_mode | 0o100)
         binary_identity=_binary_arch(binary)
-        version = process([str(binary), "--version"], timeout=30)
+        version = process([str(binary.resolve()), "--version"], timeout=30)
         sample = read(Path(snapshot) / "samples.json")["samples"][0]
-        smoke = process([str(binary), "-l", "header", "-t", "document.format", str(Path(snapshot) / sample["object"])], timeout=60)
+        sample_path = (Path(snapshot) / sample["object"]).resolve()
+        smoke = process([str(binary.resolve()), "-l", "header", "-t", "document.format", str(sample_path)], timeout=60)
         expected = "deckprobe " + lock["candidate"]["tag"].lstrip("v")
         expected_arch='arm64' if 'aarch64' in target else 'x86_64'
         ok = (version.get("exitCode") == 0 and version.get("stdout", "").strip() == expected and smoke.get("exitCode") == 0
