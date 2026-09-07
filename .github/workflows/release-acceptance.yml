@@ -175,6 +175,11 @@ jobs:
             --snapshot "$ACCEPTANCE_SNAPSHOT" \
             --platform "${{ matrix.id }}" \
             --output "$RUNNER_TEMP/platform-result" > "$RUNNER_TEMP/platform-result/stdout.txt" 2> "$RUNNER_TEMP/platform-result/stderr.txt" || {
+              echo "### Platform Smoke Failed (${{ matrix.id }})" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
+              cat "$RUNNER_TEMP/platform-result/stderr.txt" >> "$GITHUB_STEP_SUMMARY"
+              cat "$RUNNER_TEMP/platform-result/stdout.txt" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
               cat "$RUNNER_TEMP/platform-result/stderr.txt"
               cat "$RUNNER_TEMP/platform-result/stdout.txt"
               exit 1
@@ -205,6 +210,8 @@ jobs:
             python benchmark/scripts/release_acceptance.py run-platform \
               --lock .ci-freeze/run-lock.json --snapshot ci-input/current \
               --platform "${{ matrix.id }}" --output .ci-platform-result'
+      - if: always()
+        run: sudo chown -R "$(id -u):$(id -g)" .ci-platform-result || true
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with: { name: "result-platform-${{ matrix.id }}", path: .ci-platform-result, retention-days: 30 }
