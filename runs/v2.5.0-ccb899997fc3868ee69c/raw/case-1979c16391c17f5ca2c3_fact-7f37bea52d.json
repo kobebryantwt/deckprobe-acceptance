@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "IBMer",
+      "details": {
+        "answerDigest": "925b2110e9a2b0a686b47c837c869ee4589106a56b771d2169952154b8dc5037",
+        "diagnosticMatch": true
+      },
+      "expected": "IBMer",
+      "featureId": "PRO-R03",
+      "id": "case-1979c16391c17f5ca2c3_fact-7f37bea52d",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-1979c16391c17f5ca2c3_fact-7f37bea52d",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.author",
+    "local-evidence://Word旧版嵌入PDF文档.doc"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-81d2a84e73e2fefdc53cd9a6064379177db8bc28142a79bf7b0daee26169549c.json"
+  ],
+  "source": {
+    "uri": "sha256:1979c16391c17f5ca2c3d40008b10e8649dce4f9a8dd30b2432fe9416c201952"
+  },
+  "status": "passed"
+}

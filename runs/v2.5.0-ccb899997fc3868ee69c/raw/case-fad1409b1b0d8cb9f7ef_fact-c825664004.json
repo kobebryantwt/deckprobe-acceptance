@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 178,
+      "details": {
+        "answerDigest": "5e64f58e6b5065cb1eaaea15ca8d8d26672f63696dbc57d763c023bceffff7b3",
+        "diagnosticMatch": true
+      },
+      "expected": 178,
+      "featureId": "PRO-R03",
+      "id": "case-fad1409b1b0d8cb9f7ef_fact-c825664004",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-fad1409b1b0d8cb9f7ef_fact-c825664004",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.table_count",
+    "local-evidence://Excel_多子表汇总_61工作表178表格.xlsx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-5a485f9a6800aa09f15502d3295150638cd3f26249822c702b149e3a728cb283.json"
+  ],
+  "source": {
+    "uri": "sha256:fad1409b1b0d8cb9f7ef08a482d1c2102eef277b6ca0a68753e9b88ad2bc12ed"
+  },
+  "status": "passed"
+}

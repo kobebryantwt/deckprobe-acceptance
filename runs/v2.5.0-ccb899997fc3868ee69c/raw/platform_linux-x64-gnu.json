@@ -1,0 +1,58 @@
+{
+  "assertions": [
+    {
+      "actual": [
+        {
+          "actual": "deckprobe 2.5.0",
+          "command": [
+            "local-evidence://deckprobe",
+            "--version"
+          ],
+          "evidence": [
+            "evidence/version.json"
+          ],
+          "expected": "deckprobe 2.5.0",
+          "id": "release_version",
+          "requirement": "PRO-R01",
+          "status": "passed",
+          "title": "发布二进制版本与 tag 一致"
+        },
+        {
+          "actual": "deckprobe 2.5.0\n",
+          "evidence": [
+            "evidence/npm-native-launcher.json"
+          ],
+          "expected": "deckprobe 2.5.0\n",
+          "id": "npm_native_install",
+          "requirement": "PRO-R08",
+          "status": "passed",
+          "title": "npm 平台包可启动且版本一致"
+        },
+        {
+          "actual": "deckprobe 2.5.0\n",
+          "expected": "native release executable",
+          "id": "native_install",
+          "requirement": "PRO-R08",
+          "status": "passed",
+          "title": "macOS ARM64 发布包解压安装后可运行"
+        }
+      ],
+      "details": null,
+      "expected": "published x86_64 GNU binary and npm launcher",
+      "featureId": "PRO-R08",
+      "id": "platform_linux-x64-gnu",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "platform_linux-x64-gnu",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

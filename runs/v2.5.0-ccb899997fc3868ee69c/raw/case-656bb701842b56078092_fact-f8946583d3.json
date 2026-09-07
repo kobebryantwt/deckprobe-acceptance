@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 16,
+      "details": {
+        "answerDigest": "10551d38bd6b946424bf322bf2a9f36d136b21c521591341f41361c53e1b3e02",
+        "diagnosticMatch": true
+      },
+      "expected": 16,
+      "featureId": "PRO-R03",
+      "id": "case-656bb701842b56078092_fact-f8946583d3",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-656bb701842b56078092_fact-f8946583d3",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_count",
+    "local-evidence://PPT_Zenodo_统计学课程_64公式24切换.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-68e8a20242e1fc961f60223d740759dbf553cb52722a028dff885ec8f22f0667.json"
+  ],
+  "source": {
+    "uri": "sha256:656bb701842b56078092840b6f20233bb474fe9142c426812c1383156f5665d8"
+  },
+  "status": "passed"
+}

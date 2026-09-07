@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "UNSUPPORTED_FORMAT",
+      "details": {
+        "answerDigest": "c1c5e25b5fa69e6694ad2ecb0805635068303239a0c4273726b8fb64858438d9",
+        "diagnosticMatch": true
+      },
+      "expected": "UNSUPPORTED_FORMAT",
+      "featureId": "PRO-R03",
+      "id": "case-15494702ecb5554c1dfa_answer-bd355a6a1d",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-15494702ecb5554c1dfa_answer-bd355a6a1d",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://Visio绘图文档.vsdx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-9d59e39389ec913f55b41538e3d744b57db0f5ba95cfcfdffeaba6fdc83420ec.json"
+  ],
+  "source": {
+    "uri": "sha256:15494702ecb5554c1dfaee2c09ac35e2ea656e2eed7ba4ba0cf1039e6125fbe1"
+  },
+  "status": "passed"
+}

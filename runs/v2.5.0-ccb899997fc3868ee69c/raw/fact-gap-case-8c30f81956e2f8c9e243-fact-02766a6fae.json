@@ -1,0 +1,29 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "executed": false,
+        "mappingStatus": "unsupported",
+        "reason": "当前目录无同口径字段；保留独立 GT，不拿相似字段代替。"
+      },
+      "details": null,
+      "expected": 1,
+      "featureId": "PRO-R03",
+      "id": "fact-gap-case-8c30f81956e2f8c9e243-fact-02766a6fae",
+      "role": "observation",
+      "severity": "critical",
+      "status": "review",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "fact-gap-case-8c30f81956e2f8c9e243-fact-02766a6fae",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/facts.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "review"
+}

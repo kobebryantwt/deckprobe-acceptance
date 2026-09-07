@@ -1,0 +1,1227 @@
+{
+  "counts": {
+    "blocked": 35,
+    "failed": 7,
+    "passed": 14,
+    "review": 0
+  },
+  "evidence": [
+    "evidence/r01/attestation-processes.json"
+  ],
+  "groups": [
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-aarch64-apple-darwin.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-aarch64-apple-darwin.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-aarch64-unknown-linux-gnu.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-aarch64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-aarch64-unknown-linux-musl.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "3504677c1a5361494eee38d52c5ce93d0751a786410ff8b51f79cf33346a9d65",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-aarch64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-aarch64-unknown-linux-musl.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-x86_64-apple-darwin.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "6a7b3e9361312790245848bc0cdbc536762f3c9c77ffb1a2d0876ef81f066204",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-apple-darwin.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-x86_64-apple-darwin.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "deckprobe-x86_64-pc-windows-msvc.zip",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "8485f93e20edfa9cfbbe62a3c22087a7d3ed14390929aa8ac1ab29a78375c55e",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-pc-windows-msvc.zip.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-x86_64-pc-windows-msvc.zip"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-x86_64-unknown-linux-gnu.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "6e89aa8e997d3292d9989878112d8b0bd80d5fa690b008ebea7a919f4fc2684f",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-gnu.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-x86_64-unknown-linux-gnu.tar.gz"
+    },
+    {
+      "rows": [
+        {
+          "actual": 4,
+          "actualEvidence": [
+            {
+              "label": "验签执行记录",
+              "locator": "/exitCode",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签进程退出码",
+          "note": null,
+          "status": "failed"
+        },
+        {
+          "actual": "deckflow/deckprobe",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --repo",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": "b1b247e0fa881fc154ed69974360a299baede988",
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/verificationCommand",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "验签约束 --source-digest",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryURI",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "https://github.com/deckflow/deckprobe",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "repository · 源仓库",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "deckprobe-x86_64-unknown-linux-musl.tar.gz",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · 资产名称",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/statement/subject",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "0f9327526804d87571068b7f0034116dad3470167867a28314abfc38c9c67a25",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "subject · SHA-256",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryDigest",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "b1b247e0fa881fc154ed69974360a299baede988",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "commit · 源代码提交",
+          "note": null,
+          "status": "blocked"
+        },
+        {
+          "actual": null,
+          "actualEvidence": [
+            {
+              "label": "已验签声明",
+              "locator": "/verificationResult/signature/certificate/sourceRepositoryRef",
+              "path": "evidence/r01/attestation-deckprobe-x86_64-unknown-linux-musl.tar.gz.json"
+            }
+          ],
+          "expected": "refs/tags/v2.5.0",
+          "expectedEvidence": [
+            {
+              "label": "冻结的 release/tag/commit",
+              "locator": "/commit 与 /assets",
+              "path": "evidence/r01/release-lock.json"
+            }
+          ],
+          "label": "tag · 源代码引用",
+          "note": null,
+          "status": "blocked"
+        }
+      ],
+      "title": "deckprobe-x86_64-unknown-linux-musl.tar.gz"
+    }
+  ],
+  "scope": "字段取自 gh 验签成功后输出的 verificationResult；解码出字段本身不等于验签。原始进程记录另行归档。",
+  "status": "failed",
+  "summary": "7 个平台包：逐项展示 repository、subject 名称/摘要、commit 和 tag"
+}

@@ -1,0 +1,23 @@
+{
+  "assertions": [
+    {
+      "actual": "发布包已包含标准 LICENSE 与 NOTICE 版权声明",
+      "details": null,
+      "expected": "随包包含 Apache-2.0 LICENSE 与 NOTICE 版本版权声明",
+      "featureId": "PRO-R01",
+      "id": "third_party_disclosure",
+      "role": "gate",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "third_party_disclosure",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}

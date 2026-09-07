@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "Javen ONeal",
+      "details": {
+        "answerDigest": "4b2b560853f7b04e37337bbc49a7557d0024cf39c280e60e929c663f1889effa",
+        "diagnosticMatch": true
+      },
+      "expected": "Javen ONeal",
+      "featureId": "PRO-R03",
+      "id": "case-39e9608c711d38f298ed_fact-7411179b5d",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-39e9608c711d38f298ed_fact-7411179b5d",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.author",
+    "local-evidence://Word旧版宏文档.doc"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-231a98036e11f0d290a6591bc90c9a89d78f3797a16c4ecd438091953f908504.json"
+  ],
+  "source": {
+    "uri": "sha256:39e9608c711d38f298ed20a5bfae12fcdaed6f4be2be4d26db670475216ca393"
+  },
+  "status": "passed"
+}

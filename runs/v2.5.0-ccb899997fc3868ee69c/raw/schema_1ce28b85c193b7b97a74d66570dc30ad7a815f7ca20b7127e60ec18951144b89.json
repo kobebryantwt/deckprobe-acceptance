@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_1ce28b85c193b7b97a74d66570dc30ad7a815f7ca20b7127e60ec18951144b89",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_1ce28b85c193b7b97a74d66570dc30ad7a815f7ca20b7127e60ec18951144b89",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://EPUB多元数据电子书.epub"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-1ce28b85c193b7b97a74d66570dc30ad7a815f7ca20b7127e60ec18951144b89.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

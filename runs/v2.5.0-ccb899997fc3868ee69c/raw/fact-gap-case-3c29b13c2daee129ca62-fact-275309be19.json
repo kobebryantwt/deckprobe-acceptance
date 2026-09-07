@@ -1,0 +1,29 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "executed": false,
+        "mappingStatus": "unmapped",
+        "reason": "统计范围或格式适用性尚需核定，暂停比较；不能据此认定产品不支持。"
+      },
+      "details": null,
+      "expected": true,
+      "featureId": "PRO-R03",
+      "id": "fact-gap-case-3c29b13c2daee129ca62-fact-275309be19",
+      "role": "observation",
+      "severity": "critical",
+      "status": "review",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "fact-gap-case-3c29b13c2daee129ca62-fact-275309be19",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/facts.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "review"
+}
