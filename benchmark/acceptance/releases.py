@@ -221,7 +221,9 @@ def download_release(home, release, native_platform=None):
         if gh:
             result = process([gh, "attestation", "verify", str(folder / asset["name"]),
                               "--repo", release["repository"], "--source-digest", release["commit"],
-                              "--format", "json"], timeout=120)
+                              "--format", "json"], timeout=120,
+                             env={"GH_TOKEN": os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")}
+                                 if os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN") else None)
             result["status"] = "passed" if result["exitCode"] == 0 else "blocked"
         else:
             result = {"status": "blocked", "reason": "gh is not installed; checksum is not build provenance"}

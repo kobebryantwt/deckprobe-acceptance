@@ -1,7 +1,102 @@
 {
   "gaps": [],
-  "omittedPrivateSamples": 11,
+  "omittedPrivateSamples": 0,
   "samples": [
+    {
+      "active": true,
+      "bytes": 9003514,
+      "format": "pdf",
+      "id": "case-85edcfc173a942aa82fa",
+      "inputName": "OmniDocBench_PPT复杂页面.pdf",
+      "object": "objects/85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155/OmniDocBench_PPT复杂页面.pdf",
+      "private": false,
+      "provenance": {
+        "license": "research-only / redistribution not established",
+        "preparation": "使用OmniDocBench官方image_to_pdf.py转换；扫描纯图PDF与零值边界正例",
+        "project": "OmniDocBench",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "images/PPT_Catalysis.ppt_page_003.png",
+        "version": "aa1ee96d106dbe53d0ae59474d75c6e6d9b53fec"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "OmniDocBench_PPT复杂页面.pdf",
+          "sha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "pdf.page_count"
+            ],
+            "label": "页面数量",
+            "target": "pdf.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.form_field_count"
+            ],
+            "label": "无交互表单字段",
+            "note": "纯扫描件无表单字段，必须为0而非空或报错",
+            "target": "pdf.form_field_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.annotation_count"
+            ],
+            "label": "无注释对象",
+            "note": "纯扫描件无注释，必须为0",
+            "target": "pdf.annotation_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "扫描纯图 PDF 与零值边界（Missing vs Zero）"
+      },
+      "sha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+    },
+    {
+      "active": true,
+      "bytes": 1187,
+      "format": "pdf",
+      "id": "case-172cf666bbac39b34064",
+      "inputName": "PDF密码保护样本.pdf",
+      "object": "objects/172cf666bbac39b34064a3d62390133df5e9e0957f7ea5803328ef00d0b17972/PDF密码保护样本.pdf",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-NC-4.0",
+        "preparation": "原始下载",
+        "project": "delivr_to_file_samples",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "samples/test_encrypted_pdf.pdf",
+        "version": "bbe8f8001b09733b436f133cfe7ad130849056c5"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "PDF密码保护样本.pdf",
+          "sha256": "172cf666bbac39b34064a3d62390133df5e9e0957f7ea5803328ef00d0b17972"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.encrypted"
+            ],
+            "label": "加密与受保护行为",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.encrypted",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "加密与受保护行为"
+      },
+      "sha256": "172cf666bbac39b34064a3d62390133df5e9e0957f7ea5803328ef00d0b17972"
+    },
     {
       "active": true,
       "bytes": 17322,
@@ -130,6 +225,45 @@
         "summary": "宏/VBA 存在性与数量；模板格式与类型识别"
       },
       "sha256": "4b0efc5b69297cd64394ae1c3e891ac245e979c0195d4fc4166d9298efcdc0f6"
+    },
+    {
+      "active": true,
+      "bytes": 19968,
+      "format": "docx",
+      "id": "case-12afdb506994aa0089ae",
+      "inputName": "Word加密文档.docx",
+      "object": "objects/12afdb506994aa0089ae3cead911b1f31ac2866ac921ddfdd1a528c01a5ac2f0/Word加密文档.docx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-NC-4.0",
+        "preparation": "原始下载",
+        "project": "delivr_to_file_samples",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "samples/test_encrypted_docx.docx",
+        "version": "bbe8f8001b09733b436f133cfe7ad130849056c5"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docx",
+          "inputName": "Word加密文档.docx",
+          "sha256": "12afdb506994aa0089ae3cead911b1f31ac2866ac921ddfdd1a528c01a5ac2f0"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.encrypted"
+            ],
+            "label": "加密与受保护行为",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.encrypted",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "加密与受保护行为"
+      },
+      "sha256": "12afdb506994aa0089ae3cead911b1f31ac2866ac921ddfdd1a528c01a5ac2f0"
     },
     {
       "active": true,
@@ -301,6 +435,45 @@
         "summary": "该格式的代表性结构与深层探测能力"
       },
       "sha256": "8c600e97d719b0266dcfb49c1872feb8d10c6ed12bc768ff16ace7dae555ebfc"
+    },
+    {
+      "active": true,
+      "bytes": 15360,
+      "format": "xlsx",
+      "id": "case-604e85052adf13afa6dd",
+      "inputName": "Excel加密工作簿.xlsx",
+      "object": "objects/604e85052adf13afa6dd047e67b024bdee1b3cf7be4bb81a7dcd72c8833d7ad6/Excel加密工作簿.xlsx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-NC-4.0",
+        "preparation": "原始下载",
+        "project": "delivr_to_file_samples",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "samples/test_encrypted_xlsx.xlsx",
+        "version": "bbe8f8001b09733b436f133cfe7ad130849056c5"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsx",
+          "inputName": "Excel加密工作簿.xlsx",
+          "sha256": "604e85052adf13afa6dd047e67b024bdee1b3cf7be4bb81a7dcd72c8833d7ad6"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.encrypted"
+            ],
+            "label": "加密与受保护行为",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.encrypted",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "加密与受保护行为"
+      },
+      "sha256": "604e85052adf13afa6dd047e67b024bdee1b3cf7be4bb81a7dcd72c8833d7ad6"
     },
     {
       "active": true,
@@ -521,6 +694,45 @@
         "summary": "宏/VBA 存在性与数量；模板格式与类型识别"
       },
       "sha256": "4c795ce701a8ae1e796f6732798d0aebd32422430ccf6c6f2ef3bfe9954a6326"
+    },
+    {
+      "active": true,
+      "bytes": 39936,
+      "format": "pptx",
+      "id": "case-d5bdb48f6f2a967fafe1",
+      "inputName": "PowerPoint加密演示文稿.pptx",
+      "object": "objects/d5bdb48f6f2a967fafe113dcb773ed7e25c51e78a133b1ba28b9604ef164139a/PowerPoint加密演示文稿.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-NC-4.0",
+        "preparation": "原始下载",
+        "project": "delivr_to_file_samples",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "samples/test_encrypted_pptx.pptx",
+        "version": "bbe8f8001b09733b436f133cfe7ad130849056c5"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PowerPoint加密演示文稿.pptx",
+          "sha256": "d5bdb48f6f2a967fafe113dcb773ed7e25c51e78a133b1ba28b9604ef164139a"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.encrypted"
+            ],
+            "label": "加密与受保护行为",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.encrypted",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "加密与受保护行为"
+      },
+      "sha256": "d5bdb48f6f2a967fafe113dcb773ed7e25c51e78a133b1ba28b9604ef164139a"
     },
     {
       "active": true,
@@ -1248,6 +1460,355 @@
         "summary": "数字签名存在性与数量"
       },
       "sha256": "d119d8160dc912d639cbe8047c526c6dc58ca9dcd6b51bd5870c247d64413163"
+    },
+    {
+      "active": true,
+      "bytes": 547036,
+      "format": "key",
+      "id": "case-2e5116b60c97fa619bdf",
+      "inputName": "Keynote现代Build漏报样本.key",
+      "object": "objects/2e5116b60c97fa619bdf9d911f332e00ccd710e1134c70daa3058dc671979ddc/Keynote现代Build漏报样本.key",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；Keynote 26.3真实Build正例，DeckProbe 2.5.0返回0",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/olekristensen-v26.3-mac-builds-effects.key",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "key",
+          "inputName": "Keynote现代Build漏报样本.key",
+          "sha256": "2e5116b60c97fa619bdf9d911f332e00ccd710e1134c70daa3058dc671979ddc"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "iwork.build_count"
+            ],
+            "label": "构建动画覆盖数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "build_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "构建动画覆盖数量"
+      },
+      "sha256": "2e5116b60c97fa619bdf9d911f332e00ccd710e1134c70daa3058dc671979ddc"
+    },
+    {
+      "active": true,
+      "bytes": 926463,
+      "format": "key",
+      "id": "case-ea1e65eec57d5bfaa3aa",
+      "inputName": "Keynote表格与图片演示文稿.key",
+      "object": "objects/ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b/Keynote表格与图片演示文稿.key",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；表格、图片、16:9正例",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/zenodo-v13.1-tables-images.key",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "key",
+          "inputName": "Keynote表格与图片演示文稿.key",
+          "sha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "keynote.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "keynote.slide_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "tables.iwork.logical_table_count"
+            ],
+            "label": "原生表格对象数量",
+            "target": "keynote.table_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "images.package.image_part_count",
+              "images.package.unique_image_bytes_count"
+            ],
+            "label": "图片资源与图像对象数量",
+            "target": "keynote.unique_image_asset_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "keynote.aspect_ratio",
+              "keynote.orientation",
+              "keynote.slide_size"
+            ],
+            "label": "1080p宽屏画布尺寸",
+            "target": "keynote.slide_size",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Keynote 幻灯片、表格、图片与1080p画布全集（Hero Document）"
+      },
+      "sha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+    },
+    {
+      "active": true,
+      "bytes": 110397,
+      "format": "numbers",
+      "id": "case-c2a75876af27da3eee2f",
+      "inputName": "Numbers过滤规则漏报样本.numbers",
+      "object": "objects/c2a75876af27da3eee2f253b99d4edf5b2d586e9a7127e7a3157515e32aa299e/Numbers过滤规则漏报样本.numbers",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；两条已启用过滤规则，DeckProbe 2.5.0返回过滤行0",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/olekristensen-v26.3-mac-filters.numbers",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "numbers",
+          "inputName": "Numbers过滤规则漏报样本.numbers",
+          "sha256": "c2a75876af27da3eee2f253b99d4edf5b2d586e9a7127e7a3157515e32aa299e"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "numbers.filter_rule_count"
+            ],
+            "label": "过滤规则定义数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "filter_rule_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "过滤规则定义数量"
+      },
+      "sha256": "c2a75876af27da3eee2f253b99d4edf5b2d586e9a7127e7a3157515e32aa299e"
+    },
+    {
+      "active": true,
+      "bytes": 206226,
+      "format": "numbers",
+      "id": "case-81814eec7d90108595f3",
+      "inputName": "Numbers公式与批注工作簿.numbers",
+      "object": "objects/81814eec7d90108595f3a6e41457b980c1fd935e16a74d77bad20ab11006dcaf/Numbers公式与批注工作簿.numbers",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；公式定义10、批注存储体3",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/olekristensen-v26.3-demo06-formulas-round8.numbers",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "numbers",
+          "inputName": "Numbers公式与批注工作簿.numbers",
+          "sha256": "81814eec7d90108595f3a6e41457b980c1fd935e16a74d77bad20ab11006dcaf"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "formulas.iwork.formula_count"
+            ],
+            "label": "公式对象或公式单元格数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "formula_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "comments.iwork.comment_count"
+            ],
+            "label": "批注、注释或评论数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "annotation_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "公式对象或公式单元格数量；批注、注释或评论数量"
+      },
+      "sha256": "81814eec7d90108595f3a6e41457b980c1fd935e16a74d77bad20ab11006dcaf"
+    },
+    {
+      "active": true,
+      "bytes": 250804,
+      "format": "numbers",
+      "id": "case-c8afad07f828f177a0d9",
+      "inputName": "Numbers多工作表结构工作簿.numbers",
+      "object": "objects/c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe/Numbers多工作表结构工作簿.numbers",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；3工作表、3表格及尺寸正例",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/olekristensen-v26.3-demo08-structure-round6.numbers",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "numbers",
+          "inputName": "Numbers多工作表结构工作簿.numbers",
+          "sha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "numbers.sheet_count"
+            ],
+            "label": "工作表数量",
+            "target": "numbers.sheet_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "numbers.sheet_count"
+            ],
+            "label": "工作表名称列表",
+            "target": "numbers.sheet_names",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "tables.iwork.logical_table_count"
+            ],
+            "label": "原生表格对象数量",
+            "target": "numbers.table_count",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Numbers 多工作表、有序名称与表格结构全集（Hero Document）"
+      },
+      "sha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+    },
+    {
+      "active": true,
+      "bytes": 630330,
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2",
+      "inputName": "Pages多章节页眉页脚文档.pages",
+      "object": "objects/f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb/Pages多章节页眉页脚文档.pages",
+      "private": false,
+      "provenance": {
+        "license": "MIT project; fixture redistribution requires per-file attribution review",
+        "preparation": "原始下载；3章节、页眉页脚、表格、图片正例；DeckProbe无页眉页脚字段",
+        "project": "cupertino_files",
+        "redistributable": false,
+        "type": "curated-dataset",
+        "upstreamPath": "fixtures/threatconnect-v11.1-headers-footers-sections.pages",
+        "version": "bb6c7e39245ac45a36b12362fbd35680e9be722d"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pages",
+          "inputName": "Pages多章节页眉页脚文档.pages",
+          "sha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "pages.section_count"
+            ],
+            "label": "文档章节结构数量",
+            "target": "pages.section_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.section_count",
+              "pages.section_names"
+            ],
+            "label": "章节名称列表",
+            "target": "pages.section_names",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.cached_page_count"
+            ],
+            "label": "缓存页数",
+            "target": "pages.cached_page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.body_paragraph_break_count",
+              "pages.body_text_length"
+            ],
+            "label": "正文长度",
+            "target": "pages.body_text_length",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.body_paragraph_break_count",
+              "pages.body_text_length"
+            ],
+            "label": "正文段落换行数",
+            "target": "pages.body_paragraph_break_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.page_size"
+            ],
+            "label": "页面物理尺寸",
+            "target": "pages.page_size",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pages.orientation"
+            ],
+            "label": "页面方向",
+            "target": "pages.orientation",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Pages 多章节、缓存页数、正文长度与换行全集（Hero Document）"
+      },
+      "sha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
     },
     {
       "active": true,

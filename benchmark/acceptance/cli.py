@@ -1,6 +1,7 @@
 from __future__ import annotations
 import argparse
 import json
+import os
 from pathlib import Path
 import shutil
 import sys
@@ -61,7 +62,9 @@ def refresh_attestations(release):
                 if not bundles.get('attestations'):raise ValueError('No published attestations for this artifact')
                 p=process([gh,'attestation','verify',str(Path(release['folder'])/a['name']),
                            '--bundle',str(bundle_file),'--repo',release['release']['repository'],
-                           '--source-digest',release['release']['commit'],'--format','json'],timeout=90)
+                           '--source-digest',release['release']['commit'],'--format','json'],timeout=90,
+                          env={'GH_TOKEN': os.getenv('GH_TOKEN') or os.getenv('GITHUB_TOKEN')}
+                              if os.getenv('GH_TOKEN') or os.getenv('GITHUB_TOKEN') else None)
                 status='passed' if p['exitCode']==0 else ('blocked' if p.get('timedOut') or p.get('launchError') else 'failed')
                 items.append({'asset':a['name'],'status':status,'bundlePath':str(bundle_file),'bundleSha256':sha(bundle_file),**p})
             except (OSError,ValueError) as e:

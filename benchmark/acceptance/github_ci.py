@@ -149,12 +149,9 @@ def run_main(lock_path, snapshot, home, output):
         checks.append({"id":"candidate_previous_compatibility","requirement":"PRO-R04",
             "title":"候选版与前一正式版在同一冻结输入下的契约差异","status":"failed" if regressions else "passed",
             "expected":"no previously passing contract regresses","actual":{"regressions":regressions,"changes":release_comparison}})
-    # Linux x64 GNU is the main job's R08 evidence.
-    install_checks = [c for c in original_checks if c["id"] in {"release_version", "native_install", "npm_native_install"}]
-    install_ok = len(install_checks) == 3 and all(c["status"] == "passed" for c in install_checks)
-    checks.append({"id": "platform_linux-x64-gnu", "requirement": "PRO-R08",
-                   "title": "Linux x64 GNU 发布包安装运行", "status": "passed" if install_ok else "failed",
-                   "expected": "published x86_64 GNU binary and npm launcher", "actual": install_checks})
+    # CI trend measurements are supplementary. Preserve the formal R06 gate so
+    # a hosted-runner observation cannot silently replace the approved claim.
+    checks.extend(c for c in original_checks if c["id"] == "formal_performance")
     security = read(Path(home) / "security-entry.json", {})
     enabled = security.get("privateReporting", {}).get("enabled") is True
     security_policy = targets["candidate"]["release"].get("sourceSnapshots", {}).get("SECURITY.md", {})
@@ -254,6 +251,10 @@ def _binary_arch(path):
     return {'format':'unknown','arch':'unknown'}
 
 
+def _canonical_arch(value):
+    return {'aarch64':'arm64','amd64':'x86_64','x64':'x86_64'}.get(value,value)
+
+
 def platform_smoke(lock_path, snapshot, platform_id, output):
     output = Path(output); output.mkdir(parents=True, exist_ok=True)
     target, asset_name = PLATFORMS.get(platform_id, (platform_id, "unknown"))
@@ -286,8 +287,9 @@ def platform_smoke(lock_path, snapshot, platform_id, output):
         smoke = process([str(binary.resolve()), "-l", "header", "-t", "document.format", str(sample_path)], timeout=60)
         expected = "deckprobe " + lock["candidate"]["tag"].lstrip("v")
         expected_arch='arm64' if 'aarch64' in target else 'x86_64'
+        actual_arch=_canonical_arch(binary_identity.get('arch'))
         ok = (version.get("exitCode") == 0 and version.get("stdout", "").strip() == expected and smoke.get("exitCode") == 0
-              and binary_identity.get('arch')==expected_arch)
+              and actual_arch==expected_arch)
         if ok:
             try: ok = isinstance(json.loads(smoke["stdout"]), dict)
             except ValueError: ok = False
@@ -295,7 +297,8 @@ def platform_smoke(lock_path, snapshot, platform_id, output):
                        "title": platform_id + " 发布资产安装、版本和 schema smoke", "status": "passed" if ok else "failed",
                        "expected": {"target": target, "version": expected,"binaryArch":expected_arch},
                        "actual": {"asset": asset_name, "sha256": actual_hash, "environment": environment,
-                                  "binaryIdentity":binary_identity,"version": version, "smoke": smoke}})
+                                  "binaryIdentity":{**binary_identity,"normalizedArch":actual_arch},
+                                  "version": version, "smoke": smoke}})
     except Exception as error:
         checks.append({"id": "platform_" + platform_id, "requirement": "PRO-R08", "title": platform_id + " 平台 smoke",
                        "status": "blocked", "expected": target, "actual": str(error)})

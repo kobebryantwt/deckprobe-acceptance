@@ -1,15 +1,15 @@
 {
   "claimsApproved": true,
   "claimsComplete": true,
-  "contentDigest": "8681d8254cda0d3b825451b4dc9c7fe930091d22fdc0f724c42a796ee31e8f29",
+  "contentDigest": "1a0db622b9d4c000e099a1a6516504401383526172ec78884c6cb8dd857a285f",
   "counts": {
-    "answers": 111,
+    "answers": 132,
     "gaps": 0,
     "pending": 0,
-    "samples": 56
+    "samples": 67
   },
-  "createdAt": "2026-09-07T08:53:21.780804+00:00",
-  "factCount": 1242,
+  "createdAt": "2026-09-07T14:00:36.057576+00:00",
+  "factCount": 1382,
   "factInventoryVersion": 1,
   "missingPerformanceCases": [],
   "schemaVersion": 1,

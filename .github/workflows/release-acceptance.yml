@@ -158,6 +158,7 @@ jobs:
         include:
           - { id: macos-arm64, runner: macos-15 }
           - { id: macos-x64, runner: macos-15 }
+          - { id: linux-x64-gnu, runner: ubuntu-24.04 }
           - { id: linux-arm64-gnu, runner: ubuntu-24.04-arm }
           - { id: windows-x64, runner: windows-2022 }
     runs-on: ${{ matrix.runner }}

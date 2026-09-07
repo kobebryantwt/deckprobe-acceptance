@@ -1,6 +1,250 @@
 {
   "answers": [
     {
+      "answerDigest": "d2e51525ccfaabdaee7c0609025d749aa0b2607e4ebda7fab5168072cc1287fc",
+      "approval": "approved",
+      "caseId": "case-85edcfc173a942aa82fa",
+      "check": {
+        "target": "pdf.page_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "/Root /Pages",
+        "method": "pypdf 6.14.2",
+        "notes": "",
+        "recordPath": "local-evidence://case-85edcfc173a942aa82fa.json",
+        "recordSha256": "5590f83754579a923ed662faa8baf2f9f6bd729983977d760929a04e73e5350d",
+        "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+      },
+      "expected": 1,
+      "factReference": {
+        "definition": "按 PDF 页面树可访问的页面计数。",
+        "digest": "a8ba62e4a0954101269f9f42eb729e3a6821a0dfab8d84962cf6bbeab70ea264",
+        "id": "case-85edcfc173a942aa82fa:fact-8fc153b64c",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.200679+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pdf.page_count",
+            "type": "target"
+          },
+          "definitionDigest": "8f9512f94eeb860ddb546b1ffaa8b19b86fd85d345dc8463925023d8380f4058",
+          "factKey": "pdf.page_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pdf.page_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pdf",
+      "id": "case-85edcfc173a942aa82fa:fact-8fc153b64c",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pdf.page_count"
+      ],
+      "question": "PDF 有多少页？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "163819e8742fa306c6a2514e38e06083c2ec389770e344d5c052e65908320247",
+      "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+    },
+    {
+      "answerDigest": "faea0aa2439d1d7dbbe8b4bf11eb197a064402c6702c5aecd6531a26cdff7267",
+      "approval": "approved",
+      "caseId": "case-85edcfc173a942aa82fa",
+      "check": {
+        "target": "pdf.annotation_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "/Root /Pages/* /Annots",
+        "method": "pypdf 6.14.2",
+        "notes": "",
+        "recordPath": "local-evidence://case-85edcfc173a942aa82fa.json",
+        "recordSha256": "5590f83754579a923ed662faa8baf2f9f6bd729983977d760929a04e73e5350d",
+        "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+      },
+      "expected": 0,
+      "factReference": {
+        "definition": "统计每个可达页面 /Annots 数组中的条目；包含 Widget、Link 等注释子类型，不把注释正文数量混入。",
+        "digest": "88967a1ebc9bbec46203fa39052650e9757e1c2bebf0e3856660a504428bc8db",
+        "id": "case-85edcfc173a942aa82fa:fact-4f6380dde6",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.200698+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pdf.annotation_count",
+            "type": "target"
+          },
+          "definitionDigest": "e81bef79ecb703cec44d57ab6ba6b3d2067faa3b0d156b718c72a2e3546a4879",
+          "factKey": "pdf.annotation_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pdf.annotation_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pdf",
+      "id": "case-85edcfc173a942aa82fa:fact-4f6380dde6",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pdf.annotation_count"
+      ],
+      "question": "PDF 页面树中有多少个注释对象？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "b7c2aa31ec8ba9ffe8bbc3d019d180714672a280a0a7e0e4010502b7dfa6a5d9",
+      "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+    },
+    {
+      "answerDigest": "448699934ebdf63578cfb32695590e2a4c4d6c390be3aca6cfc020816acea39f",
+      "approval": "approved",
+      "caseId": "case-85edcfc173a942aa82fa",
+      "check": {
+        "target": "pdf.form_field_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "/Root /AcroForm /Fields",
+        "method": "pypdf 6.14.2",
+        "notes": "",
+        "recordPath": "local-evidence://case-85edcfc173a942aa82fa.json",
+        "recordSha256": "5590f83754579a923ed662faa8baf2f9f6bd729983977d760929a04e73e5350d",
+        "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+      },
+      "expected": 0,
+      "factReference": {
+        "definition": "由 AcroForm 字段树按完整字段名去重计数；同一字段的 Widget 外观不重复计数。",
+        "digest": "6382b7f12eced2f8155b417ebe25b452c458f80ec55cb3fdb5eca641dd3f5a5f",
+        "id": "case-85edcfc173a942aa82fa:fact-679250ec17",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.200717+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pdf.form_field_count",
+            "type": "target"
+          },
+          "definitionDigest": "af149d35c73d8705b1040865a84e1c8033f67fae1832c1a65f614a158322bcb4",
+          "factKey": "pdf.form_field_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pdf.form_field_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pdf",
+      "id": "case-85edcfc173a942aa82fa:fact-679250ec17",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pdf.form_field_count"
+      ],
+      "question": "PDF AcroForm 中有多少个表单字段？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "31c91fc783a1e92f2801bb9ee7a6c2c174bc7785d64ac9b6983d1c8f290c89df",
+      "sourceSha256": "85edcfc173a942aa82fa0123f51cb2fffed11e15b9a328970e74e3a66bbab155"
+    },
+    {
+      "answerDigest": "6dc2b59f6d3aef56930c0853f3c49110c7d1dda1b449304364493554bb4a99a5",
+      "approval": "approved",
+      "caseId": "case-172cf666bbac39b34064",
+      "check": {
+        "target": "security.encrypted",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "trailer /Encrypt",
+        "method": "pypdf 6.14.2",
+        "notes": "",
+        "recordPath": "local-evidence://case-172cf666bbac39b34064.json",
+        "recordSha256": "94ea0f758e347e6cc8586e3cc7f4a716272a2f28fbd4f0f9f7dc6e4555324dc5",
+        "sourceSha256": "172cf666bbac39b34064a3d62390133df5e9e0957f7ea5803328ef00d0b17972"
+      },
+      "expected": true,
+      "factReference": {
+        "definition": "检查 PDF trailer 的 /Encrypt，不以能否直接打开推断。",
+        "digest": "8541023cdd932ef0239bed5b32763aa9eb86781338c73a21e0c03e5e3adb1483",
+        "id": "case-172cf666bbac39b34064:fact-b3c6facd58",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.200994+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "security.encrypted",
+            "type": "target"
+          },
+          "definitionDigest": "af325894b40f864bb045ebc88ce0e561319ca17b4abc8fd789c75108ad7d5bef",
+          "factKey": "security.encrypted",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "security.encrypted"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pdf",
+      "id": "case-172cf666bbac39b34064:fact-b3c6facd58",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "security.encrypted"
+      ],
+      "question": "PDF 是否存在加密字典？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "668640d11d0480c91ecc9eb52dd53979eb0c9313fc2401f98c81e551a37d8b01",
+      "sourceSha256": "172cf666bbac39b34064a3d62390133df5e9e0957f7ea5803328ef00d0b17972"
+    },
+    {
       "answerDigest": "2ca3759923b78f880a33ccae553614e5435895c6fe9aadf17bbe2c502b62e695",
       "approval": "approved",
       "caseId": "case-8c30f81956e2f8c9e243",
@@ -243,6 +487,67 @@
       "reviewStatus": "approved",
       "sourceAnswerDigest": "ec8ccffce249821c7067c585bd0a6110cfd27d9f65f152a6ba45c86502504e14",
       "sourceSha256": "4b0efc5b69297cd64394ae1c3e891ac245e979c0195d4fc4166d9298efcdc0f6"
+    },
+    {
+      "answerDigest": "c01caea70b1e9fbe9c7651883614588960ab5d3322a2697164e7f96a37f631e2",
+      "approval": "approved",
+      "caseId": "case-12afdb506994aa0089ae",
+      "check": {
+        "target": "security.encrypted",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "CFB 流目录",
+        "method": "olefile 0.47",
+        "notes": "",
+        "recordPath": "local-evidence://case-12afdb506994aa0089ae.json",
+        "recordSha256": "b97a27a6cf846df923c919cc1a332d825df1ed17cb7009cf33d53491b94b186a",
+        "sourceSha256": "12afdb506994aa0089ae3cead911b1f31ac2866ac921ddfdd1a528c01a5ac2f0"
+      },
+      "expected": true,
+      "factReference": {
+        "definition": "CFB 顶层同时含 EncryptionInfo 和 EncryptedPackage；此口径不包含旧 BIFF 内部 FILEPASS 加密。",
+        "digest": "69c9e821219c6d4f2af49af8a941e8c5c1d7d6a764422a7145206f5daa8b1677",
+        "id": "case-12afdb506994aa0089ae:fact-30c13ff3ac",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.202764+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "security.encrypted",
+            "type": "target"
+          },
+          "definitionDigest": "011d89523564bef2e396db920563a8c63e0250ce5d11d1487ea337515c72bd01",
+          "factKey": "security.encrypted",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "security.encrypted"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "docx",
+      "id": "case-12afdb506994aa0089ae:fact-30c13ff3ac",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "security.encrypted"
+      ],
+      "question": "是否存在 Office 整包加密结构？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "ec0595806b990e3470c6f539acbf747c8d5da37e8ddb62352793953bf3d7d2f6",
+      "sourceSha256": "12afdb506994aa0089ae3cead911b1f31ac2866ac921ddfdd1a528c01a5ac2f0"
     },
     {
       "answerDigest": "7b936527ba997c60c21579a881764a874414be42159f2d6532cff9c46620e607",
@@ -548,6 +853,67 @@
       "reviewStatus": "approved",
       "sourceAnswerDigest": "dbdc2e85c1824e0f763c68c03c894919eb5cc17cae7e8a6757f21d50e3559488",
       "sourceSha256": "8c600e97d719b0266dcfb49c1872feb8d10c6ed12bc768ff16ace7dae555ebfc"
+    },
+    {
+      "answerDigest": "5569618874d0aa7ec460fe0a8ae659f79f0fcfbbb39c29559382c874d905d264",
+      "approval": "approved",
+      "caseId": "case-604e85052adf13afa6dd",
+      "check": {
+        "target": "security.encrypted",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "CFB 流目录",
+        "method": "olefile 0.47",
+        "notes": "",
+        "recordPath": "local-evidence://case-604e85052adf13afa6dd.json",
+        "recordSha256": "e14b319145951619051eb3710c4e98a0dc292ad6fffd6157900013144b490ab8",
+        "sourceSha256": "604e85052adf13afa6dd047e67b024bdee1b3cf7be4bb81a7dcd72c8833d7ad6"
+      },
+      "expected": true,
+      "factReference": {
+        "definition": "CFB 顶层同时含 EncryptionInfo 和 EncryptedPackage；此口径不包含旧 BIFF 内部 FILEPASS 加密。",
+        "digest": "55a5e47f5cdaa3fc8ed17ecb6db8f9b82309cf4d51a487d4a3ad7efa66ffae08",
+        "id": "case-604e85052adf13afa6dd:fact-2c05cd2d18",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.204764+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "security.encrypted",
+            "type": "target"
+          },
+          "definitionDigest": "011d89523564bef2e396db920563a8c63e0250ce5d11d1487ea337515c72bd01",
+          "factKey": "security.encrypted",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "security.encrypted"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "xlsx",
+      "id": "case-604e85052adf13afa6dd:fact-2c05cd2d18",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "security.encrypted"
+      ],
+      "question": "是否存在 Office 整包加密结构？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "82013518625112e99f64ee22eb409d5cbdd914b589c138f1e458ac1e8ea007f6",
+      "sourceSha256": "604e85052adf13afa6dd047e67b024bdee1b3cf7be4bb81a7dcd72c8833d7ad6"
     },
     {
       "answerDigest": "302030b57f7449837622dfb88ac60e110c49da7963c01e6cd1d49198f91a1fbe",
@@ -975,6 +1341,67 @@
       "reviewStatus": "approved",
       "sourceAnswerDigest": "18944f100c9a46e908ed8f8fc0f9c153c1de814b9316bad0f3bf38ea91a7625e",
       "sourceSha256": "4c795ce701a8ae1e796f6732798d0aebd32422430ccf6c6f2ef3bfe9954a6326"
+    },
+    {
+      "answerDigest": "ee1be46de91c639620f8096dc1c2671498af0b16986d722c233d0a0f79ac418b",
+      "approval": "approved",
+      "caseId": "case-d5bdb48f6f2a967fafe1",
+      "check": {
+        "target": "security.encrypted",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "CFB 流目录",
+        "method": "olefile 0.47",
+        "notes": "",
+        "recordPath": "local-evidence://case-d5bdb48f6f2a967fafe1.json",
+        "recordSha256": "862b8d40e9fe6e131c0fbfca226988858a60b6edc5a10c91be5eada58f7ec0f5",
+        "sourceSha256": "d5bdb48f6f2a967fafe113dcb773ed7e25c51e78a133b1ba28b9604ef164139a"
+      },
+      "expected": true,
+      "factReference": {
+        "definition": "CFB 顶层同时含 EncryptionInfo 和 EncryptedPackage；此口径不包含旧 BIFF 内部 FILEPASS 加密。",
+        "digest": "675cd5dfed1a070ebcdc7cbfcb3e5150573826fd5a00a23c0d0567c81fcc3588",
+        "id": "case-d5bdb48f6f2a967fafe1:fact-af3912921f",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.207848+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "security.encrypted",
+            "type": "target"
+          },
+          "definitionDigest": "011d89523564bef2e396db920563a8c63e0250ce5d11d1487ea337515c72bd01",
+          "factKey": "security.encrypted",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "security.encrypted"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pptx",
+      "id": "case-d5bdb48f6f2a967fafe1:fact-af3912921f",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "security.encrypted"
+      ],
+      "question": "是否存在 Office 整包加密结构？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "3c08b87f18809a26198d68b317820ce885712d2c4bf23e662f980f4e4e99c041",
+      "sourceSha256": "d5bdb48f6f2a967fafe113dcb773ed7e25c51e78a133b1ba28b9604ef164139a"
     },
     {
       "answerDigest": "1e3dee179271bc22a341095c5dcde9b280c3dba98a892f54f175a82462278f6b",
@@ -3421,6 +3848,874 @@
       "reviewStatus": "approved",
       "sourceAnswerDigest": "419e954ad9dde9da38dbf8a74b2d3479b80dd61b85a23ba5ecc5139f3cc49811",
       "sourceSha256": "d119d8160dc912d639cbe8047c526c6dc58ca9dcd6b51bd5870c247d64413163"
+    },
+    {
+      "answerDigest": "129ae1f067c4c8847af22c08ba6a5e9daa000b4125459fc328e965eac5e7f2a9",
+      "approval": "approved",
+      "caseId": "case-ea1e65eec57d5bfaa3aa",
+      "check": {
+        "target": "document.mime_type",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "格式规范",
+        "method": "IANA / Office 规范",
+        "notes": "",
+        "recordPath": "local-evidence://case-ea1e65eec57d5bfaa3aa.json",
+        "recordSha256": "f4bc8a0ddb15401e0b9c9f5aa8f45342af5647f3e12da329ec85cf266e19bc57",
+        "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+      },
+      "expected": "application/x-iwork-keynote-sffkey",
+      "factReference": {
+        "definition": "依据文件格式规范确定的标准 MIME 媒体类型。",
+        "digest": "b505013e503862acd51b779e3094fb48a3430ba190c52599a38a6fe8ee774270",
+        "id": "case-ea1e65eec57d5bfaa3aa:fact-01a5cc3dcc",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214070+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "document.mime_type",
+            "type": "target"
+          },
+          "definitionDigest": "18833a9161fda0656c6f1fa867c2e1f7a7dbc09da17c8dd47f8f74d580f480d4",
+          "factKey": "document.mime_type",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "document.mime_type"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "key",
+      "id": "case-ea1e65eec57d5bfaa3aa:fact-01a5cc3dcc",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "document.mime_type"
+      ],
+      "question": "文件验证后的 MIME 类型是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "5f59c937430f217b306deea056557065ce3e4a87ff9c87e4c9215ad864aa48e1",
+      "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+    },
+    {
+      "answerDigest": "081cb91a5a7a60265083409817181594a602264076929194293b346041542c05",
+      "approval": "approved",
+      "caseId": "case-ea1e65eec57d5bfaa3aa",
+      "check": {
+        "target": "keynote.slide_size",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-ea1e65eec57d5bfaa3aa.json",
+        "recordSha256": "f4bc8a0ddb15401e0b9c9f5aa8f45342af5647f3e12da329ec85cf266e19bc57",
+        "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+      },
+      "expected": {
+        "height_pt": 1080.0,
+        "width_pt": 1920.0
+      },
+      "factReference": {
+        "definition": "Cupertino fixture 记录的 1080p 画布尺寸。",
+        "digest": "894056c1de8fdf6844345a804712e387ae3f53e4fd255b1b4f23063813f47b65",
+        "id": "case-ea1e65eec57d5bfaa3aa:fact-513204ae0f",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214183+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "keynote.slide_size",
+            "type": "target"
+          },
+          "definitionDigest": "7dc00c9028fda98cb7e03fb5951c5067877df29319f437a23a45d67e878b036c",
+          "factKey": "keynote.slide_size",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "keynote.slide_size"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "key",
+      "id": "case-ea1e65eec57d5bfaa3aa:fact-513204ae0f",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "keynote.slide_size"
+      ],
+      "question": "Keynote 画布物理尺寸是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "af1ea4a6fd91bd37af74c84f1ad325e1bcf380ed05e00e7b3dedbed73135cbe5",
+      "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+    },
+    {
+      "answerDigest": "c5adc4a57a3df807c4bc8e6f23e8504abecfc1d09b10d77e0af24d6ec643e19c",
+      "approval": "approved",
+      "caseId": "case-ea1e65eec57d5bfaa3aa",
+      "check": {
+        "target": "keynote.aspect_ratio",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-ea1e65eec57d5bfaa3aa.json",
+        "recordSha256": "f4bc8a0ddb15401e0b9c9f5aa8f45342af5647f3e12da329ec85cf266e19bc57",
+        "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+      },
+      "expected": {
+        "decimal": 1.7777777777777777,
+        "height": 9,
+        "width": 16
+      },
+      "factReference": {
+        "definition": "Cupertino fixture 记录的 16:9 画布比例。",
+        "digest": "700a08281cf10e43812f5c6ab04901a148f541b59c725c3ea78c06492c9b96c7",
+        "id": "case-ea1e65eec57d5bfaa3aa:fact-a44e904d75",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214203+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "keynote.aspect_ratio",
+            "type": "target"
+          },
+          "definitionDigest": "2def1529bee3964f53ce46da7f8c7ac90862248c54c32a7d7f273b4efac70e4e",
+          "factKey": "keynote.aspect_ratio",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "keynote.aspect_ratio"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "key",
+      "id": "case-ea1e65eec57d5bfaa3aa:fact-a44e904d75",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "keynote.aspect_ratio"
+      ],
+      "question": "Keynote 画布宽高比是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "ce7649802787cd715eef53dd3727511efffc44fac9f1bb8eeb0d07028f4b7364",
+      "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+    },
+    {
+      "answerDigest": "9de88f3fd2f7b60e53a0a331c32273def8b8965777b4cc2fa275fcb5daf177b8",
+      "approval": "approved",
+      "caseId": "case-ea1e65eec57d5bfaa3aa",
+      "check": {
+        "target": "keynote.orientation",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-ea1e65eec57d5bfaa3aa.json",
+        "recordSha256": "f4bc8a0ddb15401e0b9c9f5aa8f45342af5647f3e12da329ec85cf266e19bc57",
+        "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+      },
+      "expected": "landscape",
+      "factReference": {
+        "definition": "依据宽度大于高度判定的横向画布。",
+        "digest": "034c265147d3e5f97f8efc0fe65855dff5380715be2a24289a579c1096747a2e",
+        "id": "case-ea1e65eec57d5bfaa3aa:fact-ddd3b5c53b",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214222+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "keynote.orientation",
+            "type": "target"
+          },
+          "definitionDigest": "9cc4c485c0c703382667ed74467426c5a4d67d2bd6ddac66775efaec817441e8",
+          "factKey": "keynote.orientation",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "keynote.orientation"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "key",
+      "id": "case-ea1e65eec57d5bfaa3aa:fact-ddd3b5c53b",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "keynote.orientation"
+      ],
+      "question": "Keynote 画布方向是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "84394d3054dd95718c787d4e25516e21218cc05c786c4ad88f4215b7bcc2cb31",
+      "sourceSha256": "ea1e65eec57d5bfaa3aa4f42fcde26d7a38d60bea39756d135d59ba3fbe44f6b"
+    },
+    {
+      "answerDigest": "f4b47ffe6a08ffa782fcde7399478e93cafd4f06c443ce016ffded7e2178eace",
+      "approval": "approved",
+      "caseId": "case-c8afad07f828f177a0d9",
+      "check": {
+        "target": "document.mime_type",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "格式规范",
+        "method": "IANA / Office 规范",
+        "notes": "",
+        "recordPath": "local-evidence://case-c8afad07f828f177a0d9.json",
+        "recordSha256": "3291138f20df68f2541d0bb68c40078f777e159172ea3529b0b22dd000fd0e32",
+        "sourceSha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+      },
+      "expected": "application/x-iwork-numbers-sffnumbers",
+      "factReference": {
+        "definition": "依据文件格式规范确定的标准 MIME 媒体类型。",
+        "digest": "49e67322ca753d397afca3540d6e367f256460eb99b7d6b4fcd3df44ea36ddbc",
+        "id": "case-c8afad07f828f177a0d9:fact-035eccb998",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214578+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "document.mime_type",
+            "type": "target"
+          },
+          "definitionDigest": "18833a9161fda0656c6f1fa867c2e1f7a7dbc09da17c8dd47f8f74d580f480d4",
+          "factKey": "document.mime_type",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "document.mime_type"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "numbers",
+      "id": "case-c8afad07f828f177a0d9:fact-035eccb998",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "document.mime_type"
+      ],
+      "question": "文件验证后的 MIME 类型是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "668c435e849b2e8db2dc4f34d203fa04c8f068cd868084140980174512a59cf6",
+      "sourceSha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+    },
+    {
+      "answerDigest": "f54db400b74f554b8726964d97ccc9df523044fe4b0f36458ab23cc8e5116f6b",
+      "approval": "approved",
+      "caseId": "case-c8afad07f828f177a0d9",
+      "check": {
+        "target": "numbers.sheet_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-c8afad07f828f177a0d9.json",
+        "recordSha256": "3291138f20df68f2541d0bb68c40078f777e159172ea3529b0b22dd000fd0e32",
+        "sourceSha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+      },
+      "expected": 3,
+      "factReference": {
+        "definition": "Cupertino fixture 记录的逻辑工作表数量。",
+        "digest": "165895a26bb54aa2372ed7b86d2707cd8177b557b28963f9426f7cf00661178e",
+        "id": "case-c8afad07f828f177a0d9:fact-04b26fe7cc",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214663+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "numbers.sheet_count",
+            "type": "target"
+          },
+          "definitionDigest": "5b26186b9aaaac9873338e9a96cc061ca151787bbce1edd26d1c8f7a111f636f",
+          "factKey": "numbers.sheet_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "numbers.sheet_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "numbers",
+      "id": "case-c8afad07f828f177a0d9:fact-04b26fe7cc",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "numbers.sheet_count"
+      ],
+      "question": "Numbers 文档中有多少张逻辑工作表？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "ffa2996a54ac09945a4c52e263b7597861221eb6cd9e2cfe48589fa7a3cbc9aa",
+      "sourceSha256": "c8afad07f828f177a0d9dbbcff83873bf512c9e72757b17b8fd077757b0553fe"
+    },
+    {
+      "answerDigest": "b3ddb4ff212b4d98b7ffe168dcc9111a1017796d9ab4c2ed280c5c5e6518e811",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "document.mime_type",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "格式规范",
+        "method": "IANA / Office 规范",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": "application/x-iwork-pages-sffpages",
+      "factReference": {
+        "definition": "依据文件格式规范确定的标准 MIME 媒体类型。",
+        "digest": "a82a014b47df8e2f231c6a588e5d32cdf4f8d901b5e049d0bf1b89c11a7949f7",
+        "id": "case-f3af645b49ebddceccb2:fact-51673505c8",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214754+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "document.mime_type",
+            "type": "target"
+          },
+          "definitionDigest": "18833a9161fda0656c6f1fa867c2e1f7a7dbc09da17c8dd47f8f74d580f480d4",
+          "factKey": "document.mime_type",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "document.mime_type"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-51673505c8",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "document.mime_type"
+      ],
+      "question": "文件验证后的 MIME 类型是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "5fede339e97e6755f33fef34e47a0c3f33c1bf74a77b7dddf75003b520375970",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "a9c0505a88381acb34c92f43a92cf0a8819e0a1f1b64f5e1bdfbf0d79e19bce6",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.section_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": 3,
+      "factReference": {
+        "definition": "Cupertino fixture 记录的章节数。",
+        "digest": "315b3f26d30e513acf97293ac08f7ba0d589aa265bb3aa1f35d945268957b4bf",
+        "id": "case-f3af645b49ebddceccb2:fact-5ea23758fe",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214840+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.section_count",
+            "type": "target"
+          },
+          "definitionDigest": "9b9f2f7641a5afc507e35eeb7d8ddfb2131ec0f829120c9ff71c7e684d297dc7",
+          "factKey": "pages.section_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.section_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-5ea23758fe",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.section_count"
+      ],
+      "question": "Pages 文档中有多少个章节？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "fa6f021944b65b0ebc717d4f3254a928ce12935c13fac7e40710efaec5067a96",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "d256beae0004fd424bca2910f682811dc61ead1f7d9df5429e00f41fd98e81db",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.section_names",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": [
+        "Blank",
+        "Blank",
+        "Blank"
+      ],
+      "factReference": {
+        "definition": "Cupertino fixture 记录的章节名称。",
+        "digest": "74140c3a5b09ce7b22014d452ba94c68c82376ac7c8e544bc1938abcff987e0d",
+        "id": "case-f3af645b49ebddceccb2:fact-8cde76bb3a",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214861+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.section_names",
+            "type": "target"
+          },
+          "definitionDigest": "1c754485aa393fa4ab18bdcfb168a74e421138f305d55ca66ad5ec6418742461",
+          "factKey": "pages.section_names",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.section_names"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-8cde76bb3a",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.section_names"
+      ],
+      "question": "Pages 章节名称有序列表是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "26d233d76d9bcbde01112d9449e2e449233f4b6e46279461be334b782bbe47f8",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "69c3d8e225bc16f769049aaabc3b180720998dbcf4d20bc4fe561306d700f708",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.cached_page_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": 31,
+      "factReference": {
+        "definition": "Cupertino fixture 记录的已渲染缓存页数。",
+        "digest": "74fd5537e4ce2e4476cb5be817501e232ea9dba1a9dae3584a40dc0b1360dd6f",
+        "id": "case-f3af645b49ebddceccb2:fact-f6ebc4d031",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214881+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.cached_page_count",
+            "type": "target"
+          },
+          "definitionDigest": "dcc16e41b9f1fbe0a6b5c7d301795645656472e6645598ea4e08273aa88a0c0f",
+          "factKey": "pages.cached_page_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.cached_page_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-f6ebc4d031",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.cached_page_count"
+      ],
+      "question": "Pages 渲染缓存页数是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "e01e2f3f2554ba4342e87845cdf41a2f6fdbf0f700d97c910cadb3dc30bb0af3",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "32694315148bda6f4a5cef81486249c05f6f2291a6b6e6bbb209443a8f8664d4",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.body_text_length",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": 29534,
+      "factReference": {
+        "definition": "Cupertino fixture 记录的正文纯文字符数。",
+        "digest": "a4517588ee8628cf772c6ed2a5de985440fe305169c99aaf4e5fce56c03021e2",
+        "id": "case-f3af645b49ebddceccb2:fact-68f6169857",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214901+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.body_text_length",
+            "type": "target"
+          },
+          "definitionDigest": "eb63951adb403245e79655e763d6d89e142e3bcd9a1fe3f03bf5ed0877a4cab5",
+          "factKey": "pages.body_text_length",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.body_text_length"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-68f6169857",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.body_text_length"
+      ],
+      "question": "Pages 正文文本长度是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "8508827b784f385a72930f3b4a687a4beab938fa4a0003f82b70eceaa201fb30",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "397ea9aaadba7da31007b857aa3c76b5f7110f8bc24ea02a967cba88daa1a2f2",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.body_paragraph_break_count",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": 438,
+      "factReference": {
+        "definition": "Cupertino fixture 记录的正文段落换行符计数。",
+        "digest": "0b33fdcec98323890a3fa0e11c9f2f244258a716d0753e3cd8be5521bc388164",
+        "id": "case-f3af645b49ebddceccb2:fact-af300ca976",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214925+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.body_paragraph_break_count",
+            "type": "target"
+          },
+          "definitionDigest": "a04dc4605e3032537f0b65a609e2e4d2f1eec21e9bf4ffa8039e3fb13e349841",
+          "factKey": "pages.body_paragraph_break_count",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.body_paragraph_break_count"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-af300ca976",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.body_paragraph_break_count"
+      ],
+      "question": "Pages 正文段落换行数是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "74c861e110c379a771979e35759ed1f687beb284bb4dc3a1a3ade2b7d64a1cb2",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "cc56b75c57fe0abb9338579d185fc73dcf05b34c12db44088c156f9f7061ec48",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.page_size",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": {
+        "height_pt": 792.0,
+        "width_pt": 612.0
+      },
+      "factReference": {
+        "definition": "Cupertino fixture 记录的 US Letter 页面物理尺寸。",
+        "digest": "0f09f53becd84d7655020277dd0dc5c112f0ac9e2fb28caf783be89a26b0688a",
+        "id": "case-f3af645b49ebddceccb2:fact-b39c11f467",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214944+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.page_size",
+            "type": "target"
+          },
+          "definitionDigest": "ca8d213efd61d2be0bf8450b30b9234bdcd977cb022c4ec161c898ad778cf6f4",
+          "factKey": "pages.page_size",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.page_size"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-b39c11f467",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.page_size"
+      ],
+      "question": "Pages 页面物理尺寸是多少？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "0afdf11a4da9db88935d9668a4e64518d9f0a180d2153ae398bd385390dc0a8d",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+    },
+    {
+      "answerDigest": "de892ce9042ebadc87635afdecf81ac891521eb88d4134cc2c0efa49d276dece",
+      "approval": "approved",
+      "caseId": "case-f3af645b49ebddceccb2",
+      "check": {
+        "target": "pages.orientation",
+        "type": "target"
+      },
+      "evidence": {
+        "inspectorSha256": "4934964991381297e9ad4cca2c0640746d0e05e04b8ffe91cda1ba76adc57ba9",
+        "location": "IWA metadata",
+        "method": "Cupertino fixture attribution",
+        "notes": "",
+        "recordPath": "local-evidence://case-f3af645b49ebddceccb2.json",
+        "recordSha256": "c2db655a16ea75ea6950cf06f6734b9cdf05ba934951656bf2d9504d7eb31f3f",
+        "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
+      },
+      "expected": "portrait",
+      "factReference": {
+        "definition": "依据页面宽度小于高度判定的纵向页面。",
+        "digest": "7b01c5b1c9bff70aa941d85c5a54cc0741e1a6312f2842571ba6ebef7557abea",
+        "id": "case-f3af645b49ebddceccb2:fact-69867dd3ab",
+        "mapping": {
+          "actor": "mapping-reconciler",
+          "adapter": "deckprobe",
+          "at": "2026-09-07T08:26:23.214963+00:00",
+          "catalogDigest": "ebfa7b27cbaf4f6434a77db4dc69bee79b60582b544e8752d84aab58eec09b9d",
+          "check": {
+            "target": "pages.orientation",
+            "type": "target"
+          },
+          "definitionDigest": "e43acab295a29ab57d692a48859128d61be3f32b46281b41b82afe6fcfa1c223",
+          "factKey": "pages.orientation",
+          "note": "按集中规则匹配统计口径；GT 的已知值与人工审批仍独立检查。",
+          "options": [
+            "-l",
+            "deep",
+            "-t",
+            "pages.orientation"
+          ],
+          "productVersion": "2.5.0",
+          "requirement": "PRO-R03",
+          "revision": 1,
+          "ruleVersion": "2.5.0-mapping-v2",
+          "status": "mapped"
+        }
+      },
+      "format": "pages",
+      "id": "case-f3af645b49ebddceccb2:fact-69867dd3ab",
+      "options": [
+        "-l",
+        "deep",
+        "-t",
+        "pages.orientation"
+      ],
+      "question": "Pages 页面方向是什么？",
+      "requirement": "PRO-R03",
+      "reviewStatus": "approved",
+      "sourceAnswerDigest": "a7d3d73136bfc9c7e1db54f2efe2a19a58ce8e4391e41f2e72d2f0c4da29b092",
+      "sourceSha256": "f3af645b49ebddceccb27ff13561caf7bdb1c0ca895b46b463113c94f273b9cb"
     },
     {
       "answerDigest": "d40299a4e62c911d5404bc757314f17cf691392a962b24983c5de460e5537f2f",

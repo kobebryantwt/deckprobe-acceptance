@@ -21,7 +21,8 @@ from benchmark.acceptance.cli import check
 from benchmark.acceptance.report_view import comparison_kind, target_observation, capture_context
 from benchmark.acceptance.ci_snapshot import export_snapshot, materialize_snapshot, validate_snapshot
 from benchmark.acceptance.github_ci import (aggregate as aggregate_ci, freeze as freeze_ci,
-                                            publish_history, sanitize_publication, _platform_smoke_sample)
+                                            publish_history, sanitize_publication, _canonical_arch,
+                                            _platform_smoke_sample)
 from benchmark.acceptance import security
 
 SCENARIOS=['identity','content_mismatch','missing_vs_zero','positive_and_negative_security','documented_limit','budget_boundary']
@@ -208,6 +209,12 @@ class AcceptanceTests(unittest.TestCase):
         ]})
         lock = {'policy': {'performance': {'cases': ['ordinary-pdf']}}}
         self.assertEqual(_platform_smoke_sample(lock, snapshot)['id'], 'ordinary-pdf')
+
+    def test_platform_arch_names_are_normalized_before_comparison(self):
+        self.assertEqual(_canonical_arch('aarch64'), 'arm64')
+        self.assertEqual(_canonical_arch('arm64'), 'arm64')
+        self.assertEqual(_canonical_arch('amd64'), 'x86_64')
+        self.assertEqual(_canonical_arch('x86_64'), 'x86_64')
 
     def test_process_timeout_kills_child_group(self):
         sentinel=self.root/'escaped'
