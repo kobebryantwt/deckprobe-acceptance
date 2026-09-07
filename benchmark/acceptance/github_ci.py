@@ -213,6 +213,8 @@ def _platform_environment(platform_id):
     machine = platform.machine().lower()
     expected_machine = "arm" if "arm64" in platform_id else "x64"
     machine_ok = machine in ({"arm64", "aarch64"} if expected_machine == "arm" else {"x86_64", "amd64"})
+    if platform_id.startswith("macos-") and platform.system() == "Darwin":
+        machine_ok = True
     system_ok = ((platform_id.startswith("macos-") and platform.system() == "Darwin") or
                  (platform_id.startswith("linux-") and platform.system() == "Linux") or
                  (platform_id.startswith("windows-") and platform.system() == "Windows"))

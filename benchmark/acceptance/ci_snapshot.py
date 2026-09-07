@@ -227,7 +227,7 @@ def validate_snapshot(folder, require_ready=True, require_checksums=True):
     sums = folder / "SHA256SUMS"
     if sums.is_file():
         listed = set()
-        for line in sums.read_text().splitlines():
+        for line in sums.read_text(encoding="utf-8").splitlines():
             expected, separator, name = line.partition("  ")
             listed.add(name)
             path = folder / name
@@ -240,7 +240,7 @@ def validate_snapshot(folder, require_ready=True, require_checksums=True):
     if require_ready and (snapshot.get("status") != "approved" or not (folder / "READY").is_file()):
         errors.append("snapshot is not READY")
     if require_ready and (folder / "READY").is_file() and sums.is_file():
-        if (folder / "READY").read_text().strip() != sha(sums): errors.append("READY binding mismatch")
+        if (folder / "READY").read_text(encoding="utf-8").strip() != sha(sums): errors.append("READY binding mismatch")
     return sorted(set(errors))
 
 

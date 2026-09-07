@@ -6,6 +6,13 @@ import shutil
 import sys
 import urllib.error
 
+if hasattr(sys.stdout, "reconfigure"):
+    try: sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception: pass
+if hasattr(sys.stderr, "reconfigure"):
+    try: sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception: pass
+
 from .common import CODE, DEFAULT_HOME, atomic, code_hash, digest, locked, now, process, read, sha, verify_seal
 from .corpus import prepare_corpus, record_decisions
 from .coverage import capture_catalog

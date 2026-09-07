@@ -42,7 +42,7 @@ def sha(path):
 
 def read(path, default=None):
     p = Path(path)
-    return json.loads(p.read_text()) if p.exists() else default
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else default
 
 
 def atomic(path, value):
@@ -50,7 +50,7 @@ def atomic(path, value):
     p.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(prefix="." + p.name, dir=p.parent)
     try:
-        with os.fdopen(fd, "w") as f:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
             if isinstance(value, str):
                 f.write(value)
             else:

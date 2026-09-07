@@ -31,6 +31,8 @@ concurrency:
 env:
   ACCEPTANCE_SNAPSHOT: ci-input/current
   PYTHONUNBUFFERED: "1"
+  PYTHONUTF8: "1"
+  PYTHONIOENCODING: "utf-8"
   GITHUB_TOKEN: ${{ github.token }}
 
 jobs:
@@ -155,7 +157,7 @@ jobs:
       matrix:
         include:
           - { id: macos-arm64, runner: macos-15 }
-          - { id: macos-x64, runner: macos-13 }
+          - { id: macos-x64, runner: macos-15 }
           - { id: linux-arm64-gnu, runner: ubuntu-24.04-arm }
           - { id: windows-x64, runner: windows-2025 }
     runs-on: ${{ matrix.runner }}
