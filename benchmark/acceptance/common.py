@@ -152,9 +152,10 @@ def code_hash():
 
 
 def seal(folder):
-    files = {str(p.relative_to(folder)): sha(p) for p in sorted(Path(folder).rglob("*"))
+    folder = Path(folder).resolve()
+    files = {p.relative_to(folder).as_posix(): sha(p) for p in sorted(folder.rglob("*"))
              if p.is_file() and p.name != "evidence-manifest.json"}
-    atomic(Path(folder) / "evidence-manifest.json", {"algorithm": "sha256", "files": files})
+    atomic(folder / "evidence-manifest.json", {"algorithm": "sha256", "files": files})
     return digest(files)
 
 
@@ -166,8 +167,15 @@ def verify_seal(folder):
     base = Path(folder).resolve()
     for name, expected in manifest["files"].items():
         p = (base / name).resolve()
-        if base not in p.parents or not p.is_file() or sha(p) != expected:
+        try:
+            p.relative_to(base)
+        except ValueError:
+            errors.append("Evidence escapes base: " + name)
+            continue
+        if not p.is_file() or sha(p) != expected:
             errors.append("Evidence mismatch: " + name)
-    actual={str(p.relative_to(base)) for p in base.rglob('*') if p.is_file() and p.name!='evidence-manifest.json'}
-    if actual!=set(manifest['files']):errors.append('Evidence inventory differs from sealed manifest')
+    actual_files = {p.relative_to(base).as_posix(): sha(p) for p in sorted(base.rglob("*"))
+                    if p.is_file() and p.name != "evidence-manifest.json"}
+    for name in sorted(set(actual_files) - set(manifest["files"])):
+        errors.append("Unmanifested evidence file: " + name)
     return errors

@@ -244,10 +244,13 @@ def _binary_arch(path):
 
 
 def platform_smoke(lock_path, snapshot, platform_id, output):
-    lock = read(lock_path); output = Path(output); output.mkdir(parents=True, exist_ok=True)
-    target, asset_name = PLATFORMS[platform_id]
+    output = Path(output); output.mkdir(parents=True, exist_ok=True)
+    target, asset_name = PLATFORMS.get(platform_id, (platform_id, "unknown"))
     checks = []
+    lock = None
     try:
+        lock = read(lock_path)
+        if not lock: raise ValueError(f"Lock file missing or unreadable: {lock_path}")
         errors = validate_snapshot(snapshot)
         if errors: raise ValueError("; ".join(errors))
         environment = _platform_environment(platform_id)
@@ -282,10 +285,11 @@ def platform_smoke(lock_path, snapshot, platform_id, output):
                        "expected": {"target": target, "version": expected,"binaryArch":expected_arch},
                        "actual": {"asset": asset_name, "sha256": actual_hash, "environment": environment,
                                   "binaryIdentity":binary_identity,"version": version, "smoke": smoke}})
-    except (OSError, ValueError, RuntimeError) as error:
+    except Exception as error:
         checks.append({"id": "platform_" + platform_id, "requirement": "PRO-R08", "title": platform_id + " 平台 smoke",
                        "status": "blocked", "expected": target, "actual": str(error)})
-    result = job_result(lock, "platform-smoke", checks, platformId=platform_id, targetTriple=target)
+    fallback_lock = {"runId": "unknown", "inputDigest": "unknown", "candidate": {"tag": "unknown"}}
+    result = job_result(lock or fallback_lock, "platform-smoke", checks, platformId=platform_id, targetTriple=target)
     atomic(output / "job-result.json", result); seal(output)
     return result
 
@@ -446,6 +450,22 @@ def aggregate(lock_path, inputs, output):
             "report": str(output / "report.html")}
 
 
+def redact_sensitive(folder):
+    from .ci_snapshot import SENSITIVE
+    for path in Path(folder).rglob("*"):
+        if not path.is_file() or path.suffix.lower() in {".png", ".jpg", ".zip", ".gz", ".pdf"}: continue
+        try: text = path.read_text(encoding="utf-8")
+        except Exception: continue
+        modified = False
+        for i, pattern in enumerate(SENSITIVE):
+            if pattern.search(text):
+                replacement = "local-evidence://" if i < 2 else "redacted"
+                text = pattern.sub(replacement, text)
+                modified = True
+        if modified:
+            path.write_text(text, encoding="utf-8")
+
+
 def sanitize_publication(folder):
     from .ci_snapshot import SENSITIVE
     errors = []
@@ -500,6 +520,7 @@ def publish_history(run_folder, site, comparison=None):
     rows = "".join(f'<tr><td>{html.escape(r["createdAt"])}</td><td>{html.escape(r["release"])}</td><td>{r["decision"]}</td><td><a href="{r["url"]}">报告</a>' + (f' · <a href="{r["comparisonUrl"]}">差异</a>' if r.get("comparisonUrl") else '') + '</td></tr>' for r in reversed(history["runs"]))
     passed_link = ' · <a href="last-passed/report.html">最近通过基线</a>' if history.get("lastPassedRunId") else ''
     atomic(site / "index.html", '<!doctype html><meta charset="utf-8"><title>DeckProbe 验收历史</title><style>body{font:15px system-ui;margin:40px;max-width:1100px}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ddd;padding:10px}</style><h1>DeckProbe 每周发布验收</h1><p><a href="latest/report.html">查看最新报告</a>'+passed_link+'</p><table><tr><th>时间</th><th>版本</th><th>结论</th><th>报告</th></tr>'+rows+'</table>')
+    redact_sensitive(site)
     leaks = sanitize_publication(site)
     if leaks: raise ValueError("publication contains sensitive paths or values: " + ", ".join(leaks))
     return {"runId": run_id, "runs": len(history["runs"]), "site": str(site)}
