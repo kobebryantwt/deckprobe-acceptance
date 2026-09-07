@@ -1,0 +1,43 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "decimal": 1.3333333333333333,
+        "height": 3,
+        "width": 4
+      },
+      "details": {
+        "answerDigest": "4db95a679b4d06ddb977103eff4e58b9b1d38df2554b6c19106b412cfaa3e101",
+        "diagnosticMatch": true
+      },
+      "expected": {
+        "decimal": 1.3333333333333333,
+        "height": 3,
+        "width": 4
+      },
+      "featureId": "PRO-R03",
+      "id": "case-e40e68238c2b667c4255_fact-6f2e023a61",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-e40e68238c2b667c4255_fact-6f2e023a61",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.aspect_ratio",
+    "local-evidence://PPT_Zenodo_设计技术教育_批注与备注.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-a5434dee8706ba696736af9942a1e3642410e3129128ac02f43b9a14210e8a1a.json"
+  ],
+  "source": {
+    "uri": "sha256:e40e68238c2b667c4255b3d051e919cd44e19911a05f807805a2603cf3d6da21"
+  },
+  "status": "passed"
+}

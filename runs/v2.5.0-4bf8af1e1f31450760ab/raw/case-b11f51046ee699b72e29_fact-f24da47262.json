@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": true,
+      "details": {
+        "answerDigest": "6c822379af6b022ce8376cf8e825c3fd63b99b357b1e8ee05c6018b2cb0d75ed",
+        "diagnosticMatch": true
+      },
+      "expected": true,
+      "featureId": "PRO-R03",
+      "id": "case-b11f51046ee699b72e29_fact-f24da47262",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-b11f51046ee699b72e29_fact-f24da47262",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://PowerPoint旧版宏演示文稿.ppt"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-c9f97d7a48a1d2831a983b5aaa273452d81f3890806022064277366161c37228.json"
+  ],
+  "source": {
+    "uri": "sha256:b11f51046ee699b72e29a53adffe71161a59a2bb5f9369839834c974d7690a61"
+  },
+  "status": "passed"
+}

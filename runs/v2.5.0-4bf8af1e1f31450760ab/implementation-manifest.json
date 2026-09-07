@@ -1,0 +1,14 @@
+{
+  "adapters/paired-performance.mjs": "57b48bbe9516076278b127e9db9f75b45b7e76a9ab4c6a572177fcf8e1d63f57",
+  "adapters/performance.mjs": "397a8a1e8c2ba651668e1a3dcfbeeb5a8c21b80d728c726791d7172c4e19d26d",
+  "adapters/runtime.mjs": "a9a87a459a8a9d2aa8f2c4bc4fe1bae291ae096ee891cbd85ffb2bc8333c4334",
+  "config/policy.json": "7caa2c80eb87f39542b48d135feb1463c4b8871174db862bff87187f3b7c34e8",
+  "contracts.py": "aa7bfe77ca6f1ebb6d1817629610b5a498d072359cf7aa57b319dbc53cb9a9b2",
+  "coverage.py": "b7bd99f460c02cd86f37dc907354e8b8353e760e7de9325050861e898d928df2",
+  "docs/handbook.md": "35a10505517525fd1311225cdfedf7720014c64b5f860388e971ee379ad84261",
+  "github_ci.py": "827611b8d7dce5ad3eccc8b27d3927637ae697850fc970bc4afaa3211eb1f25b",
+  "linux_security.py": "a54fa5a7520ab25ea7caac14c5ad513f77c924a4c9b46dfe3111679f7fdfa6e5",
+  "runner.py": "75c1adb90796cd2ef0ed23fe746b81b0136923106a3027c5033742f34af53c99",
+  "security.py": "aefc6301a3140051395f5a9958dd760fda20a2d43722e360d5ea9acc983c41fe",
+  "supply_evidence.py": "14240eb78dc8ae8d319baabd6bd82644fde7e86c94d6560e622ecd35b5a44b36"
+}

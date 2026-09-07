@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 24,
+      "details": {
+        "answerDigest": "8b238dd7766fed61c2fdcd5b4396ccfba5c43cae7c3c3c4fdbfb4e0645da70c4",
+        "diagnosticMatch": true
+      },
+      "expected": 24,
+      "featureId": "PRO-R03",
+      "id": "case-728e4555f713a21b9ce2_fact-54d20b7f6e",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-728e4555f713a21b9ce2_fact-54d20b7f6e",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_count",
+    "local-evidence://PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-71493d2f6ada672dbe669aef73fef16b645c16be8115986454be49070a84a379.json"
+  ],
+  "source": {
+    "uri": "sha256:728e4555f713a21b9ce2cee94cc22ef20b65f4021bb0fa8a0785f8578f852fe7"
+  },
+  "status": "passed"
+}

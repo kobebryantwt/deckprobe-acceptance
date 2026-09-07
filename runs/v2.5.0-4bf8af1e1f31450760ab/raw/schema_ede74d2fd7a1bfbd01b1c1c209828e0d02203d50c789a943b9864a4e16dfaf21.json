@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_ede74d2fd7a1bfbd01b1c1c209828e0d02203d50c789a943b9864a4e16dfaf21",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_ede74d2fd7a1bfbd01b1c1c209828e0d02203d50c789a943b9864a4e16dfaf21",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.page_count",
+    "local-evidence://Word_公共书房运营规划书_55页18图表部件.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-ede74d2fd7a1bfbd01b1c1c209828e0d02203d50c789a943b9864a4e16dfaf21.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

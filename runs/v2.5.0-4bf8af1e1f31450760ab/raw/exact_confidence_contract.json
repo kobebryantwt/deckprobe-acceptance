@@ -1,0 +1,37 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "confidence": "exact",
+        "confidence_score": 1.0,
+        "path": "powerpoint.presentation_xml",
+        "source": "ppt/presentation.xml",
+        "status": "resolved",
+        "target": "powerpoint.slide_count",
+        "value": 1
+      },
+      "details": null,
+      "expected": {
+        "confidence": "exact",
+        "score": 1.0,
+        "value": 1
+      },
+      "featureId": "PRO-R05",
+      "id": "exact_confidence_contract",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "exact_confidence_contract",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/paths.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

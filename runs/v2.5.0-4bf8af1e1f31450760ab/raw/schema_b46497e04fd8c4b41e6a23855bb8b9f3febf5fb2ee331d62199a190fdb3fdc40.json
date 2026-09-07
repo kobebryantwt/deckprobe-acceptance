@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_b46497e04fd8c4b41e6a23855bb8b9f3febf5fb2ee331d62199a190fdb3fdc40",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_b46497e04fd8c4b41e6a23855bb8b9f3febf5fb2ee331d62199a190fdb3fdc40",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.encrypted",
+    "local-evidence://PowerPoint加密演示文稿.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-b46497e04fd8c4b41e6a23855bb8b9f3febf5fb2ee331d62199a190fdb3fdc40.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}
