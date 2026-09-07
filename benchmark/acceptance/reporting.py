@@ -5,6 +5,7 @@ import html
 import json
 import shutil
 from pathlib import Path
+from urllib.parse import quote
 from .common import ROOT, CODE, atomic, code_hash, now, read, seal, sha, verify_seal
 from .contracts import decision, compare_assertions
 from .report_view import render
@@ -98,10 +99,21 @@ def compare(before_folder, after_folder, output):
     a=read(Path(before_folder)/'run.json')['acceptance'];b=read(Path(after_folder)/'run.json')['acceptance']
     guards=['codeSha256','policyHash','cohortHash','answersHash','declarationsHash']
     differences=[k for k in guards if a.get(k)!=b.get(k)]
-    changes=compare_assertions(a['checks'],b['checks'],not differences)
     before_checks={x['id']:x for x in a.get('checks',[])}
-    status_transitions=[{'id':x['id'],'classification':'status_changed','before':before_checks[x['id']].get('status'),'after':x.get('status')}
-                        for x in b.get('checks',[]) if x['id'] in before_checks and before_checks[x['id']].get('status')!=x.get('status')]
+    after_checks={x['id']:x for x in b.get('checks',[])}
+    def decorate(change,classification=None):
+        old=before_checks.get(change['id'],{});new=after_checks.get(change['id'],{})
+        reference=new or old
+        requirement=reference.get('requirement')
+        anchor=lambda run,check:(f'../../runs/{quote(run,safe="")}/report.html#'
+            f'{quote(check.get("requirement",""),safe="")}/{quote(check.get("id",""),safe="")}') if check else None
+        return {**change,'classification':classification or change.get('classification'),
+                'title':reference.get('title') or change['id'],'requirement':requirement,
+                'role':reference.get('role','gate'),'expected':new.get('expected',old.get('expected')),
+                'beforeActual':old.get('actual'),'afterActual':new.get('actual'),
+                'beforeUrl':anchor(a['runId'],old) if old else None,'afterUrl':anchor(b['runId'],new) if new else None}
+    changes=[decorate(x) for x in compare_assertions(a['checks'],b['checks'],not differences)]
+    status_transitions=[decorate(x,'status_changed') for x in changes if x.get('before')!=x.get('after')]
     performance=[]
     first=read(Path(before_folder)/'evidence/performance.json',[])
     second=read(Path(after_folder)/'evidence/performance.json',[])
@@ -148,7 +160,15 @@ def _comparison_page(result):
     esc=lambda value:html.escape(str(value if value is not None else '—'))
     def change_card(row):
         kind=row.get('classification','unchanged')
-        return f'<article class="change {esc(kind)}"><div><strong>{esc(row.get("id"))}</strong><span>{esc(labels.get(kind,kind))}</span></div><p>{esc(row.get("before"))} <b>→</b> {esc(row.get("after"))}</p></article>'
+        def summary(value):
+            if value is None:return 'null / 未记录'
+            if isinstance(value,list):return '空列表' if not value else f'{len(value)} 项记录'
+            text=json.dumps(value,ensure_ascii=False,sort_keys=True) if isinstance(value,(dict,bool,int,float)) else str(value)
+            return text if len(text)<=220 else text[:217]+'…'
+        before_link=f'<a href="{esc(row["beforeUrl"])}">查看前版详情</a>' if row.get('beforeUrl') else ''
+        after_link=f'<a href="{esc(row["afterUrl"])}">查看本轮详情</a>' if row.get('afterUrl') else ''
+        expected=summary(row.get('expected'))
+        return f'''<article class="change {esc(kind)}"><header><div class="change-meta"><span>{esc(row.get('requirement') or '未分类')}</span><code>{esc(row.get('id'))}</code></div><span class="change-kind">{esc(labels.get(kind,kind))}</span><h3>{esc(row.get('title') or row.get('id'))}</h3><p class="expected">通过规则 / 预期：{esc(expected)}</p></header><div class="result-pair"><section><span>前版 · {esc(str(row.get('before') or 'missing').upper())}</span><p>{esc(summary(row.get('beforeActual')))}</p></section><b>→</b><section><span>本轮 · {esc(str(row.get('after') or 'missing').upper())}</span><p>{esc(summary(row.get('afterActual')))}</p></section></div><footer>{before_link}{after_link}</footer></article>'''
     alerts=[x for x in result.get('currentPerformance',[]) if x.get('status')=='review']
     def perf_card(row):
         name=result.get('sourceLabels',{}).get(row.get('caseId'),row.get('caseId'))
@@ -156,7 +176,7 @@ def _comparison_page(result):
         p95=f'{row.get("previousP95Ms",0):.3f} → {row.get("candidateP95Ms",0):.3f} ms · {row.get("p95RelativeDelta",0)*100:+.1f}%'
         return f'<article class="perf"><strong>{esc(name)}</strong><span>{esc(row.get("level"))} · {esc(row.get("mode"))}</span><dl><dt>p50</dt><dd>{esc(p50)}</dd><dt>p95</dt><dd>{esc(p95)}</dd></dl></article>'
     guards=', '.join(result.get('guardDifferences',[])) or '无'
-    css='''*{box-sizing:border-box}body{margin:0;background:#f4f5f0;color:#202b29;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}main{max-width:1120px;margin:auto;padding:44px 24px}a{color:#315e4d;text-decoration:none}.hero{display:flex;justify-content:space-between;gap:28px;align-items:flex-start}.eyebrow{font-size:11px;letter-spacing:1.4px;color:#315e4d}.hero h1{font-size:30px;margin:8px 0}.hero p{color:#6c7470}.actions{display:flex;gap:8px;flex-wrap:wrap}.button{background:#315e4d;color:#fff;padding:9px 14px;border-radius:7px}.button.secondary{background:#fff;color:#315e4d;border:1px solid #dce2d8}.notice{margin:22px 0;padding:14px 16px;border-radius:9px;background:#fff8eb;border:1px solid #ead5aa}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 34px}.metric{background:#fff;border:1px solid #e2e6df;border-radius:10px;padding:15px}.metric strong{display:block;font-size:27px}.metric span{font-size:11px;color:#6c7470}section{margin:30px 0}h2{font-size:20px}.change,.perf{background:#fff;border:1px solid #e2e6df;border-radius:9px;padding:14px 16px;margin:9px 0}.change{display:flex;justify-content:space-between;gap:16px}.change div span,.perf>span{display:block;color:#6c7470;font-size:11px}.change p{margin:0;font-family:ui-monospace,monospace}.change.regression,.change.existing_failure{border-left:4px solid #ae443c}.change.fixed{border-left:4px solid #315e4d}.change.needs_review,.change.environment_or_evidence,.change.status_changed{border-left:4px solid #95621b}.perf{border-left:4px solid #95621b}.perf dl{display:grid;grid-template-columns:45px 1fr;gap:5px;margin:10px 0 0}.perf dt{color:#6c7470}.perf dd{margin:0;font-family:ui-monospace,monospace}details{background:#fff;border:1px solid #e2e6df;border-radius:9px;padding:13px 16px;margin-top:12px}summary{cursor:pointer;color:#315e4d}.machine{max-height:420px;overflow:auto;font:11px/1.6 ui-monospace,monospace;white-space:pre-wrap}.empty{color:#6c7470;background:#fff;padding:20px;border-radius:9px}@media(max-width:700px){main{padding:28px 16px}.hero{display:block}.actions{margin-top:16px}.metrics{grid-template-columns:1fr 1fr}.change{display:block}.change p{margin-top:8px;overflow-wrap:anywhere}}'''
+    css='''*{box-sizing:border-box}body{margin:0;background:#f4f5f0;color:#202b29;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif}main{max-width:1120px;margin:auto;padding:44px 24px}a{color:#315e4d;text-decoration:none}.hero{display:flex;justify-content:space-between;gap:28px;align-items:flex-start}.eyebrow{font-size:11px;letter-spacing:1.4px;color:#315e4d}.hero h1{font-size:30px;margin:8px 0}.hero p{color:#6c7470}.actions{display:flex;gap:8px;flex-wrap:wrap}.button{background:#315e4d;color:#fff;padding:9px 14px;border-radius:7px}.button.secondary{background:#fff;color:#315e4d;border:1px solid #dce2d8}.notice{margin:22px 0;padding:14px 16px;border-radius:9px;background:#fff8eb;border:1px solid #ead5aa}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 34px}.metric{background:#fff;border:1px solid #e2e6df;border-radius:10px;padding:15px}.metric strong{display:block;font-size:27px}.metric span{font-size:11px;color:#6c7470}section{margin:30px 0}h2{font-size:20px}.change,.perf{background:#fff;border:1px solid #e2e6df;border-radius:9px;padding:16px 18px;margin:10px 0}.change.regression,.change.existing_failure{border-left:4px solid #ae443c}.change.fixed{border-left:4px solid #315e4d}.change.needs_review,.change.environment_or_evidence,.change.status_changed{border-left:4px solid #95621b}.change header{position:relative;padding-right:150px}.change h3{font-size:15px;margin:7px 0 5px}.change-meta{display:flex;gap:9px;align-items:center;color:#6c7470;font-size:10px}.change-meta span{background:#eef1eb;border-radius:4px;padding:2px 6px}.change-meta code{overflow-wrap:anywhere}.change-kind{position:absolute;right:0;top:0;color:#95621b;font-size:11px}.expected{color:#6c7470;font-size:11px;margin:0}.result-pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:12px;margin-top:14px}.result-pair>section{margin:0;background:#f7f8f4;border-radius:7px;padding:11px 12px;min-width:0}.result-pair>section>span{font-size:10px;color:#6c7470}.result-pair p{font:11px/1.55 ui-monospace,monospace;margin:5px 0 0;overflow-wrap:anywhere}.result-pair>b{align-self:center;color:#879184}.change footer{display:flex;gap:16px;margin-top:12px;font-size:12px}.perf{border-left:4px solid #95621b}.perf>span{display:block;color:#6c7470;font-size:11px}.perf dl{display:grid;grid-template-columns:45px 1fr;gap:5px;margin:10px 0 0}.perf dt{color:#6c7470}.perf dd{margin:0;font-family:ui-monospace,monospace}details{background:#fff;border:1px solid #e2e6df;border-radius:9px;padding:13px 16px;margin-top:12px}summary{cursor:pointer;color:#315e4d}.machine{max-height:420px;overflow:auto;font:11px/1.6 ui-monospace,monospace;white-space:pre-wrap}.empty{color:#6c7470;background:#fff;padding:20px;border-radius:9px}@media(max-width:700px){main{padding:28px 16px}.hero{display:block}.actions{margin-top:16px}.metrics{grid-template-columns:1fr 1fr}.change header{padding-right:0}.change-kind{position:static;display:inline-block;margin-top:7px}.result-pair{grid-template-columns:1fr}.result-pair>b{display:none}.change footer{flex-direction:column;gap:7px}}'''
     body=''.join(change_card(x) for x in important) or '<p class="empty">断言状态没有需要特别关注的变化。</p>'
     perf=''.join(perf_card(x) for x in alerts) or '<p class="empty">本轮没有 R06 配置触发性能复核阈值。</p>'
     raw=esc(json.dumps(changes,ensure_ascii=False,indent=2))

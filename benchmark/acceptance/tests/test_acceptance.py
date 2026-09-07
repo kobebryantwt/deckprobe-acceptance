@@ -335,12 +335,20 @@ class AcceptanceTests(unittest.TestCase):
         self.assertIn('北京时间',history_html)
         comparison={'before':'a','after':'b','comparable':False,'guardDifferences':['codeSha256'],
                     'changes':[{'id':str(i),'classification':'incomparable','before':'passed','after':'passed'} for i in range(406)],
-                    'statusTransitions':[{'id':'changed','classification':'status_changed','before':'failed','after':'passed'}],
+                    'statusTransitions':[{'id':'changed','title':'必需字段是否保持不变？','requirement':'PRO-R05',
+                                          'classification':'status_changed','before':'failed','after':'passed',
+                                          'expected':True,'beforeActual':False,'afterActual':True,
+                                          'beforeUrl':'../../runs/a/report.html#PRO-R05/changed',
+                                          'afterUrl':'../../runs/b/report.html#PRO-R05/changed'}],
                     'currentPerformance':[],'sourceLabels':{}}
         comparison_html=_comparison_page(comparison)
         self.assertEqual(comparison_html.count('class="change '),1)
         self.assertIn('只展示状态变化，不归因于产品',comparison_html)
         self.assertIn('查看全部 406 条机器比较记录',comparison_html)
+        self.assertIn('必需字段是否保持不变？',comparison_html)
+        self.assertIn('前版 · FAILED',comparison_html)
+        self.assertIn('本轮 · PASSED',comparison_html)
+        self.assertIn('查看本轮详情',comparison_html)
 
     def test_offline_report_rebuild_preserves_evidence_and_escape(self):
         folder=self.root/'run';folder.mkdir()
