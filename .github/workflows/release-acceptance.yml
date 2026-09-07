@@ -286,6 +286,22 @@ jobs:
         with: { path: "${{ runner.temp }}/pages" }
       - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
         id: deployment
+      - name: Write published report links
+        if: steps.deployment.outcome == 'success'
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          from urllib.parse import quote
+          run=json.load(open(os.environ['RUNNER_TEMP']+'/aggregate/run.json'))
+          base=os.environ['PAGES_URL'].rstrip('/')+'/'
+          run_id=quote(run['runId'],safe='')
+          print('## 已发布报告')
+          print(f'\n- [验收历史首页]({base})')
+          print(f'- [最新完整报告]({base}latest/report.html)')
+          print(f'- [本轮固定报告]({base}runs/{run_id}/report.html)')
+          PY
 
   verdict:
     needs: [aggregate-report, persist-and-pages]
