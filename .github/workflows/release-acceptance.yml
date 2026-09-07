@@ -191,20 +191,20 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
-        with: { name: acceptance-lock, path: .ci-freeze }
+        with: { name: acceptance-lock, path: ci-freeze }
       - name: Run musl smoke in Alpine userspace
         run: |
-          mkdir -p .ci-platform-result
+          mkdir -p ci-platform-result
           docker run --rm -v "$PWD:/work" -w /work python:3.12-alpine@sha256:b64631e04e4920160c50fbe8d8df828f7f35f06f425cb44aa09bca53e708a35a sh -ec '
             pip install --disable-pip-version-check -r benchmark/acceptance/requirements.txt >/dev/null
             python benchmark/scripts/release_acceptance.py run-platform \
-              --lock .ci-freeze/run-lock.json --snapshot ci-input/current \
-              --platform "${{ matrix.id }}" --output .ci-platform-result'
+              --lock ci-freeze/run-lock.json --snapshot ci-input/current \
+              --platform "${{ matrix.id }}" --output ci-platform-result'
       - if: always()
-        run: sudo chown -R "$(id -u):$(id -g)" .ci-platform-result || true
+        run: sudo chown -R "$(id -u):$(id -g)" ci-platform-result || true
       - if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
-        with: { name: "result-platform-${{ matrix.id }}", path: .ci-platform-result, retention-days: 30 }
+        with: { name: "result-platform-${{ matrix.id }}", path: ci-platform-result, retention-days: 30 }
 
   aggregate-report:
     needs: [freeze, main-functional, security-linux, performance, platform-smoke, platform-smoke-musl]

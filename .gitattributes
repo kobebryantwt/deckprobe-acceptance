@@ -1,0 +1,3 @@
+# The frozen CI snapshot is content-addressed. Checkout must preserve every byte
+# on Windows as well as Unix, including JSON and nominally text-like fixtures.
+ci-input/current/** -text

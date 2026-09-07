@@ -209,6 +209,17 @@ def _asset(lock, asset_name):
     return assets[asset_name]
 
 
+def _platform_smoke_sample(lock, snapshot):
+    """Use a frozen, ordinary fixture instead of whichever edge case sorts first."""
+    configured = lock.get("policy", {}).get("performance", {}).get("cases", [])
+    sample_id = configured[0] if configured else None
+    samples = read(Path(snapshot) / "samples.json", {}).get("samples", [])
+    sample = next((item for item in samples if item.get("id") == sample_id), None)
+    if sample is None:
+        raise ValueError("platform smoke fixture is missing from the frozen snapshot: " + str(sample_id))
+    return sample
+
+
 def _platform_environment(platform_id):
     machine = platform.machine().lower()
     expected_machine = "arm" if "arm64" in platform_id else "x64"
@@ -270,7 +281,7 @@ def platform_smoke(lock_path, snapshot, platform_id, output):
         binary = binaries[0]; binary.chmod(binary.stat().st_mode | 0o100)
         binary_identity=_binary_arch(binary)
         version = process([str(binary.resolve()), "--version"], timeout=30)
-        sample = read(Path(snapshot) / "samples.json")["samples"][0]
+        sample = _platform_smoke_sample(lock, snapshot)
         sample_path = (Path(snapshot) / sample["object"]).resolve()
         smoke = process([str(binary.resolve()), "-l", "header", "-t", "document.format", str(sample_path)], timeout=60)
         expected = "deckprobe " + lock["candidate"]["tag"].lstrip("v")

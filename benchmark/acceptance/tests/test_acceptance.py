@@ -21,7 +21,7 @@ from benchmark.acceptance.cli import check
 from benchmark.acceptance.report_view import comparison_kind, target_observation, capture_context
 from benchmark.acceptance.ci_snapshot import export_snapshot, materialize_snapshot, validate_snapshot
 from benchmark.acceptance.github_ci import (aggregate as aggregate_ci, freeze as freeze_ci,
-                                            publish_history, sanitize_publication)
+                                            publish_history, sanitize_publication, _platform_smoke_sample)
 from benchmark.acceptance import security
 
 SCENARIOS=['identity','content_mismatch','missing_vs_zero','positive_and_negative_security','documented_limit','budget_boundary']
@@ -199,6 +199,15 @@ class AcceptanceTests(unittest.TestCase):
         self.assertEqual(sanitize_publication(site), [str(report)])
         self.assertEqual(git_pointer.read_text(encoding='utf-8'),
                          'gitdir: /home/runner/work/repo/.git/worktrees/site\n')
+
+    def test_platform_smoke_uses_frozen_ordinary_fixture_not_first_edge_case(self):
+        snapshot = self.root / 'snapshot'
+        atomic(snapshot / 'samples.json', {'samples': [
+            {'id': 'malformed-edge', 'object': 'objects/edge.docm'},
+            {'id': 'ordinary-pdf', 'object': 'objects/valid.pdf'},
+        ]})
+        lock = {'policy': {'performance': {'cases': ['ordinary-pdf']}}}
+        self.assertEqual(_platform_smoke_sample(lock, snapshot)['id'], 'ordinary-pdf')
 
     def test_process_timeout_kills_child_group(self):
         sentinel=self.root/'escaped'
