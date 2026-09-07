@@ -17,7 +17,7 @@ SUPPORTED = {
     'coverage.py': 'b7bd99f460c02cd86f37dc907354e8b8353e760e7de9325050861e898d928df2',
     'docs/handbook.md': '35a10505517525fd1311225cdfedf7720014c64b5f860388e971ee379ad84261',
     'supply_evidence.py': '14240eb78dc8ae8d319baabd6bd82644fde7e86c94d6560e622ecd35b5a44b36',
-    'github_ci.py': '827611b8d7dce5ad3eccc8b27d3927637ae697850fc970bc4afaa3211eb1f25b',
+    'github_ci.py': '4979f1cd58a3793165425d305df6cad18dec5fe58a999c1f19dbefced334bf73',
     'linux_security.py': 'a54fa5a7520ab25ea7caac14c5ad513f77c924a4c9b46dfe3111679f7fdfa6e5',
 }
 LEGACY = {'runner.py': {'ae3af454936e5367d7da5801c60ef482956ee8f0506f1e380838e17daace8d81', '82cdca1eb54b602d4d4605c26f165b1876876550fe849f2b2a8e44b89e4fd6bf', '9cda58512fa28f9ff23f98f1bf3742f717ff2c9ac237201266d9f1b341e6a0b2'}}
@@ -77,6 +77,17 @@ def explain(row, policy, evidence):
                         ['每项依赖有可复核的披露依据；未完成对应表和审核时不能签核。'], rule,
                         '本轮只完成许可证文件检查；未完成第三方披露完整性审阅。',
                         observed='尚无逐项披露核对表或审核结论。', criteriaLabel='完成这项审阅需要')
+    if key.startswith('fact-gap-'):
+        mapping_status=data.get('mappingStatus')
+        unsupported=mapping_status=='unsupported'
+        return protocol('产品暂不支持' if unsupported else '产品映射待处理', row['title'],
+                        ['读取该样本已经独立取证的文档事实及产品字段映射记录。'],
+                        (['当前 DeckProbe 版本没有同口径字段；保留为覆盖缺口，等待产品支持，不能据此判产品失败。'] if unsupported else
+                         ['核对统计口径和格式适用性；只有找到完全同义的 DeckProbe target 后才能建立映射。']),
+                        [('facts.json', '该样本的独立事实与产品映射状态')],
+                        '这是仅观察项，不参与发布门禁；GT 审核与产品字段映射是两件独立的事。',
+                        observedFields=[['样本 ID',data.get('caseId')],['事实标识',data.get('factKey')],
+                                        ['映射状态',mapping_status],['处理说明',data.get('reason')]])
     if key == 'live_security_monitor':
         env = evidence.get('evidence/doctor.json', {})
         return protocol('安全环境验证', '能否发现并阻止验收进程的联网、非预期执行和文件修改？',

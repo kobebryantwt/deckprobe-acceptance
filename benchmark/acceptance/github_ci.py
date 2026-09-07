@@ -184,7 +184,8 @@ def run_main(lock_path, snapshot, home, output):
         fact=row["fact"];mapping=row.get("mapping",{})
         checks.append({"id":"fact-gap-"+fact["id"].replace(":","-"),"requirement":"PRO-R03","title":fact["question"],
             "status":"review","role":"observation","expected":fact.get("expected"),
-            "actual":{"mappingStatus":mapping.get("status"),"reason":mapping.get("note"),"executed":False},
+            "actual":{"caseId":row.get("sampleId"),"factKey":mapping.get("factKey") or fact.get("factKey"),
+                      "mappingStatus":mapping.get("status"),"reason":mapping.get("note"),"executed":False},
             "approval":fact.get("status","pending"),"evidence":["facts.json"]})
     result = job_result(lock, "main-functional", checks, candidateRun=candidate, previousRun=previous,
                         releaseComparison=release_comparison)

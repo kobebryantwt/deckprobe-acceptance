@@ -30,6 +30,30 @@ class CaseExplanationTests(unittest.TestCase):
         self.assertIn('不是产品通过的文件数', ''.join(explanation['criteria']))
         self.assertIn('无独立监控事件', str(explanation['observedFields']))
 
+    def test_fact_gap_explains_mapping_state_instead_of_human_gt_review(self):
+        row = {'id':'fact-gap-case-a-fact-1','requirement':'PRO-R03','title':'宏数量？',
+               'status':'review','role':'observation',
+               'actual':{'caseId':'case-a','factKey':'macros.vba_project_count',
+                         'mappingStatus':'unsupported','reason':'没有同口径字段'}}
+        explanation = explain(row, {}, {})
+        self.assertEqual(explanation['kind'],'产品暂不支持')
+        self.assertIn('不参与发布门禁',explanation['limitation'])
+
+    def test_fact_gap_aggregate_evidence_does_not_attach_the_whole_corpus(self):
+        row = {'id':'fact-gap-case-b-fact-1','requirement':'PRO-R03','title':'工作表数量？',
+               'status':'review','role':'observation','expected':1,
+               'actual':{'caseId':'case-b','factKey':'excel.sheet_count','mappingStatus':'unmapped'},
+               'evidence':['facts.json']}
+        envelope = {'qualitySummary':{}, 'acceptance':{'runId':'demo','targetVersion':'demo',
+                    'createdAt':'2026-01-01', 'mode':'ci','checks':[row]}}
+        sources=[{'id':'case-a','path':'a.pptx','sha256':'a'},
+                 {'id':'case-b','path':'b.xlsb','sha256':'b'}]
+        with tempfile.TemporaryDirectory() as name:
+            folder=Path(name)
+            atomic(folder/'facts.json',{'facts':[{'sampleId':'case-a'},{'sampleId':'case-b'}]})
+            model=build_model(folder,envelope,{'sources':sources})
+            self.assertEqual(model['rows'][0]['sourceIds'],['case-b'])
+
     def test_missing_or_changed_implementation_cannot_borrow_new_explanation(self):
         row = {'id':'live_security_monitor', 'requirement':'PRO-R02', 'title':'monitor',
                'status':'blocked','actual':[], 'expected':'live evidence'}

@@ -158,11 +158,16 @@ def build_model(folder, envelope, context):
         if answer and answer['caseId'] in sources:
             found.add(answer['caseId'])
         referenced_sources(check.get('command', []), found)
+        referenced_sources(check.get('actual'), found)
         refs = []
         for name in check.get('evidence', []):
             data = evidence_data(name)
             if data is not None:
-                referenced_sources(data, found)
+                # facts.json is a corpus-wide inventory. A fact-gap check carries
+                # its exact caseId in actual; scanning the aggregate evidence here
+                # would incorrectly attach every corpus file to every gap card.
+                if not (check['id'].startswith('fact-gap-') and name == 'facts.json'):
+                    referenced_sources(data, found)
                 refs.append(name)
         # Some integration assertions intentionally omit the command; IDs bind their fixture.
         for sid in sources:

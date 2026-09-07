@@ -4,7 +4,7 @@ const sourceMap = new Map(model.sources.map(s => [s.id, s]));
 const categories = [
  ['PRO-R01','发布追溯','发布包、版本、来源证明和许可证，逐项对照已冻结的发布资产。'],
  ['PRO-R02','安全边界','隔离与监控证据单独呈现；未采集不等于没有异常行为。'],
- ['PRO-R03','格式与限制','逐文件查看独立 GT、预期答案和实际值。一致的草案仍需人工审核。'],
+ ['PRO-R03','格式与限制','逐文件查看独立 GT、产品字段映射和实际值；映射缺口与 GT 待审核分开标注。'],
  ['PRO-R04','Target 语义','对照 schema、状态、置信度和证据约束，展开查看系统完整输出。'],
  ['PRO-R05','路径与共享','比较成组请求的事实、成本和允许路径；明确区分规则与独立 GT。'],
  ['PRO-R06','性能观察','逐文件、逐运行方式展示观测值。后台测量不用于正式性能签核。'],
@@ -237,7 +237,8 @@ function caseBody(row){
  if(row.command?.length)right.append(jsonBlock('复现命令（逐参数记录）',row.command));
  right.append(jsonBlock('原始判定记录 · 保留机器值与原结论',{id:row.id,title:row.title,status:row.status,expected:row.expected,actual:row.actual}));
  grid.append(left,right);body.append(grid);
- const foot=el('div','case-footer');foot.append(el('span','',row.id),el('span','',`${row.id.startsWith('schema_')&&row.status==='passed'?'契约通过':statuses[row.status]} · ${row.role==='observation'?'仅观察':row.scope==='full'?'完整手册':'本机必须项'}`));body.append(foot);return body;
+ const factGap=row.id.startsWith('fact-gap-'),factGapLabel=row.actual?.mappingStatus==='unsupported'?'产品暂不支持':'产品映射待处理';
+ const foot=el('div','case-footer');foot.append(el('span','',row.id),el('span','',`${factGap?factGapLabel:row.id.startsWith('schema_')&&row.status==='passed'?'契约通过':statuses[row.status]} · ${row.role==='observation'?'仅观察':row.scope==='full'?'完整手册':'本机必须项'}`));body.append(foot);return body;
 }
 function caseCard(row,forceOpen=false){
  const d=el('details','case');d.id='case-'+row.id;d.dataset.comparison=row.comparison;d.dataset.status=row.status;
@@ -247,8 +248,10 @@ function caseCard(row,forceOpen=false){
  heading.append(el('div','case-title',row.protocol?.question||row.title),el('div','case-sub',row.sourceIds.length>2?`${row.protocol?.kind||row.id} · ${row.sourceIds.length} 份关联文件`:row.sourceIds.length?row.sourceIds.join(' · '):row.id));summary.append(heading);
  if(row.answer)summary.append(el('span','summary-value',`${short(row.expected)} → ${row.comparison==='unexecuted'?'未执行':row.targetObservation?.kind==='error'?(row.targetObservation.error?.code||'error'):row.targetObservation?.kind==='missing'?'target 缺失':row.targetObservation?.valuePresent===false?'value 缺失':short(row.actual)}`));
  else if(Array.isArray(row.expected)&&row.expected.length===0&&Array.isArray(row.actual)&&row.actual.length===0)summary.append(el('span','summary-value','0 差异 · 契约完全符合'));
- const badges=el('div','badges'),comparisonLabel=row.id==='performance_pair'&&row.status==='review'?'性能需复核':kinds[row.comparison];badges.append(badge(comparisonLabel,row.comparison));
- if(row.approval==='draft')badges.append(badge('GT 待审核','review'));else badges.append(badge(row.id.startsWith('schema_')&&row.status==='passed'?'契约通过':statuses[row.status],row.status==='failed'?'different':row.status==='blocked'?'blocked':''));summary.append(badges);d.append(summary);
+ const badges=el('div','badges'),factGap=row.id.startsWith('fact-gap-');
+ const mappingLabel=row.actual?.mappingStatus==='unsupported'?'产品暂不支持':'产品映射待处理';
+ const comparisonLabel=factGap?mappingLabel:row.id==='performance_pair'&&row.status==='review'?'性能需复核':kinds[row.comparison];badges.append(badge(comparisonLabel,factGap?'review':row.comparison));
+ if(factGap)badges.append(badge('仅观察',''));else if(row.approval==='draft')badges.append(badge('GT 待审核','review'));else badges.append(badge(row.id.startsWith('schema_')&&row.status==='passed'?'契约通过':statuses[row.status],row.status==='failed'?'different':row.status==='blocked'?'blocked':''));summary.append(badges);d.append(summary);
  function populate(){if(!d.dataset.loaded){d.append(caseBody(row));d.dataset.loaded='true';}}
  d.addEventListener('toggle',()=>{if(d.open)populate();});
  d.open=forceOpen||row.comparison!=='matched';if(d.open)populate();return d;
@@ -297,7 +300,7 @@ function reset(){fileFocus=null;$('search').value='';$('state-filter').value='al
 $('run-label').textContent=`${model.targetVersion} · ${model.mode==='diagnostic'?'样本诊断':'正式验收'} · ${new Date(model.createdAt).toLocaleString('zh-CN')} · ${model.rows.length} 条断言`;
 $('verdict').textContent=`${model.quality.localDecision} / ${model.quality.releaseDecision}`;
 $('notice').textContent=(model.mode==='diagnostic'?'这是已归档的样本诊断：可查看实际值，但未审 GT 仍为 REVIEW。':'这是已归档的正式验收：未审 GT 的实际值保留“未执行”。')+' 一致项默认折叠，差异与未完成项默认展开。'+(!model.context.corpusBound||!model.context.answersBound?' 部分样本 / GT 元数据未能与原运行绑定，页面明确保留缺口。':'');
-for(const [key,name,sub,cls] of [['passed','已通过','验收规则已满足','green'],['failed','已失败','确定性必须项失败','red'],['review','待审核','含 GT 草案与观察项',''],['blocked','未完成','缺少环境或可靠证据','']]){
+for(const [key,name,sub,cls] of [['passed','已通过','验收规则已满足','green'],['failed','已失败','确定性必须项失败','red'],['review','待处理 / 观察','含 GT 草案、产品映射缺口和非门禁观察项',''],['blocked','未完成','缺少环境或可靠证据','']]){
  const card=el('div','metric '+cls),copy=el('div');copy.append(el('span','label',name),el('span','',sub));card.append(copy,el('strong','',model.counts[key]??model.rows.filter(r=>r.status===key).length));$('metrics').append(card);
 }
 for(const [id,title] of categories){const b=el('button','tab');b.id='tab-'+id;b.dataset.category=id;b.setAttribute('role','tab');b.setAttribute('aria-controls','panel');b.append(el('small','',id==='files'?'ALL':id.replace('PRO-','')),document.createTextNode(title),el('em','',id==='files'?model.sources.length:model.rows.filter(r=>r.requirement===id).length));b.onclick=()=>{location.hash=id;selectCategory(id);};$('tabs').append(b);}
