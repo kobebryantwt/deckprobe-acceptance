@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_e694988041157f83e499d2d8e28978f9c233224af9d16b6c57cb8835980fa94f",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_e694988041157f83e499d2d8e28978f9c233224af9d16b6c57cb8835980fa94f",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.encrypted",
+    "local-evidence://Word加密文档.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-e694988041157f83e499d2d8e28978f9c233224af9d16b6c57cb8835980fa94f.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

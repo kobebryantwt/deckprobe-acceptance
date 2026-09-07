@@ -1,0 +1,33 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "alerts": 0,
+        "blocked": 0,
+        "comparisons": 144,
+        "groups": 9,
+        "runtimeVersions": 9
+      },
+      "details": null,
+      "expected": {
+        "claim": "trend only",
+        "samples": 30,
+        "warmup": 5
+      },
+      "featureId": "PRO-R06",
+      "id": "performance_pair",
+      "role": "observation",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "performance_pair",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

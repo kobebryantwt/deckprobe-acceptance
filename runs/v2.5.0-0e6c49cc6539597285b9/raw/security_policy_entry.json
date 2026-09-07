@@ -1,0 +1,33 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "declaredEntries": [
+          "https://github.com/deckflow/deckprobe/security/advisories/new"
+        ],
+        "matchesRepository": true,
+        "missing": false,
+        "sha256": "859a0c47d512fbb59a5326757ece867ca1d8f2e138024630207356be43129401"
+      },
+      "details": null,
+      "expected": {
+        "SECURITY.md": "bound to release commit",
+        "privateReportUrl": "https://github.com/deckflow/deckprobe/security/advisories/new"
+      },
+      "featureId": "PRO-R09",
+      "id": "security_policy_entry",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "security_policy_entry",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.page_count",
+    "local-evidence://OmniDocBench_PPT复杂页面.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 26.54367499999921,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.080590+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"OmniDocBench_PPT复杂页面.pdf\",\"source_kind\":\"local_file\",\"file_size\":9003514},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"pdf.page_count\":{\"target\":\"pdf.page_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"pdf.document_structure\",\"source\":\"PDF page tree\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.document_structure\"],\"estimated_cost\":100,\"actual_cost\":{\"physical_bytes_read\":9003522,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

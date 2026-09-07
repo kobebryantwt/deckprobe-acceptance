@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "numbers.sheet_count",
+    "local-evidence://Numbers多工作表结构工作簿.numbers"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.860106999998834,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.416759+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Numbers多工作表结构工作簿.numbers\",\"source_kind\":\"local_file\",\"file_size\":250804},\"driver\":{\"id\":\"numbers\",\"profile\":\"numbers\"},\"results\":{\"numbers.sheet_count\":{\"target\":\"numbers.sheet_count\",\"status\":\"resolved\",\"value\":3,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"iwork.package_inventory\",\"source\":\"TN.DocumentArchive sheet references\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.package_inventory\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":18623,\"expanded_bytes\":23907,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

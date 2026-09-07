@@ -1,0 +1,737 @@
+{
+  "assertions": [
+    {
+      "actual": "核对 9 个发布组件的许可证声明、随包 LICENSE / NOTICE 与正文",
+      "details": {
+        "audit": {
+          "counts": {
+            "blocked": 0,
+            "failed": 0,
+            "passed": 37,
+            "review": 0
+          },
+          "groups": [
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-apple-darwin.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-apple-darwin.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-apple-darwin.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-apple-darwin.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-aarch64-apple-darwin.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-gnu.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-gnu.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-gnu.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-gnu.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-aarch64-unknown-linux-gnu.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-musl.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-musl.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-musl.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-aarch64-unknown-linux-musl.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-aarch64-unknown-linux-musl.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-apple-darwin.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-apple-darwin.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-apple-darwin.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-apple-darwin.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-x86_64-apple-darwin.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-pc-windows-msvc.zip/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-pc-windows-msvc.zip/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-pc-windows-msvc.zip/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-pc-windows-msvc.zip/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-x86_64-pc-windows-msvc.zip"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-gnu.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-gnu.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-gnu.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-gnu.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-x86_64-unknown-linux-gnu.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-musl.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-musl.tar.gz/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-musl.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/deckprobe-x86_64-unknown-linux-musl.tar.gz/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "引擎 v2.5.0 · deckprobe-x86_64-unknown-linux-musl.tar.gz"
+            },
+            {
+              "rows": [
+                {
+                  "actual": "Apache-2.0",
+                  "actualEvidence": [
+                    {
+                      "label": "已安装包元数据",
+                      "locator": "/license",
+                      "path": "evidence/r01/npm-js/package.json"
+                    }
+                  ],
+                  "expected": "Apache-2.0",
+                  "expectedEvidence": [],
+                  "label": "package.json · license",
+                  "note": null,
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/npm-js/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/npm-js/LICENSE"
+                    }
+                  ],
+                  "expected": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 LICENSE",
+                      "locator": "",
+                      "path": "evidence/r01/source/LICENSE"
+                    }
+                  ],
+                  "label": "LICENSE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "NOTICE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/npm-js/NOTICE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "actualEvidence": [
+                    {
+                      "label": "随包 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/npm-js/NOTICE"
+                    }
+                  ],
+                  "expected": "85f06300dd61895e71fb076745c4595f132eb962d17a58e5d81ac7ac8ddd598d",
+                  "expectedEvidence": [
+                    {
+                      "label": "固定 commit 的 NOTICE",
+                      "locator": "",
+                      "path": "evidence/r01/source/NOTICE"
+                    }
+                  ],
+                  "label": "NOTICE · 正文一致性（统一换行符后的 SHA-256）",
+                  "note": "仅允许 LF / CRLF 换行符差异，不删除空格、版权或其他正文。原始字节 SHA-256 与完整原文均保留。",
+                  "status": "passed"
+                }
+              ],
+              "title": "@deckflow/deckprobe@2.5.0"
+            },
+            {
+              "rows": [
+                {
+                  "actual": "MIT",
+                  "actualEvidence": [
+                    {
+                      "label": "已安装包元数据",
+                      "locator": "/license",
+                      "path": "evidence/r01/npm-mcp/package.json"
+                    }
+                  ],
+                  "expected": "MIT",
+                  "expectedEvidence": [],
+                  "label": "package.json · license",
+                  "note": null,
+                  "status": "passed"
+                },
+                {
+                  "actual": true,
+                  "actualEvidence": [
+                    {
+                      "label": "LICENSE 原文",
+                      "locator": "",
+                      "path": "evidence/r01/npm-mcp/LICENSE"
+                    }
+                  ],
+                  "expected": true,
+                  "expectedEvidence": [],
+                  "label": "LICENSE · 随包文件存在",
+                  "note": "这是随实际发布包分发的文件，不是仓库中另行下载的文件。",
+                  "status": "passed"
+                },
+                {
+                  "actual": [
+                    "MIT License",
+                    "Permission is hereby granted, free of charge",
+                    "THE SOFTWARE IS PROVIDED \"AS IS\""
+                  ],
+                  "actualEvidence": [
+                    {
+                      "label": "完整许可证原文",
+                      "locator": "",
+                      "path": "evidence/r01/npm-mcp/LICENSE"
+                    }
+                  ],
+                  "expected": [
+                    "MIT License",
+                    "Permission is hereby granted, free of charge",
+                    "THE SOFTWARE IS PROVIDED \"AS IS\""
+                  ],
+                  "expectedEvidence": [],
+                  "label": "MIT LICENSE · 必需文本片段",
+                  "note": "按已批准的 MIT 声明核对三个关键文本片段；不作法律完整性结论。",
+                  "status": "passed"
+                },
+                {
+                  "actual": "当前 MIT 文件分发规则未要求 NOTICE",
+                  "actualEvidence": [],
+                  "expected": "当前 MIT 文件分发规则未要求 NOTICE",
+                  "expectedEvidence": [],
+                  "label": "NOTICE · 本版本规则",
+                  "note": "不把未要求的 NOTICE 缺失计为失败。",
+                  "status": "passed"
+                }
+              ],
+              "title": "@deckflow/deckprobe-mcp@0.1.1"
+            }
+          ],
+          "scope": "引擎与 JS 包按版本核对；MCP 0.1.1 单独核对 MIT。此项不证明第三方披露清单已完整。",
+          "status": "passed",
+          "summary": "核对 9 个发布组件的许可证声明、随包 LICENSE / NOTICE 与正文"
+        }
+      },
+      "expected": "引擎与 JS 包按版本核对；MCP 0.1.1 单独核对 MIT。此项不证明第三方披露清单已完整。",
+      "featureId": "PRO-R01",
+      "id": "release_licenses",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "release_licenses",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/r01/release_licenses.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

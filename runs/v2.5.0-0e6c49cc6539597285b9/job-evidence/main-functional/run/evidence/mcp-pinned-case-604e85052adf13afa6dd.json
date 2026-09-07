@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "local-evidence://runtime.mjs",
+    "mcp-pinned",
+    "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "local-evidence://Excel加密工作簿.xlsx",
+    "local-evidence://deckprobe"
+  ],
+  "cwd": "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+  "durationMs": 1281.7862699999978,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:09:11.415338+00:00",
+  "stderr": "",
+  "stdout": "local-evidence://n\",\"mode\":\"mcp-pinned\"}\n",
+  "timedOut": false
+}

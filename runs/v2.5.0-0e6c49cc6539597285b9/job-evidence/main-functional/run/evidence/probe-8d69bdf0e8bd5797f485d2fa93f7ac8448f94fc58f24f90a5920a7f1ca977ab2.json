@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.mime_type",
+    "local-evidence://Numbers多工作表结构工作簿.numbers"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.7722219999996014,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.413238+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Numbers多工作表结构工作簿.numbers\",\"source_kind\":\"local_file\",\"file_size\":250804},\"driver\":{\"id\":\"numbers\",\"profile\":\"numbers\"},\"results\":{\"document.mime_type\":{\"target\":\"document.mime_type\",\"status\":\"resolved\",\"value\":\"application/x-iwork-numbers-sffnumbers\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"iwork.identity\",\"source\":\"format profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.identity\"],\"estimated_cost\":3,\"actual_cost\":{\"physical_bytes_read\":18623,\"expanded_bytes\":23907,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "keynote.slide_size",
+    "local-evidence://Keynote表格与图片演示文稿.key"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 3.2516160000000127,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.397235+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Keynote表格与图片演示文稿.key\",\"source_kind\":\"local_file\",\"file_size\":926463},\"driver\":{\"id\":\"keynote\",\"profile\":\"key\"},\"results\":{\"keynote.slide_size\":{\"target\":\"keynote.slide_size\",\"status\":\"resolved\",\"value\":{\"height_pt\":1080.0,\"width_pt\":1920.0},\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"iwork.iwa_objects\",\"source\":\"KN.ShowArchive size\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.iwa_objects\"],\"estimated_cost\":42,\"actual_cost\":{\"physical_bytes_read\":147488,\"expanded_bytes\":592253,\"random_reads\":95},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

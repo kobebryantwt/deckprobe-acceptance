@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_42d5d93053c938dfe2d9434d1c7d39e03ca1a2f774f98a61dd0382d29ecfcfc5",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_42d5d93053c938dfe2d9434d1c7d39e03ca1a2f774f98a61dd0382d29ecfcfc5",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.word_count",
+    "local-evidence://Word_家居零售价目册_66页308表115图.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-42d5d93053c938dfe2d9434d1c7d39e03ca1a2f774f98a61dd0382d29ecfcfc5.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_c8e8a32a53ce3be971124771b1b4b735c6d6c999bcc8eaf5dccec31b76835425",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_c8e8a32a53ce3be971124771b1b4b735c6d6c999bcc8eaf5dccec31b76835425",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_digital_signature",
+    "local-evidence://Word超链接与数字签名文档.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-c8e8a32a53ce3be971124771b1b4b735c6d6c999bcc8eaf5dccec31b76835425.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

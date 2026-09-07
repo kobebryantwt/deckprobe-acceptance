@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 0,
+      "details": {
+        "answerDigest": "055ce09f42fecea9ed516632d3e4cc37518edd35f45159c52dc84000b43265a3",
+        "diagnosticMatch": false
+      },
+      "expected": 2,
+      "featureId": "PRO-R03",
+      "id": "case-898fe028b0ec31c2c437_fact-33ee397e1b",
+      "role": "gate",
+      "severity": "critical",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-898fe028b0ec31c2c437_fact-33ee397e1b",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.hidden_slide_count",
+    "local-evidence://PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-83e933e8baa02fccb82f45a6bd165d8eeb671a65f0dfbdcd4811f47e525a8f96.json"
+  ],
+  "source": {
+    "uri": "sha256:898fe028b0ec31c2c43793f2bdf0c78f622a9c2ea6935284504e3b8160588661"
+  },
+  "status": "failed"
+}

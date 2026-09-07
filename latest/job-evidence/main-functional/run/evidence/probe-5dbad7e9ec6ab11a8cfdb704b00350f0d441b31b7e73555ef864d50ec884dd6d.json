@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.mime_type",
+    "local-evidence://Pages多章节页眉页脚文档.pages"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.9009439999990718,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.420652+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Pages多章节页眉页脚文档.pages\",\"source_kind\":\"local_file\",\"file_size\":630330},\"driver\":{\"id\":\"pages\",\"profile\":\"pages\"},\"results\":{\"document.mime_type\":{\"target\":\"document.mime_type\",\"status\":\"resolved\",\"value\":\"application/x-iwork-pages-sffpages\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"iwork.identity\",\"source\":\"format profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.identity\"],\"estimated_cost\":3,\"actual_cost\":{\"physical_bytes_read\":59848,\"expanded_bytes\":148446,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

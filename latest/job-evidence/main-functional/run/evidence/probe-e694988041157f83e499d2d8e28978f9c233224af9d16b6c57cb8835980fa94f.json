@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.encrypted",
+    "local-evidence://Word加密文档.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.4516710000123112,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.207788+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word加密文档.docx\",\"source_kind\":\"local_file\",\"file_size\":19968},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"encrypted-ooxml\"},\"results\":{\"security.encrypted\":{\"target\":\"security.encrypted\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.cfb_inventory\",\"source\":\"EncryptionInfo + EncryptedPackage streams\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.cfb_inventory\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":6152,\"expanded_bytes\":0,\"random_reads\":6},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

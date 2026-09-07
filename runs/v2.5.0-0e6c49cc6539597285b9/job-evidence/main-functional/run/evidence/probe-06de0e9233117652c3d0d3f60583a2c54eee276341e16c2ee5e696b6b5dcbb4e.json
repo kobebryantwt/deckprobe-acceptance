@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pages.cached_page_count",
+    "local-evidence://Pages多章节页眉页脚文档.pages"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.959447999984377,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T14:08:23.434468+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Pages多章节页眉页脚文档.pages\",\"source_kind\":\"local_file\",\"file_size\":630330},\"driver\":{\"id\":\"pages\",\"profile\":\"pages\"},\"results\":{\"pages.cached_page_count\":{\"target\":\"pages.cached_page_count\",\"status\":\"resolved\",\"value\":31,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"iwork.iwa_objects\",\"source\":\"TP.LayoutStateArchive last_page_count cache\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.iwa_objects\"],\"estimated_cost\":42,\"actual_cost\":{\"physical_bytes_read\":135963,\"expanded_bytes\":582488,\"random_reads\":43},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 96,
+      "details": {
+        "answerDigest": "c32f256589fe4df9ff3051c69a54a5b204eae3fa4df4470ab97edf7cac5eacdd",
+        "diagnosticMatch": true
+      },
+      "expected": 96,
+      "featureId": "PRO-R03",
+      "id": "case-b8c4ecf2983f497590b7_fact-20a3fc2fba",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-b8c4ecf2983f497590b7_fact-20a3fc2fba",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.page_count",
+    "local-evidence://PDF_综合复习题_96页.pdf"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-b0a89240f9956dbec95bfece2ff6f757f5553cc43ea242c9062c3c4bfd4285e4.json"
+  ],
+  "source": {
+    "uri": "sha256:b8c4ecf2983f497590b786b748703488061a9814a26ffabadc5d7c32f3ddd6b3"
+  },
+  "status": "passed"
+}

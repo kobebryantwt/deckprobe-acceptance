@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R07",
+      "id": "mcp-default_parity_case-604e85052adf13afa6dd",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "mcp-default_parity_case-604e85052adf13afa6dd",
+  "command": [
+    "node",
+    "local-evidence://runtime.mjs",
+    "mcp-default",
+    "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "local-evidence://Excel加密工作簿.xlsx",
+    "local-evidence://deckprobe"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/mcp-default-case-604e85052adf13afa6dd.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}
