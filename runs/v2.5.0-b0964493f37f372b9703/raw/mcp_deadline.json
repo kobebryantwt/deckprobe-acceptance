@@ -1,0 +1,25 @@
+{
+  "assertions": [
+    {
+      "actual": "MCP_TIMEOUT",
+      "details": null,
+      "expected": "MCP_TIMEOUT",
+      "featureId": "PRO-R07",
+      "id": "mcp_deadline",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "mcp_deadline",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/mcp-timeout.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

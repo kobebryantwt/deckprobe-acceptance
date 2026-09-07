@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_0820e78424dce825f0d5a849d55a0b650c8d3198a368dbfd70e94b4277d9b00e",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_0820e78424dce825f0d5a849d55a0b650c8d3198a368dbfd70e94b4277d9b00e",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://OneNote笔记文档.one"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-0820e78424dce825f0d5a849d55a0b650c8d3198a368dbfd70e94b4277d9b00e.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.attachment_count",
+    "local-evidence://PDF附件外链与JavaScript样本.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.4356770000224515,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.743123+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PDF附件外链与JavaScript样本.pdf\",\"source_kind\":\"local_file\",\"file_size\":92359},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"pdf.attachment_count\":{\"target\":\"pdf.attachment_count\",\"status\":\"resolved\",\"value\":2,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"pdf.document_features\",\"source\":\"file-specification dictionaries with /EF entries\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.document_features\"],\"estimated_cost\":100,\"actual_cost\":{\"physical_bytes_read\":92367,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

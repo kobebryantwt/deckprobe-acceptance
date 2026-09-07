@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_size",
+    "local-evidence://PPT_Zenodo_设计技术教育_批注与备注.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6661969999915982,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.152410+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_设计技术教育_批注与备注.pptx\",\"source_kind\":\"local_file\",\"file_size\":1093355},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_size\":{\"target\":\"powerpoint.slide_size\",\"status\":\"resolved\",\"value\":{\"height_emu\":6858000,\"height_pt\":540.0,\"width_emu\":9144000,\"width_pt\":720.0},\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.presentation_xml\",\"source\":\"ppt/presentation.xml p:sldSz\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.presentation_xml\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":8738,\"expanded_bytes\":9311,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

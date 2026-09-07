@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.page_count",
+    "local-evidence://Word_职称评审表_22页多页眉页脚.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6548960000193347,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.918910+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word_职称评审表_22页多页眉页脚.docx\",\"source_kind\":\"local_file\",\"file_size\":149017},\"driver\":{\"id\":\"word\",\"profile\":\"docx\"},\"results\":{\"word.page_count\":{\"target\":\"word.page_count\",\"status\":\"resolved\",\"value\":22,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"word.app_statistics\",\"source\":\"docProps/app.xml saved statistic\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"word.app_statistics\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":7139,\"expanded_bytes\":7624,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

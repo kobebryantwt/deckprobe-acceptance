@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_external_relationships",
+    "local-evidence://Excel二进制综合工作簿.xlsb"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.645547999999053,
+  "exitCode": 4,
+  "startedAt": "2026-09-07T12:45:26.618205+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .xlsb\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

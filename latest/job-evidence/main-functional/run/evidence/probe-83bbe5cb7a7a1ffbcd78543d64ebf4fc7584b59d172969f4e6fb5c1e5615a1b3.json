@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.aspect_ratio",
+    "local-evidence://PPT_Zenodo_用户画像工具包_49页80图.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.9365070000153537,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.003644+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_用户画像工具包_49页80图.pptx\",\"source_kind\":\"local_file\",\"file_size\":22691055},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.aspect_ratio\":{\"target\":\"powerpoint.aspect_ratio\",\"status\":\"resolved\",\"value\":{\"decimal\":1.7777777777777777,\"height\":9,\"width\":16},\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.presentation_xml\",\"source\":\"ppt/presentation.xml p:sldSz\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.presentation_xml\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":30928,\"expanded_bytes\":30730,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

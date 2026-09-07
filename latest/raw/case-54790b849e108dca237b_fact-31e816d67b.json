@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "Michael McCandless",
+      "details": {
+        "answerDigest": "a104e9814558b7bde4cc4adbacd9b221b328c9f003c0e3070d487a299729cec5",
+        "diagnosticMatch": true
+      },
+      "expected": "Michael McCandless",
+      "featureId": "PRO-R03",
+      "id": "case-54790b849e108dca237b_fact-31e816d67b",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-54790b849e108dca237b_fact-31e816d67b",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.author",
+    "local-evidence://PowerPoint旧版综合元素.ppt"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-ab7e7edc19aac783c21722109ae1906d8ba71dec0a60a6ba7fe2c99e3195124c.json"
+  ],
+  "source": {
+    "uri": "sha256:54790b849e108dca237b44ebffc53dcc3920e159e84f6d590bff2db906412687"
+  },
+  "status": "passed"
+}

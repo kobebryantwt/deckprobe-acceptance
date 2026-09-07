@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_9d59e39389ec913f55b41538e3d744b57db0f5ba95cfcfdffeaba6fdc83420ec",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_9d59e39389ec913f55b41538e3d744b57db0f5ba95cfcfdffeaba6fdc83420ec",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://Visio绘图文档.vsdx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-9d59e39389ec913f55b41538e3d744b57db0f5ba95cfcfdffeaba6fdc83420ec.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

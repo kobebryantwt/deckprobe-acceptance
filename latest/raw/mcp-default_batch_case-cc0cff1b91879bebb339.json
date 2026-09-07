@@ -1,0 +1,436 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "reports": [
+          {
+            "path": "local-evidence://PDF表单与注释样本.pdf",
+            "report": {
+              "diagnostics": [],
+              "driver": {
+                "id": "pdf",
+                "profile": "pdf"
+              },
+              "execution": {
+                "actual_cost": {
+                  "expanded_bytes": 0,
+                  "physical_bytes_read": 26754,
+                  "random_reads": 0
+                },
+                "estimated_cost": 301,
+                "paths": [
+                  "pdf.header",
+                  "pdf.document_features",
+                  "pdf.info_dictionary",
+                  "pdf.document_structure"
+                ],
+                "probe_level": "metadata",
+                "unresolved_targets": []
+              },
+              "input": {
+                "display_name": "PDF表单与注释样本.pdf",
+                "file_size": 26746,
+                "source_kind": "local_file"
+              },
+              "results": {
+                "document.application": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.application",
+                  "value": "GPL Ghostscript 9.07; modified using iTextSharp 5.2.1 (c) 1T3XT BVBA"
+                },
+                "document.application_version": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.application_version",
+                  "value": "PDFCreator Version 1.7.0"
+                },
+                "document.author": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.author",
+                  "value": "Dr. Eric Knauel"
+                },
+                "document.extension": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "input path",
+                  "status": "resolved",
+                  "target": "document.extension",
+                  "value": "pdf"
+                },
+                "document.extension_matches": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "input path + detected profile",
+                  "status": "resolved",
+                  "target": "document.extension_matches",
+                  "value": true
+                },
+                "document.file_size": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "filesystem metadata",
+                  "status": "resolved",
+                  "target": "document.file_size",
+                  "value": 26746
+                },
+                "document.format": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format",
+                  "value": "pdf"
+                },
+                "document.format_profile": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format_profile",
+                  "value": "pdf"
+                },
+                "document.mime_type": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "format profile",
+                  "status": "resolved",
+                  "target": "document.mime_type",
+                  "value": "application/pdf"
+                },
+                "document.title": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.title",
+                  "value": "pdf-form-with-signature-field"
+                },
+                "pdf.linearized": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.header",
+                  "source": "first 8 KiB",
+                  "status": "resolved",
+                  "target": "pdf.linearized",
+                  "value": true
+                },
+                "pdf.version": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "%PDF header",
+                  "status": "resolved",
+                  "target": "pdf.version",
+                  "value": "1.6"
+                },
+                "security.encrypted": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_structure",
+                  "source": "PDF trailer",
+                  "status": "resolved",
+                  "target": "security.encrypted",
+                  "value": false
+                },
+                "security.has_digital_signature": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF signature dictionaries; cryptographic validity was not checked",
+                  "status": "resolved",
+                  "target": "security.has_digital_signature",
+                  "value": false
+                },
+                "security.has_embedded_files": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF EmbeddedFiles name tree, file specifications, and embedded-file streams",
+                  "status": "resolved",
+                  "target": "security.has_embedded_files",
+                  "value": false
+                },
+                "security.has_external_relationships": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF external action/file-spec dictionaries; no external resource was fetched",
+                  "status": "resolved",
+                  "target": "security.has_external_relationships",
+                  "value": true
+                },
+                "security.has_macros": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_structure",
+                  "source": "PDF does not contain Office VBA projects",
+                  "status": "resolved",
+                  "target": "security.has_macros",
+                  "value": false
+                },
+                "security.password_protected": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF trailer has no /Encrypt entry",
+                  "status": "resolved",
+                  "target": "security.password_protected",
+                  "value": false
+                }
+              },
+              "schema_version": 2,
+              "status": "ok",
+              "tool_version": "2.5.0"
+            }
+          },
+          {
+            "path": "local-evidence://missing.pdf",
+            "report": {
+              "error": {
+                "code": "MCP_INVALID_PATH",
+                "message": "local-evidence://missing.pdf'",
+                "origin": "mcp-server"
+              },
+              "schema_version": 2,
+              "status": "error"
+            }
+          },
+          {
+            "path": "local-evidence://PDF表单与注释样本.pdf",
+            "report": {
+              "diagnostics": [],
+              "driver": {
+                "id": "pdf",
+                "profile": "pdf"
+              },
+              "execution": {
+                "actual_cost": {
+                  "expanded_bytes": 0,
+                  "physical_bytes_read": 26754,
+                  "random_reads": 0
+                },
+                "estimated_cost": 301,
+                "paths": [
+                  "pdf.header",
+                  "pdf.document_features",
+                  "pdf.info_dictionary",
+                  "pdf.document_structure"
+                ],
+                "probe_level": "metadata",
+                "unresolved_targets": []
+              },
+              "input": {
+                "display_name": "PDF表单与注释样本.pdf",
+                "file_size": 26746,
+                "source_kind": "local_file"
+              },
+              "results": {
+                "document.application": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.application",
+                  "value": "GPL Ghostscript 9.07; modified using iTextSharp 5.2.1 (c) 1T3XT BVBA"
+                },
+                "document.application_version": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.application_version",
+                  "value": "PDFCreator Version 1.7.0"
+                },
+                "document.author": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.author",
+                  "value": "Dr. Eric Knauel"
+                },
+                "document.extension": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "input path",
+                  "status": "resolved",
+                  "target": "document.extension",
+                  "value": "pdf"
+                },
+                "document.extension_matches": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "input path + detected profile",
+                  "status": "resolved",
+                  "target": "document.extension_matches",
+                  "value": true
+                },
+                "document.file_size": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "filesystem metadata",
+                  "status": "resolved",
+                  "target": "document.file_size",
+                  "value": 26746
+                },
+                "document.format": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format",
+                  "value": "pdf"
+                },
+                "document.format_profile": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "magic/container",
+                  "status": "resolved",
+                  "target": "document.format_profile",
+                  "value": "pdf"
+                },
+                "document.mime_type": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "format profile",
+                  "status": "resolved",
+                  "target": "document.mime_type",
+                  "value": "application/pdf"
+                },
+                "document.title": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.info_dictionary",
+                  "source": "PDF Info dictionary",
+                  "status": "resolved",
+                  "target": "document.title",
+                  "value": "pdf-form-with-signature-field"
+                },
+                "pdf.linearized": {
+                  "confidence": "high",
+                  "confidence_score": 0.95,
+                  "path": "pdf.header",
+                  "source": "first 8 KiB",
+                  "status": "resolved",
+                  "target": "pdf.linearized",
+                  "value": true
+                },
+                "pdf.version": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.header",
+                  "source": "%PDF header",
+                  "status": "resolved",
+                  "target": "pdf.version",
+                  "value": "1.6"
+                },
+                "security.encrypted": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_structure",
+                  "source": "PDF trailer",
+                  "status": "resolved",
+                  "target": "security.encrypted",
+                  "value": false
+                },
+                "security.has_digital_signature": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF signature dictionaries; cryptographic validity was not checked",
+                  "status": "resolved",
+                  "target": "security.has_digital_signature",
+                  "value": false
+                },
+                "security.has_embedded_files": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF EmbeddedFiles name tree, file specifications, and embedded-file streams",
+                  "status": "resolved",
+                  "target": "security.has_embedded_files",
+                  "value": false
+                },
+                "security.has_external_relationships": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF external action/file-spec dictionaries; no external resource was fetched",
+                  "status": "resolved",
+                  "target": "security.has_external_relationships",
+                  "value": true
+                },
+                "security.has_macros": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_structure",
+                  "source": "PDF does not contain Office VBA projects",
+                  "status": "resolved",
+                  "target": "security.has_macros",
+                  "value": false
+                },
+                "security.password_protected": {
+                  "confidence": "exact",
+                  "confidence_score": 1,
+                  "path": "pdf.document_features",
+                  "source": "PDF trailer has no /Encrypt entry",
+                  "status": "resolved",
+                  "target": "security.password_protected",
+                  "value": false
+                }
+              },
+              "schema_version": 2,
+              "status": "ok",
+              "tool_version": "2.5.0"
+            }
+          }
+        ]
+      },
+      "details": null,
+      "expected": "3 ordered independent results; first/last good",
+      "featureId": "PRO-R07",
+      "id": "mcp-default_batch_case-cc0cff1b91879bebb339",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "mcp-default_batch_case-cc0cff1b91879bebb339",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/mcp-default-case-cc0cff1b91879bebb339.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

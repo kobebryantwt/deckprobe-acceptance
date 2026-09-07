@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://OpenDocument表格宏文档.ods"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.303392000011172,
+  "exitCode": 3,
+  "startedAt": "2026-09-07T12:45:26.796196+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_FORMAT\",\"exit_code\":3,\"message\":\"unsupported format: .ods\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

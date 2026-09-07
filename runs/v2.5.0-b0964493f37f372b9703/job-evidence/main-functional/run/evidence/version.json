@@ -1,0 +1,13 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "--version"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.369013999976687,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.300751+00:00",
+  "stderr": "",
+  "stdout": "deckprobe 2.5.0\n",
+  "timedOut": false
+}

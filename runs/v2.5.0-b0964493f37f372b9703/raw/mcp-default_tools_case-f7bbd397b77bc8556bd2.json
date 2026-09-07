@@ -1,0 +1,34 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "invalidRejected": true,
+        "outsideRejected": true,
+        "tools": [
+          "list_formats",
+          "list_targets",
+          "probe",
+          "probe_batch"
+        ]
+      },
+      "details": null,
+      "expected": true,
+      "featureId": "PRO-R07",
+      "id": "mcp-default_tools_case-f7bbd397b77bc8556bd2",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "mcp-default_tools_case-f7bbd397b77bc8556bd2",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/mcp-default-case-f7bbd397b77bc8556bd2.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

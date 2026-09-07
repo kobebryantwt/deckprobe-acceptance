@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.table_count",
+    "local-evidence://Word_公共书房运营规划书_55页18图表部件.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 11.305880999998408,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.901610+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word_公共书房运营规划书_55页18图表部件.docx\",\"source_kind\":\"local_file\",\"file_size\":719050},\"driver\":{\"id\":\"word\",\"profile\":\"docx\"},\"results\":{\"word.table_count\":{\"target\":\"word.table_count\",\"status\":\"resolved\",\"value\":26,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"word.document_structure\",\"source\":\"word/document.xml\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"word.document_structure\"],\"estimated_cost\":40,\"actual_cost\":{\"physical_bytes_read\":87213,\"expanded_bytes\":1415764,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

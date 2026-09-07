@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.table_count",
+    "local-evidence://Word_家居零售价目册_66页308表115图.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 36.140425000013465,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.848931+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word_家居零售价目册_66页308表115图.docx\",\"source_kind\":\"local_file\",\"file_size\":709702},\"driver\":{\"id\":\"word\",\"profile\":\"docx\"},\"results\":{\"word.table_count\":{\"target\":\"word.table_count\",\"status\":\"resolved\",\"value\":308,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"word.document_structure\",\"source\":\"word/document.xml\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"word.document_structure\"],\"estimated_cost\":40,\"actual_cost\":{\"physical_bytes_read\":192237,\"expanded_bytes\":3998196,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

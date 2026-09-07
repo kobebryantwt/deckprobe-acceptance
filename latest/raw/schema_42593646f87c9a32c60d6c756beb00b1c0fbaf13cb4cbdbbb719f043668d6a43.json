@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_42593646f87c9a32c60d6c756beb00b1c0fbaf13cb4cbdbbb719f043668d6a43",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_42593646f87c9a32c60d6c756beb00b1c0fbaf13cb4cbdbbb719f043668d6a43",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.annotation_count",
+    "local-evidence://PDF_生物吸附剂论文_15页72注释.pdf"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-42593646f87c9a32c60d6c756beb00b1c0fbaf13cb4cbdbbb719f043668d6a43.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

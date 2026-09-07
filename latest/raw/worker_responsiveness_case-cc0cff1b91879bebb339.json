@@ -1,0 +1,33 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "blockedMaxMs": 180.59999999997672,
+        "idleMaxMs": 10.10000000000582,
+        "workerMaxMs": 10.39999999999418,
+        "workerTicks": 27
+      },
+      "details": null,
+      "expected": {
+        "minimumWorkerTicks": 3,
+        "positiveControlMs": 100
+      },
+      "featureId": "PRO-R07",
+      "id": "worker_responsiveness_case-cc0cff1b91879bebb339",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "worker_responsiveness_case-cc0cff1b91879bebb339",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/browser-case-cc0cff1b91879bebb339.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

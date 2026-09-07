@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.unique_image_asset_count",
+    "local-evidence://PPT_Zenodo_用户画像工具包_49页80图.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 3.083050000014964,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.044825+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_用户画像工具包_49页80图.pptx\",\"source_kind\":\"local_file\",\"file_size\":22691055},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.unique_image_asset_count\":{\"target\":\"powerpoint.unique_image_asset_count\",\"status\":\"resolved\",\"value\":80,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.asset_inventory\",\"source\":\"unique image asset parts under ppt/media/\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.asset_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":29265,\"expanded_bytes\":20948,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

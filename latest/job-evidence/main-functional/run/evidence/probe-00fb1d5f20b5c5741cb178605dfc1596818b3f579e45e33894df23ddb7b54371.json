@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.linearized",
+    "local-evidence://PDF表单与注释样本.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.3933989999941332,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.724384+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PDF表单与注释样本.pdf\",\"source_kind\":\"local_file\",\"file_size\":26746},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"pdf.linearized\":{\"target\":\"pdf.linearized\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"pdf.header\",\"source\":\"first 8 KiB\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.header\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":8200,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

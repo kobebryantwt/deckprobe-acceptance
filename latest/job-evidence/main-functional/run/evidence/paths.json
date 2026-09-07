@@ -1,0 +1,260 @@
+{
+  "budget": {
+    "process": {
+      "command": [
+        "local-evidence://deckprobe",
+        "-b",
+        "1",
+        "-t",
+        "slide_count",
+        "local-evidence://PowerPoint数字签名演示文稿.pptx"
+      ],
+      "cwd": "local-evidence://deckprobe-acceptance",
+      "durationMs": 1.2879230000066855,
+      "exitCode": 4,
+      "startedAt": "2026-09-07T12:45:27.274546+00:00",
+      "stderr": "",
+      "stdout": "{\"error\":{\"code\":\"BUDGET_EXCEEDED\",\"exit_code\":4,\"message\":\"budget exceeded: deckprobe physical read budget exceeded\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+      "timedOut": false
+    },
+    "report": {
+      "error": {
+        "code": "BUDGET_EXCEEDED",
+        "exit_code": 4,
+        "message": "budget exceeded: deckprobe physical read budget exceeded"
+      },
+      "schema_version": 2,
+      "status": "error",
+      "tool_version": "2.5.0"
+    }
+  },
+  "exact": {
+    "process": {
+      "command": [
+        "local-evidence://deckprobe",
+        "-t",
+        "slide_count",
+        "-c",
+        "exact",
+        "local-evidence://PowerPoint数字签名演示文稿.pptx"
+      ],
+      "cwd": "local-evidence://deckprobe-acceptance",
+      "durationMs": 1.5808769999807737,
+      "exitCode": 0,
+      "startedAt": "2026-09-07T12:45:27.272837+00:00",
+      "stderr": "",
+      "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint数字签名演示文稿.pptx\",\"source_kind\":\"local_file\",\"file_size\":36107},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.presentation_xml\",\"source\":\"ppt/presentation.xml\"}},\"execution\":{\"probe_level\":\"metadata\",\"paths\":[\"powerpoint.presentation_xml\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":6378,\"expanded_bytes\":6610,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+      "timedOut": false
+    },
+    "report": {
+      "diagnostics": [],
+      "driver": {
+        "id": "powerpoint",
+        "profile": "pptx"
+      },
+      "execution": {
+        "actual_cost": {
+          "expanded_bytes": 6610,
+          "physical_bytes_read": 6378,
+          "random_reads": 9
+        },
+        "estimated_cost": 12,
+        "paths": [
+          "powerpoint.presentation_xml"
+        ],
+        "probe_level": "metadata",
+        "unresolved_targets": []
+      },
+      "input": {
+        "display_name": "PowerPoint数字签名演示文稿.pptx",
+        "file_size": 36107,
+        "source_kind": "local_file"
+      },
+      "results": {
+        "powerpoint.slide_count": {
+          "confidence": "exact",
+          "confidence_score": 1.0,
+          "path": "powerpoint.presentation_xml",
+          "source": "ppt/presentation.xml",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "schema_version": 2,
+      "status": "ok",
+      "tool_version": "2.5.0"
+    }
+  },
+  "no_piggyback": {
+    "process": {
+      "command": [
+        "local-evidence://deckprobe",
+        "-t",
+        "slide_count",
+        "--no-piggyback",
+        "local-evidence://PowerPoint数字签名演示文稿.pptx"
+      ],
+      "cwd": "local-evidence://deckprobe-acceptance",
+      "durationMs": 1.614971000009291,
+      "exitCode": 0,
+      "startedAt": "2026-09-07T12:45:27.271097+00:00",
+      "stderr": "",
+      "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint数字签名演示文稿.pptx\",\"source_kind\":\"local_file\",\"file_size\":36107},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"powerpoint.app_statistics\",\"source\":\"docProps/app.xml saved statistic\"}},\"execution\":{\"probe_level\":\"metadata\",\"paths\":[\"powerpoint.app_statistics\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":6282,\"expanded_bytes\":4469,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+      "timedOut": false
+    },
+    "report": {
+      "diagnostics": [],
+      "driver": {
+        "id": "powerpoint",
+        "profile": "pptx"
+      },
+      "execution": {
+        "actual_cost": {
+          "expanded_bytes": 4469,
+          "physical_bytes_read": 6282,
+          "random_reads": 9
+        },
+        "estimated_cost": 4,
+        "paths": [
+          "powerpoint.app_statistics"
+        ],
+        "probe_level": "metadata",
+        "unresolved_targets": []
+      },
+      "input": {
+        "display_name": "PowerPoint数字签名演示文稿.pptx",
+        "file_size": 36107,
+        "source_kind": "local_file"
+      },
+      "results": {
+        "powerpoint.slide_count": {
+          "confidence": "high",
+          "confidence_score": 0.95,
+          "path": "powerpoint.app_statistics",
+          "source": "docProps/app.xml saved statistic",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "schema_version": 2,
+      "status": "ok",
+      "tool_version": "2.5.0"
+    }
+  },
+  "optional": {
+    "process": {
+      "command": [
+        "local-evidence://deckprobe",
+        "-t",
+        "slide_count",
+        "-o",
+        "orientation,aspect_ratio",
+        "local-evidence://PowerPoint数字签名演示文稿.pptx"
+      ],
+      "cwd": "local-evidence://deckprobe-acceptance",
+      "durationMs": 1.7657419999750346,
+      "exitCode": 0,
+      "startedAt": "2026-09-07T12:45:27.269206+00:00",
+      "stderr": "",
+      "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint数字签名演示文稿.pptx\",\"source_kind\":\"local_file\",\"file_size\":36107},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"powerpoint.app_statistics\",\"source\":\"docProps/app.xml saved statistic\"}},\"execution\":{\"probe_level\":\"metadata\",\"paths\":[\"powerpoint.app_statistics\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":6282,\"expanded_bytes\":4469,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+      "timedOut": false
+    },
+    "report": {
+      "diagnostics": [],
+      "driver": {
+        "id": "powerpoint",
+        "profile": "pptx"
+      },
+      "execution": {
+        "actual_cost": {
+          "expanded_bytes": 4469,
+          "physical_bytes_read": 6282,
+          "random_reads": 9
+        },
+        "estimated_cost": 4,
+        "paths": [
+          "powerpoint.app_statistics"
+        ],
+        "probe_level": "metadata",
+        "unresolved_targets": []
+      },
+      "input": {
+        "display_name": "PowerPoint数字签名演示文稿.pptx",
+        "file_size": 36107,
+        "source_kind": "local_file"
+      },
+      "results": {
+        "powerpoint.slide_count": {
+          "confidence": "high",
+          "confidence_score": 0.95,
+          "path": "powerpoint.app_statistics",
+          "source": "docProps/app.xml saved statistic",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "schema_version": 2,
+      "status": "ok",
+      "tool_version": "2.5.0"
+    }
+  },
+  "required": {
+    "process": {
+      "command": [
+        "local-evidence://deckprobe",
+        "-t",
+        "slide_count",
+        "local-evidence://PowerPoint数字签名演示文稿.pptx"
+      ],
+      "cwd": "local-evidence://deckprobe-acceptance",
+      "durationMs": 2.0267069999988507,
+      "exitCode": 0,
+      "startedAt": "2026-09-07T12:45:27.267037+00:00",
+      "stderr": "",
+      "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint数字签名演示文稿.pptx\",\"source_kind\":\"local_file\",\"file_size\":36107},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"powerpoint.app_statistics\",\"source\":\"docProps/app.xml saved statistic\"}},\"execution\":{\"probe_level\":\"metadata\",\"paths\":[\"powerpoint.app_statistics\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":6282,\"expanded_bytes\":4469,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+      "timedOut": false
+    },
+    "report": {
+      "diagnostics": [],
+      "driver": {
+        "id": "powerpoint",
+        "profile": "pptx"
+      },
+      "execution": {
+        "actual_cost": {
+          "expanded_bytes": 4469,
+          "physical_bytes_read": 6282,
+          "random_reads": 9
+        },
+        "estimated_cost": 4,
+        "paths": [
+          "powerpoint.app_statistics"
+        ],
+        "probe_level": "metadata",
+        "unresolved_targets": []
+      },
+      "input": {
+        "display_name": "PowerPoint数字签名演示文稿.pptx",
+        "file_size": 36107,
+        "source_kind": "local_file"
+      },
+      "results": {
+        "powerpoint.slide_count": {
+          "confidence": "high",
+          "confidence_score": 0.95,
+          "path": "powerpoint.app_statistics",
+          "source": "docProps/app.xml saved statistic",
+          "status": "resolved",
+          "target": "powerpoint.slide_count",
+          "value": 1
+        }
+      },
+      "schema_version": 2,
+      "status": "ok",
+      "tool_version": "2.5.0"
+    }
+  }
+}

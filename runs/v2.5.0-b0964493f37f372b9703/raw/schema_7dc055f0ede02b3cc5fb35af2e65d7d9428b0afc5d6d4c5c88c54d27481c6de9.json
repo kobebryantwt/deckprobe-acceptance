@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_7dc055f0ede02b3cc5fb35af2e65d7d9428b0afc5d6d4c5c88c54d27481c6de9",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_7dc055f0ede02b3cc5fb35af2e65d7d9428b0afc5d6d4c5c88c54d27481c6de9",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.signature_count",
+    "local-evidence://PowerPoint数字签名演示文稿.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-7dc055f0ede02b3cc5fb35af2e65d7d9428b0afc5d6d4c5c88c54d27481c6de9.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

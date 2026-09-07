@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": true,
+      "details": {
+        "answerDigest": "350a4b02dd9947e70bb24f2ae317d899591beee55190b1c44dd304b2731125a9",
+        "diagnosticMatch": true
+      },
+      "expected": true,
+      "featureId": "PRO-R03",
+      "id": "case-f7bbd397b77bc8556bd2_fact-5bd2c51fe9",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-f7bbd397b77bc8556bd2_fact-5bd2c51fe9",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_external_relationships",
+    "local-evidence://Word超链接与数字签名文档.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-ca329bdf30faa491dced26da4aa241ee185b01ddce6045162afea72d44def1ad.json"
+  ],
+  "source": {
+    "uri": "sha256:f7bbd397b77bc8556bd2f15437edbe871d5536f8779eaee06b917337fee5f7cf"
+  },
+  "status": "passed"
+}

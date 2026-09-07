@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://Word旧版宏文档.doc"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.4111520000028577,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.162941+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word旧版宏文档.doc\",\"source_kind\":\"local_file\",\"file_size\":36864},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"doc\"},\"results\":{\"security.has_macros\":{\"target\":\"security.has_macros\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.cfb_inventory\",\"source\":\"CFB directory inventory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.cfb_inventory\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":13832,\"expanded_bytes\":0,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

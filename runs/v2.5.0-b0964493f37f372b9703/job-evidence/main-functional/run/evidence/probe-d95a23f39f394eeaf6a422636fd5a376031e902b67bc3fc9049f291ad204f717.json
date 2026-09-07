@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://PowerPoint宏放映文件.ppsm"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6805230000045412,
+  "exitCode": 4,
+  "startedAt": "2026-09-07T12:45:26.628358+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .ppsm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

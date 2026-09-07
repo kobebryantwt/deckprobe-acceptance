@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.unique_media_asset_count",
+    "local-evidence://PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.6389639999990777,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.126436+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx\",\"source_kind\":\"local_file\",\"file_size\":24250645},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.unique_media_asset_count\":{\"target\":\"powerpoint.unique_media_asset_count\",\"status\":\"resolved\",\"value\":24,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.asset_inventory\",\"source\":\"unique audio/video asset parts under ppt/media/\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.asset_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":22214,\"expanded_bytes\":16397,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.presentation_kind",
+    "local-evidence://PowerPoint放映文件.ppsx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.693025999998099,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.624902+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint放映文件.ppsx\",\"source_kind\":\"local_file\",\"file_size\":36521},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"ppsx\"},\"results\":{\"powerpoint.presentation_kind\":{\"target\":\"powerpoint.presentation_kind\",\"status\":\"resolved\",\"value\":\"show\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.profile\",\"source\":\"detected OOXML profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.profile\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":5798,\"expanded_bytes\":3399,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

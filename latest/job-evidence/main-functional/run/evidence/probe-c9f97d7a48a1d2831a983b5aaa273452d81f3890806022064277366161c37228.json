@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://PowerPoint旧版宏演示文稿.ppt"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.3911559999826295,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.175930+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint旧版宏演示文稿.ppt\",\"source_kind\":\"local_file\",\"file_size\":16896},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"ppt\"},\"results\":{\"security.has_macros\":{\"target\":\"security.has_macros\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.cfb_inventory\",\"source\":\"CFB directory inventory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.cfb_inventory\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":4104,\"expanded_bytes\":0,\"random_reads\":4},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

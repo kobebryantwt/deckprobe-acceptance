@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.title",
+    "local-evidence://Excel旧版普通工作簿.xls"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.41978799999265,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.670448+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel旧版普通工作簿.xls\",\"source_kind\":\"local_file\",\"file_size\":13824},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"xls\"},\"results\":{\"document.title\":{\"target\":\"document.title\",\"status\":\"resolved\",\"value\":\"Simple Excel document\",\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"office_legacy.summary_information\",\"source\":\"SummaryInformation property set\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.summary_information\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":3592,\"expanded_bytes\":0,\"random_reads\":4},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.author",
+    "local-evidence://Word旧版宏文档.doc"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.4325629999802914,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.159856+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word旧版宏文档.doc\",\"source_kind\":\"local_file\",\"file_size\":36864},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"doc\"},\"results\":{\"document.author\":{\"target\":\"document.author\",\"status\":\"resolved\",\"value\":\"Javen ONeal\",\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"office_legacy.summary_information\",\"source\":\"SummaryInformation property set\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.summary_information\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":17928,\"expanded_bytes\":0,\"random_reads\":10},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

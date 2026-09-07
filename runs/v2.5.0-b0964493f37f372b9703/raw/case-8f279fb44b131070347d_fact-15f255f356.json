@@ -1,0 +1,43 @@
+{
+  "assertions": [
+    {
+      "actual": [
+        "Feuil1",
+        "Feuil2",
+        "Feuil3"
+      ],
+      "details": {
+        "answerDigest": "8911516101d937cf1aef9659e4373ed23362ef7d40291a897a707ea91f1d28a9",
+        "diagnosticMatch": true
+      },
+      "expected": [
+        "Feuil1",
+        "Feuil2",
+        "Feuil3"
+      ],
+      "featureId": "PRO-R03",
+      "id": "case-8f279fb44b131070347d_fact-15f255f356",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-8f279fb44b131070347d_fact-15f255f356",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.sheet_names",
+    "local-evidence://Excel旧版普通工作簿.xls"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-8b0fe100e610a5e73f002ec4a54badb2d9f177322137c6c66cfd7a48f630def1.json"
+  ],
+  "source": {
+    "uri": "sha256:8f279fb44b131070347d82320c5e7900b0e4d77ead38371b1f26ce95092b211b"
+  },
+  "status": "passed"
+}

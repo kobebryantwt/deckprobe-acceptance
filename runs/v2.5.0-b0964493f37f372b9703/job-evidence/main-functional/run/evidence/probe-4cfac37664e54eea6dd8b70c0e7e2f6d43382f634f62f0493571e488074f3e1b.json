@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.form_field_count",
+    "local-evidence://PDF表单与注释样本.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.2295740000117803,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.739231+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PDF表单与注释样本.pdf\",\"source_kind\":\"local_file\",\"file_size\":26746},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"pdf.form_field_count\":{\"target\":\"pdf.form_field_count\",\"status\":\"resolved\",\"value\":5,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"pdf.document_features\",\"source\":\"catalog /AcroForm field hierarchy\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.document_features\"],\"estimated_cost\":100,\"actual_cost\":{\"physical_bytes_read\":26754,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

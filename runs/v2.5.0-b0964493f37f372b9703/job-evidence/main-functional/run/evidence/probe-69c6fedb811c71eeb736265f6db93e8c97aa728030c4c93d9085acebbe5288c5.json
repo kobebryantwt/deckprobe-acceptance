@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.is_template",
+    "local-evidence://Excel宏模板.xltm"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6362409999999272,
+  "exitCode": 4,
+  "startedAt": "2026-09-07T12:45:26.614418+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .xltm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

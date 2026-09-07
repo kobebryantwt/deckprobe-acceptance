@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.hidden_sheet_count",
+    "local-evidence://Excel_SpreadsheetBench_8工作表6隐藏.xlsx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6017160000103559,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.942841+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel_SpreadsheetBench_8工作表6隐藏.xlsx\",\"source_kind\":\"local_file\",\"file_size\":158863},\"driver\":{\"id\":\"excel\",\"profile\":\"xlsx\"},\"results\":{\"excel.hidden_sheet_count\":{\"target\":\"excel.hidden_sheet_count\",\"status\":\"resolved\",\"value\":6,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"excel.workbook_xml\",\"source\":\"xl/workbook.xml\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"excel.workbook_xml\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":5388,\"expanded_bytes\":4341,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

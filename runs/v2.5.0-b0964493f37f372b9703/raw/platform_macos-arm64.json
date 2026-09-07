@@ -1,0 +1,74 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "asset": "deckprobe-aarch64-apple-darwin.tar.gz",
+        "binaryIdentity": {
+          "arch": "arm64",
+          "format": "Mach-O"
+        },
+        "environment": {
+          "libc": [
+            "",
+            ""
+          ],
+          "machine": "arm64",
+          "matches": true,
+          "muslLoader": [],
+          "system": "Darwin"
+        },
+        "sha256": "dc76b26c9c6493af0b4c0d428431ec80a83c565faccd3baaee98dbfcf8a2b93d",
+        "smoke": {
+          "command": [
+            "local-evidence://deckprobe",
+            "-l",
+            "header",
+            "-t",
+            "document.format",
+            "local-evidence://Word宏文档.docm"
+          ],
+          "cwd": "local-evidence://deckprobe-acceptance",
+          "durationMs": 6.224166000009745,
+          "exitCode": 4,
+          "startedAt": "2026-09-07T12:44:50.487789+00:00",
+          "stderr": "",
+          "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .docm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+          "timedOut": false
+        },
+        "version": {
+          "command": [
+            "local-evidence://deckprobe",
+            "--version"
+          ],
+          "cwd": "local-evidence://deckprobe-acceptance",
+          "durationMs": 9.003833999997823,
+          "exitCode": 0,
+          "startedAt": "2026-09-07T12:44:50.477766+00:00",
+          "stderr": "",
+          "stdout": "deckprobe 2.5.0\n",
+          "timedOut": false
+        }
+      },
+      "details": null,
+      "expected": {
+        "binaryArch": "arm64",
+        "target": "aarch64-apple-darwin",
+        "version": "deckprobe 2.5.0"
+      },
+      "featureId": "PRO-R08",
+      "id": "platform_macos-arm64",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "platform_macos-arm64",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

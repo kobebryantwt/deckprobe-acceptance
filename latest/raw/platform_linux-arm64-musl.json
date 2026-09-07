@@ -1,0 +1,23 @@
+{
+  "assertions": [
+    {
+      "actual": "job result missing",
+      "details": null,
+      "expected": "bound platform smoke result",
+      "featureId": "PRO-R08",
+      "id": "platform_linux-arm64-musl",
+      "role": "gate",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "platform_linux-arm64-musl",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.hidden_slide_count",
+    "local-evidence://PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.7122120000010455,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.131635+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx\",\"source_kind\":\"local_file\",\"file_size\":1263079},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.hidden_slide_count\":{\"target\":\"powerpoint.hidden_slide_count\",\"status\":\"resolved\",\"value\":0,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.presentation_xml\",\"source\":\"ppt/presentation.xml\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.presentation_xml\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":9476,\"expanded_bytes\":8974,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

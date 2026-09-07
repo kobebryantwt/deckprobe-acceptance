@@ -1,0 +1,15 @@
+{
+  "note": "仅重建呈现。原始验收结论、批准状态及机器报告不变。",
+  "renderedAt": "2026-09-07T13:09:03.454873+00:00",
+  "renderer": {
+    "case_explanations.py": "84b5afbd35fa1a9977774dcbc00cc9873bfbd6eb679c8fd6cee0db173a43c304",
+    "presentation/README.md": "8ee562d21b0a2763d73038456896063f117654a55c2853c54646da65ca69d0f4",
+    "presentation/report.css": "a833ba70b41e8efb3836246eda773edec4654f185fb766abfefd340d938dd62a",
+    "presentation/report.mjs": "0128bfe0cb12ab279291ecbecf02ebf04eea79eb5a1e5b1b3cc0bc223556d33e",
+    "presentation/review.css": "0f6c31fa4ab9dc4aa9c5aee285d07a2f639c0b322aee8a6dc1ad33e1f85f48b5",
+    "presentation/review.mjs": "b8a5f145c3bf025a7a982d95b4ad07fded18a04510a3c6cfafbbaaba64d273d1",
+    "report_view.py": "2112ae938e8c4815c285ff63ff01dad90b2e2ff965d170306cfabca35299e0f7"
+  },
+  "runId": "v2.5.0-b0964493f37f372b9703",
+  "version": 1
+}

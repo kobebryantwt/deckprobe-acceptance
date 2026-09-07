@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://PowerPoint主题文件.thmx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.2692590000256132,
+  "exitCode": 3,
+  "startedAt": "2026-09-07T12:45:26.820898+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_FORMAT\",\"exit_code\":3,\"message\":\"unsupported format: .thmx\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

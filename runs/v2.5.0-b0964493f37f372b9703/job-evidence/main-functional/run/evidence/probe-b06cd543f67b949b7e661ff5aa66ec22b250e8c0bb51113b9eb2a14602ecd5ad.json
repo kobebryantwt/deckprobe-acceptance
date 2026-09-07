@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.chart_part_count",
+    "local-evidence://Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.710328000001482,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.077042+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx\",\"source_kind\":\"local_file\",\"file_size\":3289197},\"driver\":{\"id\":\"excel\",\"profile\":\"xlsx\"},\"results\":{\"excel.chart_part_count\":{\"target\":\"excel.chart_part_count\",\"status\":\"resolved\",\"value\":2,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"excel.asset_inventory\",\"source\":\"unique Excel chart XML parts\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"excel.asset_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":6934,\"expanded_bytes\":4597,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

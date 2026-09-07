@@ -1,0 +1,74 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "asset": "deckprobe-aarch64-unknown-linux-gnu.tar.gz",
+        "binaryIdentity": {
+          "arch": "aarch64",
+          "format": "ELF"
+        },
+        "environment": {
+          "libc": [
+            "glibc",
+            "2.39"
+          ],
+          "machine": "aarch64",
+          "matches": true,
+          "muslLoader": [],
+          "system": "Linux"
+        },
+        "sha256": "6413e99a97aa92a67313da3ff60c441a60015896365c71a2bd2f3d375df57085",
+        "smoke": {
+          "command": [
+            "local-evidence://deckprobe",
+            "-l",
+            "header",
+            "-t",
+            "document.format",
+            "local-evidence://Word宏文档.docm"
+          ],
+          "cwd": "local-evidence://deckprobe-acceptance",
+          "durationMs": 1.4686429999528627,
+          "exitCode": 4,
+          "startedAt": "2026-09-07T12:44:45.931913+00:00",
+          "stderr": "",
+          "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .docm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+          "timedOut": false
+        },
+        "version": {
+          "command": [
+            "local-evidence://deckprobe",
+            "--version"
+          ],
+          "cwd": "local-evidence://deckprobe-acceptance",
+          "durationMs": 1.4869859999180335,
+          "exitCode": 0,
+          "startedAt": "2026-09-07T12:44:45.929500+00:00",
+          "stderr": "",
+          "stdout": "deckprobe 2.5.0\n",
+          "timedOut": false
+        }
+      },
+      "details": null,
+      "expected": {
+        "binaryArch": "arm64",
+        "target": "aarch64-unknown-linux-gnu",
+        "version": "deckprobe 2.5.0"
+      },
+      "featureId": "PRO-R08",
+      "id": "platform_linux-arm64-gnu",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "platform_linux-arm64-gnu",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

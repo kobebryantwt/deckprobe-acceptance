@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://Excel旧版宏工作簿.xls"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.437160999984144,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.166164+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel旧版宏工作簿.xls\",\"source_kind\":\"local_file\",\"file_size\":30720},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"xls\"},\"results\":{\"security.has_macros\":{\"target\":\"security.has_macros\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.cfb_inventory\",\"source\":\"CFB directory inventory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.cfb_inventory\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":17416,\"expanded_bytes\":0,\"random_reads\":11},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

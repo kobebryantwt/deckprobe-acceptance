@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.annotation_count",
+    "local-evidence://PDF_生物吸附剂论文_15页72注释.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 6.705652000022155,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.824961+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PDF_生物吸附剂论文_15页72注释.pdf\",\"source_kind\":\"local_file\",\"file_size\":1648696},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"pdf.annotation_count\":{\"target\":\"pdf.annotation_count\",\"status\":\"resolved\",\"value\":72,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"pdf.document_features\",\"source\":\"page-tree /Annots arrays\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.document_features\"],\"estimated_cost\":100,\"actual_cost\":{\"physical_bytes_read\":1648704,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

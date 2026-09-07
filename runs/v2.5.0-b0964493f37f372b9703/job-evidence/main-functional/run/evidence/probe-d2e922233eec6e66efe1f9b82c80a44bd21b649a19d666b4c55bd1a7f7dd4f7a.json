@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.is_template",
+    "local-evidence://Word普通模板.dotx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.9768840000153887,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.593136+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word普通模板.dotx\",\"source_kind\":\"local_file\",\"file_size\":59583},\"driver\":{\"id\":\"word\",\"profile\":\"dotx\"},\"results\":{\"word.is_template\":{\"target\":\"word.is_template\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"word.profile\",\"source\":\"detected OOXML profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"word.profile\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":4923,\"expanded_bytes\":3768,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

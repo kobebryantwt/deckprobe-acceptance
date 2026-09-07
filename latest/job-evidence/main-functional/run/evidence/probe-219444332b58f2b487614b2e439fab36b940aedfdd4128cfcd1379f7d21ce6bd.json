@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.sheet_count",
+    "local-evidence://Excel旧版模板.xlt"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.459272000005285,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.682585+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel旧版模板.xlt\",\"source_kind\":\"local_file\",\"file_size\":25600},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"xls\"},\"results\":{\"excel.sheet_count\":{\"target\":\"excel.sheet_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.content_statistics\",\"source\":\"BIFF workbook stream\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.content_statistics\"],\"estimated_cost\":50,\"actual_cost\":{\"physical_bytes_read\":17416,\"expanded_bytes\":0,\"random_reads\":2},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

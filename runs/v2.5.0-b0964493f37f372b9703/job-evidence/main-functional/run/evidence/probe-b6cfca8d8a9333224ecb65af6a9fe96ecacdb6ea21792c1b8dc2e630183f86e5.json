@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_javascript",
+    "local-evidence://PDF附件外链与JavaScript样本.pdf"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.503633000003447,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.756023+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PDF附件外链与JavaScript样本.pdf\",\"source_kind\":\"local_file\",\"file_size\":92359},\"driver\":{\"id\":\"pdf\",\"profile\":\"pdf\"},\"results\":{\"security.has_javascript\":{\"target\":\"security.has_javascript\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"pdf.deep_document_features\",\"source\":\"PDF JavaScript action or JavaScript name tree\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"pdf.deep_document_features\"],\"estimated_cost\":105,\"actual_cost\":{\"physical_bytes_read\":92367,\"expanded_bytes\":0,\"random_reads\":0},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

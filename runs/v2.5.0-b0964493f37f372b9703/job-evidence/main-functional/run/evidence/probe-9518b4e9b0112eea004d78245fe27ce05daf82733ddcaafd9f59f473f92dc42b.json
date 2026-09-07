@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.mime_type",
+    "local-evidence://PPT_Zenodo_用户画像工具包_49页80图.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.889348999985941,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.962192+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_用户画像工具包_49页80图.pptx\",\"source_kind\":\"local_file\",\"file_size\":22691055},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"document.mime_type\":{\"target\":\"document.mime_type\",\"status\":\"resolved\",\"value\":\"application/vnd.openxmlformats-officedocument.presentationml.presentation\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"ooxml.identity\",\"source\":\"format profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"ooxml.identity\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":29265,\"expanded_bytes\":20948,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

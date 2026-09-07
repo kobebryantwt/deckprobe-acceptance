@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.is_template",
+    "local-evidence://Word宏模板.dotm"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.7061510000075941,
+  "exitCode": 4,
+  "startedAt": "2026-09-07T12:45:26.600897+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .dotm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

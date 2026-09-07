@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_count",
+    "local-evidence://PowerPoint旧版模板.pot"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.3967449999938708,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.714986+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint旧版模板.pot\",\"source_kind\":\"local_file\",\"file_size\":9728},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"ppt\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.content_statistics\",\"source\":\"PPT persist directory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.content_statistics\"],\"estimated_cost\":50,\"actual_cost\":{\"physical_bytes_read\":9736,\"expanded_bytes\":0,\"random_reads\":3},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

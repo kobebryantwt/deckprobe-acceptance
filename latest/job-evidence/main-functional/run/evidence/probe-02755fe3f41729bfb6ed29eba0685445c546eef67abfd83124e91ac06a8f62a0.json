@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.presentation_kind",
+    "local-evidence://PowerPoint宏模板.potm"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.5585769999972854,
+  "exitCode": 4,
+  "startedAt": "2026-09-07T12:45:26.641807+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"MALFORMED_INPUT\",\"exit_code\":4,\"message\":\"malformed input: package main content type does not match .potm\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

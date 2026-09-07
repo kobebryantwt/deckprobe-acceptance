@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_3e8a1d4a5556ca246df444a3a161739045ccb1a89614787265773eec4c3be621",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_3e8a1d4a5556ca246df444a3a161739045ccb1a89614787265773eec4c3be621",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.sheet_names",
+    "local-evidence://Excel旧版宏工作簿.xls"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-3e8a1d4a5556ca246df444a3a161739045ccb1a89614787265773eec4c3be621.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

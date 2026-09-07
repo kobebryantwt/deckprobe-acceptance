@@ -1,0 +1,23 @@
+{
+  "assertions": [
+    {
+      "actual": "READY binding mismatch; checksum mismatch: answers.json; checksum mismatch: claims.json; checksum mismatch: facts.json; checksum mismatch: objects/37a7bb0f1306ccbf1a974f26855474ac986066db5f10bac9ff1894ab88d5d3b0/CSV列式数据样本.csv; checksum mismatch: objects/98c43e4364197125640bdfff5ca8bf56a7bdec42cfd0e8883632bca583345a8e/RTF嵌入文件文档.rtf; checksum mismatch: objects/c97a3dd5de2f42255d8d36e156060c732941bb0aa36b7cff2dd3ac2a5492c703/HTML嵌入图片页面.html; checksum mismatch: policy.json; checksum mismatch: samples.json; checksum mismatch: snapshot.json; sample object mismatch: case-37a7bb0f1306ccbf1a97; sample object mismatch: case-98c43e4364197125640b; sample object mismatch: case-c97a3dd5de2f42255d8d",
+      "details": null,
+      "expected": "x86_64-pc-windows-msvc",
+      "featureId": "PRO-R08",
+      "id": "platform_windows-x64",
+      "role": "gate",
+      "severity": "major",
+      "status": "blocked",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "platform_windows-x64",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "blocked"
+}

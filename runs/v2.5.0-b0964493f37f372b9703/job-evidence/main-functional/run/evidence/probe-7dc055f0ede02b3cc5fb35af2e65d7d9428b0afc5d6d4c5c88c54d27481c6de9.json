@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.signature_count",
+    "local-evidence://PowerPoint数字签名演示文稿.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.8188900000097874,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.777221+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint数字签名演示文稿.pptx\",\"source_kind\":\"local_file\",\"file_size\":36107},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"security.signature_count\":{\"target\":\"security.signature_count\",\"status\":\"resolved\",\"value\":1,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"ooxml.deep_security\",\"source\":\"unique OPC digital-signature XML parts\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"ooxml.deep_security\"],\"estimated_cost\":14,\"actual_cost\":{\"physical_bytes_read\":9565,\"expanded_bytes\":11269,\"random_reads\":26},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

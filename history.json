@@ -1,0 +1,14 @@
+{
+  "checks": [],
+  "runs": [
+    {
+      "createdAt": "2026-09-07T13:09:02.107015+00:00",
+      "decision": "FAIL",
+      "inputDigest": "b0964493f37f372b9703205126d984b2c03849a2536af55ab1f9c7d8d1cdb251",
+      "release": "v2.5.0",
+      "runId": "v2.5.0-b0964493f37f372b9703",
+      "url": "runs/v2.5.0-b0964493f37f372b9703/report.html"
+    }
+  ],
+  "schemaVersion": 1
+}

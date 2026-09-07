@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "local-evidence://runtime.mjs",
+    "mcp-timeout",
+    "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "local-evidence://PDF_生物吸附剂论文_15页72注释.pdf",
+    "local-evidence://deckprobe"
+  ],
+  "cwd": "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+  "durationMs": 1239.642841999995,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:50.339086+00:00",
+  "stderr": "",
+  "stdout": "local-evidence://n\",\"mode\":\"mcp-timeout\"}\n",
+  "timedOut": false
+}

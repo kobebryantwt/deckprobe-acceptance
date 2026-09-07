@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://CSV列式数据样本.csv"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.2725349999982427,
+  "exitCode": 3,
+  "startedAt": "2026-09-07T12:45:26.805840+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_FORMAT\",\"exit_code\":3,\"message\":\"unsupported format: .csv\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

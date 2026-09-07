@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.is_template",
+    "local-evidence://Excel普通模板.xltx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.7285930000241478,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.607622+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel普通模板.xltx\",\"source_kind\":\"local_file\",\"file_size\":8589},\"driver\":{\"id\":\"excel\",\"profile\":\"xltx\"},\"results\":{\"excel.is_template\":{\"target\":\"excel.is_template\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"excel.profile\",\"source\":\"detected OOXML profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"excel.profile\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":3105,\"expanded_bytes\":1171,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

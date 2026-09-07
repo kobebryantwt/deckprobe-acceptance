@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.page_count",
+    "local-evidence://Word旧版模板.dot"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.42055000000596,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.664061+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word旧版模板.dot\",\"source_kind\":\"local_file\",\"file_size\":27136},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"doc\"},\"results\":{\"word.page_count\":{\"target\":\"word.page_count\",\"status\":\"resolved\",\"value\":2,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"office_legacy.summary_information\",\"source\":\"SummaryInformation saved statistic\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.summary_information\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":8200,\"expanded_bytes\":0,\"random_reads\":2},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

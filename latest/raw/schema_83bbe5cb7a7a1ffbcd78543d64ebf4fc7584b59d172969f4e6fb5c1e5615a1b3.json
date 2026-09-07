@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_83bbe5cb7a7a1ffbcd78543d64ebf4fc7584b59d172969f4e6fb5c1e5615a1b3",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_83bbe5cb7a7a1ffbcd78543d64ebf4fc7584b59d172969f4e6fb5c1e5615a1b3",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.aspect_ratio",
+    "local-evidence://PPT_Zenodo_用户画像工具包_49页80图.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-83bbe5cb7a7a1ffbcd78543d64ebf4fc7584b59d172969f4e6fb5c1e5615a1b3.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

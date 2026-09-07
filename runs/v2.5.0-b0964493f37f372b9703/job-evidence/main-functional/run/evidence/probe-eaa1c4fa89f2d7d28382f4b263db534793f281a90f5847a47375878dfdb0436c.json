@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "iwork.package_entry_count",
+    "local-evidence://Keynote现代IWA演示文稿.key"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.6933670000014445,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.718149+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Keynote现代IWA演示文稿.key\",\"source_kind\":\"local_file\",\"file_size\":274397},\"driver\":{\"id\":\"keynote\",\"profile\":\"key\"},\"results\":{\"iwork.package_entry_count\":{\"target\":\"iwork.package_entry_count\",\"status\":\"resolved\",\"value\":62,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"iwork.package_inventory\",\"source\":\"ZIP central directory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"iwork.package_inventory\"],\"estimated_cost\":8,\"actual_cost\":{\"physical_bytes_read\":11629,\"expanded_bytes\":12256,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.chart_part_count",
+    "local-evidence://PPT_Zenodo_光伏财务可行性_6图表2表格.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.013649999980771,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.071006+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_光伏财务可行性_6图表2表格.pptx\",\"source_kind\":\"local_file\",\"file_size\":1131652},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.chart_part_count\":{\"target\":\"powerpoint.chart_part_count\",\"status\":\"resolved\",\"value\":6,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.asset_inventory\",\"source\":\"unique PowerPoint chart XML parts\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.asset_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":11049,\"expanded_bytes\":7643,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

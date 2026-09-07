@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "controlsVisible": true,
+        "forbiddenConnects": [],
+        "modifiedInputs": [],
+        "productDropPackets": 3,
+        "runs": 56,
+        "scope": "Ubuntu x64 hosted runner and exported public fixtures",
+        "unexpectedExecutions": [],
+        "writeEvents": []
+      },
+      "details": null,
+      "expected": "positive controls visible; no product IPv4/IPv6 connect attempts",
+      "featureId": "PRO-R02",
+      "id": "linux_live_isolation",
+      "role": "gate",
+      "severity": "critical",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "linux_live_isolation",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

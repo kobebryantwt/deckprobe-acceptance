@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "details": {
+        "answerDigest": "bb262b824e92decf704512b592d215ed12a2252eeb264ad807e1cfdf9de85056",
+        "diagnosticMatch": true
+      },
+      "expected": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "featureId": "PRO-R03",
+      "id": "case-8511f025397f248ef834_fact-506cd55d9a",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-8511f025397f248ef834_fact-506cd55d9a",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.mime_type",
+    "local-evidence://Word_家居零售价目册_66页308表115图.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-6bc1e058fa2be2ed6c04e81543316c78008f72682259f87726d92ec3979bd79b.json"
+  ],
+  "source": {
+    "uri": "sha256:8511f025397f248ef8345b22e79390df010921f13e757838a34f936b8e37d035"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_count",
+    "local-evidence://PPT_Zenodo_统计学课程_64公式24切换.pptx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.8975659999966865,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:27.135526+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PPT_Zenodo_统计学课程_64公式24切换.pptx\",\"source_kind\":\"local_file\",\"file_size\":734565},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"pptx\"},\"results\":{\"powerpoint.slide_count\":{\"target\":\"powerpoint.slide_count\",\"status\":\"resolved\",\"value\":16,\"confidence\":\"high\",\"confidence_score\":0.95,\"path\":\"powerpoint.app_statistics\",\"source\":\"docProps/app.xml saved statistic\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.app_statistics\"],\"estimated_cost\":4,\"actual_cost\":{\"physical_bytes_read\":14170,\"expanded_bytes\":11071,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

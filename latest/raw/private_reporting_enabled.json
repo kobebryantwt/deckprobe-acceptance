@@ -1,0 +1,30 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "checkedAt": "2026-09-07T12:45:25.864910+00:00",
+        "identity": "GITHUB_TOKEN",
+        "privateReporting": {
+          "enabled": false
+        },
+        "repository": "deckflow/deckprobe"
+      },
+      "details": null,
+      "expected": true,
+      "featureId": "PRO-R09",
+      "id": "private_reporting_enabled",
+      "role": "gate",
+      "severity": "major",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "private_reporting_enabled",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "failed"
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "node",
+    "local-evidence://runtime.mjs",
+    "mcp-default",
+    "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "local-evidence://Excel数字签名工作簿.xlsx",
+    "local-evidence://deckprobe"
+  ],
+  "cwd": "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+  "durationMs": 1284.6227489999933,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:38.854818+00:00",
+  "stderr": "",
+  "stdout": "local-evidence://n\",\"mode\":\"mcp-default\"}\n",
+  "timedOut": false
+}

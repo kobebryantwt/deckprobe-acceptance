@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://HTML嵌入图片页面.html"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.2629070000116371,
+  "exitCode": 3,
+  "startedAt": "2026-09-07T12:45:26.808717+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_FORMAT\",\"exit_code\":3,\"message\":\"unsupported format: .html\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

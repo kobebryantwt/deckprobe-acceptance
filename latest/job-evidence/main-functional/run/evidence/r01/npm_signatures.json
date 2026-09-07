@@ -1,0 +1,77 @@
+{
+  "counts": {
+    "blocked": 0,
+    "failed": 0,
+    "passed": 3,
+    "review": 0
+  },
+  "evidence": [
+    "evidence/r01/npm-signatures.json"
+  ],
+  "groups": [
+    {
+      "rows": [
+        {
+          "actual": true,
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/lockSha256 与 /runtimeManifestSha256",
+              "path": "evidence/r01/npm-signatures.json"
+            }
+          ],
+          "expected": true,
+          "expectedEvidence": [],
+          "label": "审计日志与冻结依赖绑定",
+          "note": null,
+          "status": "passed"
+        },
+        {
+          "actual": 0,
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/result/exitCode",
+              "path": "evidence/r01/npm-signatures.json"
+            }
+          ],
+          "expected": 0,
+          "expectedEvidence": [],
+          "label": "npm audit signatures · 退出码",
+          "note": "0 是命令执行成功的退出码，不是包数量。",
+          "status": "passed"
+        },
+        {
+          "actual": 8,
+          "actualEvidence": [
+            {
+              "label": "证据",
+              "locator": "/result/stdout",
+              "path": "evidence/r01/npm-signatures.json"
+            }
+          ],
+          "expected": 8,
+          "expectedEvidence": [],
+          "label": "registry 签名通过数量",
+          "note": "预期为本次命令所审计的全部包；包数量来自同一份原始 stdout。",
+          "status": "passed"
+        }
+      ],
+      "title": "已安装依赖 · npm audit signatures"
+    }
+  ],
+  "log": {
+    "command": [
+      "npm",
+      "audit",
+      "signatures"
+    ],
+    "cwd": "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "startedAt": "2026-09-07T12:45:15.733899+00:00",
+    "stderr": "",
+    "stdout": "audited 8 packages in 0s\n\n8 packages have verified registry signatures\n\n8 packages have verified attestations\n(use --json --include-attestations to view attestation details)\n\n"
+  },
+  "scope": "同一次命令另外报告 8 个包通过来源证明验证。签名与来源证明分别计数，不能混为全部包都通过来源证明。",
+  "status": "passed",
+  "summary": "npm 审计 8 个包；registry 签名已验证 8 个"
+}

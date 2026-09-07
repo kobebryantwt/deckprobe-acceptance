@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 22,
+      "details": {
+        "answerDigest": "6b1cb181f7a3c6d3b01f369599716bbe7e374df46f93f5ec942de786d0dc5a74",
+        "diagnosticMatch": true
+      },
+      "expected": 22,
+      "featureId": "PRO-R03",
+      "id": "case-e273ff481ad4f312f663_fact-cd0331b491",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-e273ff481ad4f312f663_fact-cd0331b491",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.page_count",
+    "local-evidence://Word_职称评审表_22页多页眉页脚.docx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-4cfe3496d61b13b014d8ce0fe289fdd979728519133071367f3532136fa964af.json"
+  ],
+  "source": {
+    "uri": "sha256:e273ff481ad4f312f663bd19d4f0242ffd357f876611413b3d43580b2c845a81"
+  },
+  "status": "passed"
+}

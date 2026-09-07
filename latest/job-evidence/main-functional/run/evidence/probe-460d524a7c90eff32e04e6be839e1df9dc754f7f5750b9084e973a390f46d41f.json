@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "@all",
+    "local-evidence://Numbers旧版XML工作簿.numbers"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.358183999997209,
+  "exitCode": 3,
+  "startedAt": "2026-09-07T12:45:26.787478+00:00",
+  "stderr": "",
+  "stdout": "{\"error\":{\"code\":\"UNSUPPORTED_FORMAT\",\"exit_code\":3,\"message\":\"unsupported format: legacy XML iWork packages are not supported; modern IWA is required\"},\"schema_version\":2,\"status\":\"error\",\"tool_version\":\"2.5.0\"}\n",
+  "timedOut": false
+}

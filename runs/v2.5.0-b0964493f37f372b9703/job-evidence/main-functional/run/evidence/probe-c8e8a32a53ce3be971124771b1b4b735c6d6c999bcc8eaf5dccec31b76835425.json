@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_digital_signature",
+    "local-evidence://Word超链接与数字签名文档.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.5359840000144231,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.766669+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word超链接与数字签名文档.docx\",\"source_kind\":\"local_file\",\"file_size\":24070},\"driver\":{\"id\":\"word\",\"profile\":\"docx\"},\"results\":{\"security.has_digital_signature\":{\"target\":\"security.has_digital_signature\",\"status\":\"resolved\",\"value\":true,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"ooxml.package_security\",\"source\":\"OPC digital-signature parts and relationships\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"ooxml.package_security\"],\"estimated_cost\":12,\"actual_cost\":{\"physical_bytes_read\":4433,\"expanded_bytes\":3822,\"random_reads\":11},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

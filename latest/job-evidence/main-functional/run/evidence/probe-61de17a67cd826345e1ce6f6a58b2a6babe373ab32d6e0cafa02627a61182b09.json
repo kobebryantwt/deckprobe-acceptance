@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "word.unique_image_asset_count",
+    "local-evidence://Word_家居零售价目册_66页308表115图.docx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.000729000002366,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.897231+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Word_家居零售价目册_66页308表115图.docx\",\"source_kind\":\"local_file\",\"file_size\":709702},\"driver\":{\"id\":\"word\",\"profile\":\"docx\"},\"results\":{\"word.unique_image_asset_count\":{\"target\":\"word.unique_image_asset_count\",\"status\":\"resolved\",\"value\":115,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"word.asset_inventory\",\"source\":\"unique image asset parts under word/media/\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"word.asset_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":11965,\"expanded_bytes\":1931,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

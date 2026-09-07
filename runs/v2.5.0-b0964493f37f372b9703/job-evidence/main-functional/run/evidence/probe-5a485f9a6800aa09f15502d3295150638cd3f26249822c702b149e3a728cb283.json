@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.table_count",
+    "local-evidence://Excel_多子表汇总_61工作表178表格.xlsx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 2.3858939999854556,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.935413+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"Excel_多子表汇总_61工作表178表格.xlsx\",\"source_kind\":\"local_file\",\"file_size\":255288},\"driver\":{\"id\":\"excel\",\"profile\":\"xlsx\"},\"results\":{\"excel.table_count\":{\"target\":\"excel.table_count\",\"status\":\"resolved\",\"value\":178,\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"excel.table_inventory\",\"source\":\"OPC entry inventory\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"excel.table_inventory\"],\"estimated_cost\":2,\"actual_cost\":{\"physical_bytes_read\":25535,\"expanded_bytes\":32537,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

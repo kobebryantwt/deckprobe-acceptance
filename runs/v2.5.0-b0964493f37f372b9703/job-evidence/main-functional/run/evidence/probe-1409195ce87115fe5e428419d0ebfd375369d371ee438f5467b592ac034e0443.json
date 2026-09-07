@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.presentation_kind",
+    "local-evidence://PowerPoint普通模板.potx"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.615993000001481,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.635391+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint普通模板.potx\",\"source_kind\":\"local_file\",\"file_size\":617839},\"driver\":{\"id\":\"powerpoint\",\"profile\":\"potx\"},\"results\":{\"powerpoint.presentation_kind\":{\"target\":\"powerpoint.presentation_kind\",\"status\":\"resolved\",\"value\":\"template\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"powerpoint.profile\",\"source\":\"detected OOXML profile\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"powerpoint.profile\"],\"estimated_cost\":1,\"actual_cost\":{\"physical_bytes_read\":5531,\"expanded_bytes\":3188,\"random_reads\":7},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

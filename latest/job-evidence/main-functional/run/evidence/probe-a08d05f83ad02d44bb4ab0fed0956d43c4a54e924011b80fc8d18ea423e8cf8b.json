@@ -1,0 +1,17 @@
+{
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.presentation_kind",
+    "local-evidence://PowerPoint旧版放映文件.pps"
+  ],
+  "cwd": "local-evidence://deckprobe-acceptance",
+  "durationMs": 1.588663000006818,
+  "exitCode": 0,
+  "startedAt": "2026-09-07T12:45:26.702524+00:00",
+  "stderr": "",
+  "stdout": "{\"schema_version\":2,\"tool_version\":\"2.5.0\",\"status\":\"ok\",\"input\":{\"display_name\":\"PowerPoint旧版放映文件.pps\",\"source_kind\":\"local_file\",\"file_size\":125440},\"driver\":{\"id\":\"office-legacy\",\"profile\":\"ppt\"},\"results\":{\"powerpoint.presentation_kind\":{\"target\":\"powerpoint.presentation_kind\",\"status\":\"resolved\",\"value\":\"show\",\"confidence\":\"exact\",\"confidence_score\":1.0,\"path\":\"office_legacy.content_statistics\",\"source\":\"input suffix\"}},\"execution\":{\"probe_level\":\"deep\",\"paths\":[\"office_legacy.content_statistics\"],\"estimated_cost\":50,\"actual_cost\":{\"physical_bytes_read\":67080,\"expanded_bytes\":0,\"random_reads\":9},\"unresolved_targets\":[]},\"diagnostics\":[]}\n",
+  "timedOut": false
+}

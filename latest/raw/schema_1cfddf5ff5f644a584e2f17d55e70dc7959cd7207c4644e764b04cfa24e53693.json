@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_1cfddf5ff5f644a584e2f17d55e70dc7959cd7207c4644e764b04cfa24e53693",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_1cfddf5ff5f644a584e2f17d55e70dc7959cd7207c4644e764b04cfa24e53693",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_size",
+    "local-evidence://PPT_Zenodo_设计技术教育_批注与备注.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-1cfddf5ff5f644a584e2f17d55e70dc7959cd7207c4644e764b04cfa24e53693.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}
