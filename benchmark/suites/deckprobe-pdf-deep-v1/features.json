@@ -1,0 +1,19 @@
+{
+  "features": [
+    {"id":"pdf.header","name":"PDF Header、格式身份与 linearization","category":"fact"},
+    {"id":"pdf.info","name":"PDF Info 元数据","category":"fact"},
+    {"id":"pdf.structure","name":"页面、对象数量与 xref 类型","category":"fact"},
+    {"id":"pdf.annotations","name":"页面批注统计","category":"fact"},
+    {"id":"pdf.links","name":"内部 PDF 链接数量","category":"fact"},
+    {"id":"pdf.forms","name":"AcroForm 逻辑终端字段统计","category":"fact"},
+    {"id":"pdf.attachments","name":"附件与嵌入文件信号","category":"fact"},
+    {"id":"pdf.xmp","name":"Catalog XMP 元数据流","category":"fact"},
+    {"id":"pdf.signatures","name":"已签名签名字典检测","category":"security"},
+    {"id":"pdf.javascript","name":"PDF JavaScript 检测","category":"security"},
+    {"id":"pdf.external-actions","name":"外部 URI、GoToR 或 Launch 动作检测","category":"security"},
+    {"id":"pdf.encryption","name":"PDF 加密与密码保护状态","category":"security"},
+    {"id":"pdf.active-content-risk","name":"主动内容风险分级","category":"security"},
+    {"id":"pdf.repair","name":"xref 安全修复使用状态","category":"quality"},
+    {"id":"contract.schema-evidence","name":"Schema v2、置信度、证据和成本字段一致性","category":"contract"}
+  ]
+}

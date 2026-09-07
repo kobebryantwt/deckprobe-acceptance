@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-exact-slide-count",
+  "displayName": "DeckProbe 精确幻灯片计数",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["./target/debug/deckprobe", "-c", "exact", "-t", "slide_count", "{input}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 15,
+    "result": {"type": "stdout_json"}
+  }
+}

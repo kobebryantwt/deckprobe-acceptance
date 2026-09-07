@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-ooxml-deep",
+  "displayName": "DeckProbe OOXML 全量深度探测",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["./target/debug/deckprobe", "-l", "deep", "-t", "@all", "{input}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 20,
+    "result": {"type": "stdout_json"}
+  }
+}

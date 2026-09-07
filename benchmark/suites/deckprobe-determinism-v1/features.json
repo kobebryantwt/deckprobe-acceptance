@@ -1,0 +1,1 @@
+{"features":[{"id":"contract.determinism","name":"相同请求生成逐字节一致的默认 JSON","category":"contract"},{"id":"contract.schema-evidence","name":"每次重复生成的报告均满足 Schema 与证据规则","category":"contract"}]}

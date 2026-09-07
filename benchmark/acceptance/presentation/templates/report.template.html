@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light"><title>DeckProbe · 验收对照</title><style>/*REPORT_CSS*/</style></head>
+<body>
+<!-- TEMPLATE_ONLY_BEGIN -->
+<style>body{margin:0;background:#f4f5f0;color:#202b29;font:16px/1.8 system-ui,sans-serif}.topbar,body>main,body>noscript{display:none}#template-notice{max-width:760px;margin:72px auto;padding:32px;background:#fff;border:1px solid #dce3d6;border-radius:12px}#template-notice h1{font-size:25px;margin:0 0 12px}#template-notice a{display:block;margin-top:16px;color:#315e4d}#template-notice p{color:#647060}</style>
+<section id="template-notice"><h1>这里是报告模板，尚未填入验收数据</h1><p>请打开已生成的报告。以下为本次交付的 v2.5.0 对照页面：</p>
+<a href="../../artifacts/acceptance/rebuilt/case-oriented-v4/report.html#PRO-R02">打开按测试类型说明的验收报告（包含已采集的实际值） →</a>
+</section>
+<!-- TEMPLATE_ONLY_END -->
+<header class="topbar"><a class="brand" href="#PRO-R03"><span class="brand-icon">D</span> DeckProbe <span class="brand-sub">RELEASE ACCEPTANCE</span></a><div class="toplinks"><a href="run.json">运行记录 ↗</a><a href="agent-report.json">机器报告 ↗</a><a href="core-report.html">原版报告 ↗</a></div></header>
+<main><section class="hero"><div><div class="eyebrow">EXPECTED / OBSERVED</div><h1>发布验收对照</h1><p id="run-label"></p></div><div class="verdict"><span>本机验收 / 完整手册</span><div id="verdict"></div><p>结论来自归档 · 页面不重新判分</p></div></section>
+<div class="notice" id="notice"></div><section class="metrics" id="metrics" aria-label="结果概览"></section>
+<nav id="tabs" class="tabs" role="tablist" aria-label="验收类别"></nav>
+<section class="workspace" role="tabpanel" id="panel" aria-labelledby="tab-PRO-R03">
+<div class="section-heading"><div><div class="eyebrow" id="section-kicker"></div><h2 id="section-title"></h2><p id="section-description"></p></div><span id="section-count" class="count-label" aria-live="polite"></span></div>
+<div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索文件、target、case 或答案…" aria-label="搜索验收项"></label><select id="state-filter" aria-label="筛选结果"><option value="all">全部结果</option><option value="attention">差异与未完成</option><option value="different">仅不一致</option><option value="matched">仅一致 / 满足规则</option><option value="draft">GT 待审核</option></select><select id="format-filter" aria-label="筛选文件格式"><option value="all">全部格式</option></select><button id="reset">重置</button><div class="expand-buttons"><button id="expand">全部展开</button><button id="collapse">全部折叠</button></div></div>
+<div class="column-guide" id="column-guide"><span><b>01</b> 测试设计 · 预期与通过条件</span><span><b>02</b> 本轮执行 · 结果与证据缺口</span></div>
+<div id="cases"></div><div id="empty" hidden>没有符合当前筛选条件的项目。<button id="clear-empty">清除筛选</button></div>
+</section><footer><span>仅本机证据 · 源文件保留原始路径与内容哈希</span><div><a href="coverage.json">覆盖矩阵 ↗</a><a href="evidence-manifest.json">证据清单 ↗</a><a href="questions.json">问题与答案 ↗</a></div></footer></main>
+<noscript>此对照页需要 JavaScript。请打开 <a href="core-report.html">原版静态报告</a> 或 <a href="run.json">完整运行记录</a>。</noscript>
+<script type="application/json" id="report-data">REPORT_DATA_JSON</script><script>/*REPORT_JS*/</script></body></html>

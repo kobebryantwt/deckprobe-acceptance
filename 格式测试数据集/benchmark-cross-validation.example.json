@@ -1,0 +1,98 @@
+{
+  "artifact_schema_version": 2,
+  "record_id": "cross-validation-pdf-form-example-v1",
+  "record_kind": "cross_validation",
+  "sample": {
+    "case_id": "case-cc0cff1b91879bebb339",
+    "corpus_path": "01_明确支持/01_PDF文档/字段代表样本/PDF表单与注释样本.pdf",
+    "sha256": "cc0cff1b91879bebb339b687b7efdb228c40154800ece83f2b1dad7134ee7ce4",
+    "file_size": 26746,
+    "extension": "pdf",
+    "declared_support": "supported",
+    "format_profile": "pdf"
+  },
+  "producer": {
+    "name": "third-party-pdf-inspector",
+    "version": "replace-with-real-version",
+    "independence": "independent_implementation",
+    "shared_components": []
+  },
+  "run": {
+    "probe_level": "independent",
+    "command": [
+      "third-party-pdf-inspector",
+      "--json",
+      "PDF表单与注释样本.pdf"
+    ]
+  },
+  "outcome": {
+    "status": "ok",
+    "process_exit_code": 0
+  },
+  "fields": [
+    {
+      "fact_id": "pdf.page-tree.leaf-count",
+      "definition": "从 PDF Catalog 可达页面树统计叶子 /Page 对象；每个可达叶子计一次。",
+      "target_mapping": {
+        "status": "mapped",
+        "target": "pdf.page_count",
+        "check": "value",
+        "request_options": ["--probe-level", "deep", "--targets", "pdf.page_count"],
+        "requirement": "PRO-R03",
+        "rationale": "独立事实与 DeckProbe pdf.page_count 使用相同的页面树叶子统计口径。"
+      },
+      "state": "observed",
+      "value": 1,
+      "confidence": "exact",
+      "method": "page-tree traversal",
+      "evidence": [
+        {
+          "kind": "tool_output",
+          "locator": "raw_output.page_count"
+        }
+      ]
+    },
+    {
+      "fact_id": "pdf.acroform.terminal-field-count",
+      "definition": "递归 AcroForm Fields 树并统计没有 Kids 的终端字段；widget 注释本身不重复计数。",
+      "target_mapping": {
+        "status": "mapped",
+        "target": "pdf.form_field_count",
+        "check": "value",
+        "request_options": ["--probe-level", "deep", "--targets", "pdf.form_field_count"],
+        "requirement": "PRO-R03",
+        "rationale": "统计口径与产品字段契约一致。"
+      },
+      "state": "observed",
+      "value": 5,
+      "confidence": "exact",
+      "method": "terminal AcroForm field count",
+      "evidence": [
+        {
+          "kind": "pdf_object",
+          "locator": "Catalog/AcroForm/Fields"
+        }
+      ]
+    },
+    {
+      "fact_id": "document.metadata.author",
+      "definition": "依次检查 PDF Info /Author 与 XMP dc:creator；两处均无值时记为 absent。",
+      "target_mapping": {
+        "status": "mapped",
+        "target": "document.author",
+        "check": "value",
+        "request_options": ["--probe-level", "deep", "--targets", "document.author"],
+        "requirement": "PRO-R03",
+        "rationale": "独立读取的作者元数据与产品 document.author 语义一致。"
+      },
+      "state": "absent",
+      "confidence": "exact",
+      "method": "Info and XMP metadata inspection"
+    }
+  ],
+  "raw_output": {
+    "page_count": 1,
+    "form_field_count": 5,
+    "author_present": false
+  }
+}

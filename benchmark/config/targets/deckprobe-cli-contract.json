@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-cli-contract",
+  "displayName": "DeckProbe CLI 行为合同",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["python3", "benchmark/adapters/deckprobe_cli_contract.py", "./target/debug/deckprobe", "{input}", "{case_id}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 20,
+    "result": {"type": "stdout_json"}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "features": [
+    {"id": "contract.schema-evidence", "name": "Schema v2 信封、稳定状态、置信度与证据一致性", "category": "contract"},
+    {"id": "routing.format", "name": "按扩展名路由后验证容器和格式配置", "category": "routing"},
+    {"id": "facts.document", "name": "通用文档事实", "category": "fact"},
+    {"id": "facts.structure", "name": "格式主要结构事实", "category": "fact"},
+    {"id": "security.signals", "name": "加密、宏、嵌入对象与外部内容信号", "category": "safety"},
+    {"id": "safety.unsupported", "name": "稳定拒绝不支持的格式", "category": "safety"},
+    {"id": "efficiency.focused", "name": "元数据与安全探测不超过已审批的语料成本上限", "category": "cost"}
+  ]
+}

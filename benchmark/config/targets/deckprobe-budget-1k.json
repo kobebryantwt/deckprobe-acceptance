@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-budget-1k",
+  "displayName": "DeckProbe 1 KiB 物理读取预算",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["./target/debug/deckprobe", "-b", "1024", "-t", "@summary", "{input}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 15,
+    "result": {"type": "stdout_json"}
+  }
+}

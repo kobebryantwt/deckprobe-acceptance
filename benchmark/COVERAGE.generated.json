@@ -1,0 +1,289 @@
+{
+  "contractVersion": 2,
+  "definitions": {
+    "designed": "A deterministic target check exists in any suite.",
+    "approved": "The suite and the question binding that check are approved.",
+    "run": "The approved check appears in the latest suite run and the source SHA matches.",
+    "passed": "The latest matching run reports that approved check as passed."
+  },
+  "profiles": [
+    {
+      "profile": "pdf",
+      "catalogTargetCount": 34,
+      "coverage": {
+        "designed": {
+          "targetCount": 32,
+          "coveragePercent": 94.1
+        },
+        "approved": {
+          "targetCount": 32,
+          "coveragePercent": 94.1
+        },
+        "run": {
+          "targetCount": 32,
+          "coveragePercent": 94.1
+        },
+        "passed": {
+          "targetCount": 32,
+          "coveragePercent": 94.1
+        }
+      },
+      "missingDesignedTargets": [
+        "document.application",
+        "document.description"
+      ],
+      "designedButMissingFromCatalog": [
+        "pdf.link_count"
+      ]
+    },
+    {
+      "profile": "docx",
+      "catalogTargetCount": 35,
+      "coverage": {
+        "designed": {
+          "targetCount": 35,
+          "coveragePercent": 100.0
+        },
+        "approved": {
+          "targetCount": 35,
+          "coveragePercent": 100.0
+        },
+        "run": {
+          "targetCount": 35,
+          "coveragePercent": 100.0
+        },
+        "passed": {
+          "targetCount": 33,
+          "coveragePercent": 94.3
+        }
+      },
+      "missingDesignedTargets": [],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "xlsx",
+      "catalogTargetCount": 38,
+      "coverage": {
+        "designed": {
+          "targetCount": 37,
+          "coveragePercent": 97.4
+        },
+        "approved": {
+          "targetCount": 37,
+          "coveragePercent": 97.4
+        },
+        "run": {
+          "targetCount": 37,
+          "coveragePercent": 97.4
+        },
+        "passed": {
+          "targetCount": 37,
+          "coveragePercent": 97.4
+        }
+      },
+      "missingDesignedTargets": [
+        "document.keywords"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "pptx",
+      "catalogTargetCount": 40,
+      "coverage": {
+        "designed": {
+          "targetCount": 39,
+          "coveragePercent": 97.5
+        },
+        "approved": {
+          "targetCount": 39,
+          "coveragePercent": 97.5
+        },
+        "run": {
+          "targetCount": 39,
+          "coveragePercent": 97.5
+        },
+        "passed": {
+          "targetCount": 39,
+          "coveragePercent": 97.5
+        }
+      },
+      "missingDesignedTargets": [
+        "document.keywords"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "doc",
+      "catalogTargetCount": 27,
+      "coverage": {
+        "designed": {
+          "targetCount": 24,
+          "coveragePercent": 88.9
+        },
+        "approved": {
+          "targetCount": 24,
+          "coveragePercent": 88.9
+        },
+        "run": {
+          "targetCount": 24,
+          "coveragePercent": 88.9
+        },
+        "passed": {
+          "targetCount": 23,
+          "coveragePercent": 85.2
+        }
+      },
+      "missingDesignedTargets": [
+        "document.created_at",
+        "document.modified_at",
+        "word.paragraph_count"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "ppt",
+      "catalogTargetCount": 25,
+      "coverage": {
+        "designed": {
+          "targetCount": 22,
+          "coveragePercent": 88.0
+        },
+        "approved": {
+          "targetCount": 22,
+          "coveragePercent": 88.0
+        },
+        "run": {
+          "targetCount": 22,
+          "coveragePercent": 88.0
+        },
+        "passed": {
+          "targetCount": 21,
+          "coveragePercent": 84.0
+        }
+      },
+      "missingDesignedTargets": [
+        "document.created_at",
+        "document.modified_at",
+        "powerpoint.notes_slide_count"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "key",
+      "catalogTargetCount": 42,
+      "coverage": {
+        "designed": {
+          "targetCount": 29,
+          "coveragePercent": 69.0
+        },
+        "approved": {
+          "targetCount": 29,
+          "coveragePercent": 69.0
+        },
+        "run": {
+          "targetCount": 29,
+          "coveragePercent": 69.0
+        },
+        "passed": {
+          "targetCount": 28,
+          "coveragePercent": 66.7
+        }
+      },
+      "missingDesignedTargets": [
+        "document.language",
+        "document.locale",
+        "iwork.all_iwa_valid",
+        "iwork.archive_object_count",
+        "iwork.message_type_counts",
+        "iwork.object_type_counts",
+        "keynote.aspect_ratio",
+        "keynote.master_slide_count",
+        "keynote.orientation",
+        "keynote.slides_with_builds_count",
+        "keynote.table_component_count",
+        "keynote.table_count",
+        "quality.corrupted"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "numbers",
+      "catalogTargetCount": 40,
+      "coverage": {
+        "designed": {
+          "targetCount": 26,
+          "coveragePercent": 65.0
+        },
+        "approved": {
+          "targetCount": 26,
+          "coveragePercent": 65.0
+        },
+        "run": {
+          "targetCount": 26,
+          "coveragePercent": 65.0
+        },
+        "passed": {
+          "targetCount": 25,
+          "coveragePercent": 62.5
+        }
+      },
+      "missingDesignedTargets": [
+        "document.language",
+        "document.locale",
+        "iwork.all_iwa_valid",
+        "iwork.archive_object_count",
+        "iwork.message_type_counts",
+        "iwork.object_type_counts",
+        "numbers.filtered_row_count",
+        "numbers.formula_definition_count",
+        "numbers.hidden_column_count",
+        "numbers.hidden_row_count",
+        "numbers.table_component_count",
+        "numbers.table_count",
+        "numbers.table_dimensions",
+        "quality.corrupted"
+      ],
+      "designedButMissingFromCatalog": []
+    },
+    {
+      "profile": "pages",
+      "catalogTargetCount": 42,
+      "coverage": {
+        "designed": {
+          "targetCount": 27,
+          "coveragePercent": 64.3
+        },
+        "approved": {
+          "targetCount": 27,
+          "coveragePercent": 64.3
+        },
+        "run": {
+          "targetCount": 27,
+          "coveragePercent": 64.3
+        },
+        "passed": {
+          "targetCount": 26,
+          "coveragePercent": 61.9
+        }
+      },
+      "missingDesignedTargets": [
+        "document.language",
+        "document.locale",
+        "iwork.all_iwa_valid",
+        "iwork.archive_object_count",
+        "iwork.message_type_counts",
+        "iwork.object_type_counts",
+        "pages.aspect_ratio",
+        "pages.body_paragraph_break_count",
+        "pages.body_text_length",
+        "pages.change_tracking_enabled",
+        "pages.section_count",
+        "pages.section_names",
+        "pages.table_component_count",
+        "pages.table_count",
+        "quality.corrupted"
+      ],
+      "designedButMissingFromCatalog": []
+    }
+  ]
+}

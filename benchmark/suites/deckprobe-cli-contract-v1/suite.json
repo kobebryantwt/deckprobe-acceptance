@@ -1,0 +1,25 @@
+{
+  "id": "deckprobe-cli-contract-v1",
+  "displayName": "DeckProbe CLI 行为合同 v1",
+  "profile": "probe",
+  "version": "1",
+  "reviewStatus": "approved",
+  "evaluator": {
+    "id": "cli-contract",
+    "version": "2"
+  },
+  "sourceCache": "session",
+  "features": "features.json",
+  "cases": "cases.jsonl",
+  "questions": "questions.jsonl",
+  "qualityPolicy": {
+    "version": "1",
+    "reviewStatus": "approved",
+    "scoring": {
+      "aggregation": "macro_feature",
+      "scale": 100,
+      "passThreshold": 95,
+      "reviewThreshold": 80
+    }
+  }
+}

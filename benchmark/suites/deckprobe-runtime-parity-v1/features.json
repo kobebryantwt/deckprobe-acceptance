@@ -1,0 +1,1 @@
+{"features":[{"id":"runtime.node-file","name":"Node 文件 API","description":"probeFile 与 native CLI 报告完全一致。"},{"id":"runtime.node-bytes","name":"Node 字节输入","description":"Buffer、Uint8Array、ArrayBuffer 结果一致。"},{"id":"runtime.browser-worker","name":"Browser/Worker","description":"浏览器主线程和 Worker 的 WASM 报告一致且符合 Schema。"}]}

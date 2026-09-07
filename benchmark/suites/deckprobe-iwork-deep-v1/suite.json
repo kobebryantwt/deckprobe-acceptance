@@ -1,0 +1,25 @@
+{
+  "id": "deckprobe-iwork-deep-v1",
+  "displayName": "DeckProbe iWork 深度能力 v1",
+  "profile": "probe",
+  "version": "1",
+  "reviewStatus": "approved",
+  "evaluator": {
+    "id": "document-probe-contract",
+    "version": "2"
+  },
+  "sourceCache": "session",
+  "features": "features.json",
+  "cases": "cases.jsonl",
+  "questions": "questions.jsonl",
+  "qualityPolicy": {
+    "version": "1",
+    "reviewStatus": "approved",
+    "scoring": {
+      "aggregation": "macro_feature",
+      "scale": 100,
+      "passThreshold": 95,
+      "reviewThreshold": 80
+    }
+  }
+}

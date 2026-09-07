@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+
+# Local acceptance caches, sqlite databases, and runs
+benchmark/artifacts/
+benchmark/cache/
+node_modules/
+.venv/
+venv/
+
+# Local raw source corpus archive
+格式测试数据集/03_淘汰归档/

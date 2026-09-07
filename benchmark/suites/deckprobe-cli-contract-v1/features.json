@@ -1,0 +1,10 @@
+{
+  "features": [
+    {"id":"cli.discovery","name":"能力发现","description":"formats、targets、schema 与生成命令的机器可读合同。"},
+    {"id":"cli.input","name":"输入模式","description":"本地文件、原始 stdin 与 JSONL 连续处理。"},
+    {"id":"cli.selection","name":"选择与规划","description":"values 视图、plan-only、可选目标、piggyback 与别名。"},
+    {"id":"cli.errors","name":"错误与退出码","description":"严格模式、格式断言和格式参数错误。"},
+    {"id":"cli.output","name":"输出稳定性","description":"pretty 只改变空白，telemetry 明确选择非确定性字段。"},
+    {"id":"cli.generation","name":"Shell 集成产物","description":"completion 与 man 输出可生成。"}
+  ]
+}

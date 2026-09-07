@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DeckProbe · GT 分组审核</title><style>/*REVIEW_CSS*/</style></head>
+<body>
+<!-- TEMPLATE_ONLY_BEGIN -->
+<style>body{margin:0;background:#f4f5f0;color:#20382e;font:16px/1.8 system-ui,sans-serif}body>main{display:none}#template-notice{max-width:720px;margin:64px auto;padding:30px;background:white;border:1px solid #dce3d7;border-radius:12px}#template-notice h1{font-size:24px;margin:0 0 12px}#template-notice p{color:#6c766d}#template-notice a{display:inline-block;margin-top:12px;padding:10px 18px;background:#31634d;color:white;border-radius:7px;text-decoration:none}@media(max-width:760px){#template-notice{margin:24px 16px;padding:22px}}</style>
+<section id="template-notice"><h1>请进入 GT 审核页</h1><p>当前文件是生成页面使用的源码模板，没有加载答案。实际审核页包含文件类型分组、场景筛选和中文取证说明。</p><a href="../../artifacts/acceptance/answers/review.html">打开 GT 分组审核页 →</a><p>后续请收藏上面的审核页地址。</p></section>
+<!-- TEMPLATE_ONLY_END -->
+<main><header><div><small>DECKPROBE / 答案审核</small><h1>按问题看懂每条 GT</h1><p>先看样本场景与中文答案，再展开独立依据。技术 ID 和原始记录保留用于追溯。</p></div><a href="index.json">原始答案清单 ↗</a></header>
+<div class="notice">这是只读审核页。可按条目 ID 提出批准、拒绝或修改意见；页面不会自动批准答案。中文说明不改变原始预期、哈希或审批状态。</div>
+<p id="manager-entry" hidden><a id="manager-link">进入可交互的样本与 GT 管理 →</a>（需保持本地管理服务运行）</p>
+<div id="totals" class="totals"></div><nav id="families" aria-label="文档类型"></nav>
+<div class="toolbar"><label class="search">搜索<input id="search" type="search" placeholder="如：Excel 模板、HTML、宏、页数、xltx…"></label><label>分组方式<select id="grouping"><option value="format">按文件格式</option><option value="scenario">按相似测试场景</option></select></label><label>审核状态<select id="review"><option value="all">全部</option><option value="pending">待审核</option><option value="approved">已批准</option><option value="rejected">已拒绝</option></select></label><button id="reset">重置</button><button id="expand">展开分组</button><button id="collapse">折叠分组</button></div>
+<p id="count" aria-live="polite"></p><div id="groups"></div><p id="empty" hidden>没有匹配的答案，请调整搜索或筛选。</p>
+<details class="gaps"><summary>尚未覆盖的样本与事实</summary><ul id="gaps"></ul></details>
+<footer>同类问题只合并展示，不合并审批。每条答案仍绑定独立 ID、样本哈希和答案哈希。</footer></main>
+<script type="application/json" id="review-data">REVIEW_DATA_JSON</script><script>/*REVIEW_JS*/</script></body></html>

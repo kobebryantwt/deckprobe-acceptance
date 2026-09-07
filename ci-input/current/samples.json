@@ -1,0 +1,2613 @@
+{
+  "gaps": [],
+  "omittedPrivateSamples": 11,
+  "samples": [
+    {
+      "active": true,
+      "bytes": 17322,
+      "format": "docm",
+      "id": "case-8c30f81956e2f8c9e243",
+      "inputName": "Word宏文档.docm",
+      "object": "objects/8c30f81956e2f8c9e243bab09038fadb1cce36b593540484e5edcbcc1b56c1d3/Word宏文档.docm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testWORD_macros.docm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docm",
+          "inputName": "Word宏文档.docm",
+          "sha256": "8c30f81956e2f8c9e243bab09038fadb1cce36b593540484e5edcbcc1b56c1d3"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量"
+      },
+      "sha256": "8c30f81956e2f8c9e243bab09038fadb1cce36b593540484e5edcbcc1b56c1d3"
+    },
+    {
+      "active": true,
+      "bytes": 59583,
+      "format": "dotx",
+      "id": "case-e21a1c1e7c1f30176bf0",
+      "inputName": "Word普通模板.dotx",
+      "object": "objects/e21a1c1e7c1f30176bf03e5228282750afd6a6708f6706eb9906c6254c08fbae/Word普通模板.dotx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testWORD_template.dotx",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "dotx",
+          "inputName": "Word普通模板.dotx",
+          "sha256": "e21a1c1e7c1f30176bf03e5228282750afd6a6708f6706eb9906c6254c08fbae"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "word.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "模板格式与类型识别"
+      },
+      "sha256": "e21a1c1e7c1f30176bf03e5228282750afd6a6708f6706eb9906c6254c08fbae"
+    },
+    {
+      "active": true,
+      "bytes": 65527,
+      "format": "dotm",
+      "id": "case-4b0efc5b69297cd64394",
+      "inputName": "Word宏模板.dotm",
+      "object": "objects/4b0efc5b69297cd64394ae1c3e891ac245e979c0195d4fc4166d9298efcdc0f6/Word宏模板.dotm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testDOTM.dotm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "dotm",
+          "inputName": "Word宏模板.dotm",
+          "sha256": "4b0efc5b69297cd64394ae1c3e891ac245e979c0195d4fc4166d9298efcdc0f6"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量；模板格式与类型识别"
+      },
+      "sha256": "4b0efc5b69297cd64394ae1c3e891ac245e979c0195d4fc4166d9298efcdc0f6"
+    },
+    {
+      "active": true,
+      "bytes": 14561,
+      "format": "xlsm",
+      "id": "case-4a82d32be9bbe6cbc0e2",
+      "inputName": "Excel宏工作簿.xlsm",
+      "object": "objects/4a82d32be9bbe6cbc0e232727668f2344edb249c8c0bcd8d3f3e1e16ffddd859/Excel宏工作簿.xlsm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_macro.xlsm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsm",
+          "inputName": "Excel宏工作簿.xlsm",
+          "sha256": "4a82d32be9bbe6cbc0e232727668f2344edb249c8c0bcd8d3f3e1e16ffddd859"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量"
+      },
+      "sha256": "4a82d32be9bbe6cbc0e232727668f2344edb249c8c0bcd8d3f3e1e16ffddd859"
+    },
+    {
+      "active": true,
+      "bytes": 8589,
+      "format": "xltx",
+      "id": "case-124ba0a3e3d613fd6480",
+      "inputName": "Excel普通模板.xltx",
+      "object": "objects/124ba0a3e3d613fd64808fa9a70efa6b8eacd128727cbb365b678ee2d7e772fb/Excel普通模板.xltx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_template.xltx",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xltx",
+          "inputName": "Excel普通模板.xltx",
+          "sha256": "124ba0a3e3d613fd64808fa9a70efa6b8eacd128727cbb365b678ee2d7e772fb"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "excel.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "模板格式与类型识别"
+      },
+      "sha256": "124ba0a3e3d613fd64808fa9a70efa6b8eacd128727cbb365b678ee2d7e772fb"
+    },
+    {
+      "active": true,
+      "bytes": 8619,
+      "format": "xltm",
+      "id": "case-70146cac3a4030b4eb0f",
+      "inputName": "Excel宏模板.xltm",
+      "object": "objects/70146cac3a4030b4eb0f97b0c1922ac90b493e0895df0c5f7ff7fd4b2577f658/Excel宏模板.xltm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_macro_enabled_template.xltm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xltm",
+          "inputName": "Excel宏模板.xltm",
+          "sha256": "70146cac3a4030b4eb0f97b0c1922ac90b493e0895df0c5f7ff7fd4b2577f658"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "excel.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量；模板格式与类型识别"
+      },
+      "sha256": "70146cac3a4030b4eb0f97b0c1922ac90b493e0895df0c5f7ff7fd4b2577f658"
+    },
+    {
+      "active": true,
+      "bytes": 22715,
+      "format": "xlsb",
+      "id": "case-8c600e97d719b0266dcf",
+      "inputName": "Excel二进制综合工作簿.xlsb",
+      "object": "objects/8c600e97d719b0266dcfb49c1872feb8d10c6ed12bc768ff16ace7dae555ebfc/Excel二进制综合工作簿.xlsb",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_various.xlsb",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsb",
+          "inputName": "Excel二进制综合工作簿.xlsb",
+          "sha256": "8c600e97d719b0266dcfb49c1872feb8d10c6ed12bc768ff16ace7dae555ebfc"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "excel.sheet_count",
+              "links.external_reference_count",
+              "security.has_external_relationships"
+            ],
+            "label": "代表性结构事实",
+            "note": "只纳入对本样本有区分度且可独立取证的事实，不机械填满全部字段。",
+            "target": "@all",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "该格式的代表性结构与深层探测能力"
+      },
+      "sha256": "8c600e97d719b0266dcfb49c1872feb8d10c6ed12bc768ff16ace7dae555ebfc"
+    },
+    {
+      "active": true,
+      "bytes": 32824,
+      "format": "pptm",
+      "id": "case-eb1fa9f03d20e99ab6f5",
+      "inputName": "PowerPoint宏演示文稿.pptm",
+      "object": "objects/eb1fa9f03d20e99ab6f5760c30c2d9f8fa8aac73dc7a5e932b9e6a70749f45d5/PowerPoint宏演示文稿.pptm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT_macros.pptm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptm",
+          "inputName": "PowerPoint宏演示文稿.pptm",
+          "sha256": "eb1fa9f03d20e99ab6f5760c30c2d9f8fa8aac73dc7a5e932b9e6a70749f45d5"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量"
+      },
+      "sha256": "eb1fa9f03d20e99ab6f5760c30c2d9f8fa8aac73dc7a5e932b9e6a70749f45d5"
+    },
+    {
+      "active": true,
+      "bytes": 36521,
+      "format": "ppsx",
+      "id": "case-82dcd905dfeb155d8ffe",
+      "inputName": "PowerPoint放映文件.ppsx",
+      "object": "objects/82dcd905dfeb155d8ffea9d4f7e69d03a39895148407c32fa971a1addbea5656/PowerPoint放映文件.ppsx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT.ppsx",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "ppsx",
+          "inputName": "PowerPoint放映文件.ppsx",
+          "sha256": "82dcd905dfeb155d8ffea9d4f7e69d03a39895148407c32fa971a1addbea5656"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "放映文件格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "presentation_kind",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "放映文件格式与类型识别"
+      },
+      "sha256": "82dcd905dfeb155d8ffea9d4f7e69d03a39895148407c32fa971a1addbea5656"
+    },
+    {
+      "active": true,
+      "bytes": 36545,
+      "format": "ppsm",
+      "id": "case-a59f5f63571880c9e1d1",
+      "inputName": "PowerPoint宏放映文件.ppsm",
+      "object": "objects/a59f5f63571880c9e1d153d165847c51122969a0bb8d6f5a3258e694eaf754e4/PowerPoint宏放映文件.ppsm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT.ppsm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "ppsm",
+          "inputName": "PowerPoint宏放映文件.ppsm",
+          "sha256": "a59f5f63571880c9e1d153d165847c51122969a0bb8d6f5a3258e694eaf754e4"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "放映文件格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "presentation_kind",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量；放映文件格式与类型识别"
+      },
+      "sha256": "a59f5f63571880c9e1d153d165847c51122969a0bb8d6f5a3258e694eaf754e4"
+    },
+    {
+      "active": true,
+      "bytes": 617839,
+      "format": "potx",
+      "id": "case-a69207b33c69e171dd35",
+      "inputName": "PowerPoint普通模板.potx",
+      "object": "objects/a69207b33c69e171dd35fab165e498802a46759bca24f5eb614deb3503aa5ee6/PowerPoint普通模板.potx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/slideshow/bug59273.potx",
+        "version": "3e24e7d6f4151b993232ee67faae650ade533712"
+      },
+      "purpose": {
+        "binding": {
+          "format": "potx",
+          "inputName": "PowerPoint普通模板.potx",
+          "sha256": "a69207b33c69e171dd35fab165e498802a46759bca24f5eb614deb3503aa5ee6"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "模板格式与类型识别"
+      },
+      "sha256": "a69207b33c69e171dd35fab165e498802a46759bca24f5eb614deb3503aa5ee6"
+    },
+    {
+      "active": true,
+      "bytes": 40102,
+      "format": "potm",
+      "id": "case-4c795ce701a8ae1e796f",
+      "inputName": "PowerPoint宏模板.potm",
+      "object": "objects/4c795ce701a8ae1e796f6732798d0aebd32422430ccf6c6f2ef3bfe9954a6326/PowerPoint宏模板.potm",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT.potm",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "potm",
+          "inputName": "PowerPoint宏模板.potm",
+          "sha256": "4c795ce701a8ae1e796f6732798d0aebd32422430ccf6c6f2ef3bfe9954a6326"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "模板格式与类型识别",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "is_template",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "宏/VBA 存在性与数量；模板格式与类型识别"
+      },
+      "sha256": "4c795ce701a8ae1e796f6732798d0aebd32422430ccf6c6f2ef3bfe9954a6326"
+    },
+    {
+      "active": true,
+      "bytes": 1491456,
+      "format": "doc",
+      "id": "case-1979c16391c17f5ca2c3",
+      "inputName": "Word旧版嵌入PDF文档.doc",
+      "object": "objects/1979c16391c17f5ca2c3d40008b10e8649dce4f9a8dd30b2432fe9416c201952/Word旧版嵌入PDF文档.doc",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testWORD_embedded_pdf.doc",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "doc",
+          "inputName": "Word旧版嵌入PDF文档.doc",
+          "sha256": "1979c16391c17f5ca2c3d40008b10e8649dce4f9a8dd30b2432fe9416c201952"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "embedded.cfb_storage_count",
+              "security.has_embedded_files"
+            ],
+            "label": "嵌入对象的存在、数量和类型",
+            "target": "security.has_embedded_ole",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.author"
+            ],
+            "label": "作者元数据",
+            "target": "document.author",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 97-2003 嵌入 PDF 结构与标题作者元数据"
+      },
+      "sha256": "1979c16391c17f5ca2c3d40008b10e8649dce4f9a8dd30b2432fe9416c201952"
+    },
+    {
+      "active": true,
+      "bytes": 27136,
+      "format": "dot",
+      "id": "case-717585c0a88f20862c86",
+      "inputName": "Word旧版模板.dot",
+      "object": "objects/717585c0a88f20862c86220163dd03da87cd743970354c6b29add32725f2e833/Word旧版模板.dot",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；Word 97模板正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/document/SampleDoc.doc",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "dot",
+          "inputName": "Word旧版模板.dot",
+          "sha256": "717585c0a88f20862c86220163dd03da87cd743970354c6b29add32725f2e833"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "word.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "target": "word.is_template",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.page_count"
+            ],
+            "label": "页面数量",
+            "target": "word.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 97-2003 模板类型识别与段落页数统计"
+      },
+      "sha256": "717585c0a88f20862c86220163dd03da87cd743970354c6b29add32725f2e833"
+    },
+    {
+      "active": true,
+      "bytes": 303104,
+      "format": "xls",
+      "id": "case-373d3d9301394c0ec88b",
+      "inputName": "Excel旧版嵌入对象工作簿.xls",
+      "object": "objects/373d3d9301394c0ec88b9ee12cfc525f72d0c77ccca721b2c417bbff3cc110d0/Excel旧版嵌入对象工作簿.xls",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_embeded.xls",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xls",
+          "inputName": "Excel旧版嵌入对象工作簿.xls",
+          "sha256": "373d3d9301394c0ec88b9ee12cfc525f72d0c77ccca721b2c417bbff3cc110d0"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "embedded.cfb_storage_count",
+              "security.has_embedded_files"
+            ],
+            "label": "嵌入对象的存在、数量和类型",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_embedded_ole",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "嵌入对象的存在、数量和类型"
+      },
+      "sha256": "373d3d9301394c0ec88b9ee12cfc525f72d0c77ccca721b2c417bbff3cc110d0"
+    },
+    {
+      "active": true,
+      "bytes": 13824,
+      "format": "xls",
+      "id": "case-8f279fb44b131070347d",
+      "inputName": "Excel旧版普通工作簿.xls",
+      "object": "objects/8f279fb44b131070347d82320c5e7900b0e4d77ead38371b1f26ce95092b211b/Excel旧版普通工作簿.xls",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL.xls",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xls",
+          "inputName": "Excel旧版普通工作簿.xls",
+          "sha256": "8f279fb44b131070347d82320c5e7900b0e4d77ead38371b1f26ce95092b211b"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "excel.sheet_count"
+            ],
+            "label": "工作表数量",
+            "target": "excel.sheet_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count",
+              "excel.sheet_names"
+            ],
+            "label": "工作表名称列表",
+            "target": "excel.sheet_names",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Excel 97-2003 多工作表结构与有序名称列表"
+      },
+      "sha256": "8f279fb44b131070347d82320c5e7900b0e4d77ead38371b1f26ce95092b211b"
+    },
+    {
+      "active": true,
+      "bytes": 25600,
+      "format": "xlt",
+      "id": "case-3c29b13c2daee129ca62",
+      "inputName": "Excel旧版模板.xlt",
+      "object": "objects/3c29b13c2daee129ca6222253c12838ef38767faedeb4306b419d62cdaf09eef/Excel旧版模板.xlt",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testEXCEL_template.xlt",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlt",
+          "inputName": "Excel旧版模板.xlt",
+          "sha256": "3c29b13c2daee129ca6222253c12838ef38767faedeb4306b419d62cdaf09eef"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "excel.is_template"
+            ],
+            "label": "模板格式与类型识别",
+            "target": "excel.is_template",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count"
+            ],
+            "label": "工作表数量",
+            "target": "excel.sheet_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count",
+              "excel.sheet_names"
+            ],
+            "label": "工作表名称列表",
+            "target": "excel.sheet_names",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Excel 97-2003 模板类型识别与工作表名称"
+      },
+      "sha256": "3c29b13c2daee129ca6222253c12838ef38767faedeb4306b419d62cdaf09eef"
+    },
+    {
+      "active": true,
+      "bytes": 160768,
+      "format": "ppt",
+      "id": "case-54790b849e108dca237b",
+      "inputName": "PowerPoint旧版综合元素.ppt",
+      "object": "objects/54790b849e108dca237b44ebffc53dcc3920e159e84f6d590bff2db906412687/PowerPoint旧版综合元素.ppt",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT_various.ppt",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "ppt",
+          "inputName": "PowerPoint旧版综合元素.ppt",
+          "sha256": "54790b849e108dca237b44ebffc53dcc3920e159e84f6d590bff2db906412687"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "powerpoint.slide_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.author"
+            ],
+            "label": "作者元数据",
+            "target": "document.author",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PowerPoint 97-2003 综合元素与标题作者元数据"
+      },
+      "sha256": "54790b849e108dca237b44ebffc53dcc3920e159e84f6d590bff2db906412687"
+    },
+    {
+      "active": true,
+      "bytes": 125440,
+      "format": "pps",
+      "id": "case-64275a6685b8f2678271",
+      "inputName": "PowerPoint旧版放映文件.pps",
+      "object": "objects/64275a6685b8f267827178037dcc59de927475e56385725916f4c6039c7ce7f6/PowerPoint旧版放映文件.pps",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；PowerPoint放映文件正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/slideshow/SampleShow.ppt",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pps",
+          "inputName": "PowerPoint旧版放映文件.pps",
+          "sha256": "64275a6685b8f267827178037dcc59de927475e56385725916f4c6039c7ce7f6"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "放映文件格式与类型识别",
+            "target": "powerpoint.presentation_kind",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "powerpoint.slide_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PowerPoint 97-2003 放映类型识别与幻灯片统计"
+      },
+      "sha256": "64275a6685b8f267827178037dcc59de927475e56385725916f4c6039c7ce7f6"
+    },
+    {
+      "active": true,
+      "bytes": 9728,
+      "format": "pot",
+      "id": "case-120fd65304563887738a",
+      "inputName": "PowerPoint旧版模板.pot",
+      "object": "objects/120fd65304563887738ae9cfa1f366389acf9bddb40fefab4693e4653b50f9d0/PowerPoint旧版模板.pot",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；PowerPoint模板正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/slideshow/Single_Coloured_Page.ppt",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pot",
+          "inputName": "PowerPoint旧版模板.pot",
+          "sha256": "120fd65304563887738ae9cfa1f366389acf9bddb40fefab4693e4653b50f9d0"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "document.extension_matches",
+              "powerpoint.presentation_kind"
+            ],
+            "label": "模板格式与类型识别",
+            "target": "powerpoint.presentation_kind",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "powerpoint.slide_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.title"
+            ],
+            "label": "标题元数据",
+            "target": "document.title",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PowerPoint 97-2003 模板类型识别与幻灯片统计"
+      },
+      "sha256": "120fd65304563887738ae9cfa1f366389acf9bddb40fefab4693e4653b50f9d0"
+    },
+    {
+      "active": true,
+      "bytes": 274397,
+      "format": "key",
+      "id": "case-8da93f6b566bc9eb22f4",
+      "inputName": "Keynote现代IWA演示文稿.key",
+      "object": "objects/8da93f6b566bc9eb22f4791bbfd5f2179162f39bf80968187b164c33d31824db/Keynote现代IWA演示文稿.key",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-apple-module/src/test/resources/test-documents/testKeynote2013.key",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "key",
+          "inputName": "Keynote现代IWA演示文稿.key",
+          "sha256": "8da93f6b566bc9eb22f4791bbfd5f2179162f39bf80968187b164c33d31824db"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "office.package_entry_count",
+              "images.package.image_part_count",
+              "images.package.unique_image_bytes_count"
+            ],
+            "label": "代表性结构事实",
+            "note": "只纳入对本样本有区分度且可独立取证的事实，不机械填满全部字段。",
+            "target": "@all",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "该格式的代表性结构与深层探测能力"
+      },
+      "sha256": "8da93f6b566bc9eb22f4791bbfd5f2179162f39bf80968187b164c33d31824db"
+    },
+    {
+      "active": true,
+      "bytes": 26746,
+      "format": "pdf",
+      "id": "case-cc0cff1b91879bebb339",
+      "inputName": "PDF表单与注释样本.pdf",
+      "object": "objects/cc0cff1b91879bebb339b687b7efdb228c40154800ece83f2b1dad7134ee7ce4/PDF表单与注释样本.pdf",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；表单、注释、外链正例",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-pdf-module/src/test/resources/test-documents/testPDF_acroform3.pdf",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "PDF表单与注释样本.pdf",
+          "sha256": "cc0cff1b91879bebb339b687b7efdb228c40154800ece83f2b1dad7134ee7ce4"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "pdf.page_count"
+            ],
+            "label": "页面数量",
+            "target": "pdf.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.form_field_count"
+            ],
+            "label": "PDF 表单字段数量",
+            "target": "pdf.form_field_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.annotation_count"
+            ],
+            "label": "批注、注释或评论数量",
+            "target": "pdf.annotation_count",
+            "type": "fact"
+          },
+          {
+            "label": "XMP元数据存在性",
+            "target": "pdf.has_xmp",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.linearized"
+            ],
+            "label": "线性化流式结构",
+            "target": "pdf.linearized",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PDF 交互结构、页面与XMP元数据全集（Hero Document）"
+      },
+      "sha256": "cc0cff1b91879bebb339b687b7efdb228c40154800ece83f2b1dad7134ee7ce4"
+    },
+    {
+      "active": true,
+      "bytes": 92359,
+      "format": "pdf",
+      "id": "case-9676f28b3a11d339309f",
+      "inputName": "PDF附件外链与JavaScript样本.pdf",
+      "object": "objects/9676f28b3a11d339309f5d18eb1aaf51458c3cbf422183650d577b74bd8e823c/PDF附件外链与JavaScript样本.pdf",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；附件、外链、JavaScript正例",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-pdf-module/src/test/resources/test-documents/testPDFPackage.pdf",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "PDF附件外链与JavaScript样本.pdf",
+          "sha256": "9676f28b3a11d339309f5d18eb1aaf51458c3cbf422183650d577b74bd8e823c"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "links.external_reference_count",
+              "links.external_unique_targets",
+              "security.has_external_relationships"
+            ],
+            "label": "外部关系的存在、数量和目标",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_external_relationships",
+            "type": "fact"
+          },
+          {
+            "label": "JavaScript 动作存在性",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_javascript",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "pdf.attachment_count",
+              "pdf.attachment_names",
+              "security.has_embedded_files"
+            ],
+            "label": "嵌入附件的存在、数量和类型",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "pdf.attachment_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "外部关系的存在、数量和目标；JavaScript 动作存在性；嵌入附件的存在、数量和类型"
+      },
+      "sha256": "9676f28b3a11d339309f5d18eb1aaf51458c3cbf422183650d577b74bd8e823c"
+    },
+    {
+      "active": true,
+      "bytes": 24070,
+      "format": "docx",
+      "id": "case-f7bbd397b77bc8556bd2",
+      "inputName": "Word超链接与数字签名文档.docx",
+      "object": "objects/f7bbd397b77bc8556bd2f15437edbe871d5536f8779eaee06b917337fee5f7cf/Word超链接与数字签名文档.docx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；数字签名、外部超链接正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/xmldsign/hyperlink-example-signed.docx",
+        "version": "3e24e7d6f4151b993232ee67faae650ade533712"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docx",
+          "inputName": "Word超链接与数字签名文档.docx",
+          "sha256": "f7bbd397b77bc8556bd2f15437edbe871d5536f8779eaee06b917337fee5f7cf"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.has_digital_signature",
+              "security.signature_count"
+            ],
+            "label": "数字签名存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_signatures",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "links.external_reference_count",
+              "links.external_unique_targets",
+              "security.has_external_relationships"
+            ],
+            "label": "外部关系的存在、数量和目标",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_external_relationships",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "数字签名存在性与数量；外部关系的存在、数量和目标"
+      },
+      "sha256": "f7bbd397b77bc8556bd2f15437edbe871d5536f8779eaee06b917337fee5f7cf"
+    },
+    {
+      "active": true,
+      "bytes": 13072,
+      "format": "xlsx",
+      "id": "case-22e2d0f6f1a413d011fb",
+      "inputName": "Excel数字签名工作簿.xlsx",
+      "object": "objects/22e2d0f6f1a413d011fbdeba4c386ce842570f1cffc66c4f85956137d86a8f1d/Excel数字签名工作簿.xlsx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；数字签名正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/xmldsign/hello-world-signed.xlsx",
+        "version": "3e24e7d6f4151b993232ee67faae650ade533712"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsx",
+          "inputName": "Excel数字签名工作簿.xlsx",
+          "sha256": "22e2d0f6f1a413d011fbdeba4c386ce842570f1cffc66c4f85956137d86a8f1d"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.has_digital_signature",
+              "security.signature_count"
+            ],
+            "label": "数字签名存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_signatures",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "数字签名存在性与数量"
+      },
+      "sha256": "22e2d0f6f1a413d011fbdeba4c386ce842570f1cffc66c4f85956137d86a8f1d"
+    },
+    {
+      "active": true,
+      "bytes": 36107,
+      "format": "pptx",
+      "id": "case-d119d8160dc912d639cb",
+      "inputName": "PowerPoint数字签名演示文稿.pptx",
+      "object": "objects/d119d8160dc912d639cbe8047c526c6dc58ca9dcd6b51bd5870c247d64413163/PowerPoint数字签名演示文稿.pptx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；数字签名正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/xmldsign/hello-world-signed.pptx",
+        "version": "3e24e7d6f4151b993232ee67faae650ade533712"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PowerPoint数字签名演示文稿.pptx",
+          "sha256": "d119d8160dc912d639cbe8047c526c6dc58ca9dcd6b51bd5870c247d64413163"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "security.has_digital_signature",
+              "security.signature_count"
+            ],
+            "label": "数字签名存在性与数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "security.has_signatures",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "数字签名存在性与数量"
+      },
+      "sha256": "d119d8160dc912d639cbe8047c526c6dc58ca9dcd6b51bd5870c247d64413163"
+    },
+    {
+      "active": true,
+      "bytes": 221745,
+      "format": "key",
+      "id": "case-4a270c2427f11d77f82f",
+      "inputName": "Keynote旧版XML演示文稿.key",
+      "object": "objects/4a270c2427f11d77f82fae696e3fd6eda945bae0422ae87c5fac6cf2bd06015c/Keynote旧版XML演示文稿.key",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-apple-module/src/test/resources/test-documents/testKeynote.key",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "key",
+          "inputName": "Keynote旧版XML演示文稿.key",
+          "sha256": "4a270c2427f11d77f82fae696e3fd6eda945bae0422ae87c5fac6cf2bd06015c"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "4a270c2427f11d77f82fae696e3fd6eda945bae0422ae87c5fac6cf2bd06015c"
+    },
+    {
+      "active": true,
+      "bytes": 134571,
+      "format": "numbers",
+      "id": "case-6fb57a2fc3cfc532713a",
+      "inputName": "Numbers旧版XML工作簿.numbers",
+      "object": "objects/6fb57a2fc3cfc532713ac3e58d2b7e9de93342f7d84cf76599901281a26d56cc/Numbers旧版XML工作簿.numbers",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-apple-module/src/test/resources/test-documents/testNumbers.numbers",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "numbers",
+          "inputName": "Numbers旧版XML工作簿.numbers",
+          "sha256": "6fb57a2fc3cfc532713ac3e58d2b7e9de93342f7d84cf76599901281a26d56cc"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "6fb57a2fc3cfc532713ac3e58d2b7e9de93342f7d84cf76599901281a26d56cc"
+    },
+    {
+      "active": true,
+      "bytes": 134152,
+      "format": "pages",
+      "id": "case-a276a2784a9ce6ea4aba",
+      "inputName": "Pages旧版XML文档.pages",
+      "object": "objects/a276a2784a9ce6ea4aba7fe2cbfd555fe2edecf4db7dbe1f0998c803a150f446/Pages旧版XML文档.pages",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-apple-module/src/test/resources/test-documents/testPages.pages",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pages",
+          "inputName": "Pages旧版XML文档.pages",
+          "sha256": "a276a2784a9ce6ea4aba7fe2cbfd555fe2edecf4db7dbe1f0998c803a150f446"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "a276a2784a9ce6ea4aba7fe2cbfd555fe2edecf4db7dbe1f0998c803a150f446"
+    },
+    {
+      "active": true,
+      "bytes": 30809,
+      "format": "odt",
+      "id": "case-97a3253daa7d164369bb",
+      "inputName": "OpenDocument文本宏文档.odt",
+      "object": "objects/97a3253daa7d164369bb383e1e9412870fadeaa166c36356718c0c6a4d266601/OpenDocument文本宏文档.odt",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-miscoffice-module/src/test/resources/test-documents/testODTMacro.odt",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "odt",
+          "inputName": "OpenDocument文本宏文档.odt",
+          "sha256": "97a3253daa7d164369bb383e1e9412870fadeaa166c36356718c0c6a4d266601"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "97a3253daa7d164369bb383e1e9412870fadeaa166c36356718c0c6a4d266601"
+    },
+    {
+      "active": true,
+      "bytes": 30726,
+      "format": "ods",
+      "id": "case-1bbcc2e1753af18cd94d",
+      "inputName": "OpenDocument表格宏文档.ods",
+      "object": "objects/1bbcc2e1753af18cd94d9c56645f1a5d695ec09c7758ffa0eb45b0f8646c28ca/OpenDocument表格宏文档.ods",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-miscoffice-module/src/test/resources/test-documents/testODSMacro.ods",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "ods",
+          "inputName": "OpenDocument表格宏文档.ods",
+          "sha256": "1bbcc2e1753af18cd94d9c56645f1a5d695ec09c7758ffa0eb45b0f8646c28ca"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "1bbcc2e1753af18cd94d9c56645f1a5d695ec09c7758ffa0eb45b0f8646c28ca"
+    },
+    {
+      "active": true,
+      "bytes": 14505,
+      "format": "odp",
+      "id": "case-9132f1a2a5193fe415a9",
+      "inputName": "OpenDocument演示宏文档.odp",
+      "object": "objects/9132f1a2a5193fe415a9542f096ed705d008d69577f0ba1fab5ba83cd4e3e3f0/OpenDocument演示宏文档.odp",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-miscoffice-module/src/test/resources/test-documents/testODPMacro.odp",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "odp",
+          "inputName": "OpenDocument演示宏文档.odp",
+          "sha256": "9132f1a2a5193fe415a9542f096ed705d008d69577f0ba1fab5ba83cd4e3e3f0"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "9132f1a2a5193fe415a9542f096ed705d008d69577f0ba1fab5ba83cd4e3e3f0"
+    },
+    {
+      "active": true,
+      "bytes": 1234084,
+      "format": "rtf",
+      "id": "case-98c43e4364197125640b",
+      "inputName": "RTF嵌入文件文档.rtf",
+      "object": "objects/98c43e4364197125640bdfff5ca8bf56a7bdec42cfd0e8883632bca583345a8e/RTF嵌入文件文档.rtf",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testRTFEmbeddedFiles.rtf",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "rtf",
+          "inputName": "RTF嵌入文件文档.rtf",
+          "sha256": "98c43e4364197125640bdfff5ca8bf56a7bdec42cfd0e8883632bca583345a8e"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "98c43e4364197125640bdfff5ca8bf56a7bdec42cfd0e8883632bca583345a8e"
+    },
+    {
+      "active": true,
+      "bytes": 1137,
+      "format": "csv",
+      "id": "case-37a7bb0f1306ccbf1a97",
+      "inputName": "CSV列式数据样本.csv",
+      "object": "objects/37a7bb0f1306ccbf1a974f26855474ac986066db5f10bac9ff1894ab88d5d3b0/CSV列式数据样本.csv",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-integration-tests/src/test/resources/test-documents/test-columnar.csv",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "csv",
+          "inputName": "CSV列式数据样本.csv",
+          "sha256": "37a7bb0f1306ccbf1a974f26855474ac986066db5f10bac9ff1894ab88d5d3b0"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "37a7bb0f1306ccbf1a974f26855474ac986066db5f10bac9ff1894ab88d5d3b0"
+    },
+    {
+      "active": true,
+      "bytes": 22358,
+      "format": "html",
+      "id": "case-c97a3dd5de2f42255d8d",
+      "inputName": "HTML嵌入图片页面.html",
+      "object": "objects/c97a3dd5de2f42255d8d36e156060c732941bb0aa36b7cff2dd3ac2a5492c703/HTML嵌入图片页面.html",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-html-module/src/test/resources/test-documents/testHTML_embedded_img.html",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "html",
+          "inputName": "HTML嵌入图片页面.html",
+          "sha256": "c97a3dd5de2f42255d8d36e156060c732941bb0aa36b7cff2dd3ac2a5492c703"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "c97a3dd5de2f42255d8d36e156060c732941bb0aa36b7cff2dd3ac2a5492c703"
+    },
+    {
+      "active": true,
+      "bytes": 571926,
+      "format": "epub",
+      "id": "case-a1a3772b7e718c6bddea",
+      "inputName": "EPUB多元数据电子书.epub",
+      "object": "objects/a1a3772b7e718c6bddead4c9acded6c0dd466e5c1c1f6d4f6cae5484c3e6fe33/EPUB多元数据电子书.epub",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-miscoffice-module/src/test/resources/test-documents/testEPUB_multi-metadata-vals.epub",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "epub",
+          "inputName": "EPUB多元数据电子书.epub",
+          "sha256": "a1a3772b7e718c6bddead4c9acded6c0dd466e5c1c1f6d4f6cae5484c3e6fe33"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "a1a3772b7e718c6bddead4c9acded6c0dd466e5c1c1f6d4f6cae5484c3e6fe33"
+    },
+    {
+      "active": true,
+      "bytes": 44426,
+      "format": "vsdx",
+      "id": "case-15494702ecb5554c1dfa",
+      "inputName": "Visio绘图文档.vsdx",
+      "object": "objects/15494702ecb5554c1dfaee2c09ac35e2ea656e2eed7ba4ba0cf1039e6125fbe1/Visio绘图文档.vsdx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testVISIO_60489.vsdx",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "vsdx",
+          "inputName": "Visio绘图文档.vsdx",
+          "sha256": "15494702ecb5554c1dfaee2c09ac35e2ea656e2eed7ba4ba0cf1039e6125fbe1"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "15494702ecb5554c1dfaee2c09ac35e2ea656e2eed7ba4ba0cf1039e6125fbe1"
+    },
+    {
+      "active": true,
+      "bytes": 360280,
+      "format": "one",
+      "id": "case-51bf981fe9572c26a961",
+      "inputName": "OneNote笔记文档.one",
+      "object": "objects/51bf981fe9572c26a9611e05a4bb1f0f3940c84c4a0e5a986f97343d16561a05/OneNote笔记文档.one",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testOneNote1.one",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "one",
+          "inputName": "OneNote笔记文档.one",
+          "sha256": "51bf981fe9572c26a9611e05a4bb1f0f3940c84c4a0e5a986f97343d16561a05"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "51bf981fe9572c26a9611e05a4bb1f0f3940c84c4a0e5a986f97343d16561a05"
+    },
+    {
+      "active": true,
+      "bytes": 42485,
+      "format": "thmx",
+      "id": "case-35a51a53cd9e7602dfb9",
+      "inputName": "PowerPoint主题文件.thmx",
+      "object": "objects/35a51a53cd9e7602dfb9e2e476ca1f23e99ca4669256f4632e73be3c90971f58/PowerPoint主题文件.thmx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载",
+        "project": "Apache_Tika",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "tika-parsers/tika-parsers-standard/tika-parsers-standard-modules/tika-parser-microsoft-module/src/test/resources/test-documents/testPPT.thmx",
+        "version": "acab4a86262b6c5586ffe771fc607e50f77f0fbe"
+      },
+      "purpose": {
+        "binding": {
+          "format": "thmx",
+          "inputName": "PowerPoint主题文件.thmx",
+          "sha256": "35a51a53cd9e7602dfb9e2e476ca1f23e99ca4669256f4632e73be3c90971f58"
+        },
+        "checks": [
+          {
+            "label": "稳定返回不支持格式",
+            "note": "核验真实容器与扩展名后，再按冻结版本契约比较错误码。",
+            "target": "UNSUPPORTED_FORMAT",
+            "type": "contract"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "未支持格式的稳定限制行为"
+      },
+      "sha256": "35a51a53cd9e7602dfb9e2e476ca1f23e99ca4669256f4632e73be3c90971f58"
+    },
+    {
+      "active": true,
+      "bytes": 1648696,
+      "format": "pdf",
+      "id": "case-26751704deed4e9fb921",
+      "inputName": "PDF_生物吸附剂论文_15页72注释.pdf",
+      "object": "objects/26751704deed4e9fb9211163a18027af7b51d872fcca55f0c72eac8f1ecd8456/PDF_生物吸附剂论文_15页72注释.pdf",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；15 页、72 注释",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_008/reed_fiber_biosorbent.pdf",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "PDF_生物吸附剂论文_15页72注释.pdf",
+          "sha256": "26751704deed4e9fb9211163a18027af7b51d872fcca55f0c72eac8f1ecd8456"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "pdf.annotation_count"
+            ],
+            "label": "批注、注释或评论数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "annotation_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "批注、注释或评论数量"
+      },
+      "sha256": "26751704deed4e9fb9211163a18027af7b51d872fcca55f0c72eac8f1ecd8456"
+    },
+    {
+      "active": true,
+      "bytes": 390722,
+      "format": "pdf",
+      "id": "case-b8c4ecf2983f497590b7",
+      "inputName": "PDF_综合复习题_96页.pdf",
+      "object": "objects/b8c4ecf2983f497590b786b748703488061a9814a26ffabadc5d7c32f3ddd6b3/PDF_综合复习题_96页.pdf",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；96 页真实试题",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_038/多岗位从业人员综合复习题_菟思学院.pdf",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pdf",
+          "inputName": "PDF_综合复习题_96页.pdf",
+          "sha256": "b8c4ecf2983f497590b786b748703488061a9814a26ffabadc5d7c32f3ddd6b3"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "pdf.page_count"
+            ],
+            "label": "代表性结构事实",
+            "note": "只纳入对本样本有区分度且可独立取证的事实，不机械填满全部字段。",
+            "target": "@all",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "该格式的代表性结构与深层探测能力"
+      },
+      "sha256": "b8c4ecf2983f497590b786b748703488061a9814a26ffabadc5d7c32f3ddd6b3"
+    },
+    {
+      "active": true,
+      "bytes": 709702,
+      "format": "docx",
+      "id": "case-8511f025397f248ef834",
+      "inputName": "Word_家居零售价目册_66页308表115图.docx",
+      "object": "objects/8511f025397f248ef8345b22e79390df010921f13e757838a34f936b8e37d035/Word_家居零售价目册_66页308表115图.docx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；66 页、308 表、115 图",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_033/家居零售价目册.docx",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docx",
+          "inputName": "Word_家居零售价目册_66页308表115图.docx",
+          "sha256": "8511f025397f248ef8345b22e79390df010921f13e757838a34f936b8e37d035"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "word.page_count"
+            ],
+            "label": "页面数量",
+            "target": "word.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.paragraph_count"
+            ],
+            "label": "段落数量",
+            "target": "word.paragraph_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.word_count"
+            ],
+            "label": "单词统计",
+            "target": "word.word_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.character_count"
+            ],
+            "label": "字符统计",
+            "target": "word.character_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.table_count"
+            ],
+            "label": "原生表格对象数量",
+            "target": "word.table_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "images.package.image_part_count",
+              "images.package.media_part_count",
+              "images.package.unique_image_bytes_count"
+            ],
+            "label": "图片资源与图像对象数量",
+            "target": "word.unique_image_asset_count",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 现代页面、段落、词数、表格与图片资产全集（Hero Document）"
+      },
+      "sha256": "8511f025397f248ef8345b22e79390df010921f13e757838a34f936b8e37d035"
+    },
+    {
+      "active": true,
+      "bytes": 719050,
+      "format": "docx",
+      "id": "case-baa21791da557def206a",
+      "inputName": "Word_公共书房运营规划书_55页18图表部件.docx",
+      "object": "objects/baa21791da557def206a3fa9b5eb05ecbeba364b911cdadbe82b668712d4f049/Word_公共书房运营规划书_55页18图表部件.docx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；55 页、26 表、24 图、18 chart parts",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_018/公共书房运营规划书.docx",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docx",
+          "inputName": "Word_公共书房运营规划书_55页18图表部件.docx",
+          "sha256": "baa21791da557def206a3fa9b5eb05ecbeba364b911cdadbe82b668712d4f049"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "word.table_count"
+            ],
+            "label": "原生表格对象数量",
+            "target": "word.table_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.page_count"
+            ],
+            "label": "页面数量",
+            "target": "word.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.chart_part_count"
+            ],
+            "label": "图表部件数量",
+            "target": "word.chart_part_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 复杂长文档表格、页面与图表部件"
+      },
+      "sha256": "baa21791da557def206a3fa9b5eb05ecbeba364b911cdadbe82b668712d4f049"
+    },
+    {
+      "active": true,
+      "bytes": 149017,
+      "format": "docx",
+      "id": "case-e273ff481ad4f312f663",
+      "inputName": "Word_职称评审表_22页多页眉页脚.docx",
+      "object": "objects/e273ff481ad4f312f663bd19d4f0242ffd357f876611413b3d43580b2c845a81/Word_职称评审表_22页多页眉页脚.docx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；多 section 页眉页脚",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_028/职称评审表.docx",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "docx",
+          "inputName": "Word_职称评审表_22页多页眉页脚.docx",
+          "sha256": "e273ff481ad4f312f663bd19d4f0242ffd357f876611413b3d43580b2c845a81"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "word.page_count"
+            ],
+            "label": "页面数量",
+            "target": "word.page_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "word.footer_part_count",
+              "word.header_part_count"
+            ],
+            "label": "页眉与页脚部件数量",
+            "target": "header_footer_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 复杂表格、页面与多节页眉页脚"
+      },
+      "sha256": "e273ff481ad4f312f663bd19d4f0242ffd357f876611413b3d43580b2c845a81"
+    },
+    {
+      "active": true,
+      "bytes": 255288,
+      "format": "xlsx",
+      "id": "case-fad1409b1b0d8cb9f7ef",
+      "inputName": "Excel_多子表汇总_61工作表178表格.xlsx",
+      "object": "objects/fad1409b1b0d8cb9f7ef08a482d1c2102eef277b6ca0a68753e9b88ad2bc12ed/Excel_多子表汇总_61工作表178表格.xlsx",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "固定 revision 原始下载；61 sheet、178 table parts",
+        "project": "HuggingFace_OmegaUse_OfficeVal",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "task_files/officeval_090/子表数据提取到汇总表.xlsx",
+        "version": "8e19c575b5be64c8a2964a4e28aafb696490c2ae"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsx",
+          "inputName": "Excel_多子表汇总_61工作表178表格.xlsx",
+          "sha256": "fad1409b1b0d8cb9f7ef08a482d1c2102eef277b6ca0a68753e9b88ad2bc12ed"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "excel.sheet_count"
+            ],
+            "label": "工作表数量",
+            "target": "excel.sheet_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count",
+              "excel.sheet_names"
+            ],
+            "label": "工作表名称列表",
+            "target": "excel.sheet_names",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.table_count"
+            ],
+            "label": "原生表格对象数量",
+            "target": "excel.table_count",
+            "type": "fact"
+          },
+          {
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Excel 多工作表、有序名称与表格结构全集（Hero Document）"
+      },
+      "sha256": "fad1409b1b0d8cb9f7ef08a482d1c2102eef277b6ca0a68753e9b88ad2bc12ed"
+    },
+    {
+      "active": true,
+      "bytes": 158863,
+      "format": "xlsx",
+      "id": "case-4c2a895839d36bd67b8d",
+      "inputName": "Excel_SpreadsheetBench_8工作表6隐藏.xlsx",
+      "object": "objects/4c2a895839d36bd67b8d78ebd3525689ad3fe85e2d2430e5f2e15a9c5db50882/Excel_SpreadsheetBench_8工作表6隐藏.xlsx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-SA-4.0",
+        "preparation": "从 verified_400 固定归档提取；8 sheet、6 hidden sheets",
+        "project": "HuggingFace_SpreadsheetBench",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "spreadsheetbench_verified_400/spreadsheet/18645/1_18645_init.xlsx",
+        "version": "ab0b742b0fc95b946f212d80ac7771b5531272e4"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsx",
+          "inputName": "Excel_SpreadsheetBench_8工作表6隐藏.xlsx",
+          "sha256": "4c2a895839d36bd67b8d78ebd3525689ad3fe85e2d2430e5f2e15a9c5db50882"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "excel.hidden_sheet_count",
+              "excel.sheet_count"
+            ],
+            "label": "隐藏页面或工作表数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "hidden_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count"
+            ],
+            "label": "工作表数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "sheet_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "隐藏页面或工作表数量；工作表数量"
+      },
+      "sha256": "4c2a895839d36bd67b8d78ebd3525689ad3fe85e2d2430e5f2e15a9c5db50882"
+    },
+    {
+      "active": true,
+      "bytes": 22691055,
+      "format": "pptx",
+      "id": "case-2e921ccffab9ea815eea",
+      "inputName": "PPT_Zenodo_用户画像工具包_49页80图.pptx",
+      "object": "objects/2e921ccffab9ea815eeada71c152419de8eaf7734b92a7950ae9e55bce602539/PPT_Zenodo_用户画像工具包_49页80图.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；路径明确标注 CC-BY-4.0",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2024/0208efa2c46887ccf13bcc64c20767d3-Base4NFDI_PersonaCreation_Kit.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_用户画像工具包_49页80图.pptx",
+          "sha256": "2e921ccffab9ea815eeada71c152419de8eaf7734b92a7950ae9e55bce602539"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "powerpoint.slide_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "images.package.image_part_count",
+              "images.package.media_part_count",
+              "images.package.unique_image_bytes_count"
+            ],
+            "label": "图片资源与图像对象数量",
+            "target": "powerpoint.unique_image_asset_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.aspect_ratio",
+              "powerpoint.orientation",
+              "powerpoint.slide_size"
+            ],
+            "label": "16:9画布比例与物理尺寸",
+            "target": "powerpoint.aspect_ratio",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.unique_media_asset_count"
+            ],
+            "label": "MIME媒体类型",
+            "target": "document.mime_type",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PowerPoint 多页幻灯片、图片资产与16:9宽屏画布全集（Hero Document）"
+      },
+      "sha256": "2e921ccffab9ea815eeada71c152419de8eaf7734b92a7950ae9e55bce602539"
+    },
+    {
+      "active": true,
+      "bytes": 1131652,
+      "format": "pptx",
+      "id": "case-0a779b321c55714c669b",
+      "inputName": "PPT_Zenodo_光伏财务可行性_6图表2表格.pptx",
+      "object": "objects/0a779b321c55714c669b22eb6d95b28cfe308ecd485e75ae236a3490e9d98369/PPT_Zenodo_光伏财务可行性_6图表2表格.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；8 slide、6 chart、2 table、5 embeddings",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2024/0255424aed4183a74da5a55d7f76ee61-EMP-A-2024 Presentation_ANALYSING THE FINANCIAL VIABILITY OF THE 50MW BANGWEULU SOLAR PLANT IN ZAMBIA USING FINPLAN.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_光伏财务可行性_6图表2表格.pptx",
+          "sha256": "0a779b321c55714c669b22eb6d95b28cfe308ecd485e75ae236a3490e9d98369"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.chart_part_count"
+            ],
+            "label": "图表部件数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "chart_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "tables.powerpoint.table_object_count"
+            ],
+            "label": "原生表格对象数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "table_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "图表部件数量；原生表格对象数量"
+      },
+      "sha256": "0a779b321c55714c669b22eb6d95b28cfe308ecd485e75ae236a3490e9d98369"
+    },
+    {
+      "active": true,
+      "bytes": 3289197,
+      "format": "xlsx",
+      "id": "case-5b7a20b8445c86580480",
+      "inputName": "Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx",
+      "object": "objects/5b7a20b8445c8658048004411186d94a0efeefdc6543f6998c10deb132fe20a6/Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx",
+      "private": false,
+      "provenance": {
+        "license": "CDLA-Permissive-2.0",
+        "preparation": "固定 revision 原始下载；2 chart、3 pivot、12844 formula、1 comment、1 image",
+        "project": "HuggingFace_OfficeComprehensionBenchmark",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "reference_files/NBA_all_seasons_Improved.xlsx",
+        "version": "0104ac2f88348ecf1148781b85fdb6a189b59671"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xlsx",
+          "inputName": "Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx",
+          "sha256": "5b7a20b8445c8658048004411186d94a0efeefdc6543f6998c10deb132fe20a6"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "formulas.excel.stored_formula_cell_count"
+            ],
+            "label": "公式对象或公式单元格数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "formula_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.chart_part_count"
+            ],
+            "label": "图表部件数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "chart_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.pivot_table_part_count"
+            ],
+            "label": "透视表定义部件数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "pivot_table_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "公式对象或公式单元格数量；图表部件数量；透视表定义部件数量"
+      },
+      "sha256": "5b7a20b8445c8658048004411186d94a0efeefdc6543f6998c10deb132fe20a6"
+    },
+    {
+      "active": true,
+      "bytes": 24250645,
+      "format": "pptx",
+      "id": "case-728e4555f713a21b9ce2",
+      "inputName": "PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx",
+      "object": "objects/728e4555f713a21b9ce2cee94cc22ef20b65f4021bb0fa8a0785f8578f852fe7/PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；24 slide、24 audio、48 transition、24 timing、24 notes",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2023/3a2257b80b2e4ad6200958068f8927f7-Wearables - 2023 Wearable PPG Roadmap audio.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_可穿戴PPG路线图_24音频48切换.pptx",
+          "sha256": "728e4555f713a21b9ce2cee94cc22ef20b65f4021bb0fa8a0785f8578f852fe7"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.unique_media_asset_count"
+            ],
+            "label": "音视频媒体资源数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "media_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.slide_count",
+              "powerpoint.transition_slide_count"
+            ],
+            "label": "幻灯片切换效果数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "transition_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "音视频媒体资源数量；幻灯片切换效果数量"
+      },
+      "sha256": "728e4555f713a21b9ce2cee94cc22ef20b65f4021bb0fa8a0785f8578f852fe7"
+    },
+    {
+      "active": true,
+      "bytes": 1263079,
+      "format": "pptx",
+      "id": "case-898fe028b0ec31c2c437",
+      "inputName": "PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx",
+      "object": "objects/898fe028b0ec31c2c43793f2bdf0c78f622a9c2ea6935284504e3b8160588661/PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；8 slide、2 hidden；DeckProbe 2.5.0 返回隐藏数0",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2022/a04e1e47377107b19e2dc7677deced26-Presentation Costa Rica Transport Sector EMPLAC 2022.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_哥斯达黎加交通模型_2隐藏页.pptx",
+          "sha256": "898fe028b0ec31c2c43793f2bdf0c78f622a9c2ea6935284504e3b8160588661"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.hidden_slide_count"
+            ],
+            "label": "隐藏页面或工作表数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "hidden_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "隐藏页面或工作表数量"
+      },
+      "sha256": "898fe028b0ec31c2c43793f2bdf0c78f622a9c2ea6935284504e3b8160588661"
+    },
+    {
+      "active": true,
+      "bytes": 734565,
+      "format": "pptx",
+      "id": "case-656bb701842b56078092",
+      "inputName": "PPT_Zenodo_统计学课程_64公式24切换.pptx",
+      "object": "objects/656bb701842b56078092840b6f20233bb474fe9142c426812c1383156f5665d8/PPT_Zenodo_统计学课程_64公式24切换.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；16 slide、64 OMML、24 transition、15 notes",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2023/e4530cd2718cf9b7658d586ba4629918-PERTEMUAN 9_13 APRIL 2023.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_统计学课程_64公式24切换.pptx",
+          "sha256": "656bb701842b56078092840b6f20233bb474fe9142c426812c1383156f5665d8"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "formulas.powerpoint.math_object_count"
+            ],
+            "label": "公式对象或公式单元格数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "formula_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.slide_count",
+              "powerpoint.transition_slide_count"
+            ],
+            "label": "幻灯片切换效果数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "transition_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "公式对象或公式单元格数量；幻灯片切换效果数量"
+      },
+      "sha256": "656bb701842b56078092840b6f20233bb474fe9142c426812c1383156f5665d8"
+    },
+    {
+      "active": true,
+      "bytes": 1093355,
+      "format": "pptx",
+      "id": "case-e40e68238c2b667c4255",
+      "inputName": "PPT_Zenodo_设计技术教育_批注与备注.pptx",
+      "object": "objects/e40e68238c2b667c4255b3d051e919cd44e19911a05f807805a2603cf3d6da21/PPT_Zenodo_设计技术教育_批注与备注.pptx",
+      "private": false,
+      "provenance": {
+        "license": "CC-BY-4.0",
+        "preparation": "固定 revision 原始下载；14 slide、1 comment part、5 notes",
+        "project": "HuggingFace_Zenodo10K",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "pptx/cc-by-4.0/2020/7f7d68d6ffb33fe72b6c6ebc5187e4e3-Ch18 Transitions after secondary design and technology.pptx",
+        "version": "e59bf3ec11f7518a6c84dc145d83c0675d412522"
+      },
+      "purpose": {
+        "binding": {
+          "format": "pptx",
+          "inputName": "PPT_Zenodo_设计技术教育_批注与备注.pptx",
+          "sha256": "e40e68238c2b667c4255b3d051e919cd44e19911a05f807805a2603cf3d6da21"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "powerpoint.aspect_ratio",
+              "powerpoint.orientation",
+              "powerpoint.slide_size"
+            ],
+            "label": "4:3 画布比例与尺寸",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "aspect_ratio",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "comments.powerpoint.comment_count",
+              "powerpoint.comment_part_count"
+            ],
+            "label": "批注、注释或评论数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "annotation_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.notes_slide_count"
+            ],
+            "label": "演讲者备注部件数量",
+            "note": "先独立核定事实口径，再确认与产品 target 的映射。",
+            "target": "notes_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "4:3 画布比例与尺寸；批注、注释或评论数量；演讲者备注部件数量"
+      },
+      "sha256": "e40e68238c2b667c4255b3d051e919cd44e19911a05f807805a2603cf3d6da21"
+    },
+    {
+      "active": true,
+      "bytes": 36864,
+      "format": "doc",
+      "id": "case-39e9608c711d38f298ed",
+      "inputName": "Word旧版宏文档.doc",
+      "object": "objects/39e9608c711d38f298ed20a5bfae12fcdaed6f4be2be4d26db670475216ca393/Word旧版宏文档.doc",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；Word 97 VBA宏正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/document/SimpleMacro.doc",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "doc",
+          "inputName": "Word旧版宏文档.doc",
+          "sha256": "39e9608c711d38f298ed20a5bfae12fcdaed6f4be2be4d26db670475216ca393"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "document.author"
+            ],
+            "label": "作者元数据",
+            "target": "document.author",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Word 97-2003 宏/VBA能力与作者元数据"
+      },
+      "sha256": "39e9608c711d38f298ed20a5bfae12fcdaed6f4be2be4d26db670475216ca393"
+    },
+    {
+      "active": true,
+      "bytes": 30720,
+      "format": "xls",
+      "id": "case-0e92c9bb018abd8a5f91",
+      "inputName": "Excel旧版宏工作簿.xls",
+      "object": "objects/0e92c9bb018abd8a5f9121d65827c9e3bd280777219cb77a2efd70635143c00a/Excel旧版宏工作簿.xls",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；Excel 97 VBA宏正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/spreadsheet/SimpleMacro.xls",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "xls",
+          "inputName": "Excel旧版宏工作簿.xls",
+          "sha256": "0e92c9bb018abd8a5f9121d65827c9e3bd280777219cb77a2efd70635143c00a"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count"
+            ],
+            "label": "工作表数量",
+            "target": "excel.sheet_count",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "excel.sheet_count",
+              "excel.sheet_names"
+            ],
+            "label": "工作表名称列表",
+            "target": "excel.sheet_names",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "Excel 97-2003 宏/VBA能力与多工作表名称"
+      },
+      "sha256": "0e92c9bb018abd8a5f9121d65827c9e3bd280777219cb77a2efd70635143c00a"
+    },
+    {
+      "active": true,
+      "bytes": 16896,
+      "format": "ppt",
+      "id": "case-b11f51046ee699b72e29",
+      "inputName": "PowerPoint旧版宏演示文稿.ppt",
+      "object": "objects/b11f51046ee699b72e29a53adffe71161a59a2bb5f9369839834c974d7690a61/PowerPoint旧版宏演示文稿.ppt",
+      "private": false,
+      "provenance": {
+        "license": "Apache-2.0",
+        "preparation": "原始下载；PowerPoint 97 VBA宏正例",
+        "project": "Apache_POI",
+        "redistributable": true,
+        "type": "curated-dataset",
+        "upstreamPath": "test-data/slideshow/WithMacros.ppt",
+        "version": "trunk"
+      },
+      "purpose": {
+        "binding": {
+          "format": "ppt",
+          "inputName": "PowerPoint旧版宏演示文稿.ppt",
+          "sha256": "b11f51046ee699b72e29a53adffe71161a59a2bb5f9369839834c974d7690a61"
+        },
+        "checks": [
+          {
+            "factKeys": [
+              "macros.vba_project_count",
+              "security.has_macros"
+            ],
+            "label": "宏/VBA 存在性与数量",
+            "target": "security.has_vba",
+            "type": "fact"
+          },
+          {
+            "factKeys": [
+              "powerpoint.slide_count"
+            ],
+            "label": "幻灯片数量",
+            "target": "powerpoint.slide_count",
+            "type": "fact"
+          }
+        ],
+        "source": "dataset-manifest-v1",
+        "summary": "PowerPoint 97-2003 宏/VBA能力与幻灯片统计"
+      },
+      "sha256": "b11f51046ee699b72e29a53adffe71161a59a2bb5f9369839834c974d7690a61"
+    }
+  ],
+  "schemaVersion": 1
+}

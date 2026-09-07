@@ -1,0 +1,74 @@
+import copy
+import shutil
+import tempfile
+import unittest
+from pathlib import Path
+
+from benchmark.acceptance.case_explanations import SUPPORTED, explain
+from benchmark.acceptance.common import CODE, atomic, sha
+from benchmark.acceptance.report_view import build_model
+
+
+class CaseExplanationTests(unittest.TestCase):
+    def test_matching_unknown_and_private_count_do_not_become_fact_proof(self):
+        row = {'id':'optional_required_semantics', 'requirement':'PRO-R05', 'title':'pair',
+               'expected':{'status':'unknown'}, 'actual':{'status':'unknown'}, 'status':'passed'}
+        original = copy.deepcopy(row)
+        explanation = explain(row, {}, {})
+        self.assertIn('不能证明页数', explanation['limitation'])
+        self.assertEqual(row, original)
+        row = {'id':'private_sources_protected', 'requirement':'PRO-R02', 'actual':35}
+        explanation = explain(row, {}, {})
+        self.assertIn('不是产品通过的文件数', ''.join(explanation['criteria']))
+        self.assertIn('无独立监控事件', str(explanation['observedFields']))
+
+    def test_missing_or_changed_implementation_cannot_borrow_new_explanation(self):
+        row = {'id':'live_security_monitor', 'requirement':'PRO-R02', 'title':'monitor',
+               'status':'blocked','actual':[], 'expected':'live evidence'}
+        envelope = {'qualitySummary':{}, 'acceptance':{'runId':'demo','targetVersion':'demo',
+                    'createdAt':'2026-01-01', 'mode':'diagnostic','checks':[row]}}
+        with tempfile.TemporaryDirectory() as name:
+            folder=Path(name)
+            self.assertFalse(build_model(folder,envelope,{})['context']['protocolBound'])
+            for path, expected_hash in SUPPORTED.items():
+                self.assertEqual(sha(CODE/path), expected_hash, 'Review protocol wording when implementation changes')
+                dest=folder/'implementation'/path
+                dest.parent.mkdir(parents=True,exist_ok=True)
+                shutil.copyfile(CODE/path,dest)
+            atomic(folder/'implementation-manifest.json',SUPPORTED)
+            bound=build_model(folder,envelope,{})
+            self.assertTrue(bound['context']['protocolBound'])
+            self.assertEqual(bound['rows'][0]['protocol']['kind'],'安全环境验证')
+            self.assertEqual(bound['rows'][0]['status'],'blocked')
+            (folder/'implementation/runner.py').write_text('changed semantics')
+            changed=build_model(folder,envelope,{})
+            self.assertFalse(changed['context']['protocolBound'])
+            self.assertEqual(changed['rows'][0]['protocol']['kind'],'历史检查')
+
+
+if __name__ == '__main__':
+    unittest.main()
+
+class ApprovalWordingTests(unittest.TestCase):
+    def _row(self, approval, status):
+        return {'id':'case','requirement':'PRO-R03','status':status,'approval':approval,
+                'answer':{'question':'数量？','check':{'type':'target','target':'count'},'options':[]}}
+
+    def test_approved_pass_wording_is_not_hypothetical_pending_warning(self):
+        p=explain(self._row('approved','passed'),{}, {})
+        self.assertIn('正式通过',p['limitation'])
+        self.assertNotIn('尚未人工审核',p['limitation'])
+
+    def test_draft_match_remains_diagnostic_only(self):
+        p=explain(self._row('draft','review'),{}, {})
+        self.assertIn('尚未人工审核',p['limitation'])
+        self.assertIn('诊断观察',p['limitation'])
+
+
+class SchemaWordingTests(unittest.TestCase):
+    def test_empty_schema_issue_list_means_validation_ran_and_passed(self):
+        row={'id':'schema_x','title':'schema','requirement':'PRO-R04','actual':[]}
+        p=explain(row,{}, {})
+        self.assertIn('已执行 JSON Schema',p['observed'])
+        self.assertIn('未发现契约违规',p['observed'])
+        self.assertNotIn('记录了 0 条',p['observed'])

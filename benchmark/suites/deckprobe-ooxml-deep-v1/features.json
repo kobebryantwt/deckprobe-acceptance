@@ -1,0 +1,10 @@
+{
+  "features": [
+    {"id":"ooxml.identity","name":"OOXML 身份与包","description":"格式、MIME、扩展名、文档种类、包条目和一致性。"},
+    {"id":"ooxml.metadata","name":"核心与应用元数据","description":"core.xml 与 app.xml 中可独立读取的元数据。"},
+    {"id":"ooxml.security","name":"安全与活动内容","description":"加密、宏、签名、外部关系和嵌入内容。"},
+    {"id":"word.structure","name":"Word 结构","description":"页、字、字符、段落、表格、批注和图片。"},
+    {"id":"excel.structure","name":"Excel 结构","description":"工作表、名称、字符串、表、图表、透视表和图片。"},
+    {"id":"powerpoint.structure","name":"PowerPoint 结构","description":"幻灯片、母版、版式、备注、尺寸、图表、批注和媒体。"}
+  ]
+}

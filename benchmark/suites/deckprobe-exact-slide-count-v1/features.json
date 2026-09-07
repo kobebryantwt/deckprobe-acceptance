@@ -1,0 +1,1 @@
+{"features":[{"id":"facts.slide-count","name":"观察精确幻灯片数量","category":"fact"},{"id":"planner.minimum-path","name":"观察实际 Planner 路径、置信度与证据","category":"planner"},{"id":"efficiency.read-cost","name":"观察聚焦探测的物理读取、解压量与随机读取次数","category":"cost"}]}

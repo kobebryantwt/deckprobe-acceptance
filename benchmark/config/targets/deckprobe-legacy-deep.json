@@ -1,0 +1,1 @@
+{"id":"deckprobe-legacy-deep","displayName":"DeckProbe Legacy Office 深度探测","profile":"probe","adapter":{"type":"command","command":["./target/debug/deckprobe","-l","deep","-t","@all","{input}"],"cwd":"{repo}","timeoutSeconds":20,"result":{"type":"stdout_json"}}}

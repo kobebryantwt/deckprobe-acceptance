@@ -1,0 +1,1 @@
+{"features":[{"id":"safety.resource-budget","name":"强制执行物理读取硬预算","category":"safety"},{"id":"contract.error","name":"稳定、机器可读的预算错误", "category":"contract"}]}

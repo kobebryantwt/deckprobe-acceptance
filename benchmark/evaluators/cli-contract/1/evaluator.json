@@ -1,0 +1,7 @@
+{
+  "id": "cli-contract",
+  "version": "1",
+  "displayName": "CLI 可观察行为声明式评估器",
+  "profile": "probe",
+  "type": "declarative"
+}

@@ -1,0 +1,298 @@
+name: DeckProbe release acceptance
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"
+      timezone: "Asia/Shanghai"
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 留空时检查最新正式版
+        required: false
+        type: string
+      force:
+        description: 即使输入未变化也重新运行
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: deckprobe-release-acceptance
+  cancel-in-progress: false
+
+env:
+  ACCEPTANCE_SNAPSHOT: ci-input/current
+  PYTHONUNBUFFERED: "1"
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  freeze:
+    runs-on: ubuntu-24.04
+    outputs:
+      run_id: ${{ steps.lock.outputs.run_id }}
+      changed: ${{ steps.lock.outputs.changed }}
+      status: ${{ steps.lock.outputs.status }}
+      input_digest: ${{ steps.lock.outputs.input_digest }}
+      release_tag: ${{ steps.lock.outputs.release_tag }}
+      previous_tag: ${{ steps.lock.outputs.previous_tag }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+      - name: Read historical baseline when present
+        continue-on-error: true
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: acceptance-results
+          path: result-history
+      - name: Freeze published inputs
+        env:
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          FORCE_RUN: ${{ inputs.force }}
+        run: |
+          args=(--snapshot "$ACCEPTANCE_SNAPSHOT" --output "$RUNNER_TEMP/freeze" --history result-history)
+          if [[ -n "$RELEASE_TAG" ]]; then args+=(--release-tag "$RELEASE_TAG"); fi
+          if [[ "$FORCE_RUN" == "true" ]]; then args+=(--force); fi
+          python benchmark/scripts/release_acceptance.py freeze "${args[@]}"
+      - name: Export lock outputs
+        id: lock
+        run: |
+          python - <<'PY'
+          import json, os
+          p=json.load(open(os.environ['RUNNER_TEMP']+'/freeze/run-lock.json'))
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:
+              p['releaseTag']=(p.get('candidate') or {}).get('tag','')
+              p['previousTag']=(p.get('previous') or {}).get('tag','')
+              for key in ['runId','changed','status','inputDigest','releaseTag','previousTag']:
+                  value=str(p[key]).lower() if isinstance(p[key],bool) else str(p[key])
+                  f.write({'runId':'run_id','inputDigest':'input_digest','releaseTag':'release_tag','previousTag':'previous_tag'}.get(key,key)+"="+value+"\n")
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: acceptance-lock
+          path: ${{ runner.temp }}/freeze
+          retention-days: 30
+
+  main-functional:
+    needs: freeze
+    if: needs.freeze.outputs.status == 'READY' && needs.freeze.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+        with: { browser: "true" }
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
+      - name: Run R01/R03/R04/R05/R07/R09 and Linux x64 GNU R08
+        run: >-
+          python benchmark/scripts/release_acceptance.py
+          --home "$RUNNER_TEMP/main-home" run-main
+          --lock "$RUNNER_TEMP/freeze/run-lock.json"
+          --snapshot "$ACCEPTANCE_SNAPSHOT"
+          --output "$RUNNER_TEMP/main-result"
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: result-main, path: "${{ runner.temp }}/main-result", retention-days: 30 }
+
+  security-linux:
+    needs: freeze
+    if: needs.freeze.outputs.status == 'READY' && needs.freeze.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
+      - name: Install isolation and tracing tools
+        run: sudo apt-get update && sudo apt-get install -y iproute2 nftables strace
+      - name: Run R02 inside a dedicated network namespace
+        run: |
+          sudo env "PATH=$PATH" "GITHUB_TOKEN=${GITHUB_TOKEN:-}" "RUNNER_NAME=${RUNNER_NAME:-}" \
+            "$(command -v python)" benchmark/scripts/release_acceptance.py \
+            --home "$RUNNER_TEMP/security-home" run-security-linux \
+            --lock "$RUNNER_TEMP/freeze/run-lock.json" \
+            --snapshot "$ACCEPTANCE_SNAPSHOT" \
+            --output "$RUNNER_TEMP/security-result"
+      - if: always()
+        run: sudo chown -R "$(id -u):$(id -g)" "$RUNNER_TEMP/security-result" || true
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: result-security, path: "${{ runner.temp }}/security-result", retention-days: 30 }
+
+  performance:
+    needs: freeze
+    if: needs.freeze.outputs.status == 'READY' && needs.freeze.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+        with: { browser: "true" }
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
+      - name: Run interleaved candidate/previous trend measurements
+        run: >-
+          python benchmark/scripts/release_acceptance.py
+          --home "$RUNNER_TEMP/performance-home" run-performance
+          --lock "$RUNNER_TEMP/freeze/run-lock.json"
+          --snapshot "$ACCEPTANCE_SNAPSHOT"
+          --output "$RUNNER_TEMP/performance-result"
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: result-performance, path: "${{ runner.temp }}/performance-result", retention-days: 30 }
+
+  platform-smoke:
+    needs: freeze
+    if: needs.freeze.outputs.status == 'READY' && needs.freeze.outputs.changed == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { id: macos-arm64, runner: macos-15 }
+          - { id: macos-x64, runner: macos-13 }
+          - { id: linux-arm64-gnu, runner: ubuntu-24.04-arm }
+          - { id: windows-x64, runner: windows-2025 }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
+      - name: Run native platform smoke
+        shell: bash
+        run: >-
+          python benchmark/scripts/release_acceptance.py run-platform
+          --lock "$RUNNER_TEMP/freeze/run-lock.json"
+          --snapshot "$ACCEPTANCE_SNAPSHOT"
+          --platform "${{ matrix.id }}"
+          --output "$RUNNER_TEMP/platform-result"
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: "result-platform-${{ matrix.id }}", path: "${{ runner.temp }}/platform-result", retention-days: 30 }
+
+  platform-smoke-musl:
+    needs: freeze
+    if: needs.freeze.outputs.status == 'READY' && needs.freeze.outputs.changed == 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { id: linux-x64-musl, runner: ubuntu-24.04 }
+          - { id: linux-arm64-musl, runner: ubuntu-24.04-arm }
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: .ci-freeze }
+      - name: Run musl smoke in Alpine userspace
+        run: |
+          mkdir -p .ci-platform-result
+          docker run --rm -v "$PWD:/work" -w /work python:3.12-alpine@sha256:b64631e04e4920160c50fbe8d8df828f7f35f06f425cb44aa09bca53e708a35a sh -ec '
+            pip install --disable-pip-version-check -r benchmark/acceptance/requirements.txt >/dev/null
+            python benchmark/scripts/release_acceptance.py run-platform \
+              --lock .ci-freeze/run-lock.json --snapshot ci-input/current \
+              --platform "${{ matrix.id }}" --output .ci-platform-result'
+      - if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: "result-platform-${{ matrix.id }}", path: .ci-platform-result, retention-days: 30 }
+
+  aggregate-report:
+    needs: [freeze, main-functional, security-linux, performance, platform-smoke, platform-smoke-musl]
+    if: always() && needs.freeze.result == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: acceptance-lock, path: "${{ runner.temp }}/freeze" }
+      - name: Download all available job results
+        continue-on-error: true
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: result-*
+          path: ${{ runner.temp }}/results
+      - name: Build the unified R01-R09 report
+        run: >-
+          python benchmark/scripts/release_acceptance.py aggregate
+          --lock "$RUNNER_TEMP/freeze/run-lock.json"
+          --inputs "$RUNNER_TEMP/results"
+          --output "$RUNNER_TEMP/aggregate"
+      - name: Write Job Summary
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json, os
+          p=json.load(open(os.environ['RUNNER_TEMP']+'/aggregate/run.json'))
+          q=p['qualitySummary']
+          print('# DeckProbe 发布验收')
+          print(f"\n- 结论：**{q['releaseDecision']}**")
+          print(f"- Run ID：`{p['runId']}`")
+          print(f"- 检查数：{len(p['acceptance']['checks'])}")
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with: { name: aggregate-report, path: "${{ runner.temp }}/aggregate", retention-days: 30 }
+
+  persist-and-pages:
+    needs: [freeze, aggregate-report]
+    if: always() && needs.aggregate-report.result == 'success'
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with: { fetch-depth: 0 }
+      - uses: ./.github/actions/setup-acceptance
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: aggregate-report, path: "${{ runner.temp }}/aggregate" }
+      - name: Prepare the complete results branch
+        run: |
+          if git ls-remote --exit-code --heads origin acceptance-results >/dev/null 2>&1; then
+            git fetch origin acceptance-results:acceptance-results
+            git worktree add "$RUNNER_TEMP/site" acceptance-results
+          else
+            git worktree add --detach "$RUNNER_TEMP/site"
+            git -C "$RUNNER_TEMP/site" switch --orphan acceptance-results
+          fi
+          if [[ "${{ needs.freeze.outputs.status }}" != "NO_CHANGE" && -f "$RUNNER_TEMP/site/latest/run.json" ]]; then
+            python benchmark/scripts/release_acceptance.py compare \
+              --before "$RUNNER_TEMP/site/latest" --after "$RUNNER_TEMP/aggregate" \
+              --output "$RUNNER_TEMP/comparison"
+            comparison=(--comparison "$RUNNER_TEMP/comparison")
+          else
+            comparison=()
+          fi
+          python benchmark/scripts/release_acceptance.py publish-history \
+            --run "$RUNNER_TEMP/aggregate" --site "$RUNNER_TEMP/site" "${comparison[@]}"
+          cd "$RUNNER_TEMP/site"
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git diff --cached --quiet || git commit -m "acceptance: ${{ needs.freeze.outputs.run_id }} [skip ci]"
+          git push origin HEAD:acceptance-results
+          mkdir -p "$RUNNER_TEMP/pages"
+          rsync -a --exclude=.git "$RUNNER_TEMP/site/" "$RUNNER_TEMP/pages/"
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with: { path: "${{ runner.temp }}/pages" }
+      - uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+        id: deployment
+
+  verdict:
+    needs: [aggregate-report, persist-and-pages]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: ./.github/actions/setup-acceptance
+      - if: needs.aggregate-report.result == 'success'
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with: { name: aggregate-report, path: "${{ runner.temp }}/aggregate" }
+      - name: Enforce the final verdict after publication
+        run: |
+          test "${{ needs.aggregate-report.result }}" = success
+          test "${{ needs.persist-and-pages.result }}" = success
+          python benchmark/scripts/release_acceptance.py verdict --run "$RUNNER_TEMP/aggregate"

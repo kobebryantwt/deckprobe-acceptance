@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-summary-security",
+  "displayName": "DeckProbe 元数据摘要与安全探测",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["./target/debug/deckprobe", "-l", "metadata", "-t", "@summary,@security", "{input}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 15,
+    "result": {"type": "stdout_json"}
+  }
+}

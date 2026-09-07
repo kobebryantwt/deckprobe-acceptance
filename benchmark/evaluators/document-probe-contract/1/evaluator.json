@@ -1,0 +1,8 @@
+{
+  "id": "document-probe-contract",
+  "version": "1",
+  "displayName": "文档事实探测质量契约",
+  "profile": "probe",
+  "type": "command",
+  "command": ["python3", "evaluate.py", "{context}"]
+}

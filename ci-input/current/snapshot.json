@@ -1,0 +1,18 @@
+{
+  "claimsApproved": true,
+  "claimsComplete": true,
+  "contentDigest": "8681d8254cda0d3b825451b4dc9c7fe930091d22fdc0f724c42a796ee31e8f29",
+  "counts": {
+    "answers": 111,
+    "gaps": 0,
+    "pending": 0,
+    "samples": 56
+  },
+  "createdAt": "2026-09-07T08:53:21.780804+00:00",
+  "factCount": 1242,
+  "factInventoryVersion": 1,
+  "missingPerformanceCases": [],
+  "schemaVersion": 1,
+  "sourceCohort": "0894c746b0e6b3f2722a2731238e1c0fc7ebb20f64cd2ad4df00222f70369b0d",
+  "status": "approved"
+}

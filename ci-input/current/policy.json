@@ -1,0 +1,183 @@
+{
+  "policy": {
+    "approvalPolicy": "Each new or changed answer requires an explicit human decision bound to its digest. Plan approval is not answer approval.",
+    "declaredProfiles": [
+      "pdf",
+      "docx",
+      "docm",
+      "dotx",
+      "dotm",
+      "xlsx",
+      "xlsm",
+      "xltx",
+      "xltm",
+      "xlsb",
+      "pptx",
+      "pptm",
+      "ppsx",
+      "ppsm",
+      "potx",
+      "potm",
+      "doc",
+      "dot",
+      "xls",
+      "xlt",
+      "ppt",
+      "pps",
+      "pot",
+      "key",
+      "numbers",
+      "pages"
+    ],
+    "licenses": {
+      "engineBefore2.5.0": "MIT",
+      "engineFrom2.5.0": "Apache-2.0",
+      "mcp0.1.1": "MIT"
+    },
+    "maxArchiveExpandedBytes": 1073741824,
+    "maxDownloadBytes": 268435456,
+    "nativePlatform": "aarch64-apple-darwin",
+    "performance": {
+      "absoluteAlertMs": 2,
+      "cases": [
+        "case-cc0cff1b91879bebb339",
+        "case-fad1409b1b0d8cb9f7ef",
+        "case-2e921ccffab9ea815eea"
+      ],
+      "levels": [
+        "header",
+        "metadata",
+        "deep"
+      ],
+      "relativeAlert": 0.2,
+      "role": "observation",
+      "samples": 30,
+      "warmup": 5
+    },
+    "platforms": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "x86_64-pc-windows-msvc"
+    ],
+    "processTimeoutSeconds": 120,
+    "repository": "deckflow/deckprobe",
+    "requiredScenarios": [
+      "identity",
+      "content_mismatch",
+      "missing_vs_zero",
+      "positive_and_negative_security",
+      "documented_limit",
+      "budget_boundary"
+    ],
+    "requirements": [
+      {
+        "evidence": [
+          "asset hashes",
+          "provenance subject/repository/commit",
+          "component licenses"
+        ],
+        "id": "PRO-R01",
+        "priority": "P1",
+        "scope": "local",
+        "title": "发布追溯与许可证"
+      },
+      {
+        "evidence": [
+          "pre/post positive controls",
+          "isolation",
+          "process/network/file events",
+          "capture completeness"
+        ],
+        "id": "PRO-R02",
+        "priority": "P0",
+        "scope": "local",
+        "title": "本地安全边界"
+      },
+      {
+        "evidence": [
+          "approved source-bound answers",
+          "declared profile-target matrix"
+        ],
+        "id": "PRO-R03",
+        "priority": "P0",
+        "scope": "local",
+        "title": "格式与限制"
+      },
+      {
+        "evidence": [
+          "release schema",
+          "confidence/status/evidence invariants",
+          "compatibility"
+        ],
+        "id": "PRO-R04",
+        "priority": "P0",
+        "scope": "local",
+        "title": "target 语义与契约"
+      },
+      {
+        "evidence": [
+          "approved allowed paths and cost constraints",
+          "paired requests"
+        ],
+        "id": "PRO-R05",
+        "priority": "P1",
+        "scope": "local",
+        "title": "路径与共享"
+      },
+      {
+        "evidence": [
+          "controlled environment",
+          "100 samples/config",
+          "independent repetitions"
+        ],
+        "id": "PRO-R06",
+        "priority": "P1",
+        "scope": "full",
+        "title": "正式性能声明"
+      },
+      {
+        "evidence": [
+          "CLI/JSONL/Node/WASM/Worker/MCP",
+          "batch isolation",
+          "UI timing controls"
+        ],
+        "id": "PRO-R07",
+        "priority": "P1",
+        "scope": "local",
+        "title": "集成表面"
+      },
+      {
+        "evidence": [
+          "native runner per published platform",
+          "same locked artifacts and suite"
+        ],
+        "id": "PRO-R08",
+        "priority": "P1",
+        "scope": "full",
+        "title": "全部发布平台"
+      },
+      {
+        "evidence": [
+          "SECURITY snapshot",
+          "private reporting enabled",
+          "authenticated form access"
+        ],
+        "id": "PRO-R09",
+        "priority": "P1",
+        "scope": "local",
+        "title": "私密报告入口"
+      }
+    ],
+    "schedule": {
+      "hour": 10,
+      "timezone": "Asia/Shanghai",
+      "weekday": "Monday"
+    },
+    "version": "1"
+  },
+  "schemaVersion": 1
+}

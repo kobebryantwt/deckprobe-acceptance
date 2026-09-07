@@ -1,0 +1,12 @@
+{
+  "id": "deckprobe-repeat-exact-slide-count",
+  "displayName": "DeckProbe 重复执行精确幻灯片计数",
+  "profile": "probe",
+  "adapter": {
+    "type": "command",
+    "command": ["python3", "benchmark/adapters/deckprobe_repeat.py", "./target/debug/deckprobe", "{input}"],
+    "cwd": "{repo}",
+    "timeoutSeconds": 30,
+    "result": {"type": "stdout_json"}
+  }
+}
