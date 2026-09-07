@@ -7,7 +7,7 @@ from __future__ import annotations
 
 VERSION = 1
 SUPPORTED = {
-    'runner.py': 'c25bc9eb6fbbcd2594327f95cf64ec880b44dc7f1a0e025fd66572ae044a423f',
+    'runner.py': '75c1adb90796cd2ef0ed23fe746b81b0136923106a3027c5033742f34af53c99',
     'contracts.py': 'aa7bfe77ca6f1ebb6d1817629610b5a498d072359cf7aa57b319dbc53cb9a9b2',
     'config/policy.json': '7caa2c80eb87f39542b48d135feb1463c4b8871174db862bff87187f3b7c34e8',
     'security.py': 'aefc6301a3140051395f5a9958dd760fda20a2d43722e360d5ea9acc983c41fe',

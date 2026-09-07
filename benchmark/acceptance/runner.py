@@ -209,7 +209,7 @@ def run(home,label='candidate',diagnostic=False,performance=False,target_overrid
         return out
 
     def paths():
-        src=next((s for s in sources.values() if s.get('format')=='pptx' and not s.get('private')),None)
+        src=next((s for s in sources.values() if s.get('format')=='pptx' and not s.get('private') and '加密' not in s.get('inputName','')),None)
         if not src or src['private']:
             return [item('paths_fixture_unavailable','PRO-R05','路径对照样本启用且可安全执行','blocked','active public fixture','sample disabled, missing or private')]
         variants={'required':['-t','slide_count'],'optional':['-t','slide_count','-o','orientation,aspect_ratio'],
