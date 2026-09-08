@@ -1,0 +1,34 @@
+{
+  "version": "2",
+  "repository": "deckflow/deckprobe",
+  "schedule": {"timezone": "Asia/Shanghai", "weekday": "Monday", "hour": 10},
+  "nativePlatform": "aarch64-apple-darwin",
+  "processTimeoutSeconds": 120,
+  "maxDownloadBytes": 268435456,
+  "maxArchiveExpandedBytes": 1073741824,
+  "performance": {
+    "cases": ["case-cc0cff1b91879bebb339", "case-fad1409b1b0d8cb9f7ef", "case-2e921ccffab9ea815eea"],
+    "levels": ["header", "metadata", "deep"],
+    "warmup": 5,
+    "samples": 50,
+    "relativeAlert": 0.2,
+    "absoluteAlertMs": 2,
+    "role": "observation"
+  },
+  "requirements": [
+    {"id":"PRO-R01","title":"发布追溯与许可证","priority":"P1","scope":"local","evidence":["asset hashes","provenance subject/repository/commit","component licenses"]},
+    {"id":"PRO-R02","title":"本地安全边界","priority":"P0","scope":"local","evidence":["pre/post positive controls","isolation","process/network/file events","capture completeness"]},
+    {"id":"PRO-R03","title":"格式与限制","priority":"P0","scope":"local","evidence":["approved source-bound answers","declared profile-target matrix"]},
+    {"id":"PRO-R04","title":"target 语义与契约","priority":"P0","scope":"local","evidence":["release schema","confidence/status/evidence invariants","compatibility"]},
+    {"id":"PRO-R05","title":"路径与共享","priority":"P1","scope":"local","evidence":["approved allowed paths and cost constraints","paired requests"]},
+    {"id":"PRO-R06","title":"GitHub 性能分布与版本趋势","priority":"P1","scope":"full","evidence":["same-runner candidate/previous pairing","50 samples/config","per-configuration p50/p95 and raw points"]},
+    {"id":"PRO-R07","title":"集成表面","priority":"P1","scope":"local","evidence":["CLI/JSONL/Node/WASM/Worker/MCP","batch isolation","UI timing controls"]},
+    {"id":"PRO-R08","title":"全部发布平台","priority":"P1","scope":"full","evidence":["native runner per published platform","same locked smoke fixture and normalized result"]},
+    {"id":"PRO-R09","title":"私密报告入口","priority":"P1","scope":"local","evidence":["SECURITY snapshot","private reporting enabled","authenticated form access"]}
+  ],
+  "declaredProfiles": ["pdf","docx","docm","dotx","dotm","xlsx","xlsm","xltx","xltm","xlsb","pptx","pptm","ppsx","ppsm","potx","potm","doc","dot","xls","xlt","ppt","pps","pot","key","numbers","pages"],
+  "requiredScenarios": ["identity","content_mismatch","missing_vs_zero","positive_and_negative_security","documented_limit","budget_boundary"],
+  "platforms": ["aarch64-apple-darwin","x86_64-apple-darwin","aarch64-unknown-linux-gnu","aarch64-unknown-linux-musl","x86_64-unknown-linux-gnu","x86_64-unknown-linux-musl","x86_64-pc-windows-msvc"],
+  "licenses": {"engineFrom2.5.0":"Apache-2.0","engineBefore2.5.0":"MIT","mcp0.1.1":"MIT"},
+  "approvalPolicy": "Each new or changed answer requires an explicit human decision bound to its digest. Plan approval is not answer approval."
+}

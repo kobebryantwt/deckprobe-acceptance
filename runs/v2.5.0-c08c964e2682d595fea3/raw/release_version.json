@@ -1,0 +1,28 @@
+{
+  "assertions": [
+    {
+      "actual": "deckprobe 2.5.0",
+      "details": null,
+      "expected": "deckprobe 2.5.0",
+      "featureId": "PRO-R01",
+      "id": "release_version",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "release_version",
+  "command": [
+    "local-evidence://deckprobe",
+    "--version"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/version.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,118 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "coverage": {
+          "approved": 107,
+          "declarationReviewStatus": "approved",
+          "designed": 107,
+          "executed": 107,
+          "passed": 90,
+          "passedScenarios": 6,
+          "requiredScenarios": 6,
+          "total": 2104
+        },
+        "gaps": [],
+        "scenarios": [
+          {
+            "answerIds": [
+              "case-717585c0a88f20862c86:fact-ea6823bbdf",
+              "case-82dcd905dfeb155d8ffe:fact-bb3335a62f",
+              "case-a69207b33c69e171dd35:fact-b2fe12c8bf",
+              "case-e21a1c1e7c1f30176bf0:fact-0a7329c037"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "identity",
+            "passed": true,
+            "reviewStatus": "approved"
+          },
+          {
+            "answerIds": [
+              "case-124ba0a3e3d613fd6480:fact-bd1e66a3ff",
+              "case-e21a1c1e7c1f30176bf0:fact-0a7329c037"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "content_mismatch",
+            "passed": true,
+            "reviewStatus": "approved"
+          },
+          {
+            "answerIds": [
+              "case-85edcfc173a942aa82fa:fact-4f6380dde6",
+              "case-85edcfc173a942aa82fa:fact-679250ec17"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "missing_vs_zero",
+            "passed": true,
+            "reviewStatus": "approved"
+          },
+          {
+            "answerIds": [
+              "case-12afdb506994aa0089ae:fact-30c13ff3ac",
+              "case-172cf666bbac39b34064:fact-b3c6facd58",
+              "case-22e2d0f6f1a413d011fb:fact-e0191e39b9",
+              "case-604e85052adf13afa6dd:fact-2c05cd2d18",
+              "case-d5bdb48f6f2a967fafe1:fact-af3912921f",
+              "case-f7bbd397b77bc8556bd2:fact-a277017956"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "positive_and_negative_security",
+            "passed": true,
+            "reviewStatus": "approved"
+          },
+          {
+            "answerIds": [
+              "case-4a270c2427f11d77f82f:answer-890a358c5f",
+              "case-6fb57a2fc3cfc532713a:answer-45b99dc9b8",
+              "case-97a3253daa7d164369bb:answer-18a57fb70c",
+              "case-a276a2784a9ce6ea4aba:answer-6b5be7d3f0"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "documented_limit",
+            "passed": true,
+            "reviewStatus": "approved"
+          },
+          {
+            "answerIds": [
+              "case-8511f025397f248ef834:fact-bb0960aef2",
+              "case-b8c4ecf2983f497590b7:fact-20a3fc2fba",
+              "case-baa21791da557def206a:fact-725651171f"
+            ],
+            "approved": true,
+            "designed": true,
+            "executed": true,
+            "id": "budget_boundary",
+            "passed": true,
+            "reviewStatus": "approved"
+          }
+        ]
+      },
+      "details": null,
+      "expected": "approved fact + positive/negative/boundary matrix complete",
+      "featureId": "PRO-R03",
+      "id": "complete_declared_coverage",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "complete_declared_coverage",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

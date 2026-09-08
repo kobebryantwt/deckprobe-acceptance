@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 3,
+      "details": {
+        "answerDigest": "65f60199b56ac2d88e4a250c2df9d8092535335b4f17307e0c0ee7daabb2ef54",
+        "diagnosticMatch": true
+      },
+      "expected": 3,
+      "featureId": "PRO-R03",
+      "id": "case-5b7a20b8445c86580480_fact-f967c1466f",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-5b7a20b8445c86580480_fact-f967c1466f",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "excel.pivot_table_part_count",
+    "local-evidence://Excel_OCB_NBA全赛季_2图表3透视表12844公式.xlsx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-523981f80586310dc58241a0eaaee4d5074f8ac108a7ae9fa6fa13dc6bfa046a.json"
+  ],
+  "source": {
+    "uri": "sha256:5b7a20b8445c8658048004411186d94a0efeefdc6543f6998c10deb132fe20a6"
+  },
+  "status": "passed"
+}

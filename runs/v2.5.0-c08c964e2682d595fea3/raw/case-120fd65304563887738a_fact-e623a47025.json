@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": "This is a title, it�s in black",
+      "details": {
+        "answerDigest": "413db69e8fd317d506f00b1674b431f9e9c3332f19655875612eee15c85027f7",
+        "diagnosticMatch": false
+      },
+      "expected": "This is a title, its in black",
+      "featureId": "PRO-R03",
+      "id": "case-120fd65304563887738a_fact-e623a47025",
+      "role": "gate",
+      "severity": "critical",
+      "status": "failed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-120fd65304563887738a_fact-e623a47025",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "document.title",
+    "local-evidence://PowerPoint旧版模板.pot"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-9562efc08d5230d7794452ad01302a339b38ada45bc21c5e3f1839e652fb8139.json"
+  ],
+  "source": {
+    "uri": "sha256:120fd65304563887738ae9cfa1f366389acf9bddb40fefab4693e4653b50f9d0"
+  },
+  "status": "failed"
+}

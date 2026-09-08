@@ -1,0 +1,37 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "failedChecks": [],
+        "families": {
+          "iwork": true,
+          "ooxml": true,
+          "pdf": true
+        }
+      },
+      "details": null,
+      "expected": {
+        "allSurfaceChecksComplete": true,
+        "families": {
+          "iwork": true,
+          "ooxml": true,
+          "pdf": true
+        }
+      },
+      "featureId": "PRO-R07",
+      "id": "integration_deep_coverage",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "integration_deep_coverage",
+  "command": [],
+  "durationMs": 0,
+  "evidence": [],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R07",
+      "id": "node_parity_case-8da93f6b566bc9eb22f4",
+      "role": "gate",
+      "severity": "major",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "node_parity_case-8da93f6b566bc9eb22f4",
+  "command": [
+    "node",
+    "local-evidence://runtime.mjs",
+    "node",
+    "local-evidence://3446cb7f4329966f05ddb829dbc4c66bd4e4b6b38409f4d22a88d034f1c48179",
+    "local-evidence://Keynote现代IWA演示文稿.key",
+    "local-evidence://deckprobe"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/node-case-8da93f6b566bc9eb22f4.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

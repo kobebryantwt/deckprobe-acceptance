@@ -1,0 +1,32 @@
+{
+  "assertions": [
+    {
+      "actual": [],
+      "details": null,
+      "expected": [],
+      "featureId": "PRO-R04",
+      "id": "schema_41b18352f9d31f34f2a6299f453612c27886a23eb13ebf9198ec75713fed04ea",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "schema_41b18352f9d31f34f2a6299f453612c27886a23eb13ebf9198ec75713fed04ea",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "pdf.form_field_count",
+    "local-evidence://OmniDocBench_PPT复杂页面.pdf"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-41b18352f9d31f34f2a6299f453612c27886a23eb13ebf9198ec75713fed04ea.json"
+  ],
+  "source": {
+    "uri": "release://v2.5.0"
+  },
+  "status": "passed"
+}

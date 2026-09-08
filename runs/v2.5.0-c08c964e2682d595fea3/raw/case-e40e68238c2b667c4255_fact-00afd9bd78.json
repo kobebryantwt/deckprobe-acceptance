@@ -1,0 +1,45 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "height_emu": 6858000,
+        "height_pt": 540.0,
+        "width_emu": 9144000,
+        "width_pt": 720.0
+      },
+      "details": {
+        "answerDigest": "8e4ac20bcba44a848370d73e32b6a6aec01c48f4aac62b3b19140facd6473ef1",
+        "diagnosticMatch": true
+      },
+      "expected": {
+        "height_emu": 6858000,
+        "height_pt": 540.0,
+        "width_emu": 9144000,
+        "width_pt": 720.0
+      },
+      "featureId": "PRO-R03",
+      "id": "case-e40e68238c2b667c4255_fact-00afd9bd78",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-e40e68238c2b667c4255_fact-00afd9bd78",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_size",
+    "local-evidence://PPT_Zenodo_设计技术教育_批注与备注.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-1cfddf5ff5f644a584e2f17d55e70dc7959cd7207c4644e764b04cfa24e53693.json"
+  ],
+  "source": {
+    "uri": "sha256:e40e68238c2b667c4255b3d051e919cd44e19911a05f807805a2603cf3d6da21"
+  },
+  "status": "passed"
+}

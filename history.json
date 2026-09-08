@@ -127,6 +127,22 @@
       "release": "v2.5.0",
       "runId": "v2.5.0-4bf8af1e1f31450760ab",
       "url": "runs/v2.5.0-4bf8af1e1f31450760ab/report.html"
+    },
+    {
+      "comparisonUrl": "comparisons/v2.5.0-4bf8af1e1f31450760ab--v2.5.0-c08c964e2682d595fea3/comparison.html",
+      "counts": {
+        "blocked": 2,
+        "failed": 18,
+        "passed": 327,
+        "review": 59
+      },
+      "createdAt": "2026-09-08T02:23:04.441077+00:00",
+      "decision": "FAIL",
+      "inputDigest": "c08c964e2682d595fea3042e1ec110100361988137e369c9a84fd63daf41b12c",
+      "performanceAlerts": 1,
+      "release": "v2.5.0",
+      "runId": "v2.5.0-c08c964e2682d595fea3",
+      "url": "runs/v2.5.0-c08c964e2682d595fea3/report.html"
     }
   ],
   "schemaVersion": 1

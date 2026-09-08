@@ -1,0 +1,45 @@
+{
+  "assertions": [
+    {
+      "actual": {
+        "height_emu": 6858000,
+        "height_pt": 540.0,
+        "width_emu": 12192000,
+        "width_pt": 960.0
+      },
+      "details": {
+        "answerDigest": "44e0cbb01dcacb3b64f09e768cdc4528a79ee4502731efbfd512734b0944f45c",
+        "diagnosticMatch": true
+      },
+      "expected": {
+        "height_emu": 6858000,
+        "height_pt": 540.0,
+        "width_emu": 12192000,
+        "width_pt": 960.0
+      },
+      "featureId": "PRO-R03",
+      "id": "case-2e921ccffab9ea815eea_fact-75626c0353",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-2e921ccffab9ea815eea_fact-75626c0353",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "powerpoint.slide_size",
+    "local-evidence://PPT_Zenodo_用户画像工具包_49页80图.pptx"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-8bd73a34be0ec298eb626c60d94fc1399af6cdedc80e8049d87351b8e68f4285.json"
+  ],
+  "source": {
+    "uri": "sha256:2e921ccffab9ea815eeada71c152419de8eaf7734b92a7950ae9e55bce602539"
+  },
+  "status": "passed"
+}

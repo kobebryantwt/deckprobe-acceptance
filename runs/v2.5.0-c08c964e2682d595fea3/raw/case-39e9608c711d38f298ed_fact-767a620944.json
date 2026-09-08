@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": true,
+      "details": {
+        "answerDigest": "0df3972322b2d40906643a59979704a65b663a398762df2fb5c23b02b099d412",
+        "diagnosticMatch": true
+      },
+      "expected": true,
+      "featureId": "PRO-R03",
+      "id": "case-39e9608c711d38f298ed_fact-767a620944",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-39e9608c711d38f298ed_fact-767a620944",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "security.has_macros",
+    "local-evidence://Word旧版宏文档.doc"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-8f50c41e95cde3f861a49f1979384e951780a4f839a7e98120d5a1fd014f298b.json"
+  ],
+  "source": {
+    "uri": "sha256:39e9608c711d38f298ed20a5bfae12fcdaed6f4be2be4d26db670475216ca393"
+  },
+  "status": "passed"
+}

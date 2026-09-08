@@ -1,0 +1,35 @@
+{
+  "assertions": [
+    {
+      "actual": 62,
+      "details": {
+        "answerDigest": "36e246ba2de555e8ab8835d468775bb646655c75e354c15961cc02f1fb9e549f",
+        "diagnosticMatch": true
+      },
+      "expected": 62,
+      "featureId": "PRO-R03",
+      "id": "case-8da93f6b566bc9eb22f4_fact-f4424ca0d5",
+      "role": "gate",
+      "severity": "critical",
+      "status": "passed",
+      "type": "acceptance_contract"
+    }
+  ],
+  "caseId": "case-8da93f6b566bc9eb22f4_fact-f4424ca0d5",
+  "command": [
+    "local-evidence://deckprobe",
+    "-l",
+    "deep",
+    "-t",
+    "iwork.package_entry_count",
+    "local-evidence://Keynote现代IWA演示文稿.key"
+  ],
+  "durationMs": 0,
+  "evidence": [
+    "job-evidence/main-functional/run/evidence/probe-eaa1c4fa89f2d7d28382f4b263db534793f281a90f5847a47375878dfdb0436c.json"
+  ],
+  "source": {
+    "uri": "sha256:8da93f6b566bc9eb22f4791bbfd5f2179162f39bf80968187b164c33d31824db"
+  },
+  "status": "passed"
+}
