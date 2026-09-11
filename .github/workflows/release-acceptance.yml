@@ -1,11 +1,6 @@
 name: DeckProbe release acceptance
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: "0 10 * * 1"
-      timezone: "Asia/Shanghai"
   workflow_dispatch:
     inputs:
       release_tag:
